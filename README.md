@@ -24,7 +24,7 @@ Anonymous job search in IT(public version).
   - Run `make init` to copy `.env.sample` -> `.env`
   
 1. Add certificates to trusted
-  - Check [Nginx Readme](./nginx/Readme.md)
+  - Check [Nginx Readme](./nginx/README.md)
 
 ## Run project
 
