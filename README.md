@@ -8,7 +8,7 @@ Anonymous job search in IT(public version).
 
 1. Clone repository:
     ```bash
-   git clone git@github.com:mate-academy/huntd.git
+   git clone git@github.com:mate-academy/huntd-public.git
    ```
 1. Install dependencies (node modules) for primary services locally:
 
