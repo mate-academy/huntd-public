@@ -4,11 +4,11 @@ Anonymous job search in IT(public version).
 
 ## Setup environment
 
-1. Setup environment as described in the [doc](https://docs.google.com/document/d/1-Tc4rOG7tHXgwWoF1eihtFyE9PY28tYLO7yDgfqpvGs/edit#heading=h.2hv36bmbpj50)
+1. Setup environment as described in the [doc](./Setup.md)
 
 1. Clone repository:
     ```bash
-   git clone git@github.com:mate-academy/huntd.git
+   git clone git@github.com:mate-academy/huntd-public.git
    ```
 1. Install dependencies (node modules) for primary services locally:
 
@@ -22,6 +22,8 @@ Anonymous job search in IT(public version).
     ```
 1. Setup local `.env` file
   - Run `make init` to copy `.env.sample` -> `.env`
+5. Add certificates to trusted
+  - Check [Nginx Readme](./nginx/README.md)
 
 ## Run project
 
