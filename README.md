@@ -10,6 +10,9 @@ Anonymous job search in IT(public version).
     ```bash
    git clone git@github.com:mate-academy/huntd-public.git
    ```
+1. Setup local `.env` file
+  - Run `make init` to copy `.env.sample` -> `.env`
+  - Insert on the 4th line the NPM_TOKEN you were given
 1. Install dependencies (node modules) for primary services locally:
 
     Use install script in the root of the project
@@ -20,9 +23,6 @@ Anonymous job search in IT(public version).
     ```bash
     npm install # in root, ./frontend, ./api, ./cms
     ```
-1. Setup local `.env` file
-  - Run `make init` to copy `.env.sample` -> `.env`
-  - Insert on the 4th line the NPM_TOKEN you were given
 5. Add certificates to trusted
   - Check [Nginx Readme](./nginx/README.md)
 
