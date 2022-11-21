@@ -1,5 +1,5 @@
 import React, {
-  Dispatch, FC, SetStateAction, useEffect, useMemo, useState,
+  FC, useEffect, useMemo, useState,
 } from 'react';
 import {
   EmploymentLocationBaseFragment,
@@ -27,14 +27,12 @@ interface FieldProps {
 type Props = FormFieldProps<
   EmploymentLocationBaseFragment[],
   FieldProps
-> & {
-  setIsOffice: Dispatch<SetStateAction<boolean>>
-}
+>
 
 export const ProfileEmploymentLocationsInput: FC<Props> = (props) => {
   const { t } = useTranslation([Namespaces.Form]);
   const {
-    initialValue, setValue, register, setIsOffice,
+    initialValue, setValue, register,
   } = props;
 
   const employmentLocationsQueryResult = useEmploymentLocationsQuery();
@@ -71,10 +69,6 @@ export const ProfileEmploymentLocationsInput: FC<Props> = (props) => {
   }, [selectedIds, setValue]);
 
   const handleChange = (checked: boolean, label: string, value: string) => {
-    if (label === EmploymentLocations.Office) {
-      setIsOffice(checked);
-    }
-
     if (selectedIds.has(value)) {
       setSelectedIds((prev) => new Set([...prev].filter((id) => id !== value)));
     } else {

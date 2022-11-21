@@ -1,14 +1,12 @@
 import React, {
   useEffect, useState,
-  useMemo, useCallback, FC,
+  useCallback, FC,
 } from 'react';
 import { useForm } from 'react-hook-form';
 import cn from 'classnames';
 import { Router } from '@/controllers/i18n/i18n.client';
 import { CandidateProfileRoutes } from '@/controllers/router/router.constants';
 import {
-  CandidateProfileCityInput,
-  CityTypes,
   UpdateCandidateProfileMutationVariables,
 } from '@/controllers/graphql/generated';
 import { Tooltip } from '@/components/Base/Tooltip';
@@ -21,7 +19,6 @@ import CandidateProfileModule
   from '@/components/Profile/CandidateProfileModule/CandidateProfileModule.module.scss';
 import { FormField } from '@/components/FormElements/FormField';
 import { InputNumber } from '@/components/FormElements/FormInputs/InputNumber';
-import { CitySelect } from '@/components/Profile/CandidateProfileModule/JobRequirementsForm/CitySelectUi';
 import { analytics } from '@/controllers/analytics/analytics.client';
 import { useUpdateCandidateProfile } from '@/controllers/candidateProfile/candidateProfile.hooks/useUpdateCandidateProfile';
 import { ProfileFormActions } from '@/components/Profile/ProfileFormActions';
@@ -32,11 +29,9 @@ import { ProfileEnglishLevelInput } from '@/components/Profile/CandidateProfileM
 import { ProfileEmploymentLocationsInput } from '@/components/Profile/CandidateProfileModule/JobRequirementsForm/ProfileEmploymentLocationsInput';
 import { IconCheck } from '@/ui/icons/general/IconCheck';
 import { SalaryMultipliers } from '@/components/Profile/ProfilesListModule/Filters/SalaryFilterInput';
-import { EmploymentLocations } from '@/controllers/candidateProfile/candidateProfile.constants';
 import { Switcher } from '@/components/Switcher';
 import { TooltipPositions } from '@/controllers/tooltip/tooltip.constants';
 import { SalaryAmount, SalaryPeriod } from './jobRequirementsForm.constants';
-import { LocationSelect } from './LocationSelectUi';
 import styles from './JobRequirementsForm.module.scss';
 
 interface FormData extends Omit<UpdateCandidateProfileMutationVariables, 'salary'> {
@@ -44,8 +39,6 @@ interface FormData extends Omit<UpdateCandidateProfileMutationVariables, 'salary
   jobExperience: SelectOption | null;
   employmentLocations: string[] | null;
   englishLevel: SelectOption | null;
-  citiesData?: CandidateProfileCityInput[];
-  location: CandidateProfileCityInput;
 }
 
 interface Props {
@@ -82,21 +75,9 @@ export const JobRequirementsForm: FC<Props> = (props) => {
     [],
   );
 
-  const [citiesState, setCitiesState] = useState({
-    isDirty: false,
-  });
-  const [locationState, setLocationState] = useState({
-    isDirty: false,
-  });
-
   const [updateProfile, { loading }] = useUpdateCandidateProfile();
 
   const [profile, { loading: profileLoading }] = useLatestCandidateProfile();
-
-  const [isOffice, setIsOffice] = useState<boolean>(
-    profile?.employmentLocations?.some(
-      (location) => location.slug === EmploymentLocations.Office) || false,
-  );
 
   const initialSalary = profile?.salary
     ? (Math.round(profile.salary * salaryMultiplier)).toString()
@@ -106,23 +87,11 @@ export const JobRequirementsForm: FC<Props> = (props) => {
     setValue('salary', initialSalary);
   }, [setValue, initialSalary]);
 
-  const locationCity = profile?.cities?.find(
-    (city) => city.type === CityTypes.CandidateCity
-  );
-
-  const officeCities = useMemo(() => profile?.cities?.filter(
-    (city) => city.type === CityTypes.OfficeCity
-  ), [profile?.cities]);
-
   const [edited, setEdited] = useState(false);
 
   useEffect(() => {
-    setEdited(
-      citiesState.isDirty
-      || locationState.isDirty
-      || formState.isDirty,
-    );
-  }, [formState.isDirty, citiesState, locationState]);
+    setEdited(formState.isDirty);
+  }, [formState.isDirty]);
 
   const [initialFormValues, setInitialFormValues] = useState<FormData>(
     {} as FormData,
@@ -142,42 +111,17 @@ export const JobRequirementsForm: FC<Props> = (props) => {
 
   const discardChanges = () => {
     reset(initialFormValues);
-    setCitiesState({ isDirty: false });
-    setLocationState({ isDirty: false });
   };
 
   const onSubmit = handleSubmit(async (data) => {
     const {
-      salary, jobExperience, location,
-      englishLevel, citiesData, employmentLocations,
+      salary, jobExperience,
+      englishLevel, employmentLocations,
     } = data;
-
-    if (!location) {
-      setError('location', {
-        type: 'required',
-        message: t(`${Namespaces.Validations}:location_is_required`),
-      });
-
-      return;
-    }
 
     const employmentLocationsIds = employmentLocations
       ? employmentLocations.map((el) => Number(el))
       : [];
-
-    let cities;
-
-    if (citiesData) {
-      cities = isOffice
-        ? [...citiesData]
-        : [];
-    }
-
-    if (location) {
-      cities = cities
-        ? [...cities, location]
-        : [location];
-    }
 
     let preparedSalary = Number(salary);
 
@@ -191,7 +135,6 @@ export const JobRequirementsForm: FC<Props> = (props) => {
           salary: preparedSalary,
           jobExperienceId: Number(jobExperience?.value),
           englishLevelId: Number(englishLevel?.value),
-          cities,
           employmentLocationsIds,
         },
         async update() {
@@ -213,9 +156,7 @@ export const JobRequirementsForm: FC<Props> = (props) => {
       reset({
         salary,
         jobExperience,
-        location,
         englishLevel,
-        citiesData,
         employmentLocations,
       });
     } catch (error) {
@@ -332,40 +273,16 @@ export const JobRequirementsForm: FC<Props> = (props) => {
                 />
               </div>
 
-              <div className="mb-24">
-                <LocationSelect
-                  isDirty={locationState.isDirty}
-                  setIsDirty={setLocationState}
-                  formDisabled={loading}
-                  initialValue={locationCity}
-                  {...formMethods}
-                />
-              </div>
-
               <div className="mb-16">
                 <div className={CandidateProfileModule.employmentTypesCells}>
                   <div>
                     <ProfileEmploymentLocationsInput
-                      setIsOffice={setIsOffice}
                       formDisabled={loading}
                       initialValue={profile?.employmentLocations ?? []}
                       {...formMethods}
                     />
                   </div>
                 </div>
-              </div>
-
-              <div className={cn('mb-24', {
-                [CandidateProfileModule.citySelectHidden]: !isOffice,
-              })}
-              >
-                <CitySelect
-                  isDirty={citiesState.isDirty}
-                  setIsDirty={setCitiesState}
-                  formDisabled={loading}
-                  initialValue={officeCities ?? []}
-                  {...formMethods}
-                />
               </div>
             </div>
 

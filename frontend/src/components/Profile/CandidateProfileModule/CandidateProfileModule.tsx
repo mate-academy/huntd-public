@@ -23,9 +23,6 @@ const Modal = dynamic(
 
     return mod.Modal;
   },
-  {
-    ssr: false,
-  },
 );
 
 const JobRequirementsForm = dynamic(
@@ -33,9 +30,6 @@ const JobRequirementsForm = dynamic(
     const mod = await import('@/components/Profile/CandidateProfileModule/JobRequirementsForm');
 
     return mod.JobRequirementsForm;
-  },
-  {
-    ssr: false,
   },
 );
 
@@ -45,9 +39,6 @@ const WorkExperienceForm = dynamic(
 
     return mod.WorkExperienceForm;
   },
-  {
-    ssr: false,
-  },
 );
 
 const AboutCandidateForm = dynamic(
@@ -56,9 +47,6 @@ const AboutCandidateForm = dynamic(
 
     return mod.AboutCandidateForm;
   },
-  {
-    ssr: false,
-  },
 );
 
 const ProfileContactsForm = dynamic(
@@ -66,9 +54,6 @@ const ProfileContactsForm = dynamic(
     const mod = await import('@/components/Profile/ProfileContactsModule/ProfileContactsForm');
 
     return mod.ProfileContactsForm;
-  },
-  {
-    ssr: false,
   },
 );
 
