@@ -27,7 +27,7 @@ Anonymous job search in IT(public version).
 
 ## Run project
 
-To run the project run following command in the root directory:
+To run the project run following command in the root directory(INSERT NPM TOKEN INTO MAKEFILE BEFORE RUNNING IT):
 ```bash
   make up
 ```
