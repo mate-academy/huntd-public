@@ -4,7 +4,7 @@ Anonymous job search in IT(public version).
 
 ## Setup environment
 
-1. Setup environment as described in the [doc](https://docs.google.com/document/d/1-Tc4rOG7tHXgwWoF1eihtFyE9PY28tYLO7yDgfqpvGs/edit#heading=h.2hv36bmbpj50)
+1. Setup environment as described in the [doc](./Setup.md)
 
 1. Clone repository:
     ```bash
