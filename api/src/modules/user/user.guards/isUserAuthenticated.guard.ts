@@ -3,7 +3,7 @@ import { ForbiddenError } from 'apollo-server';
 import { idX } from '@mate-academy/core';
 import { makeResolver } from '@/core';
 import {
-  GetAuthUser,
+  GetAuthUserUseCase,
   GetAuthUserUseCaseOptions,
   GetAuthUserUseCaseResult,
 } from '@/modules/user/user.useCases/GetAuthUser.useCase';
@@ -16,7 +16,7 @@ export const isUserAuthenticatedGuard = makeResolver<
     unknown,
     typeof skip | ForbiddenError
     >(
-      GetAuthUser,
+      GetAuthUserUseCase,
       idX,
       [],
       (user) => (
