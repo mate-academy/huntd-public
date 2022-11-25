@@ -332,8 +332,26 @@
   {
     "language": "en",
     "namespace": "profile",
+    "code": "fetch",
+    "value": "fetch"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "reload",
+    "value": "reload"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Minimum salary is $2400/year",
+    "value": "Minimum salary is $2400/year"
   },
   {
     "language": "en",
