@@ -12,6 +12,7 @@
 
 # Ignore env config
 .env
+Makefile
 
 # Ignore node_modules
 node_modules
