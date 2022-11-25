@@ -6,11 +6,14 @@ Anonymous job search in IT(public version).
 
 1. Setup environment as described in the [doc](./Setup.md)
 
-1. Clone repository:
+2. Clone repository:
     ```bash
    git clone git@github.com:mate-academy/huntd-public.git
    ```
-1. Install dependencies (node modules) for primary services locally:
+3. Setup local `.env` file
+  - Run `make init` to copy `.env.sample` -> `.env`
+  - Insert on the 4th line the NPM_TOKEN you were given
+4. Install dependencies (node modules) for primary services locally:
 
     Use install script in the root of the project
     ```bash
@@ -20,8 +23,6 @@ Anonymous job search in IT(public version).
     ```bash
     npm install # in root, ./frontend, ./api, ./cms
     ```
-1. Setup local `.env` file
-  - Run `make init` to copy `.env.sample` -> `.env`
 5. Add certificates to trusted
   - Check [Nginx Readme](./nginx/README.md)
 
