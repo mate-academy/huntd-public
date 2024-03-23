@@ -36,6 +36,14 @@ export const RecruiterProfileDetails: FC<Props> = (props) => {
           {profile.companyName}
         </Text>
       </View>
+      <View style={profileDetailsStyles.item}>
+        <Text style={[profileDetailsStyles.title, typography.text]}>
+          {t(`${Namespaces.Profile}:recruiter_company_label`)}
+        </Text>
+        <Text style={[profileDetailsStyles.text, typography.text]}>
+          {profile.city}
+        </Text>
+      </View>
       <View style={{ height: 24 }} />
     </ScrollView>
   );

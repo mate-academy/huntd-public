@@ -44,6 +44,18 @@
       content: '|';
     }
   }
+
+  &:last-child::before {
+    content: '';
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('/map-pin.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
 }
 
 .divider {
