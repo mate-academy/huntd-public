@@ -11,6 +11,7 @@ export interface MetaItem {
 interface UseRecruiterProfileMetaItems {
   (profile?: RecruiterProfile | null): MetaItem[]
 }
+
 export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
   profile,
 ) => useMemo(
@@ -19,7 +20,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       return [];
     }
 
-    return [
+    const metaItems: MetaItem[] = [
       {
         name: RecruiterProfileMetaItems.Position,
         text: getFilledValue(profile.position),
@@ -28,11 +29,16 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
         name: RecruiterProfileMetaItems.CompanyName,
         text: getFilledValue(profile.companyName),
       },
-      {
+    ];
+
+    if (profile.city) {
+      metaItems.push({
         name: RecruiterProfileMetaItems.City,
         text: getFilledValue(profile.city),
-      },
-    ];
+      });
+    }
+
+    return metaItems;
   },
   [profile],
 );
