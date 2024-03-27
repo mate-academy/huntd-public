@@ -287,6 +287,7 @@ export type RecruiterProfiles = {
   status: Enum_Recruiterprofiles_Status;
   position?: Maybe<Scalars['String']>;
   company_name?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user_id?: Maybe<HuntdUsers>;
   reject_reason?: Maybe<Scalars['String']>;
   created_by?: Maybe<AdminUser>;

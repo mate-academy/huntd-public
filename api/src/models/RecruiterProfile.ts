@@ -53,18 +53,24 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   companyName: string;
 
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  city: string | null;
+
   @Unique
   @Column
-  slug: string
+  slug: string;
 
   @Column({
     field: 'statuses_notification_sent_at',
   })
-  statusesNotificationSentAt: Date
+  statusesNotificationSentAt: Date;
 
   @DeletedAt
   @Column({
     field: 'deleted_at',
   })
-  deletedAt: Date
+  deletedAt: Date;
 }

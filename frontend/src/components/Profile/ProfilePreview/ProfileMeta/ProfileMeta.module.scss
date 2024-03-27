@@ -44,6 +44,13 @@
       content: '|';
     }
   }
+
+  @include icon-styles {
+    width: var(--icon-size, 1.5rem);
+    height: var(--icon-size, 1.5rem);
+    margin-right: rem-calc(4);
+    color: $c-semidark-chocolate;
+  }
 }
 
 .divider {
