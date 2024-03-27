@@ -53,8 +53,11 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   companyName: string;
 
-  @Column
-  city: string;
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  city: string | null;
 
   @Unique
   @Column
