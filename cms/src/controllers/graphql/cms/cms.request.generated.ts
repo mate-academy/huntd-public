@@ -287,6 +287,7 @@ export type RecruiterProfiles = {
   status: Enum_Recruiterprofiles_Status;
   position?: Maybe<Scalars['String']>;
   company_name?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user_id?: Maybe<HuntdUsers>;
   reject_reason?: Maybe<Scalars['String']>;
   created_by?: Maybe<AdminUser>;
@@ -1863,10 +1864,12 @@ export enum CacheControlScope {
 export type CandidateProfilesBaseFragment = (
   { __typename?: 'CandidateProfiles' }
   & Pick<CandidateProfiles, 'id' | 'candidate_description' | 'experience_description' | 'position' | 'status' | 'salary'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
+  & {
+    user_id?: Maybe<(
+      { __typename?: 'HuntdUsers' }
+      & HuntdUsersBaseFragment
+    )>
+  }
 );
 
 export type CandidateProfilesQueryVariables = Exact<{
@@ -1879,10 +1882,12 @@ export type CandidateProfilesQueryVariables = Exact<{
 
 export type CandidateProfilesQuery = (
   { __typename?: 'Query' }
-  & { candidateProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'CandidateProfiles' }
-    & CandidateProfilesBaseFragment
-  )>>> }
+  & {
+    candidateProfiles?: Maybe<Array<Maybe<(
+      { __typename?: 'CandidateProfiles' }
+      & CandidateProfilesBaseFragment
+    )>>>
+  }
 );
 
 export type HuntdUsersBaseFragment = (
@@ -1893,10 +1898,12 @@ export type HuntdUsersBaseFragment = (
 export type RecruiterProfilesBaseFragment = (
   { __typename?: 'RecruiterProfiles' }
   & Pick<RecruiterProfiles, 'id' | 'company_name' | 'position' | 'status'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
+  & {
+    user_id?: Maybe<(
+      { __typename?: 'HuntdUsers' }
+      & HuntdUsersBaseFragment
+    )>
+  }
 );
 
 export type RecruiterProfilesQueryVariables = Exact<{
@@ -1909,10 +1916,12 @@ export type RecruiterProfilesQueryVariables = Exact<{
 
 export type RecruiterProfilesQuery = (
   { __typename?: 'Query' }
-  & { recruiterProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'RecruiterProfiles' }
-    & RecruiterProfilesBaseFragment
-  )>>> }
+  & {
+    recruiterProfiles?: Maybe<Array<Maybe<(
+      { __typename?: 'RecruiterProfiles' }
+      & RecruiterProfilesBaseFragment
+    )>>>
+  }
 );
 
 export type SettingsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1920,10 +1929,12 @@ export type SettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SettingsQuery = (
   { __typename?: 'Query' }
-  & { setting?: Maybe<(
-    { __typename?: 'Settings' }
-    & Pick<Settings, 'id' | 'api_graphql_endpoint' | 'api_graphql_token'>
-  )> }
+  & {
+    setting?: Maybe<(
+      { __typename?: 'Settings' }
+      & Pick<Settings, 'id' | 'api_graphql_endpoint' | 'api_graphql_token'>
+    )>
+  }
 );
 
 export const HuntdUsersBaseFragmentDoc = /*#__PURE__*/ gql`

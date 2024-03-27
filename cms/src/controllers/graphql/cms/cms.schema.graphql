@@ -208,6 +208,9 @@ type RecruiterProfiles {
   company_name: String
 
   """"""
+  city: String
+
+  """"""
   user_id: HuntdUsers
 
   """"""

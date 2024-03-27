@@ -286,6 +286,7 @@ export type RecruiterProfiles = {
   status: Enum_Recruiterprofiles_Status;
   position?: Maybe<Scalars['String']>;
   company_name?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user_id?: Maybe<HuntdUsers>;
   reject_reason?: Maybe<Scalars['String']>;
   created_by?: Maybe<AdminUser>;
@@ -1862,10 +1863,12 @@ export enum CacheControlScope {
 export type CandidateProfilesBaseFragment = (
   { __typename?: 'CandidateProfiles' }
   & Pick<CandidateProfiles, 'id' | 'candidate_description' | 'experience_description' | 'position' | 'status' | 'salary'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
+  & {
+    user_id?: Maybe<(
+      { __typename?: 'HuntdUsers' }
+      & HuntdUsersBaseFragment
+    )>
+  }
 );
 
 export type CandidateProfilesQueryVariables = Exact<{
@@ -1878,10 +1881,12 @@ export type CandidateProfilesQueryVariables = Exact<{
 
 export type CandidateProfilesQuery = (
   { __typename?: 'Query' }
-  & { candidateProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'CandidateProfiles' }
-    & CandidateProfilesBaseFragment
-  )>>> }
+  & {
+    candidateProfiles?: Maybe<Array<Maybe<(
+      { __typename?: 'CandidateProfiles' }
+      & CandidateProfilesBaseFragment
+    )>>>
+  }
 );
 
 export type HuntdUsersBaseFragment = (
@@ -1892,10 +1897,12 @@ export type HuntdUsersBaseFragment = (
 export type RecruiterProfilesBaseFragment = (
   { __typename?: 'RecruiterProfiles' }
   & Pick<RecruiterProfiles, 'id' | 'company_name' | 'position' | 'status'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
+  & {
+    user_id?: Maybe<(
+      { __typename?: 'HuntdUsers' }
+      & HuntdUsersBaseFragment
+    )>
+  }
 );
 
 export type RecruiterProfilesQueryVariables = Exact<{
@@ -1908,10 +1915,12 @@ export type RecruiterProfilesQueryVariables = Exact<{
 
 export type RecruiterProfilesQuery = (
   { __typename?: 'Query' }
-  & { recruiterProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'RecruiterProfiles' }
-    & RecruiterProfilesBaseFragment
-  )>>> }
+  & {
+    recruiterProfiles?: Maybe<Array<Maybe<(
+      { __typename?: 'RecruiterProfiles' }
+      & RecruiterProfilesBaseFragment
+    )>>>
+  }
 );
 
 export type SettingsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1919,10 +1928,12 @@ export type SettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SettingsQuery = (
   { __typename?: 'Query' }
-  & { setting?: Maybe<(
-    { __typename?: 'Settings' }
-    & Pick<Settings, 'id' | 'api_graphql_endpoint' | 'api_graphql_token'>
-  )> }
+  & {
+    setting?: Maybe<(
+      { __typename?: 'Settings' }
+      & Pick<Settings, 'id' | 'api_graphql_endpoint' | 'api_graphql_token'>
+    )>
+  }
 );
 
 export const HuntdUsersBaseFragmentDoc = /*#__PURE__*/ gql`
@@ -1950,6 +1961,7 @@ export const RecruiterProfilesBaseFragmentDoc = /*#__PURE__*/ gql`
     fragment RecruiterProfilesBase on RecruiterProfiles {
   id
   company_name
+  city
   position
   status
   user_id {
@@ -1985,11 +1997,11 @@ export const CandidateProfilesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useCandidateProfilesQuery(baseOptions?: Apollo.QueryHookOptions<CandidateProfilesQuery, CandidateProfilesQueryVariables>) {
-        return Apollo.useQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
-      }
+  return Apollo.useQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
+}
 export function useCandidateProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CandidateProfilesQuery, CandidateProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
+}
 export type CandidateProfilesQueryHookResult = ReturnType<typeof useCandidateProfilesQuery>;
 export type CandidateProfilesLazyQueryHookResult = ReturnType<typeof useCandidateProfilesLazyQuery>;
 export type CandidateProfilesQueryResult = Apollo.QueryResult<CandidateProfilesQuery, CandidateProfilesQueryVariables>;
@@ -2021,11 +2033,11 @@ export const RecruiterProfilesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useRecruiterProfilesQuery(baseOptions?: Apollo.QueryHookOptions<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>) {
-        return Apollo.useQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
-      }
+  return Apollo.useQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
+}
 export function useRecruiterProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
+}
 export type RecruiterProfilesQueryHookResult = ReturnType<typeof useRecruiterProfilesQuery>;
 export type RecruiterProfilesLazyQueryHookResult = ReturnType<typeof useRecruiterProfilesLazyQuery>;
 export type RecruiterProfilesQueryResult = Apollo.QueryResult<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>;
@@ -2055,11 +2067,11 @@ export const SettingsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useSettingsQuery(baseOptions?: Apollo.QueryHookOptions<SettingsQuery, SettingsQueryVariables>) {
-        return Apollo.useQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
-      }
+  return Apollo.useQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
+}
 export function useSettingsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SettingsQuery, SettingsQueryVariables>) {
-          return Apollo.useLazyQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
+}
 export type SettingsQueryHookResult = ReturnType<typeof useSettingsQuery>;
 export type SettingsLazyQueryHookResult = ReturnType<typeof useSettingsLazyQuery>;
 export type SettingsQueryResult = Apollo.QueryResult<SettingsQuery, SettingsQueryVariables>;
