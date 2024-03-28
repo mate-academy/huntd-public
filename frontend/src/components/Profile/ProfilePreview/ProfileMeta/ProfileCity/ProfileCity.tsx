@@ -3,24 +3,11 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { IconLocation } from '@/ui/icons/general/IconLocation';
 import styles from './ProfileCity.module.scss';
+import { geoService } from './geoservice/geoService';
 
 interface Props {
   title: string;
 }
-
-const geoService = {
-  url: 'https://secure.geonames.org/searchJSON?q=',
-  user: 'yasik2255',
-  params: '&maxRows=1&username=',
-
-  getSearchLink(city: string): string {
-    return `${this.url}${city}${this.params}${this.user}`;
-  },
-
-  getCityLink(city: string): string {
-    return `https://www.google.com/maps?q=${city}`;
-  },
-};
 
 export const ProfileCity: React.FC<Props> = (props) => {
   const { title } = props;
@@ -31,7 +18,7 @@ export const ProfileCity: React.FC<Props> = (props) => {
       .then((response) => response.json())
       .then((data) => {
         const city = data.geonames[0];
-        // eslint-disable-next-line padding-line-between-statements, no-console
+
         if (city) {
           setCityLink(geoService.getCityLink(city.name));
         } else {
@@ -47,13 +34,12 @@ export const ProfileCity: React.FC<Props> = (props) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const linkedProfileClass = 'profileCity--linked';
   const desciptionText = cityLink ? `Open ${title} city with google maps` : 'Recruiter location';
 
   return (
     <p
       className={classNames(styles.profileCity, {
-        [styles[linkedProfileClass]]: cityLink,
+        [styles.profileCity_linked]: cityLink,
       })}
       title={desciptionText}
     >

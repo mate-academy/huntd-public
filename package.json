@@ -27,8 +27,6 @@
     "graphql": "^15.3.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.2.11",
-    "mysql2": "^3.9.2",
-    "sequelize": "^6.37.1"
   },
   "husky": {
     "hooks": {
@@ -51,8 +49,6 @@
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.1.0",
-    "stylelint-declaration-use-variable": "^1.7.2",
-    "stylelint-order": "^4.1.0",
-    "typescript": "^5.4.3"
+    "stylelint-declaration-use-variable": "^1.7.2"
   }
 }
