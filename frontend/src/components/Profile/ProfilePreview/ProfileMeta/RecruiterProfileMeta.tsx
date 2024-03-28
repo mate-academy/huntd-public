@@ -1,29 +1,35 @@
 import React from 'react';
-import cn from 'classnames';
 import { MetaItem } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems';
-import typography from '@/ui/typography/typography.module.scss';
 import { RecruiterProfileMetaItems } from '@/controllers/recruiterProfile/recruiterProfile.typedefs';
 import { IconLocation } from '@/ui/icons/general/IconLocation';
+import { FCIcon } from '@/ui/icons/typedefs';
 import styles from './ProfileMeta.module.scss';
+import { ProfileMetaItem } from './ProfileMetaItem';
 
 interface Props {
   items: MetaItem[]
 }
+
+export const getRecruiterProfileMetaIcon = (item: MetaItem): FCIcon | null => {
+  switch (item.name) {
+    case RecruiterProfileMetaItems.City:
+      return IconLocation;
+    default:
+      return null;
+  }
+};
+
 export const RecruiterProfileMeta = React.memo<Props>((props) => {
   const { items } = props;
 
   return (
     <ul className={styles.metaWrapper}>
       {items.map((item) => (
-        <li
-          className={cn(styles.recruiterMetaItem, typography.smallHeading)}
+        <ProfileMetaItem
+          item={item}
+          Icon={getRecruiterProfileMetaIcon(item)}
           key={item.name}
-        >
-          {item.name === RecruiterProfileMetaItems.City && (
-            <IconLocation />
-          )}
-          {item.text}
-        </li>
+        />
       ))}
     </ul>
   );

@@ -1,7 +1,7 @@
 TAG ?= latest
 APP_ENV ?= local
 t ?= 20
-NPM_TOKEN ?= <npm_token>
+NPM_TOKEN ?= <nmp_token>
 
 .PHONY: api front cms
 
