@@ -1,0 +1,50 @@
+@import "utils";
+
+.profileCity {
+  display: flex;
+  gap: 4px;
+
+  @include icon-styles {
+    width: 24px;
+    height: 24px;
+    margin-right: 0;
+  }
+
+  &--linked {
+    cursor: pointer;
+    @extend %hover-underline;
+
+    .profileCity__icon {
+      animation: location_anim 3s linear infinite;
+    }
+  }
+
+  &__title {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@keyframes location_anim {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(-5%);
+  }
+  25% {
+    transform: translateY(-20%);
+  }
+  30% {
+    transform: translateY(-5%);
+  }
+  35% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

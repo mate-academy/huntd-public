@@ -26,7 +26,9 @@
     "eslint": "^7.6.0",
     "graphql": "^15.3.0",
     "husky": "^4.3.8",
-    "lint-staged": "^10.2.11"
+    "lint-staged": "^10.2.11",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1"
   },
   "husky": {
     "hooks": {
@@ -42,6 +44,7 @@
     "@graphql-codegen/typescript-graphql-request": "^2.0.0",
     "@graphql-codegen/typescript-operations": "^1.17.8",
     "@graphql-codegen/typescript-react-apollo": "^2.0.6",
+    "@mate-academy/eslint-config-internal": "^1.2.3",
     "@mate-academy/stylelint-config": "0.0.9",
     "concurrently": "^5.3.0",
     "prettier": "2.1.1",
