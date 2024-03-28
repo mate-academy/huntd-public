@@ -25,13 +25,21 @@ services:
   redis:
     image: redis:5.0
     ports:
-      - '6379:6379'
+      - "6379:6379"
 
   ################################# CMS ################################
   # strapi cms
   cms:
     restart: always
-    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev", "-- --watch-admin"]
+    command:
+      [
+        "./wait-for-it.sh",
+        "api:4000/healthz",
+        "npm",
+        "run",
+        "dev",
+        "-- --watch-admin",
+      ]
     build:
       context: ./cms
       args:

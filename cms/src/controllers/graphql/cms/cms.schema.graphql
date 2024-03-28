@@ -1,119 +1,260 @@
-""""""
+"""
+
+"""
 type Query {
-  """"""
+  """
+
+  """
   candidateProfile(id: ID!): CandidateProfiles
 
-  """"""
-  candidateProfiles(sort: String, limit: Int, start: Int, where: JSON): [CandidateProfiles]
+  """
 
-  """"""
-  candidateProfilesConnection(sort: String, limit: Int, start: Int, where: JSON): CandidateProfilesConnection
+  """
+  candidateProfiles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [CandidateProfiles]
 
-  """"""
+  """
+
+  """
+  candidateProfilesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): CandidateProfilesConnection
+
+  """
+
+  """
   huntdUser(id: ID!): HuntdUsers
 
-  """"""
+  """
+
+  """
   huntdUsers(sort: String, limit: Int, start: Int, where: JSON): [HuntdUsers]
 
-  """"""
-  huntdUsersConnection(sort: String, limit: Int, start: Int, where: JSON): HuntdUsersConnection
+  """
 
-  """"""
+  """
+  huntdUsersConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): HuntdUsersConnection
+
+  """
+
+  """
   recruiterProfile(id: ID!): RecruiterProfiles
 
-  """"""
-  recruiterProfiles(sort: String, limit: Int, start: Int, where: JSON): [RecruiterProfiles]
+  """
 
-  """"""
-  recruiterProfilesConnection(sort: String, limit: Int, start: Int, where: JSON): RecruiterProfilesConnection
+  """
+  recruiterProfiles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [RecruiterProfiles]
 
-  """"""
+  """
+
+  """
+  recruiterProfilesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): RecruiterProfilesConnection
+
+  """
+
+  """
   serviceAccessToken(id: ID!): ServiceAccessTokens
 
-  """"""
-  serviceAccessTokens(sort: String, limit: Int, start: Int, where: JSON): [ServiceAccessTokens]
+  """
 
-  """"""
-  serviceAccessTokensConnection(sort: String, limit: Int, start: Int, where: JSON): ServiceAccessTokensConnection
+  """
+  serviceAccessTokens(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [ServiceAccessTokens]
 
-  """"""
+  """
+
+  """
+  serviceAccessTokensConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): ServiceAccessTokensConnection
+
+  """
+
+  """
   setting: Settings
 
-  """"""
+  """
+
+  """
   translate(id: ID!): Translates
 
-  """"""
+  """
+
+  """
   translates(sort: String, limit: Int, start: Int, where: JSON): [Translates]
 
-  """"""
-  translatesConnection(sort: String, limit: Int, start: Int, where: JSON): TranslatesConnection
+  """
 
-  """"""
+  """
+  translatesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): TranslatesConnection
+
+  """
+
+  """
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 
-  """"""
-  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  """
 
-  """"""
+  """
+  filesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UploadFileConnection
+
+  """
+
+  """
   role(id: ID!): UsersPermissionsRole
 
   """
   Retrieve all the existing roles. You can't apply filters on this query.
   """
-  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  roles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsRole]
 
-  """"""
-  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  """
 
-  """"""
+  """
+  rolesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UsersPermissionsRoleConnection
+
+  """
+
+  """
   user(id: ID!): UsersPermissionsUser
 
-  """"""
-  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  """
 
-  """"""
-  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  """
+  users(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsUser]
 
-  """"""
+  """
+
+  """
+  usersConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UsersPermissionsUserConnection
+
+  """
+
+  """
   me: UsersPermissionsMe
 }
 
-""""""
+"""
+
+"""
 type CandidateProfiles {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   status: ENUM_CANDIDATEPROFILES_STATUS!
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   salary: Float
 
-  """"""
+  """
+
+  """
   candidate_description: String
 
-  """"""
+  """
+
+  """
   experience_description: String
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   user_id: HuntdUsers
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
@@ -122,63 +263,113 @@ A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `dat
 """
 scalar DateTime
 
-""""""
+"""
+
+"""
 enum ENUM_CANDIDATEPROFILES_STATUS {
-  """"""
+  """
+
+  """
   DRAFT
 
-  """"""
+  """
+
+  """
   ON_REVIEW
 
-  """"""
+  """
+
+  """
   REJECTED
 
-  """"""
+  """
+
+  """
   ACTIVE
 
-  """"""
+  """
+
+  """
   INACTIVE
 }
 
-""""""
+"""
+
+"""
 type HuntdUsers {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   email: String
 
-  """"""
+  """
+
+  """
   first_name: String
 
-  """"""
+  """
+
+  """
   last_name: String
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 
-  """"""
-  recruiter_profiles(sort: String, limit: Int, start: Int, where: JSON): [RecruiterProfiles]
+  """
 
-  """"""
-  candidate_profiles(sort: String, limit: Int, start: Int, where: JSON): [CandidateProfiles]
+  """
+  recruiter_profiles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [RecruiterProfiles]
+
+  """
+
+  """
+  candidate_profiles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [CandidateProfiles]
 }
 
-""""""
+"""
+
+"""
 type AdminUser {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   username: String
 }
 
@@ -187,2530 +378,4409 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-""""""
+"""
+
+"""
 type RecruiterProfiles {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   status: ENUM_RECRUITERPROFILES_STATUS!
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   company_name: String
 
-  """"""
+  """
+
+  """
   user_id: HuntdUsers
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 enum ENUM_RECRUITERPROFILES_STATUS {
-  """"""
+  """
+
+  """
   DRAFT
 
-  """"""
+  """
+
+  """
   ON_REVIEW
 
-  """"""
+  """
+
+  """
   REJECTED
 
-  """"""
+  """
+
+  """
   ACTIVE
 
-  """"""
+  """
+
+  """
   INACTIVE
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnection {
-  """"""
+  """
+
+  """
   values: [CandidateProfiles]
 
-  """"""
+  """
+
+  """
   groupBy: CandidateProfilesGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: CandidateProfilesAggregator
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesGroupBy {
-  """"""
+  """
+
+  """
   id: [CandidateProfilesConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [CandidateProfilesConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [CandidateProfilesConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   status: [CandidateProfilesConnectionStatus]
 
-  """"""
+  """
+
+  """
   position: [CandidateProfilesConnectionPosition]
 
-  """"""
+  """
+
+  """
   salary: [CandidateProfilesConnectionSalary]
 
-  """"""
+  """
+
+  """
   candidate_description: [CandidateProfilesConnectionCandidate_description]
 
-  """"""
+  """
+
+  """
   experience_description: [CandidateProfilesConnectionExperience_description]
 
-  """"""
+  """
+
+  """
   reject_reason: [CandidateProfilesConnectionReject_reason]
 
-  """"""
+  """
+
+  """
   user_id: [CandidateProfilesConnectionUser_id]
 
-  """"""
+  """
+
+  """
   created_by: [CandidateProfilesConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [CandidateProfilesConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionStatus {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionPosition {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionSalary {
-  """"""
+  """
+
+  """
   key: Float
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionCandidate_description {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionExperience_description {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionReject_reason {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionUser_id {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: CandidateProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 
-  """"""
+  """
+
+  """
   sum: CandidateProfilesAggregatorSum
 
-  """"""
+  """
+
+  """
   avg: CandidateProfilesAggregatorAvg
 
-  """"""
+  """
+
+  """
   min: CandidateProfilesAggregatorMin
 
-  """"""
+  """
+
+  """
   max: CandidateProfilesAggregatorMax
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesAggregatorSum {
-  """"""
+  """
+
+  """
   salary: Float
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesAggregatorAvg {
-  """"""
+  """
+
+  """
   salary: Float
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesAggregatorMin {
-  """"""
+  """
+
+  """
   salary: Float
 }
 
-""""""
+"""
+
+"""
 type CandidateProfilesAggregatorMax {
-  """"""
+  """
+
+  """
   salary: Float
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnection {
-  """"""
+  """
+
+  """
   values: [HuntdUsers]
 
-  """"""
+  """
+
+  """
   groupBy: HuntdUsersGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: HuntdUsersAggregator
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersGroupBy {
-  """"""
+  """
+
+  """
   id: [HuntdUsersConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [HuntdUsersConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [HuntdUsersConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   email: [HuntdUsersConnectionEmail]
 
-  """"""
+  """
+
+  """
   first_name: [HuntdUsersConnectionFirst_name]
 
-  """"""
+  """
+
+  """
   last_name: [HuntdUsersConnectionLast_name]
 
-  """"""
+  """
+
+  """
   created_by: [HuntdUsersConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [HuntdUsersConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionEmail {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionFirst_name {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionLast_name {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: HuntdUsersConnection
 }
 
-""""""
+"""
+
+"""
 type HuntdUsersAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnection {
-  """"""
+  """
+
+  """
   values: [RecruiterProfiles]
 
-  """"""
+  """
+
+  """
   groupBy: RecruiterProfilesGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: RecruiterProfilesAggregator
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesGroupBy {
-  """"""
+  """
+
+  """
   id: [RecruiterProfilesConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [RecruiterProfilesConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [RecruiterProfilesConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   status: [RecruiterProfilesConnectionStatus]
 
-  """"""
+  """
+
+  """
   position: [RecruiterProfilesConnectionPosition]
 
-  """"""
+  """
+
+  """
   company_name: [RecruiterProfilesConnectionCompany_name]
 
-  """"""
+  """
+
+  """
   user_id: [RecruiterProfilesConnectionUser_id]
 
-  """"""
+  """
+
+  """
   reject_reason: [RecruiterProfilesConnectionReject_reason]
 
-  """"""
+  """
+
+  """
   created_by: [RecruiterProfilesConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [RecruiterProfilesConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionStatus {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionPosition {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionCompany_name {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionUser_id {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionReject_reason {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: RecruiterProfilesConnection
 }
 
-""""""
+"""
+
+"""
 type RecruiterProfilesAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokens {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   token: String!
 
-  """"""
+  """
+
+  """
   user_id: HuntdUsers
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnection {
-  """"""
+  """
+
+  """
   values: [ServiceAccessTokens]
 
-  """"""
+  """
+
+  """
   groupBy: ServiceAccessTokensGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: ServiceAccessTokensAggregator
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensGroupBy {
-  """"""
+  """
+
+  """
   id: [ServiceAccessTokensConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [ServiceAccessTokensConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [ServiceAccessTokensConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   token: [ServiceAccessTokensConnectionToken]
 
-  """"""
+  """
+
+  """
   user_id: [ServiceAccessTokensConnectionUser_id]
 
-  """"""
+  """
+
+  """
   created_by: [ServiceAccessTokensConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [ServiceAccessTokensConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionToken {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionUser_id {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: ServiceAccessTokensConnection
 }
 
-""""""
+"""
+
+"""
 type ServiceAccessTokensAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type Settings {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   api_graphql_endpoint: String!
 
-  """"""
+  """
+
+  """
   api_graphql_token: String!
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 type Translates {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   code: String!
 
-  """"""
+  """
+
+  """
   namespace: String!
 
-  """"""
+  """
+
+  """
   language: String!
 
-  """"""
+  """
+
+  """
   value: String
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnection {
-  """"""
+  """
+
+  """
   values: [Translates]
 
-  """"""
+  """
+
+  """
   groupBy: TranslatesGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: TranslatesAggregator
 }
 
-""""""
+"""
+
+"""
 type TranslatesGroupBy {
-  """"""
+  """
+
+  """
   id: [TranslatesConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [TranslatesConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [TranslatesConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   code: [TranslatesConnectionCode]
 
-  """"""
+  """
+
+  """
   namespace: [TranslatesConnectionNamespace]
 
-  """"""
+  """
+
+  """
   language: [TranslatesConnectionLanguage]
 
-  """"""
+  """
+
+  """
   value: [TranslatesConnectionValue]
 
-  """"""
+  """
+
+  """
   created_by: [TranslatesConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [TranslatesConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionCode {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionNamespace {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionLanguage {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionValue {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: TranslatesConnection
 }
 
-""""""
+"""
+
+"""
 type TranslatesAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type UploadFile {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   name: String!
 
-  """"""
+  """
+
+  """
   alternativeText: String
 
-  """"""
+  """
+
+  """
   caption: String
 
-  """"""
+  """
+
+  """
   width: Int
 
-  """"""
+  """
+
+  """
   height: Int
 
-  """"""
+  """
+
+  """
   formats: JSON
 
-  """"""
+  """
+
+  """
   hash: String!
 
-  """"""
+  """
+
+  """
   ext: String
 
-  """"""
+  """
+
+  """
   mime: String!
 
-  """"""
+  """
+
+  """
   size: Float!
 
-  """"""
+  """
+
+  """
   url: String!
 
-  """"""
+  """
+
+  """
   previewUrl: String
 
-  """"""
+  """
+
+  """
   provider: String!
 
-  """"""
+  """
+
+  """
   provider_metadata: JSON
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 
-  """"""
+  """
+
+  """
   related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
 }
 
-""""""
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | CandidateProfiles | CandidateProfilesConnection | CandidateProfilesAggregator | CandidateProfilesAggregatorSum | CandidateProfilesAggregatorAvg | CandidateProfilesAggregatorMin | CandidateProfilesAggregatorMax | CandidateProfilesGroupBy | CandidateProfilesConnectionId | CandidateProfilesConnectionCreated_at | CandidateProfilesConnectionUpdated_at | CandidateProfilesConnectionStatus | CandidateProfilesConnectionPosition | CandidateProfilesConnectionSalary | CandidateProfilesConnectionCandidate_description | CandidateProfilesConnectionExperience_description | CandidateProfilesConnectionReject_reason | CandidateProfilesConnectionUser_id | CandidateProfilesConnectionCreated_by | CandidateProfilesConnectionUpdated_by | createCandidateProfilePayload | updateCandidateProfilePayload | deleteCandidateProfilePayload | HuntdUsers | HuntdUsersConnection | HuntdUsersAggregator | HuntdUsersGroupBy | HuntdUsersConnectionId | HuntdUsersConnectionCreated_at | HuntdUsersConnectionUpdated_at | HuntdUsersConnectionEmail | HuntdUsersConnectionFirst_name | HuntdUsersConnectionLast_name | HuntdUsersConnectionCreated_by | HuntdUsersConnectionUpdated_by | createHuntdUserPayload | updateHuntdUserPayload | deleteHuntdUserPayload | RecruiterProfiles | RecruiterProfilesConnection | RecruiterProfilesAggregator | RecruiterProfilesGroupBy | RecruiterProfilesConnectionId | RecruiterProfilesConnectionCreated_at | RecruiterProfilesConnectionUpdated_at | RecruiterProfilesConnectionStatus | RecruiterProfilesConnectionPosition | RecruiterProfilesConnectionCompany_name | RecruiterProfilesConnectionUser_id | RecruiterProfilesConnectionReject_reason | RecruiterProfilesConnectionCreated_by | RecruiterProfilesConnectionUpdated_by | createRecruiterProfilePayload | updateRecruiterProfilePayload | deleteRecruiterProfilePayload | ServiceAccessTokens | ServiceAccessTokensConnection | ServiceAccessTokensAggregator | ServiceAccessTokensGroupBy | ServiceAccessTokensConnectionId | ServiceAccessTokensConnectionCreated_at | ServiceAccessTokensConnectionUpdated_at | ServiceAccessTokensConnectionToken | ServiceAccessTokensConnectionUser_id | ServiceAccessTokensConnectionCreated_by | ServiceAccessTokensConnectionUpdated_by | createServiceAccessTokenPayload | updateServiceAccessTokenPayload | deleteServiceAccessTokenPayload | Settings | updateSettingPayload | deleteSettingPayload | Translates | TranslatesConnection | TranslatesAggregator | TranslatesGroupBy | TranslatesConnectionId | TranslatesConnectionCreated_at | TranslatesConnectionUpdated_at | TranslatesConnectionCode | TranslatesConnectionNamespace | TranslatesConnectionLanguage | TranslatesConnectionValue | TranslatesConnectionCreated_by | TranslatesConnectionUpdated_by | createTranslatePayload | updateTranslatePayload | deleteTranslatePayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionCreated_by | UploadFileConnectionUpdated_by | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnectionCreated_by | UsersPermissionsRoleConnectionUpdated_by | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionCreated_by | UsersPermissionsUserConnectionUpdated_by | createUserPayload | updateUserPayload | deleteUserPayload
+"""
 
-""""""
+"""
+union Morph =
+    UsersPermissionsMe
+  | UsersPermissionsMeRole
+  | UsersPermissionsLoginPayload
+  | UserPermissionsPasswordPayload
+  | CandidateProfiles
+  | CandidateProfilesConnection
+  | CandidateProfilesAggregator
+  | CandidateProfilesAggregatorSum
+  | CandidateProfilesAggregatorAvg
+  | CandidateProfilesAggregatorMin
+  | CandidateProfilesAggregatorMax
+  | CandidateProfilesGroupBy
+  | CandidateProfilesConnectionId
+  | CandidateProfilesConnectionCreated_at
+  | CandidateProfilesConnectionUpdated_at
+  | CandidateProfilesConnectionStatus
+  | CandidateProfilesConnectionPosition
+  | CandidateProfilesConnectionSalary
+  | CandidateProfilesConnectionCandidate_description
+  | CandidateProfilesConnectionExperience_description
+  | CandidateProfilesConnectionReject_reason
+  | CandidateProfilesConnectionUser_id
+  | CandidateProfilesConnectionCreated_by
+  | CandidateProfilesConnectionUpdated_by
+  | createCandidateProfilePayload
+  | updateCandidateProfilePayload
+  | deleteCandidateProfilePayload
+  | HuntdUsers
+  | HuntdUsersConnection
+  | HuntdUsersAggregator
+  | HuntdUsersGroupBy
+  | HuntdUsersConnectionId
+  | HuntdUsersConnectionCreated_at
+  | HuntdUsersConnectionUpdated_at
+  | HuntdUsersConnectionEmail
+  | HuntdUsersConnectionFirst_name
+  | HuntdUsersConnectionLast_name
+  | HuntdUsersConnectionCreated_by
+  | HuntdUsersConnectionUpdated_by
+  | createHuntdUserPayload
+  | updateHuntdUserPayload
+  | deleteHuntdUserPayload
+  | RecruiterProfiles
+  | RecruiterProfilesConnection
+  | RecruiterProfilesAggregator
+  | RecruiterProfilesGroupBy
+  | RecruiterProfilesConnectionId
+  | RecruiterProfilesConnectionCreated_at
+  | RecruiterProfilesConnectionUpdated_at
+  | RecruiterProfilesConnectionStatus
+  | RecruiterProfilesConnectionPosition
+  | RecruiterProfilesConnectionCompany_name
+  | RecruiterProfilesConnectionUser_id
+  | RecruiterProfilesConnectionReject_reason
+  | RecruiterProfilesConnectionCreated_by
+  | RecruiterProfilesConnectionUpdated_by
+  | createRecruiterProfilePayload
+  | updateRecruiterProfilePayload
+  | deleteRecruiterProfilePayload
+  | ServiceAccessTokens
+  | ServiceAccessTokensConnection
+  | ServiceAccessTokensAggregator
+  | ServiceAccessTokensGroupBy
+  | ServiceAccessTokensConnectionId
+  | ServiceAccessTokensConnectionCreated_at
+  | ServiceAccessTokensConnectionUpdated_at
+  | ServiceAccessTokensConnectionToken
+  | ServiceAccessTokensConnectionUser_id
+  | ServiceAccessTokensConnectionCreated_by
+  | ServiceAccessTokensConnectionUpdated_by
+  | createServiceAccessTokenPayload
+  | updateServiceAccessTokenPayload
+  | deleteServiceAccessTokenPayload
+  | Settings
+  | updateSettingPayload
+  | deleteSettingPayload
+  | Translates
+  | TranslatesConnection
+  | TranslatesAggregator
+  | TranslatesGroupBy
+  | TranslatesConnectionId
+  | TranslatesConnectionCreated_at
+  | TranslatesConnectionUpdated_at
+  | TranslatesConnectionCode
+  | TranslatesConnectionNamespace
+  | TranslatesConnectionLanguage
+  | TranslatesConnectionValue
+  | TranslatesConnectionCreated_by
+  | TranslatesConnectionUpdated_by
+  | createTranslatePayload
+  | updateTranslatePayload
+  | deleteTranslatePayload
+  | UploadFile
+  | UploadFileConnection
+  | UploadFileAggregator
+  | UploadFileAggregatorSum
+  | UploadFileAggregatorAvg
+  | UploadFileAggregatorMin
+  | UploadFileAggregatorMax
+  | UploadFileGroupBy
+  | UploadFileConnectionId
+  | UploadFileConnectionCreated_at
+  | UploadFileConnectionUpdated_at
+  | UploadFileConnectionName
+  | UploadFileConnectionAlternativeText
+  | UploadFileConnectionCaption
+  | UploadFileConnectionWidth
+  | UploadFileConnectionHeight
+  | UploadFileConnectionFormats
+  | UploadFileConnectionHash
+  | UploadFileConnectionExt
+  | UploadFileConnectionMime
+  | UploadFileConnectionSize
+  | UploadFileConnectionUrl
+  | UploadFileConnectionPreviewUrl
+  | UploadFileConnectionProvider
+  | UploadFileConnectionProvider_metadata
+  | UploadFileConnectionCreated_by
+  | UploadFileConnectionUpdated_by
+  | UsersPermissionsPermission
+  | UsersPermissionsRole
+  | UsersPermissionsRoleConnection
+  | UsersPermissionsRoleAggregator
+  | UsersPermissionsRoleGroupBy
+  | UsersPermissionsRoleConnectionId
+  | UsersPermissionsRoleConnectionName
+  | UsersPermissionsRoleConnectionDescription
+  | UsersPermissionsRoleConnectionType
+  | UsersPermissionsRoleConnectionCreated_by
+  | UsersPermissionsRoleConnectionUpdated_by
+  | createRolePayload
+  | updateRolePayload
+  | deleteRolePayload
+  | UsersPermissionsUser
+  | UsersPermissionsUserConnection
+  | UsersPermissionsUserAggregator
+  | UsersPermissionsUserGroupBy
+  | UsersPermissionsUserConnectionId
+  | UsersPermissionsUserConnectionCreated_at
+  | UsersPermissionsUserConnectionUpdated_at
+  | UsersPermissionsUserConnectionUsername
+  | UsersPermissionsUserConnectionEmail
+  | UsersPermissionsUserConnectionProvider
+  | UsersPermissionsUserConnectionConfirmed
+  | UsersPermissionsUserConnectionBlocked
+  | UsersPermissionsUserConnectionRole
+  | UsersPermissionsUserConnectionCreated_by
+  | UsersPermissionsUserConnectionUpdated_by
+  | createUserPayload
+  | updateUserPayload
+  | deleteUserPayload
+
+"""
+
+"""
 type UsersPermissionsMe {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   username: String!
 
-  """"""
+  """
+
+  """
   email: String!
 
-  """"""
+  """
+
+  """
   confirmed: Boolean
 
-  """"""
+  """
+
+  """
   blocked: Boolean
 
-  """"""
+  """
+
+  """
   role: UsersPermissionsMeRole
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsMeRole {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   name: String!
 
-  """"""
+  """
+
+  """
   description: String
 
-  """"""
+  """
+
+  """
   type: String
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsLoginPayload {
-  """"""
+  """
+
+  """
   jwt: String
 
-  """"""
+  """
+
+  """
   user: UsersPermissionsMe!
 }
 
-""""""
+"""
+
+"""
 type UserPermissionsPasswordPayload {
-  """"""
+  """
+
+  """
   ok: Boolean!
 }
 
-""""""
+"""
+
+"""
 type createCandidateProfilePayload {
-  """"""
+  """
+
+  """
   candidateProfile: CandidateProfiles
 }
 
-""""""
+"""
+
+"""
 type updateCandidateProfilePayload {
-  """"""
+  """
+
+  """
   candidateProfile: CandidateProfiles
 }
 
-""""""
+"""
+
+"""
 type deleteCandidateProfilePayload {
-  """"""
+  """
+
+  """
   candidateProfile: CandidateProfiles
 }
 
-""""""
+"""
+
+"""
 type createHuntdUserPayload {
-  """"""
+  """
+
+  """
   huntdUser: HuntdUsers
 }
 
-""""""
+"""
+
+"""
 type updateHuntdUserPayload {
-  """"""
+  """
+
+  """
   huntdUser: HuntdUsers
 }
 
-""""""
+"""
+
+"""
 type deleteHuntdUserPayload {
-  """"""
+  """
+
+  """
   huntdUser: HuntdUsers
 }
 
-""""""
+"""
+
+"""
 type createRecruiterProfilePayload {
-  """"""
+  """
+
+  """
   recruiterProfile: RecruiterProfiles
 }
 
-""""""
+"""
+
+"""
 type updateRecruiterProfilePayload {
-  """"""
+  """
+
+  """
   recruiterProfile: RecruiterProfiles
 }
 
-""""""
+"""
+
+"""
 type deleteRecruiterProfilePayload {
-  """"""
+  """
+
+  """
   recruiterProfile: RecruiterProfiles
 }
 
-""""""
+"""
+
+"""
 type createServiceAccessTokenPayload {
-  """"""
+  """
+
+  """
   serviceAccessToken: ServiceAccessTokens
 }
 
-""""""
+"""
+
+"""
 type updateServiceAccessTokenPayload {
-  """"""
+  """
+
+  """
   serviceAccessToken: ServiceAccessTokens
 }
 
-""""""
+"""
+
+"""
 type deleteServiceAccessTokenPayload {
-  """"""
+  """
+
+  """
   serviceAccessToken: ServiceAccessTokens
 }
 
-""""""
+"""
+
+"""
 type updateSettingPayload {
-  """"""
+  """
+
+  """
   setting: Settings
 }
 
-""""""
+"""
+
+"""
 type deleteSettingPayload {
-  """"""
+  """
+
+  """
   setting: Settings
 }
 
-""""""
+"""
+
+"""
 type createTranslatePayload {
-  """"""
+  """
+
+  """
   translate: Translates
 }
 
-""""""
+"""
+
+"""
 type updateTranslatePayload {
-  """"""
+  """
+
+  """
   translate: Translates
 }
 
-""""""
+"""
+
+"""
 type deleteTranslatePayload {
-  """"""
+  """
+
+  """
   translate: Translates
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnection {
-  """"""
+  """
+
+  """
   values: [UploadFile]
 
-  """"""
+  """
+
+  """
   groupBy: UploadFileGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: UploadFileAggregator
 }
 
-""""""
+"""
+
+"""
 type UploadFileGroupBy {
-  """"""
+  """
+
+  """
   id: [UploadFileConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [UploadFileConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [UploadFileConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   name: [UploadFileConnectionName]
 
-  """"""
+  """
+
+  """
   alternativeText: [UploadFileConnectionAlternativeText]
 
-  """"""
+  """
+
+  """
   caption: [UploadFileConnectionCaption]
 
-  """"""
+  """
+
+  """
   width: [UploadFileConnectionWidth]
 
-  """"""
+  """
+
+  """
   height: [UploadFileConnectionHeight]
 
-  """"""
+  """
+
+  """
   formats: [UploadFileConnectionFormats]
 
-  """"""
+  """
+
+  """
   hash: [UploadFileConnectionHash]
 
-  """"""
+  """
+
+  """
   ext: [UploadFileConnectionExt]
 
-  """"""
+  """
+
+  """
   mime: [UploadFileConnectionMime]
 
-  """"""
+  """
+
+  """
   size: [UploadFileConnectionSize]
 
-  """"""
+  """
+
+  """
   url: [UploadFileConnectionUrl]
 
-  """"""
+  """
+
+  """
   previewUrl: [UploadFileConnectionPreviewUrl]
 
-  """"""
+  """
+
+  """
   provider: [UploadFileConnectionProvider]
 
-  """"""
+  """
+
+  """
   provider_metadata: [UploadFileConnectionProvider_metadata]
 
-  """"""
+  """
+
+  """
   created_by: [UploadFileConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [UploadFileConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionName {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionAlternativeText {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionCaption {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionWidth {
-  """"""
+  """
+
+  """
   key: Int
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionHeight {
-  """"""
+  """
+
+  """
   key: Int
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionFormats {
-  """"""
+  """
+
+  """
   key: JSON
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionHash {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionExt {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionMime {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionSize {
-  """"""
+  """
+
+  """
   key: Float
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionUrl {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionPreviewUrl {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionProvider {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionProvider_metadata {
-  """"""
+  """
+
+  """
   key: JSON
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UploadFileConnection
 }
 
-""""""
+"""
+
+"""
 type UploadFileAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 
-  """"""
+  """
+
+  """
   sum: UploadFileAggregatorSum
 
-  """"""
+  """
+
+  """
   avg: UploadFileAggregatorAvg
 
-  """"""
+  """
+
+  """
   min: UploadFileAggregatorMin
 
-  """"""
+  """
+
+  """
   max: UploadFileAggregatorMax
 }
 
-""""""
+"""
+
+"""
 type UploadFileAggregatorSum {
-  """"""
+  """
+
+  """
   width: Float
 
-  """"""
+  """
+
+  """
   height: Float
 
-  """"""
+  """
+
+  """
   size: Float
 }
 
-""""""
+"""
+
+"""
 type UploadFileAggregatorAvg {
-  """"""
+  """
+
+  """
   width: Float
 
-  """"""
+  """
+
+  """
   height: Float
 
-  """"""
+  """
+
+  """
   size: Float
 }
 
-""""""
+"""
+
+"""
 type UploadFileAggregatorMin {
-  """"""
+  """
+
+  """
   width: Float
 
-  """"""
+  """
+
+  """
   height: Float
 
-  """"""
+  """
+
+  """
   size: Float
 }
 
-""""""
+"""
+
+"""
 type UploadFileAggregatorMax {
-  """"""
+  """
+
+  """
   width: Float
 
-  """"""
+  """
+
+  """
   height: Float
 
-  """"""
+  """
+
+  """
   size: Float
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsPermission {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   type: String!
 
-  """"""
+  """
+
+  """
   controller: String!
 
-  """"""
+  """
+
+  """
   action: String!
 
-  """"""
+  """
+
+  """
   enabled: Boolean!
 
-  """"""
+  """
+
+  """
   policy: String
 
-  """"""
+  """
+
+  """
   role: UsersPermissionsRole
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRole {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   name: String!
 
-  """"""
+  """
+
+  """
   description: String
 
-  """"""
+  """
+
+  """
   type: String
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 
-  """"""
-  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  """
 
-  """"""
-  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  """
+  permissions(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsPermission]
+
+  """
+
+  """
+  users(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsUser]
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUser {
-  """"""
+  """
+
+  """
   id: ID!
 
-  """"""
+  """
+
+  """
   created_at: DateTime!
 
-  """"""
+  """
+
+  """
   updated_at: DateTime!
 
-  """"""
+  """
+
+  """
   username: String!
 
-  """"""
+  """
+
+  """
   email: String!
 
-  """"""
+  """
+
+  """
   provider: String
 
-  """"""
+  """
+
+  """
   confirmed: Boolean
 
-  """"""
+  """
+
+  """
   blocked: Boolean
 
-  """"""
+  """
+
+  """
   role: UsersPermissionsRole
 
-  """"""
+  """
+
+  """
   created_by: AdminUser
 
-  """"""
+  """
+
+  """
   updated_by: AdminUser
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnection {
-  """"""
+  """
+
+  """
   values: [UsersPermissionsRole]
 
-  """"""
+  """
+
+  """
   groupBy: UsersPermissionsRoleGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: UsersPermissionsRoleAggregator
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleGroupBy {
-  """"""
+  """
+
+  """
   id: [UsersPermissionsRoleConnectionId]
 
-  """"""
+  """
+
+  """
   name: [UsersPermissionsRoleConnectionName]
 
-  """"""
+  """
+
+  """
   description: [UsersPermissionsRoleConnectionDescription]
 
-  """"""
+  """
+
+  """
   type: [UsersPermissionsRoleConnectionType]
 
-  """"""
+  """
+
+  """
   created_by: [UsersPermissionsRoleConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [UsersPermissionsRoleConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionName {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionDescription {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionType {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsRoleConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsRoleAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type createRolePayload {
-  """"""
+  """
+
+  """
   role: UsersPermissionsRole
 }
 
-""""""
+"""
+
+"""
 type updateRolePayload {
-  """"""
+  """
+
+  """
   role: UsersPermissionsRole
 }
 
-""""""
+"""
+
+"""
 type deleteRolePayload {
-  """"""
+  """
+
+  """
   role: UsersPermissionsRole
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnection {
-  """"""
+  """
+
+  """
   values: [UsersPermissionsUser]
 
-  """"""
+  """
+
+  """
   groupBy: UsersPermissionsUserGroupBy
 
-  """"""
+  """
+
+  """
   aggregate: UsersPermissionsUserAggregator
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserGroupBy {
-  """"""
+  """
+
+  """
   id: [UsersPermissionsUserConnectionId]
 
-  """"""
+  """
+
+  """
   created_at: [UsersPermissionsUserConnectionCreated_at]
 
-  """"""
+  """
+
+  """
   updated_at: [UsersPermissionsUserConnectionUpdated_at]
 
-  """"""
+  """
+
+  """
   username: [UsersPermissionsUserConnectionUsername]
 
-  """"""
+  """
+
+  """
   email: [UsersPermissionsUserConnectionEmail]
 
-  """"""
+  """
+
+  """
   provider: [UsersPermissionsUserConnectionProvider]
 
-  """"""
+  """
+
+  """
   confirmed: [UsersPermissionsUserConnectionConfirmed]
 
-  """"""
+  """
+
+  """
   blocked: [UsersPermissionsUserConnectionBlocked]
 
-  """"""
+  """
+
+  """
   role: [UsersPermissionsUserConnectionRole]
 
-  """"""
+  """
+
+  """
   created_by: [UsersPermissionsUserConnectionCreated_by]
 
-  """"""
+  """
+
+  """
   updated_by: [UsersPermissionsUserConnectionUpdated_by]
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionId {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionCreated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionUpdated_at {
-  """"""
+  """
+
+  """
   key: DateTime
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionUsername {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionEmail {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionProvider {
-  """"""
+  """
+
+  """
   key: String
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionConfirmed {
-  """"""
+  """
+
+  """
   key: Boolean
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionBlocked {
-  """"""
+  """
+
+  """
   key: Boolean
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionRole {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionCreated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserConnectionUpdated_by {
-  """"""
+  """
+
+  """
   key: ID
 
-  """"""
+  """
+
+  """
   connection: UsersPermissionsUserConnection
 }
 
-""""""
+"""
+
+"""
 type UsersPermissionsUserAggregator {
-  """"""
+  """
+
+  """
   count: Int
 
-  """"""
+  """
+
+  """
   totalCount: Int
 }
 
-""""""
+"""
+
+"""
 type createUserPayload {
-  """"""
+  """
+
+  """
   user: UsersPermissionsUser
 }
 
-""""""
+"""
+
+"""
 type updateUserPayload {
-  """"""
+  """
+
+  """
   user: UsersPermissionsUser
 }
 
-""""""
+"""
+
+"""
 type deleteUserPayload {
-  """"""
+  """
+
+  """
   user: UsersPermissionsUser
 }
 
-""""""
+"""
+
+"""
 type Mutation {
-  """"""
-  createCandidateProfile(input: createCandidateProfileInput): createCandidateProfilePayload
+  """
 
-  """"""
-  updateCandidateProfile(input: updateCandidateProfileInput): updateCandidateProfilePayload
+  """
+  createCandidateProfile(
+    input: createCandidateProfileInput
+  ): createCandidateProfilePayload
 
-  """"""
-  deleteCandidateProfile(input: deleteCandidateProfileInput): deleteCandidateProfilePayload
+  """
 
-  """"""
+  """
+  updateCandidateProfile(
+    input: updateCandidateProfileInput
+  ): updateCandidateProfilePayload
+
+  """
+
+  """
+  deleteCandidateProfile(
+    input: deleteCandidateProfileInput
+  ): deleteCandidateProfilePayload
+
+  """
+
+  """
   createHuntdUser(input: createHuntdUserInput): createHuntdUserPayload
 
-  """"""
+  """
+
+  """
   updateHuntdUser(input: updateHuntdUserInput): updateHuntdUserPayload
 
-  """"""
+  """
+
+  """
   deleteHuntdUser(input: deleteHuntdUserInput): deleteHuntdUserPayload
 
-  """"""
-  createRecruiterProfile(input: createRecruiterProfileInput): createRecruiterProfilePayload
+  """
 
-  """"""
-  updateRecruiterProfile(input: updateRecruiterProfileInput): updateRecruiterProfilePayload
+  """
+  createRecruiterProfile(
+    input: createRecruiterProfileInput
+  ): createRecruiterProfilePayload
 
-  """"""
-  deleteRecruiterProfile(input: deleteRecruiterProfileInput): deleteRecruiterProfilePayload
+  """
 
-  """"""
-  createServiceAccessToken(input: createServiceAccessTokenInput): createServiceAccessTokenPayload
+  """
+  updateRecruiterProfile(
+    input: updateRecruiterProfileInput
+  ): updateRecruiterProfilePayload
 
-  """"""
-  updateServiceAccessToken(input: updateServiceAccessTokenInput): updateServiceAccessTokenPayload
+  """
 
-  """"""
-  deleteServiceAccessToken(input: deleteServiceAccessTokenInput): deleteServiceAccessTokenPayload
+  """
+  deleteRecruiterProfile(
+    input: deleteRecruiterProfileInput
+  ): deleteRecruiterProfilePayload
 
-  """"""
+  """
+
+  """
+  createServiceAccessToken(
+    input: createServiceAccessTokenInput
+  ): createServiceAccessTokenPayload
+
+  """
+
+  """
+  updateServiceAccessToken(
+    input: updateServiceAccessTokenInput
+  ): updateServiceAccessTokenPayload
+
+  """
+
+  """
+  deleteServiceAccessToken(
+    input: deleteServiceAccessTokenInput
+  ): deleteServiceAccessTokenPayload
+
+  """
+
+  """
   updateSetting(input: updateSettingInput): updateSettingPayload
 
-  """"""
+  """
+
+  """
   deleteSetting: deleteSettingPayload
 
-  """"""
+  """
+
+  """
   createTranslate(input: createTranslateInput): createTranslatePayload
 
-  """"""
+  """
+
+  """
   updateTranslate(input: updateTranslateInput): updateTranslatePayload
 
-  """"""
+  """
+
+  """
   deleteTranslate(input: deleteTranslateInput): deleteTranslatePayload
 
-  """Create a new role"""
+  """
+  Create a new role
+  """
   createRole(input: createRoleInput): createRolePayload
 
-  """Update an existing role"""
+  """
+  Update an existing role
+  """
   updateRole(input: updateRoleInput): updateRolePayload
 
-  """Delete an existing role"""
+  """
+  Delete an existing role
+  """
   deleteRole(input: deleteRoleInput): deleteRolePayload
 
-  """Create a new user"""
+  """
+  Create a new user
+  """
   createUser(input: createUserInput): createUserPayload
 
-  """Update an existing user"""
+  """
+  Update an existing user
+  """
   updateUser(input: updateUserInput): updateUserPayload
 
-  """Delete an existing user"""
+  """
+  Delete an existing user
+  """
   deleteUser(input: deleteUserInput): deleteUserPayload
 
-  """"""
-  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  """
 
-  """"""
-  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  """
+  upload(
+    refId: ID
+    ref: String
+    field: String
+    source: String
+    file: Upload!
+  ): UploadFile!
 
-  """"""
+  """
+
+  """
+  multipleUpload(
+    refId: ID
+    ref: String
+    field: String
+    source: String
+    files: [Upload]!
+  ): [UploadFile]!
+
+  """
+
+  """
   updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
 
-  """"""
+  """
+
+  """
   login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
 
-  """"""
+  """
+
+  """
   register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
 
-  """"""
+  """
+
+  """
   forgotPassword(email: String!): UserPermissionsPasswordPayload
 
-  """"""
-  resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  """
 
-  """"""
+  """
+  resetPassword(
+    password: String!
+    passwordConfirmation: String!
+    code: String!
+  ): UsersPermissionsLoginPayload
+
+  """
+
+  """
   emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
 }
 
-""""""
+"""
+
+"""
 input createCandidateProfileInput {
-  """"""
+  """
+
+  """
   data: CandidateProfileInput
 }
 
-""""""
+"""
+
+"""
 input CandidateProfileInput {
-  """"""
+  """
+
+  """
   status: ENUM_CANDIDATEPROFILES_STATUS
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   salary: Float
 
-  """"""
+  """
+
+  """
   candidate_description: String
 
-  """"""
+  """
+
+  """
   experience_description: String
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateCandidateProfileInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editCandidateProfileInput
 }
 
-""""""
+"""
+
+"""
 input InputID {
-  """"""
+  """
+
+  """
   id: ID!
 }
 
-""""""
+"""
+
+"""
 input editCandidateProfileInput {
-  """"""
+  """
+
+  """
   status: ENUM_CANDIDATEPROFILES_STATUS
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   salary: Float
 
-  """"""
+  """
+
+  """
   candidate_description: String
 
-  """"""
+  """
+
+  """
   experience_description: String
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteCandidateProfileInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input createHuntdUserInput {
-  """"""
+  """
+
+  """
   data: HuntdUserInput
 }
 
-""""""
+"""
+
+"""
 input HuntdUserInput {
-  """"""
+  """
+
+  """
   email: String
 
-  """"""
+  """
+
+  """
   first_name: String
 
-  """"""
+  """
+
+  """
   last_name: String
 
-  """"""
+  """
+
+  """
   recruiter_profiles: [ID]
 
-  """"""
+  """
+
+  """
   candidate_profiles: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateHuntdUserInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editHuntdUserInput
 }
 
-""""""
+"""
+
+"""
 input editHuntdUserInput {
-  """"""
+  """
+
+  """
   email: String
 
-  """"""
+  """
+
+  """
   first_name: String
 
-  """"""
+  """
+
+  """
   last_name: String
 
-  """"""
+  """
+
+  """
   recruiter_profiles: [ID]
 
-  """"""
+  """
+
+  """
   candidate_profiles: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteHuntdUserInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input createRecruiterProfileInput {
-  """"""
+  """
+
+  """
   data: RecruiterProfileInput
 }
 
-""""""
+"""
+
+"""
 input RecruiterProfileInput {
-  """"""
+  """
+
+  """
   status: ENUM_RECRUITERPROFILES_STATUS
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   company_name: String
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateRecruiterProfileInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editRecruiterProfileInput
 }
 
-""""""
+"""
+
+"""
 input editRecruiterProfileInput {
-  """"""
+  """
+
+  """
   status: ENUM_RECRUITERPROFILES_STATUS
 
-  """"""
+  """
+
+  """
   position: String
 
-  """"""
+  """
+
+  """
   company_name: String
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   reject_reason: String
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteRecruiterProfileInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input createServiceAccessTokenInput {
-  """"""
+  """
+
+  """
   data: ServiceAccessTokenInput
 }
 
-""""""
+"""
+
+"""
 input ServiceAccessTokenInput {
-  """"""
+  """
+
+  """
   token: String!
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateServiceAccessTokenInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editServiceAccessTokenInput
 }
 
-""""""
+"""
+
+"""
 input editServiceAccessTokenInput {
-  """"""
+  """
+
+  """
   token: String
 
-  """"""
+  """
+
+  """
   user_id: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteServiceAccessTokenInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input updateSettingInput {
-  """"""
+  """
+
+  """
   data: editSettingInput
 }
 
-""""""
+"""
+
+"""
 input editSettingInput {
-  """"""
+  """
+
+  """
   api_graphql_endpoint: String
 
-  """"""
+  """
+
+  """
   api_graphql_token: String
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input createTranslateInput {
-  """"""
+  """
+
+  """
   data: TranslateInput
 }
 
-""""""
+"""
+
+"""
 input TranslateInput {
-  """"""
+  """
+
+  """
   code: String!
 
-  """"""
+  """
+
+  """
   namespace: String!
 
-  """"""
+  """
+
+  """
   language: String
 
-  """"""
+  """
+
+  """
   value: String
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateTranslateInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editTranslateInput
 }
 
-""""""
+"""
+
+"""
 input editTranslateInput {
-  """"""
+  """
+
+  """
   code: String
 
-  """"""
+  """
+
+  """
   namespace: String
 
-  """"""
+  """
+
+  """
   language: String
 
-  """"""
+  """
+
+  """
   value: String
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteTranslateInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input createRoleInput {
-  """"""
+  """
+
+  """
   data: RoleInput
 }
 
-""""""
+"""
+
+"""
 input RoleInput {
-  """"""
+  """
+
+  """
   name: String!
 
-  """"""
+  """
+
+  """
   description: String
 
-  """"""
+  """
+
+  """
   type: String
 
-  """"""
+  """
+
+  """
   permissions: [ID]
 
-  """"""
+  """
+
+  """
   users: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateRoleInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editRoleInput
 }
 
-""""""
+"""
+
+"""
 input editRoleInput {
-  """"""
+  """
+
+  """
   name: String
 
-  """"""
+  """
+
+  """
   description: String
 
-  """"""
+  """
+
+  """
   type: String
 
-  """"""
+  """
+
+  """
   permissions: [ID]
 
-  """"""
+  """
+
+  """
   users: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteRoleInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-""""""
+"""
+
+"""
 input createUserInput {
-  """"""
+  """
+
+  """
   data: UserInput
 }
 
-""""""
+"""
+
+"""
 input UserInput {
-  """"""
+  """
+
+  """
   username: String!
 
-  """"""
+  """
+
+  """
   email: String!
 
-  """"""
+  """
+
+  """
   provider: String
 
-  """"""
+  """
+
+  """
   password: String
 
-  """"""
+  """
+
+  """
   resetPasswordToken: String
 
-  """"""
+  """
+
+  """
   confirmed: Boolean
 
-  """"""
+  """
+
+  """
   blocked: Boolean
 
-  """"""
+  """
+
+  """
   role: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input updateUserInput {
-  """"""
+  """
+
+  """
   where: InputID
 
-  """"""
+  """
+
+  """
   data: editUserInput
 }
 
-""""""
+"""
+
+"""
 input editUserInput {
-  """"""
+  """
+
+  """
   username: String
 
-  """"""
+  """
+
+  """
   email: String
 
-  """"""
+  """
+
+  """
   provider: String
 
-  """"""
+  """
+
+  """
   password: String
 
-  """"""
+  """
+
+  """
   resetPasswordToken: String
 
-  """"""
+  """
+
+  """
   confirmed: Boolean
 
-  """"""
+  """
+
+  """
   blocked: Boolean
 
-  """"""
+  """
+
+  """
   role: ID
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input deleteUserInput {
-  """"""
+  """
+
+  """
   where: InputID
 }
 
-"""The `Upload` scalar type represents a file upload."""
+"""
+The `Upload` scalar type represents a file upload.
+"""
 scalar Upload
 
-""""""
+"""
+
+"""
 input FileInfoInput {
-  """"""
+  """
+
+  """
   name: String
 
-  """"""
+  """
+
+  """
   alternativeText: String
 
-  """"""
+  """
+
+  """
   caption: String
 }
 
-""""""
+"""
+
+"""
 input UsersPermissionsLoginInput {
-  """"""
+  """
+
+  """
   identifier: String!
 
-  """"""
+  """
+
+  """
   password: String!
 
-  """"""
+  """
+
+  """
   provider: String = "local"
 }
 
-""""""
+"""
+
+"""
 input UsersPermissionsRegisterInput {
-  """"""
+  """
+
+  """
   username: String!
 
-  """"""
+  """
+
+  """
   email: String!
 
-  """"""
+  """
+
+  """
   password: String!
 }
 
-""""""
+"""
+
+"""
 input SettingInput {
-  """"""
+  """
+
+  """
   api_graphql_endpoint: String!
 
-  """"""
+  """
+
+  """
   api_graphql_token: String!
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input FileInput {
-  """"""
+  """
+
+  """
   name: String!
 
-  """"""
+  """
+
+  """
   alternativeText: String
 
-  """"""
+  """
+
+  """
   caption: String
 
-  """"""
+  """
+
+  """
   width: Int
 
-  """"""
+  """
+
+  """
   height: Int
 
-  """"""
+  """
+
+  """
   formats: JSON
 
-  """"""
+  """
+
+  """
   hash: String!
 
-  """"""
+  """
+
+  """
   ext: String
 
-  """"""
+  """
+
+  """
   mime: String!
 
-  """"""
+  """
+
+  """
   size: Float!
 
-  """"""
+  """
+
+  """
   url: String!
 
-  """"""
+  """
+
+  """
   previewUrl: String
 
-  """"""
+  """
+
+  """
   provider: String!
 
-  """"""
+  """
+
+  """
   provider_metadata: JSON
 
-  """"""
+  """
+
+  """
   related: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-""""""
+"""
+
+"""
 input editFileInput {
-  """"""
+  """
+
+  """
   name: String
 
-  """"""
+  """
+
+  """
   alternativeText: String
 
-  """"""
+  """
+
+  """
   caption: String
 
-  """"""
+  """
+
+  """
   width: Int
 
-  """"""
+  """
+
+  """
   height: Int
 
-  """"""
+  """
+
+  """
   formats: JSON
 
-  """"""
+  """
+
+  """
   hash: String
 
-  """"""
+  """
+
+  """
   ext: String
 
-  """"""
+  """
+
+  """
   mime: String
 
-  """"""
+  """
+
+  """
   size: Float
 
-  """"""
+  """
+
+  """
   url: String
 
-  """"""
+  """
+
+  """
   previewUrl: String
 
-  """"""
+  """
+
+  """
   provider: String
 
-  """"""
+  """
+
+  """
   provider_metadata: JSON
 
-  """"""
+  """
+
+  """
   related: [ID]
 
-  """"""
+  """
+
+  """
   created_by: ID
 
-  """"""
+  """
+
+  """
   updated_by: ID
 }
 
-"""A time string with format: HH:mm:ss.SSS"""
+"""
+A time string with format: HH:mm:ss.SSS
+"""
 scalar Time
 
 """
@@ -2718,14 +4788,22 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
-"""The `Long` scalar type represents 52-bit integers"""
+"""
+The `Long` scalar type represents 52-bit integers
+"""
 scalar Long
 
-""""""
+"""
+
+"""
 enum CacheControlScope {
-  """"""
+  """
+
+  """
   PUBLIC
 
-  """"""
+  """
+
+  """
   PRIVATE
 }
