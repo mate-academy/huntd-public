@@ -21,18 +21,12 @@ export const ProfileCity: React.FC<Props> = (props) => {
 
         if (city) {
           setCityLink(geoService.getCityLink(city.name));
-        } else {
-          // eslint-disable-next-line no-console
-          console.error(`Geonames service err: couldn't find ${title} city.`);
         }
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Geonames err:', error);
+      .catch(() => {
         setCityLink('');
       });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [title]);
 
   const desciptionText = cityLink ? `Open ${title} city with google maps` : 'Recruiter location';
 

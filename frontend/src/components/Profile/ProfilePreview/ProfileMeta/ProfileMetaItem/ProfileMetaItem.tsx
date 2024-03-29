@@ -1,6 +1,7 @@
-import { MetaItem } from "@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems";
-import { ReactNode } from "react-markdown";
-import { ProfileCity } from "../ProfileCity";
+import React from 'react';
+import { ReactNode } from 'react-markdown';
+import { MetaItem } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems';
+import { ProfileCity } from '../ProfileCity';
 
 interface Props {
   item: MetaItem;
