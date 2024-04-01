@@ -1008,6 +1008,7 @@ export type RecruiterProfile = {
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
@@ -1368,10 +1369,12 @@ export type UpdateAdminSettingsMutationVariables = Exact<{
 
 export type UpdateAdminSettingsMutation = (
   { __typename?: 'Mutation' }
-  & { updateAdminSettings: (
-    { __typename?: 'AdminSettings' }
-    & AdminSettingsBaseFragment
-  ) }
+  & {
+    updateAdminSettings: (
+      { __typename?: 'AdminSettings' }
+      & AdminSettingsBaseFragment
+    )
+  }
 );
 
 export type CandidateProfileFullFragment = (
@@ -1395,10 +1398,12 @@ export type CandidateProfileBaseFragment = (
 
 export type CandidateProfileCitiesFragment = (
   { __typename?: 'CandidateProfile' }
-  & { cities?: Maybe<Array<(
-    { __typename?: 'CandidateProfileCity' }
-    & CandidateProfileCityBaseFragment
-  )>> }
+  & {
+    cities?: Maybe<Array<(
+      { __typename?: 'CandidateProfileCity' }
+      & CandidateProfileCityBaseFragment
+    )>>
+  }
 );
 
 export type CandidateProfileConnectionsFragment = (
@@ -1408,84 +1413,106 @@ export type CandidateProfileConnectionsFragment = (
 
 export type CandidateProfileEmploymentLocationsFragment = (
   { __typename?: 'CandidateProfile' }
-  & { employmentLocations?: Maybe<Array<(
-    { __typename?: 'EmploymentLocation' }
-    & EmploymentLocationBaseFragment
-  )>> }
+  & {
+    employmentLocations?: Maybe<Array<(
+      { __typename?: 'EmploymentLocation' }
+      & EmploymentLocationBaseFragment
+    )>>
+  }
 );
 
 export type CandidateProfileEmploymentTypesFragment = (
   { __typename?: 'CandidateProfile' }
-  & { employmentTypes?: Maybe<Array<(
-    { __typename?: 'EmploymentType' }
-    & EmploymentTypeBaseFragment
-  )>> }
+  & {
+    employmentTypes?: Maybe<Array<(
+      { __typename?: 'EmploymentType' }
+      & EmploymentTypeBaseFragment
+    )>>
+  }
 );
 
 export type CandidateProfileEnglishLevelFragment = (
   { __typename?: 'CandidateProfile' }
-  & { englishLevel?: Maybe<(
-    { __typename?: 'EnglishLevel' }
-    & EnglishLevelBaseFragment
-  )> }
+  & {
+    englishLevel?: Maybe<(
+      { __typename?: 'EnglishLevel' }
+      & EnglishLevelBaseFragment
+    )>
+  }
 );
 
 export type CandidateProfileJobExperienceFragment = (
   { __typename?: 'CandidateProfile' }
-  & { jobExperience?: Maybe<(
-    { __typename?: 'JobExperience' }
-    & JobExperienceBaseFragment
-  )> }
+  & {
+    jobExperience?: Maybe<(
+      { __typename?: 'JobExperience' }
+      & JobExperienceBaseFragment
+    )>
+  }
 );
 
 export type CandidateProfileSpecializationsFragment = (
   { __typename?: 'CandidateProfile' }
-  & { specializations?: Maybe<Array<(
-    { __typename?: 'Specialization' }
-    & SpecializationBaseFragment
-  )>> }
+  & {
+    specializations?: Maybe<Array<(
+      { __typename?: 'Specialization' }
+      & SpecializationBaseFragment
+    )>>
+  }
 );
 
 export type CandidateProfileTechnologiesFragment = (
   { __typename?: 'CandidateProfile' }
-  & { technologies?: Maybe<Array<(
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  )>> }
+  & {
+    technologies?: Maybe<Array<(
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )>>
+  }
 );
 
 export type CandidateProfileUserFragment = (
   { __typename?: 'CandidateProfile' }
-  & { user?: Maybe<(
-    { __typename?: 'User' }
-    & { nfts?: Maybe<Array<(
-      { __typename?: 'Nft' }
-      & NftBaseFragment
-    )>> }
-    & UserBaseFragment
-    & UserCvFragment
-    & UserAvatarFragment
-  )> }
+  & {
+    user?: Maybe<(
+      { __typename?: 'User' }
+      & {
+        nfts?: Maybe<Array<(
+          { __typename?: 'Nft' }
+          & NftBaseFragment
+        )>>
+      }
+      & UserBaseFragment
+      & UserCvFragment
+      & UserAvatarFragment
+    )>
+  }
 );
 
 export type CandidateProfileUserWithNftFragment = (
   { __typename?: 'CandidateProfile' }
-  & { user?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & { nfts?: Maybe<Array<(
-      { __typename?: 'Nft' }
-      & NftBaseFragment
-    )>> }
-  )> }
+  & {
+    user?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & {
+        nfts?: Maybe<Array<(
+          { __typename?: 'Nft' }
+          & NftBaseFragment
+        )>>
+      }
+    )>
+  }
 );
 
 export type CandidateProfileWorkPlacesFragment = (
   { __typename?: 'CandidateProfile' }
-  & { workPlaces?: Maybe<Array<(
-    { __typename?: 'CandidateProfileWorkPlace' }
-    & WorkPlaceFullFragment
-  )>> }
+  & {
+    workPlaces?: Maybe<Array<(
+      { __typename?: 'CandidateProfileWorkPlace' }
+      & WorkPlaceFullFragment
+    )>>
+  }
 );
 
 export type CandidateProfileBySlugQueryVariables = Exact<{
@@ -1495,10 +1522,12 @@ export type CandidateProfileBySlugQueryVariables = Exact<{
 
 export type CandidateProfileBySlugQuery = (
   { __typename?: 'Query' }
-  & { candidateProfileBySlug?: Maybe<(
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileFullFragment
-  )> }
+  & {
+    candidateProfileBySlug?: Maybe<(
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileFullFragment
+    )>
+  }
 );
 
 export type DeactivateCandidateProfilesMutationVariables = Exact<{ [key: string]: never; }>;
@@ -1517,10 +1546,12 @@ export type CandidateProfilesBySubscriptionQueryVariables = Exact<{
 
 export type CandidateProfilesBySubscriptionQuery = (
   { __typename?: 'Query' }
-  & { candidateProfilesBySubscription: Array<(
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  )> }
+  & {
+    candidateProfilesBySubscription: Array<(
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    )>
+  }
 );
 
 export type LatestActiveCandidateProfileQueryVariables = Exact<{
@@ -1530,10 +1561,12 @@ export type LatestActiveCandidateProfileQueryVariables = Exact<{
 
 export type LatestActiveCandidateProfileQuery = (
   { __typename?: 'Query' }
-  & { latestActiveCandidateProfile?: Maybe<(
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  )> }
+  & {
+    latestActiveCandidateProfile?: Maybe<(
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    )>
+  }
 );
 
 export type LatestCandidateProfileQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1541,10 +1574,12 @@ export type LatestCandidateProfileQueryVariables = Exact<{ [key: string]: never;
 
 export type LatestCandidateProfileQuery = (
   { __typename?: 'Query' }
-  & { latestCandidateProfile?: Maybe<(
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileFullFragment
-  )> }
+  & {
+    latestCandidateProfile?: Maybe<(
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileFullFragment
+    )>
+  }
 );
 
 export type PerfectCandidatesAmountQueryVariables = Exact<{
@@ -1562,10 +1597,12 @@ export type CandidateProfileStatusUpdatedSubscriptionVariables = Exact<{ [key: s
 
 export type CandidateProfileStatusUpdatedSubscription = (
   { __typename?: 'Subscription' }
-  & { candidateProfileStatusUpdated: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ) }
+  & {
+    candidateProfileStatusUpdated: (
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    )
+  }
 );
 
 export type PublicCandidateProfilesQueryVariables = Exact<{
@@ -1576,24 +1613,28 @@ export type PublicCandidateProfilesQueryVariables = Exact<{
 
 export type PublicCandidateProfilesQuery = (
   { __typename?: 'Query' }
-  & { publicCandidateProfiles: (
-    { __typename?: 'PublicCandidateProfilesResult' }
-    & Pick<PublicCandidateProfilesResult, 'hasMore' | 'count'>
-    & { rows: Array<(
-      { __typename?: 'CandidateProfile' }
-      & CandidateProfileBaseFragment
-      & CandidateProfileTechnologiesFragment
-      & CandidateProfileEnglishLevelFragment
-      & CandidateProfileJobExperienceFragment
-      & CandidateProfileEmploymentTypesFragment
-      & CandidateProfileSpecializationsFragment
-      & CandidateProfileCitiesFragment
-      & CandidateProfileEmploymentLocationsFragment
-      & CandidateProfileConnectionsFragment
-      & CandidateProfileWorkPlacesFragment
-      & CandidateProfileUserWithNftFragment
-    )> }
-  ) }
+  & {
+    publicCandidateProfiles: (
+      { __typename?: 'PublicCandidateProfilesResult' }
+      & Pick<PublicCandidateProfilesResult, 'hasMore' | 'count'>
+      & {
+        rows: Array<(
+          { __typename?: 'CandidateProfile' }
+          & CandidateProfileBaseFragment
+          & CandidateProfileTechnologiesFragment
+          & CandidateProfileEnglishLevelFragment
+          & CandidateProfileJobExperienceFragment
+          & CandidateProfileEmploymentTypesFragment
+          & CandidateProfileSpecializationsFragment
+          & CandidateProfileCitiesFragment
+          & CandidateProfileEmploymentLocationsFragment
+          & CandidateProfileConnectionsFragment
+          & CandidateProfileWorkPlacesFragment
+          & CandidateProfileUserWithNftFragment
+        )>
+      }
+    )
+  }
 );
 
 export type SendCandidateProfileToReviewMutationVariables = Exact<{ [key: string]: never; }>;
@@ -1601,10 +1642,12 @@ export type SendCandidateProfileToReviewMutationVariables = Exact<{ [key: string
 
 export type SendCandidateProfileToReviewMutation = (
   { __typename?: 'Mutation' }
-  & { sendCandidateProfileToReview: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ) }
+  & {
+    sendCandidateProfileToReview: (
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    )
+  }
 );
 
 export type UpdateCandidateProfileMutationVariables = Exact<{
@@ -1628,10 +1671,12 @@ export type UpdateCandidateProfileMutationVariables = Exact<{
 
 export type UpdateCandidateProfileMutation = (
   { __typename?: 'Mutation' }
-  & { updateCandidateProfile: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ) }
+  & {
+    updateCandidateProfile: (
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    )
+  }
 );
 
 export type CandidateProfileCityBaseFragment = (
@@ -1642,13 +1687,15 @@ export type CandidateProfileCityBaseFragment = (
 export type ChatMessageBaseFragment = (
   { __typename?: 'ChatMessage' }
   & Pick<ChatMessage, 'id' | 'message' | 'profileConnectionId' | 'isSystemMessage' | 'createdAt' | 'updatedAt'>
-  & { senderUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
-  )>, recipientUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
-  )> }
+  & {
+    senderUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'isAuthUser'>
+    )>, recipientUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'isAuthUser'>
+    )>
+  }
 );
 
 export type NewMessageSubscriptionVariables = Exact<{ [key: string]: never; }>;
@@ -1656,10 +1703,12 @@ export type NewMessageSubscriptionVariables = Exact<{ [key: string]: never; }>;
 
 export type NewMessageSubscription = (
   { __typename?: 'Subscription' }
-  & { newMessage?: Maybe<(
-    { __typename?: 'ChatMessage' }
-    & ChatMessageBaseFragment
-  )> }
+  & {
+    newMessage?: Maybe<(
+      { __typename?: 'ChatMessage' }
+      & ChatMessageBaseFragment
+    )>
+  }
 );
 
 export type SendMessageMutationVariables = Exact<{
@@ -1670,10 +1719,12 @@ export type SendMessageMutationVariables = Exact<{
 
 export type SendMessageMutation = (
   { __typename?: 'Mutation' }
-  & { sendMessage: (
-    { __typename?: 'ChatMessage' }
-    & ChatMessageBaseFragment
-  ) }
+  & {
+    sendMessage: (
+      { __typename?: 'ChatMessage' }
+      & ChatMessageBaseFragment
+    )
+  }
 );
 
 export type UpdateMessageMutationVariables = Exact<{
@@ -1684,10 +1735,12 @@ export type UpdateMessageMutationVariables = Exact<{
 
 export type UpdateMessageMutation = (
   { __typename?: 'Mutation' }
-  & { updateMessage: (
-    { __typename?: 'ChatMessage' }
-    & ChatMessageBaseFragment
-  ) }
+  & {
+    updateMessage: (
+      { __typename?: 'ChatMessage' }
+      & ChatMessageBaseFragment
+    )
+  }
 );
 
 export type EmploymentLocationBaseFragment = (
@@ -1700,10 +1753,12 @@ export type EmploymentLocationsQueryVariables = Exact<{ [key: string]: never; }>
 
 export type EmploymentLocationsQuery = (
   { __typename?: 'Query' }
-  & { employmentLocations?: Maybe<Array<(
-    { __typename?: 'EmploymentLocation' }
-    & EmploymentLocationBaseFragment
-  )>> }
+  & {
+    employmentLocations?: Maybe<Array<(
+      { __typename?: 'EmploymentLocation' }
+      & EmploymentLocationBaseFragment
+    )>>
+  }
 );
 
 export type EmploymentTypeBaseFragment = (
@@ -1716,10 +1771,12 @@ export type EmploymentTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type EmploymentTypesQuery = (
   { __typename?: 'Query' }
-  & { employmentTypes?: Maybe<Array<(
-    { __typename?: 'EmploymentType' }
-    & EmploymentTypeBaseFragment
-  )>> }
+  & {
+    employmentTypes?: Maybe<Array<(
+      { __typename?: 'EmploymentType' }
+      & EmploymentTypeBaseFragment
+    )>>
+  }
 );
 
 export type EnglishLevelBaseFragment = (
@@ -1732,10 +1789,12 @@ export type EnglishLevelsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type EnglishLevelsQuery = (
   { __typename?: 'Query' }
-  & { englishLevels?: Maybe<Array<(
-    { __typename?: 'EnglishLevel' }
-    & EnglishLevelBaseFragment
-  )>> }
+  & {
+    englishLevels?: Maybe<Array<(
+      { __typename?: 'EnglishLevel' }
+      & EnglishLevelBaseFragment
+    )>>
+  }
 );
 
 export type FeatureBaseFragment = (
@@ -1750,10 +1809,12 @@ export type FeatureQueryVariables = Exact<{
 
 export type FeatureQuery = (
   { __typename?: 'Query' }
-  & { feature?: Maybe<(
-    { __typename?: 'Feature' }
-    & FeatureBaseFragment
-  )> }
+  & {
+    feature?: Maybe<(
+      { __typename?: 'Feature' }
+      & FeatureBaseFragment
+    )>
+  }
 );
 
 export type FeaturesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1761,10 +1822,12 @@ export type FeaturesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type FeaturesQuery = (
   { __typename?: 'Query' }
-  & { features?: Maybe<Array<(
-    { __typename?: 'Feature' }
-    & FeatureBaseFragment
-  )>> }
+  & {
+    features?: Maybe<Array<(
+      { __typename?: 'Feature' }
+      & FeatureBaseFragment
+    )>>
+  }
 );
 
 export type SendFeedbackMutationVariables = Exact<{
@@ -1788,19 +1851,23 @@ export type JobExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type JobExperiencesQuery = (
   { __typename?: 'Query' }
-  & { jobExperiences?: Maybe<Array<(
-    { __typename?: 'JobExperience' }
-    & JobExperienceBaseFragment
-  )>> }
+  & {
+    jobExperiences?: Maybe<Array<(
+      { __typename?: 'JobExperience' }
+      & JobExperienceBaseFragment
+    )>>
+  }
 );
 
 export type NftBaseFragment = (
   { __typename?: 'Nft' }
   & Pick<Nft, 'id' | 'userId' | 'openseaUrl'>
-  & { entity: (
-    { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'url' | 'name' | 'mime'>
-  ) }
+  & {
+    entity: (
+      { __typename?: 'UploadedFile' }
+      & Pick<UploadedFile, 'id' | 'url' | 'name' | 'mime'>
+    )
+  }
 );
 
 export type AllNftsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1808,10 +1875,12 @@ export type AllNftsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AllNftsQuery = (
   { __typename?: 'Query' }
-  & { allNfts?: Maybe<Array<(
-    { __typename?: 'Nft' }
-    & NftBaseFragment
-  )>> }
+  & {
+    allNfts?: Maybe<Array<(
+      { __typename?: 'Nft' }
+      & NftBaseFragment
+    )>>
+  }
 );
 
 export type ClaimNftMutationVariables = Exact<{
@@ -1821,10 +1890,12 @@ export type ClaimNftMutationVariables = Exact<{
 
 export type ClaimNftMutation = (
   { __typename?: 'Mutation' }
-  & { claimNft?: Maybe<(
-    { __typename?: 'Nft' }
-    & NftBaseFragment
-  )> }
+  & {
+    claimNft?: Maybe<(
+      { __typename?: 'Nft' }
+      & NftBaseFragment
+    )>
+  }
 );
 
 export type ConnectOAuthProviderMutationVariables = Exact<{
@@ -1878,12 +1949,14 @@ export type SocialSignUpMutationVariables = Exact<{
 
 export type SocialSignUpMutation = (
   { __typename?: 'Mutation' }
-  & { socialSignUp: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    socialSignUp: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type SocialSignUpAsInactiveUserMutationVariables = Exact<{
@@ -1916,12 +1989,14 @@ export type SocialSignUpAsInactiveUserMutationVariables = Exact<{
 
 export type SocialSignUpAsInactiveUserMutation = (
   { __typename?: 'Mutation' }
-  & { socialSignUpAsInactiveUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    socialSignUpAsInactiveUser: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type UsersOAuthProvidersQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1929,10 +2004,12 @@ export type UsersOAuthProvidersQueryVariables = Exact<{ [key: string]: never; }>
 
 export type UsersOAuthProvidersQuery = (
   { __typename?: 'Query' }
-  & { usersOAuthProviders?: Maybe<Array<(
-    { __typename?: 'OAuthToken' }
-    & Pick<OAuthToken, 'id' | 'providerId' | 'providerName' | 'token'>
-  )>> }
+  & {
+    usersOAuthProviders?: Maybe<Array<(
+      { __typename?: 'OAuthToken' }
+      & Pick<OAuthToken, 'id' | 'providerId' | 'providerName' | 'token'>
+    )>>
+  }
 );
 
 export type SendPaymentRequestMutationVariables = Exact<{
@@ -1944,10 +2021,12 @@ export type SendPaymentRequestMutationVariables = Exact<{
 
 export type SendPaymentRequestMutation = (
   { __typename?: 'Mutation' }
-  & { sendPaymentRequest: (
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-  ) }
+  & {
+    sendPaymentRequest: (
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+    )
+  }
 );
 
 export type ArchiveProfileConnectionForUserMutationVariables = Exact<{
@@ -1977,14 +2056,18 @@ export type ProfileConnectionMessagesQueryVariables = Exact<{
 
 export type ProfileConnectionMessagesQuery = (
   { __typename?: 'Query' }
-  & { profileConnection?: Maybe<(
-    { __typename?: 'ProfileConnection' }
-    & Pick<ProfileConnection, 'id'>
-    & { chatMessages?: Maybe<Array<(
-      { __typename?: 'ChatMessage' }
-      & ChatMessageBaseFragment
-    )>> }
-  )> }
+  & {
+    profileConnection?: Maybe<(
+      { __typename?: 'ProfileConnection' }
+      & Pick<ProfileConnection, 'id'>
+      & {
+        chatMessages?: Maybe<Array<(
+          { __typename?: 'ChatMessage' }
+          & ChatMessageBaseFragment
+        )>>
+      }
+    )>
+  }
 );
 
 export type ProfileConnectionMetaQueryVariables = Exact<{
@@ -1994,14 +2077,16 @@ export type ProfileConnectionMetaQueryVariables = Exact<{
 
 export type ProfileConnectionMetaQuery = (
   { __typename?: 'Query' }
-  & { profileConnection?: Maybe<(
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-    & ProfileConnectionWithUsersFragment
-    & ProfileConnectionWithProfilesFragment
-    & ProfileConnectionWithUsersMetaFragment
-    & ProfileConnectionUnreadMessagesCountFragment
-  )> }
+  & {
+    profileConnection?: Maybe<(
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+      & ProfileConnectionWithUsersFragment
+      & ProfileConnectionWithProfilesFragment
+      & ProfileConnectionWithUsersMetaFragment
+      & ProfileConnectionUnreadMessagesCountFragment
+    )>
+  }
 );
 
 export type ProfileConnectionMetaWithMessagesQueryVariables = Exact<{
@@ -2011,15 +2096,17 @@ export type ProfileConnectionMetaWithMessagesQueryVariables = Exact<{
 
 export type ProfileConnectionMetaWithMessagesQuery = (
   { __typename?: 'Query' }
-  & { profileConnection?: Maybe<(
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-    & ProfileConnectionWithUsersFragment
-    & ProfileConnectionWithProfilesFragment
-    & ProfileConnectionWithUsersMetaFragment
-    & ProfileConnectionUnreadMessagesCountFragment
-    & ProfileConnectionMessagesFragment
-  )> }
+  & {
+    profileConnection?: Maybe<(
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+      & ProfileConnectionWithUsersFragment
+      & ProfileConnectionWithProfilesFragment
+      & ProfileConnectionWithUsersMetaFragment
+      & ProfileConnectionUnreadMessagesCountFragment
+      & ProfileConnectionMessagesFragment
+    )>
+  }
 );
 
 export type ProfileConnectionUpdatedSubscriptionVariables = Exact<{ [key: string]: never; }>;
@@ -2027,13 +2114,15 @@ export type ProfileConnectionUpdatedSubscriptionVariables = Exact<{ [key: string
 
 export type ProfileConnectionUpdatedSubscription = (
   { __typename?: 'Subscription' }
-  & { profileConnectionUpdated: (
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-    & ProfileConnectionWithUsersFragment
-    & ProfileConnectionUnreadMessagesCountFragment
-    & ProfileConnectionWithUsersMetaFragment
-  ) }
+  & {
+    profileConnectionUpdated: (
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+      & ProfileConnectionWithUsersFragment
+      & ProfileConnectionUnreadMessagesCountFragment
+      & ProfileConnectionWithUsersMetaFragment
+    )
+  }
 );
 
 export type ReportOfferStatusMutationVariables = Exact<{
@@ -2044,10 +2133,12 @@ export type ReportOfferStatusMutationVariables = Exact<{
 
 export type ReportOfferStatusMutation = (
   { __typename?: 'Mutation' }
-  & { reportOfferStatus: (
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-  ) }
+  & {
+    reportOfferStatus: (
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+    )
+  }
 );
 
 export type ReviewProfileConnectionRequestMutationVariables = Exact<{
@@ -2058,10 +2149,12 @@ export type ReviewProfileConnectionRequestMutationVariables = Exact<{
 
 export type ReviewProfileConnectionRequestMutation = (
   { __typename?: 'Mutation' }
-  & { reviewProfileConnectionRequest: (
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-  ) }
+  & {
+    reviewProfileConnectionRequest: (
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+    )
+  }
 );
 
 export type SendProfileConnectionRequestMutationVariables = Exact<{
@@ -2072,10 +2165,12 @@ export type SendProfileConnectionRequestMutationVariables = Exact<{
 
 export type SendProfileConnectionRequestMutation = (
   { __typename?: 'Mutation' }
-  & { sendProfileConnectionRequest: (
-    { __typename?: 'ProfileConnection' }
-    & ProfileConnectionBaseFragment
-  ) }
+  & {
+    sendProfileConnectionRequest: (
+      { __typename?: 'ProfileConnection' }
+      & ProfileConnectionBaseFragment
+    )
+  }
 );
 
 export type UnarchiveProfileConnectionForUserMutationVariables = Exact<{
@@ -2096,14 +2191,18 @@ export type UpdateConnectionLastActionTimeMutationVariables = Exact<{
 
 export type UpdateConnectionLastActionTimeMutation = (
   { __typename?: 'Mutation' }
-  & { updateConnectionLastActionTime?: Maybe<(
-    { __typename?: 'ProfileConnection' }
-    & Pick<ProfileConnection, 'id'>
-    & { userMeta?: Maybe<(
-      { __typename?: 'ProfileConnectionUserMeta' }
-      & Pick<ProfileConnectionUserMeta, 'id' | 'lastActionTime'>
-    )> }
-  )> }
+  & {
+    updateConnectionLastActionTime?: Maybe<(
+      { __typename?: 'ProfileConnection' }
+      & Pick<ProfileConnection, 'id'>
+      & {
+        userMeta?: Maybe<(
+          { __typename?: 'ProfileConnectionUserMeta' }
+          & Pick<ProfileConnectionUserMeta, 'id' | 'lastActionTime'>
+        )>
+      }
+    )>
+  }
 );
 
 export type ProfileConnectionBaseFragment = (
@@ -2113,10 +2212,12 @@ export type ProfileConnectionBaseFragment = (
 
 export type ProfileConnectionMessagesFragment = (
   { __typename?: 'ProfileConnection' }
-  & { chatMessages?: Maybe<Array<(
-    { __typename?: 'ChatMessage' }
-    & ChatMessageBaseFragment
-  )>> }
+  & {
+    chatMessages?: Maybe<Array<(
+      { __typename?: 'ChatMessage' }
+      & ChatMessageBaseFragment
+    )>>
+  }
 );
 
 export type ProfileConnectionUnreadMessagesCountFragment = (
@@ -2126,41 +2227,47 @@ export type ProfileConnectionUnreadMessagesCountFragment = (
 
 export type ProfileConnectionWithProfilesFragment = (
   { __typename?: 'ProfileConnection' }
-  & { candidateProfile: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ), recruiterProfile: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & {
+    candidateProfile: (
+      { __typename?: 'CandidateProfile' }
+      & CandidateProfileBaseFragment
+    ), recruiterProfile: (
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )
+  }
 );
 
 export type ProfileConnectionWithUsersFragment = (
   { __typename?: 'ProfileConnection' }
-  & { candidateUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
-    & UserBaseFragment
-    & UserAvatarFragment
-    & UserNftFragment
-  )>, recruiterUser: (
-    { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
-    & UserBaseFragment
-    & UserAvatarFragment
-    & UserNftFragment
-  ) }
+  & {
+    candidateUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'isAuthUser'>
+      & UserBaseFragment
+      & UserAvatarFragment
+      & UserNftFragment
+    )>, recruiterUser: (
+      { __typename?: 'User' }
+      & Pick<User, 'isAuthUser'>
+      & UserBaseFragment
+      & UserAvatarFragment
+      & UserNftFragment
+    )
+  }
 );
 
 export type ProfileConnectionWithUsersMetaFragment = (
   { __typename?: 'ProfileConnection' }
-  & { userMeta?: Maybe<(
-    { __typename?: 'ProfileConnectionUserMeta' }
-    & ProfileConnectionUserMetaBaseFragment
-  )>, buddyMeta?: Maybe<(
-    { __typename?: 'ProfileConnectionUserMeta' }
-    & ProfileConnectionUserMetaBaseFragment
-  )> }
+  & {
+    userMeta?: Maybe<(
+      { __typename?: 'ProfileConnectionUserMeta' }
+      & ProfileConnectionUserMetaBaseFragment
+    )>, buddyMeta?: Maybe<(
+      { __typename?: 'ProfileConnectionUserMeta' }
+      & ProfileConnectionUserMetaBaseFragment
+    )>
+  }
 );
 
 export type ProfileConnectionUserMetaBaseFragment = (
@@ -2170,7 +2277,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'city' | 'slug' | 'lastActionTime'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -2181,10 +2288,12 @@ export type RecruiterProfileFullFragment = (
 
 export type RecruiterProfileUserFragment = (
   { __typename?: 'RecruiterProfile' }
-  & { user?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-  )> }
+  & {
+    user?: Maybe<(
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type BulkReportOfferStatusMutationVariables = Exact<{
@@ -2218,10 +2327,12 @@ export type CreateRecruiterProfileMutationVariables = Exact<{
 
 export type CreateRecruiterProfileMutation = (
   { __typename?: 'Mutation' }
-  & { createRecruiterProfile: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & {
+    createRecruiterProfile: (
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )
+  }
 );
 
 export type DeactivateRecruiterProfilesMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2237,10 +2348,12 @@ export type LatestRecruiterProfileQueryVariables = Exact<{ [key: string]: never;
 
 export type LatestRecruiterProfileQuery = (
   { __typename?: 'Query' }
-  & { latestRecruiterProfile?: Maybe<(
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileFullFragment
-  )> }
+  & {
+    latestRecruiterProfile?: Maybe<(
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileFullFragment
+    )>
+  }
 );
 
 export type LatestRecruiterProfileByUserIdQueryVariables = Exact<{
@@ -2250,10 +2363,12 @@ export type LatestRecruiterProfileByUserIdQueryVariables = Exact<{
 
 export type LatestRecruiterProfileByUserIdQuery = (
   { __typename?: 'Query' }
-  & { latestRecruiterProfileByUserId?: Maybe<(
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileFullFragment
-  )> }
+  & {
+    latestRecruiterProfileByUserId?: Maybe<(
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileFullFragment
+    )>
+  }
 );
 
 export type PublicRecruiterProfilesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2261,10 +2376,12 @@ export type PublicRecruiterProfilesQueryVariables = Exact<{ [key: string]: never
 
 export type PublicRecruiterProfilesQuery = (
   { __typename?: 'Query' }
-  & { publicRecruiterProfiles: Array<(
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  )> }
+  & {
+    publicRecruiterProfiles: Array<(
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )>
+  }
 );
 
 export type RecruiterProfileActiveConnectionQueryVariables = Exact<{
@@ -2274,16 +2391,20 @@ export type RecruiterProfileActiveConnectionQueryVariables = Exact<{
 
 export type RecruiterProfileActiveConnectionQuery = (
   { __typename?: 'Query' }
-  & { latestRecruiterProfile?: Maybe<(
-    { __typename?: 'RecruiterProfile' }
-    & Pick<RecruiterProfile, 'id'>
-    & { activeConnectionWithCandidate?: Maybe<(
-      { __typename?: 'ProfileConnection' }
-      & ProfileConnectionBaseFragment
-      & ProfileConnectionWithUsersFragment
-      & ProfileConnectionWithProfilesFragment
-    )> }
-  )> }
+  & {
+    latestRecruiterProfile?: Maybe<(
+      { __typename?: 'RecruiterProfile' }
+      & Pick<RecruiterProfile, 'id'>
+      & {
+        activeConnectionWithCandidate?: Maybe<(
+          { __typename?: 'ProfileConnection' }
+          & ProfileConnectionBaseFragment
+          & ProfileConnectionWithUsersFragment
+          & ProfileConnectionWithProfilesFragment
+        )>
+      }
+    )>
+  }
 );
 
 export type RecruiterProfileBySlugQueryVariables = Exact<{
@@ -2293,10 +2414,12 @@ export type RecruiterProfileBySlugQueryVariables = Exact<{
 
 export type RecruiterProfileBySlugQuery = (
   { __typename?: 'Query' }
-  & { recruiterProfileBySlug?: Maybe<(
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileFullFragment
-  )> }
+  & {
+    recruiterProfileBySlug?: Maybe<(
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileFullFragment
+    )>
+  }
 );
 
 export type RecruiterProfileStatusUpdatedSubscriptionVariables = Exact<{ [key: string]: never; }>;
@@ -2304,10 +2427,12 @@ export type RecruiterProfileStatusUpdatedSubscriptionVariables = Exact<{ [key: s
 
 export type RecruiterProfileStatusUpdatedSubscription = (
   { __typename?: 'Subscription' }
-  & { recruiterProfileStatusUpdated: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & {
+    recruiterProfileStatusUpdated: (
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )
+  }
 );
 
 export type SendRecruiterProfileToReviewMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2315,10 +2440,12 @@ export type SendRecruiterProfileToReviewMutationVariables = Exact<{ [key: string
 
 export type SendRecruiterProfileToReviewMutation = (
   { __typename?: 'Mutation' }
-  & { sendRecruiterProfileToReview: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & {
+    sendRecruiterProfileToReview: (
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )
+  }
 );
 
 export type UpdateRecruiterProfileMutationVariables = Exact<{
@@ -2329,10 +2456,12 @@ export type UpdateRecruiterProfileMutationVariables = Exact<{
 
 export type UpdateRecruiterProfileMutation = (
   { __typename?: 'Mutation' }
-  & { updateRecruiterProfile: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & {
+    updateRecruiterProfile: (
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )
+  }
 );
 
 export type SpecializationBaseFragment = (
@@ -2347,10 +2476,12 @@ export type SpecializationQueryVariables = Exact<{
 
 export type SpecializationQuery = (
   { __typename?: 'Query' }
-  & { specializations?: Maybe<Array<(
-    { __typename?: 'Specialization' }
-    & SpecializationBaseFragment
-  )>> }
+  & {
+    specializations?: Maybe<Array<(
+      { __typename?: 'Specialization' }
+      & SpecializationBaseFragment
+    )>>
+  }
 );
 
 export type TechnologyBaseFragment = (
@@ -2365,10 +2496,12 @@ export type CreateTechnologiesMutationVariables = Exact<{
 
 export type CreateTechnologiesMutation = (
   { __typename?: 'Mutation' }
-  & { createTechnologies?: Maybe<Array<(
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  )>> }
+  & {
+    createTechnologies?: Maybe<Array<(
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )>>
+  }
 );
 
 export type CreateTechnologyMutationVariables = Exact<{
@@ -2378,10 +2511,12 @@ export type CreateTechnologyMutationVariables = Exact<{
 
 export type CreateTechnologyMutation = (
   { __typename?: 'Mutation' }
-  & { createTechnology: (
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  ) }
+  & {
+    createTechnology: (
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )
+  }
 );
 
 export type TechnologiesQueryVariables = Exact<{
@@ -2392,10 +2527,12 @@ export type TechnologiesQueryVariables = Exact<{
 
 export type TechnologiesQuery = (
   { __typename?: 'Query' }
-  & { technologies?: Maybe<Array<(
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  )>> }
+  & {
+    technologies?: Maybe<Array<(
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )>>
+  }
 );
 
 export type TechnologiesByNamesQueryVariables = Exact<{
@@ -2405,18 +2542,22 @@ export type TechnologiesByNamesQueryVariables = Exact<{
 
 export type TechnologiesByNamesQuery = (
   { __typename?: 'Query' }
-  & { technologiesByNames?: Maybe<Array<(
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  )>> }
+  & {
+    technologiesByNames?: Maybe<Array<(
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )>>
+  }
 );
 
 export type AdminSettingsFragment = (
   { __typename?: 'User' }
-  & { adminSettings?: Maybe<(
-    { __typename?: 'AdminSettings' }
-    & AdminSettingsBaseFragment
-  )> }
+  & {
+    adminSettings?: Maybe<(
+      { __typename?: 'AdminSettings' }
+      & AdminSettingsBaseFragment
+    )>
+  }
 );
 
 export type IsFirstCandidateProfileFragment = (
@@ -2432,10 +2573,12 @@ export type IsFirstRecruiterProfileFragment = (
 export type UserAvatarFragment = (
   { __typename?: 'User' }
   & Pick<User, 'id'>
-  & { avatar?: Maybe<(
-    { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
-  )> }
+  & {
+    avatar?: Maybe<(
+      { __typename?: 'UploadedFile' }
+      & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    )>
+  }
 );
 
 export type UserBaseFragment = (
@@ -2446,10 +2589,12 @@ export type UserBaseFragment = (
 export type UserCvFragment = (
   { __typename?: 'User' }
   & Pick<User, 'id'>
-  & { cv?: Maybe<(
-    { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
-  )> }
+  & {
+    cv?: Maybe<(
+      { __typename?: 'UploadedFile' }
+      & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    )>
+  }
 );
 
 export type UserEngagementFieldsFragment = (
@@ -2459,23 +2604,29 @@ export type UserEngagementFieldsFragment = (
 
 export type UserMessageTemplatesFragment = (
   { __typename?: 'User' }
-  & { messageTemplates?: Maybe<Array<(
-    { __typename?: 'UserTemplateMessage' }
-    & MessageTemplateBaseFragment
-  )>> }
+  & {
+    messageTemplates?: Maybe<Array<(
+      { __typename?: 'UserTemplateMessage' }
+      & MessageTemplateBaseFragment
+    )>>
+  }
 );
 
 export type UserNftFragment = (
   { __typename?: 'User' }
   & Pick<User, 'id'>
-  & { nfts?: Maybe<Array<(
-    { __typename?: 'Nft' }
-    & Pick<Nft, 'id' | 'openseaUrl'>
-    & { entity: (
-      { __typename?: 'UploadedFile' }
-      & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
-    ) }
-  )>> }
+  & {
+    nfts?: Maybe<Array<(
+      { __typename?: 'Nft' }
+      & Pick<Nft, 'id' | 'openseaUrl'>
+      & {
+        entity: (
+          { __typename?: 'UploadedFile' }
+          & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+        )
+      }
+    )>>
+  }
 );
 
 export type UserPrimaryProfileFragment = (
@@ -2485,10 +2636,12 @@ export type UserPrimaryProfileFragment = (
 
 export type UserSettingsFragment = (
   { __typename?: 'User' }
-  & { settings?: Maybe<(
-    { __typename?: 'UserSettings' }
-    & UserSettingsBaseFragment
-  )> }
+  & {
+    settings?: Maybe<(
+      { __typename?: 'UserSettings' }
+      & UserSettingsBaseFragment
+    )>
+  }
 );
 
 export type UserSocialLinksFragment = (
@@ -2508,10 +2661,12 @@ export type UserHasVacanciesSourceFragment = (
 
 export type SearchSubscriptionsFragment = (
   { __typename?: 'User' }
-  & { searchSubscriptions?: Maybe<Array<(
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionFullFragment
-  )>> }
+  & {
+    searchSubscriptions?: Maybe<Array<(
+      { __typename?: 'UsersSearchSubscription' }
+      & UsersSearchSubscriptionFullFragment
+    )>>
+  }
 );
 
 export type AdminSettingsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2519,11 +2674,13 @@ export type AdminSettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AdminSettingsQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & AdminSettingsFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & AdminSettingsFragment
+    )>
+  }
 );
 
 export type AdminUserQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2531,10 +2688,12 @@ export type AdminUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AdminUserQuery = (
   { __typename?: 'Query' }
-  & { adminUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-  )> }
+  & {
+    adminUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type AuthUserQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2542,19 +2701,21 @@ export type AuthUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AuthUserQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-    & UserCvFragment
-    & UserAvatarFragment
-    & IsFirstCandidateProfileFragment
-    & IsFirstRecruiterProfileFragment
-    & UserSocialLinksFragment
-    & UserHasVacanciesSourceFragment
-    & UserNftFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+      & UserCvFragment
+      & UserAvatarFragment
+      & IsFirstCandidateProfileFragment
+      & IsFirstRecruiterProfileFragment
+      & UserSocialLinksFragment
+      & UserHasVacanciesSourceFragment
+      & UserNftFragment
+    )>
+  }
 );
 
 export type AuthUserConnectionsQueryVariables = Exact<{
@@ -2564,18 +2725,22 @@ export type AuthUserConnectionsQueryVariables = Exact<{
 
 export type AuthUserConnectionsQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & { profileConnections?: Maybe<Array<(
-      { __typename?: 'ProfileConnection' }
-      & ProfileConnectionBaseFragment
-      & ProfileConnectionWithUsersFragment
-      & ProfileConnectionWithProfilesFragment
-      & ProfileConnectionUnreadMessagesCountFragment
-      & ProfileConnectionWithUsersMetaFragment
-    )>> }
-    & UserBaseFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & {
+        profileConnections?: Maybe<Array<(
+          { __typename?: 'ProfileConnection' }
+          & ProfileConnectionBaseFragment
+          & ProfileConnectionWithUsersFragment
+          & ProfileConnectionWithProfilesFragment
+          & ProfileConnectionUnreadMessagesCountFragment
+          & ProfileConnectionWithUsersMetaFragment
+        )>>
+      }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type AuthUserHiresQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2583,18 +2748,22 @@ export type AuthUserHiresQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AuthUserHiresQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & { hires?: Maybe<Array<(
-      { __typename?: 'ProfileConnection' }
-      & ProfileConnectionBaseFragment
-      & ProfileConnectionWithUsersFragment
-      & ProfileConnectionWithProfilesFragment
-      & ProfileConnectionUnreadMessagesCountFragment
-      & ProfileConnectionWithUsersMetaFragment
-    )>> }
-    & UserBaseFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & {
+        hires?: Maybe<Array<(
+          { __typename?: 'ProfileConnection' }
+          & ProfileConnectionBaseFragment
+          & ProfileConnectionWithUsersFragment
+          & ProfileConnectionWithProfilesFragment
+          & ProfileConnectionUnreadMessagesCountFragment
+          & ProfileConnectionWithUsersMetaFragment
+        )>>
+      }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type ChangePasswordMutationVariables = Exact<{
@@ -2627,10 +2796,12 @@ export type CreateUserMutationVariables = Exact<{
 
 export type CreateUserMutation = (
   { __typename?: 'Mutation' }
-  & { createUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-  ) }
+  & {
+    createUser: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )
+  }
 );
 
 export type ForgotPasswordMutationVariables = Exact<{
@@ -2648,11 +2819,13 @@ export type IsFirstTimeFillingCandidateProfileQueryVariables = Exact<{ [key: str
 
 export type IsFirstTimeFillingCandidateProfileQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & { isFirstTimeFillingCandidateProfile: User['isFirstTimeFillingCandidateProfile'] }
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & { isFirstTimeFillingCandidateProfile: User['isFirstTimeFillingCandidateProfile'] }
+    )>
+  }
 );
 
 export type IsFirstTimeFillingRecruiterProfileQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2660,11 +2833,13 @@ export type IsFirstTimeFillingRecruiterProfileQueryVariables = Exact<{ [key: str
 
 export type IsFirstTimeFillingRecruiterProfileQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & { isFirstTimeFillingRecruiterProfile: User['isFirstTimeFillingRecruiterProfile'] }
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & { isFirstTimeFillingRecruiterProfile: User['isFirstTimeFillingRecruiterProfile'] }
+    )>
+  }
 );
 
 export type LogOutMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2680,10 +2855,12 @@ export type LogOutFromUserMutationVariables = Exact<{ [key: string]: never; }>;
 
 export type LogOutFromUserMutation = (
   { __typename?: 'Mutation' }
-  & { logOutFromUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-  ) }
+  & {
+    logOutFromUser: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )
+  }
 );
 
 export type RemoveCvFileMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2691,10 +2868,12 @@ export type RemoveCvFileMutationVariables = Exact<{ [key: string]: never; }>;
 
 export type RemoveCvFileMutation = (
   { __typename?: 'Mutation' }
-  & { removeCvFile: (
-    { __typename?: 'User' }
-    & UserCvFragment
-  ) }
+  & {
+    removeCvFile: (
+      { __typename?: 'User' }
+      & UserCvFragment
+    )
+  }
 );
 
 export type ResetPasswordMutationVariables = Exact<{
@@ -2722,10 +2901,12 @@ export type ServiceUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type ServiceUserQuery = (
   { __typename?: 'Query' }
-  & { serviceUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-  )> }
+  & {
+    serviceUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type SetNftAvatarMutationVariables = Exact<{
@@ -2735,10 +2916,12 @@ export type SetNftAvatarMutationVariables = Exact<{
 
 export type SetNftAvatarMutation = (
   { __typename?: 'Mutation' }
-  & { setNftAvatar: (
-    { __typename?: 'User' }
-    & UserAvatarFragment
-  ) }
+  & {
+    setNftAvatar: (
+      { __typename?: 'User' }
+      & UserAvatarFragment
+    )
+  }
 );
 
 export type SignInMutationVariables = Exact<{
@@ -2749,12 +2932,14 @@ export type SignInMutationVariables = Exact<{
 
 export type SignInMutation = (
   { __typename?: 'Mutation' }
-  & { signIn: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    signIn: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type SignInAsUserMutationVariables = Exact<{
@@ -2764,12 +2949,14 @@ export type SignInAsUserMutationVariables = Exact<{
 
 export type SignInAsUserMutation = (
   { __typename?: 'Mutation' }
-  & { signInAsUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    signInAsUser: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type SignUpMutationVariables = Exact<{
@@ -2800,12 +2987,14 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = (
   { __typename?: 'Mutation' }
-  & { signUp: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    signUp: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type SignUpAsInactiveUserMutationVariables = Exact<{
@@ -2837,12 +3026,14 @@ export type SignUpAsInactiveUserMutationVariables = Exact<{
 
 export type SignUpAsInactiveUserMutation = (
   { __typename?: 'Mutation' }
-  & { signUpAsInactiveUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
+  & {
+    signUpAsInactiveUser: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+      & UserEngagementFieldsFragment
+    )
+  }
 );
 
 export type UpdateProfileContactsMutationVariables = Exact<{
@@ -2858,11 +3049,13 @@ export type UpdateProfileContactsMutationVariables = Exact<{
 
 export type UpdateProfileContactsMutation = (
   { __typename?: 'Mutation' }
-  & { updateProfileContacts: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-  ) }
+  & {
+    updateProfileContacts: (
+      { __typename?: 'User' }
+      & UserBaseFragment
+      & UserPrimaryProfileFragment
+    )
+  }
 );
 
 export type UploadAvatarMutationVariables = Exact<{
@@ -2873,10 +3066,12 @@ export type UploadAvatarMutationVariables = Exact<{
 
 export type UploadAvatarMutation = (
   { __typename?: 'Mutation' }
-  & { uploadAvatar: (
-    { __typename?: 'User' }
-    & UserAvatarFragment
-  ) }
+  & {
+    uploadAvatar: (
+      { __typename?: 'User' }
+      & UserAvatarFragment
+    )
+  }
 );
 
 export type UploadCvFileMutationVariables = Exact<{
@@ -2887,10 +3082,12 @@ export type UploadCvFileMutationVariables = Exact<{
 
 export type UploadCvFileMutation = (
   { __typename?: 'Mutation' }
-  & { uploadCvFile: (
-    { __typename?: 'User' }
-    & UserCvFragment
-  ) }
+  & {
+    uploadCvFile: (
+      { __typename?: 'User' }
+      & UserCvFragment
+    )
+  }
 );
 
 export type UserAvatarQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2898,10 +3095,12 @@ export type UserAvatarQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UserAvatarQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserAvatarFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserAvatarFragment
+    )>
+  }
 );
 
 export type UserByUsernameQueryVariables = Exact<{
@@ -2911,10 +3110,12 @@ export type UserByUsernameQueryVariables = Exact<{
 
 export type UserByUsernameQuery = (
   { __typename?: 'Query' }
-  & { userByUsername?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-  )> }
+  & {
+    userByUsername?: Maybe<(
+      { __typename?: 'User' }
+      & UserBaseFragment
+    )>
+  }
 );
 
 export type UserCvQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2922,10 +3123,12 @@ export type UserCvQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UserCvQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserCvFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserCvFragment
+    )>
+  }
 );
 
 export type UserMessageTemplatesQueryVariables = Exact<{
@@ -2935,14 +3138,18 @@ export type UserMessageTemplatesQueryVariables = Exact<{
 
 export type UserMessageTemplatesQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & { messageTemplates?: Maybe<Array<(
-      { __typename?: 'UserTemplateMessage' }
-      & MessageTemplateBaseFragment
-    )>> }
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & {
+        messageTemplates?: Maybe<Array<(
+          { __typename?: 'UserTemplateMessage' }
+          & MessageTemplateBaseFragment
+        )>>
+      }
+    )>
+  }
 );
 
 export type UserNftQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2950,10 +3157,12 @@ export type UserNftQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UserNftQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserNftFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserNftFragment
+    )>
+  }
 );
 
 export type UserSettingsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2961,11 +3170,13 @@ export type UserSettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UserSettingsQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & UserSettingsFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & UserSettingsFragment
+    )>
+  }
 );
 
 export type UserSubscriptionsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2973,11 +3184,13 @@ export type UserSubscriptionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UserSubscriptionsQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & SearchSubscriptionsFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id'>
+      & SearchSubscriptionsFragment
+    )>
+  }
 );
 
 export type UserUnreadMessagesCountQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2985,10 +3198,12 @@ export type UserUnreadMessagesCountQueryVariables = Exact<{ [key: string]: never
 
 export type UserUnreadMessagesCountQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & UserUnreadMessagesCountFragment
-  )> }
+  & {
+    authUser?: Maybe<(
+      { __typename?: 'User' }
+      & UserUnreadMessagesCountFragment
+    )>
+  }
 );
 
 export type UserUnreadMessagesCountUpdatedSubscriptionVariables = Exact<{ [key: string]: never; }>;
@@ -2996,10 +3211,12 @@ export type UserUnreadMessagesCountUpdatedSubscriptionVariables = Exact<{ [key: 
 
 export type UserUnreadMessagesCountUpdatedSubscription = (
   { __typename?: 'Subscription' }
-  & { userUnreadMessagesCountUpdated?: Maybe<(
-    { __typename?: 'User' }
-    & UserUnreadMessagesCountFragment
-  )> }
+  & {
+    userUnreadMessagesCountUpdated?: Maybe<(
+      { __typename?: 'User' }
+      & UserUnreadMessagesCountFragment
+    )>
+  }
 );
 
 export type MessageTemplateBaseFragment = (
@@ -3017,10 +3234,12 @@ export type CreateMessageTemplateMutationVariables = Exact<{
 
 export type CreateMessageTemplateMutation = (
   { __typename?: 'Mutation' }
-  & { createMessageTemplate: (
-    { __typename?: 'UserTemplateMessage' }
-    & MessageTemplateBaseFragment
-  ) }
+  & {
+    createMessageTemplate: (
+      { __typename?: 'UserTemplateMessage' }
+      & MessageTemplateBaseFragment
+    )
+  }
 );
 
 export type DeleteMessageTemplateMutationVariables = Exact<{
@@ -3043,10 +3262,12 @@ export type UpdateMessageTemplateMutationVariables = Exact<{
 
 export type UpdateMessageTemplateMutation = (
   { __typename?: 'Mutation' }
-  & { updateMessageTemplate: (
-    { __typename?: 'UserTemplateMessage' }
-    & MessageTemplateBaseFragment
-  ) }
+  & {
+    updateMessageTemplate: (
+      { __typename?: 'UserTemplateMessage' }
+      & MessageTemplateBaseFragment
+    )
+  }
 );
 
 export type UserSettingsBaseFragment = (
@@ -3068,31 +3289,37 @@ export type UsersSearchSubscriptionBaseFragment = (
 
 export type UsersSearchSubscriptionParamsFragment = (
   { __typename?: 'UsersSearchSubscription' }
-  & { searchParams: (
-    { __typename?: 'CandidatesSearchParams' }
-    & Pick<CandidatesSearchParams, 'cities' | 'countries' | 'specializations' | 'salaryFrom' | 'salaryTo' | 'timezoneFrom' | 'timezoneTo' | 'timezoneReverseMode' | 'searchQuery' | 'experienceIds' | 'englishLevelIds' | 'employmentTypesIds' | 'technologiesIds'>
-  ) }
+  & {
+    searchParams: (
+      { __typename?: 'CandidatesSearchParams' }
+      & Pick<CandidatesSearchParams, 'cities' | 'countries' | 'specializations' | 'salaryFrom' | 'salaryTo' | 'timezoneFrom' | 'timezoneTo' | 'timezoneReverseMode' | 'searchQuery' | 'experienceIds' | 'englishLevelIds' | 'employmentTypesIds' | 'technologiesIds'>
+    )
+  }
 );
 
 export type UsersSearchSubscriptionStringifiedParamsFragment = (
   { __typename?: 'UsersSearchSubscription' }
-  & { stringifiedSearchParams: (
-    { __typename?: 'SubscriptionStringifiedParams' }
-    & Pick<SubscriptionStringifiedParams, 'id'>
-    & { employmentTypes?: Maybe<Array<(
-      { __typename?: 'EmploymentType' }
-      & EmploymentTypeBaseFragment
-    )>>, technologies?: Maybe<Array<(
-      { __typename?: 'Technology' }
-      & TechnologyBaseFragment
-    )>>, jobExperiences?: Maybe<Array<(
-      { __typename?: 'JobExperience' }
-      & JobExperienceBaseFragment
-    )>>, englishLevels?: Maybe<Array<(
-      { __typename?: 'EnglishLevel' }
-      & EnglishLevelBaseFragment
-    )>> }
-  ) }
+  & {
+    stringifiedSearchParams: (
+      { __typename?: 'SubscriptionStringifiedParams' }
+      & Pick<SubscriptionStringifiedParams, 'id'>
+      & {
+        employmentTypes?: Maybe<Array<(
+          { __typename?: 'EmploymentType' }
+          & EmploymentTypeBaseFragment
+        )>>, technologies?: Maybe<Array<(
+          { __typename?: 'Technology' }
+          & TechnologyBaseFragment
+        )>>, jobExperiences?: Maybe<Array<(
+          { __typename?: 'JobExperience' }
+          & JobExperienceBaseFragment
+        )>>, englishLevels?: Maybe<Array<(
+          { __typename?: 'EnglishLevel' }
+          & EnglishLevelBaseFragment
+        )>>
+      }
+    )
+  }
 );
 
 export type SubscribeToCandidatesSearchMutationVariables = Exact<{
@@ -3104,10 +3331,12 @@ export type SubscribeToCandidatesSearchMutationVariables = Exact<{
 
 export type SubscribeToCandidatesSearchMutation = (
   { __typename?: 'Mutation' }
-  & { subscribeToCandidatesSearch: (
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-  ) }
+  & {
+    subscribeToCandidatesSearch: (
+      { __typename?: 'UsersSearchSubscription' }
+      & UsersSearchSubscriptionBaseFragment
+    )
+  }
 );
 
 export type UnsubscribeFromCandidatesSearchMutationVariables = Exact<{
@@ -3129,10 +3358,12 @@ export type UpdateSubscriptionLastUsedMutationVariables = Exact<{
 
 export type UpdateSubscriptionLastUsedMutation = (
   { __typename?: 'Mutation' }
-  & { updateSubscriptionLastUsed: (
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-  ) }
+  & {
+    updateSubscriptionLastUsed: (
+      { __typename?: 'UsersSearchSubscription' }
+      & UsersSearchSubscriptionBaseFragment
+    )
+  }
 );
 
 export type UpdateSubscriptionTitleMutationVariables = Exact<{
@@ -3144,10 +3375,12 @@ export type UpdateSubscriptionTitleMutationVariables = Exact<{
 
 export type UpdateSubscriptionTitleMutation = (
   { __typename?: 'Mutation' }
-  & { updateSubscriptionTitle: (
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-  ) }
+  & {
+    updateSubscriptionTitle: (
+      { __typename?: 'UsersSearchSubscription' }
+      & UsersSearchSubscriptionBaseFragment
+    )
+  }
 );
 
 export type UserSearchSubscriptionsByUserIdQueryVariables = Exact<{
@@ -3157,10 +3390,12 @@ export type UserSearchSubscriptionsByUserIdQueryVariables = Exact<{
 
 export type UserSearchSubscriptionsByUserIdQuery = (
   { __typename?: 'Query' }
-  & { userSearchSubscriptionsByUserId?: Maybe<Array<(
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionFullFragment
-  )>> }
+  & {
+    userSearchSubscriptionsByUserId?: Maybe<Array<(
+      { __typename?: 'UsersSearchSubscription' }
+      & UsersSearchSubscriptionFullFragment
+    )>>
+  }
 );
 
 export type VacanciesSourceBaseFragment = (
@@ -3186,19 +3421,23 @@ export type CreateVacanciesSourceMutationVariables = Exact<{
 
 export type CreateVacanciesSourceMutation = (
   { __typename?: 'Mutation' }
-  & { createVacanciesSource?: Maybe<(
-    { __typename?: 'VacanciesSource' }
-    & VacanciesSourceBaseFragment
-  )> }
+  & {
+    createVacanciesSource?: Maybe<(
+      { __typename?: 'VacanciesSource' }
+      & VacanciesSourceBaseFragment
+    )>
+  }
 );
 
 export type CompanyLogoFragment = (
   { __typename?: 'Vacancy' }
   & Pick<Vacancy, 'id'>
-  & { companyLogo?: Maybe<(
-    { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
-  )> }
+  & {
+    companyLogo?: Maybe<(
+      { __typename?: 'UploadedFile' }
+      & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    )>
+  }
 );
 
 export type VacancyBaseFragment = (
@@ -3208,10 +3447,12 @@ export type VacancyBaseFragment = (
 
 export type VacancyEnglishLevelFragment = (
   { __typename?: 'Vacancy' }
-  & { englishLevel?: Maybe<(
-    { __typename?: 'EnglishLevel' }
-    & EnglishLevelBaseFragment
-  )> }
+  & {
+    englishLevel?: Maybe<(
+      { __typename?: 'EnglishLevel' }
+      & EnglishLevelBaseFragment
+    )>
+  }
 );
 
 export type VacancyFullFragment = (
@@ -3226,26 +3467,32 @@ export type VacancyFullFragment = (
 
 export type VacancyJobExperienceFragment = (
   { __typename?: 'Vacancy' }
-  & { jobExperience?: Maybe<(
-    { __typename?: 'JobExperience' }
-    & JobExperienceBaseFragment
-  )> }
+  & {
+    jobExperience?: Maybe<(
+      { __typename?: 'JobExperience' }
+      & JobExperienceBaseFragment
+    )>
+  }
 );
 
 export type VacancySpecializationsFragment = (
   { __typename?: 'Vacancy' }
-  & { specializations?: Maybe<Array<(
-    { __typename?: 'Specialization' }
-    & SpecializationBaseFragment
-  )>> }
+  & {
+    specializations?: Maybe<Array<(
+      { __typename?: 'Specialization' }
+      & SpecializationBaseFragment
+    )>>
+  }
 );
 
 export type VacancyTechnologiesFragment = (
   { __typename?: 'Vacancy' }
-  & { technologies?: Maybe<Array<(
-    { __typename?: 'Technology' }
-    & TechnologyBaseFragment
-  )>> }
+  & {
+    technologies?: Maybe<Array<(
+      { __typename?: 'Technology' }
+      & TechnologyBaseFragment
+    )>>
+  }
 );
 
 export type AddVacanciesLogoMutationVariables = Exact<{
@@ -3263,14 +3510,16 @@ export type HotVacanciesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HotVacanciesQuery = (
   { __typename?: 'Query' }
-  & { hotVacancies?: Maybe<Array<(
-    { __typename?: 'Vacancy' }
-    & VacancyBaseFragment
-    & VacancyEnglishLevelFragment
-    & VacancyJobExperienceFragment
-    & VacancySpecializationsFragment
-    & CompanyLogoFragment
-  )>> }
+  & {
+    hotVacancies?: Maybe<Array<(
+      { __typename?: 'Vacancy' }
+      & VacancyBaseFragment
+      & VacancyEnglishLevelFragment
+      & VacancyJobExperienceFragment
+      & VacancySpecializationsFragment
+      & CompanyLogoFragment
+    )>>
+  }
 );
 
 export type SalariesDataByCategoryQueryVariables = Exact<{
@@ -3280,10 +3529,12 @@ export type SalariesDataByCategoryQueryVariables = Exact<{
 
 export type SalariesDataByCategoryQuery = (
   { __typename?: 'Query' }
-  & { salariesDataByCategory: (
-    { __typename?: 'VacancySalaryData' }
-    & Pick<VacancySalaryData, 'maxSalary' | 'averageMinSalary' | 'averageSalary'>
-  ) }
+  & {
+    salariesDataByCategory: (
+      { __typename?: 'VacancySalaryData' }
+      & Pick<VacancySalaryData, 'maxSalary' | 'averageMinSalary' | 'averageSalary'>
+    )
+  }
 );
 
 export type SendNewVacancyApplicationMutationVariables = Exact<{
@@ -3316,14 +3567,18 @@ export type VacanciesQueryVariables = Exact<{
 
 export type VacanciesQuery = (
   { __typename?: 'Query' }
-  & { vacancies: (
-    { __typename?: 'VacanciesResult' }
-    & Pick<VacanciesResult, 'hasMore'>
-    & { rows: Array<(
-      { __typename?: 'Vacancy' }
-      & VacancyFullFragment
-    )> }
-  ) }
+  & {
+    vacancies: (
+      { __typename?: 'VacanciesResult' }
+      & Pick<VacanciesResult, 'hasMore'>
+      & {
+        rows: Array<(
+          { __typename?: 'Vacancy' }
+          & VacancyFullFragment
+        )>
+      }
+    )
+  }
 );
 
 export type VacanciesByCompanyQueryVariables = Exact<{
@@ -3333,10 +3588,12 @@ export type VacanciesByCompanyQueryVariables = Exact<{
 
 export type VacanciesByCompanyQuery = (
   { __typename?: 'Query' }
-  & { vacanciesByCompany?: Maybe<Array<(
-    { __typename?: 'Vacancy' }
-    & VacancyFullFragment
-  )>> }
+  & {
+    vacanciesByCompany?: Maybe<Array<(
+      { __typename?: 'Vacancy' }
+      & VacancyFullFragment
+    )>>
+  }
 );
 
 export type WorkPlaceBaseFragment = (
@@ -3374,10 +3631,12 @@ export type CreateWorkPlaceMutationVariables = Exact<{
 
 export type CreateWorkPlaceMutation = (
   { __typename?: 'Mutation' }
-  & { createWorkPlace: (
-    { __typename?: 'CandidateProfileWorkPlace' }
-    & WorkPlaceFullFragment
-  ) }
+  & {
+    createWorkPlace: (
+      { __typename?: 'CandidateProfileWorkPlace' }
+      & WorkPlaceFullFragment
+    )
+  }
 );
 
 export type DeleteWorkPlaceMutationVariables = Exact<{
@@ -3399,10 +3658,12 @@ export type FetchWorkPlacesMutationVariables = Exact<{
 
 export type FetchWorkPlacesMutation = (
   { __typename?: 'Mutation' }
-  & { fetchWorkPlaces?: Maybe<Array<(
-    { __typename?: 'CandidateProfileWorkPlace' }
-    & WorkPlaceFullFragment
-  )>> }
+  & {
+    fetchWorkPlaces?: Maybe<Array<(
+      { __typename?: 'CandidateProfileWorkPlace' }
+      & WorkPlaceFullFragment
+    )>>
+  }
 );
 
 export type UpdateWorkPlaceMutationVariables = Exact<{
@@ -3424,19 +3685,23 @@ export type UpdateWorkPlaceMutationVariables = Exact<{
 
 export type UpdateWorkPlaceMutation = (
   { __typename?: 'Mutation' }
-  & { updateWorkPlace: (
-    { __typename?: 'CandidateProfileWorkPlace' }
-    & WorkPlaceFullFragment
-  ) }
+  & {
+    updateWorkPlace: (
+      { __typename?: 'CandidateProfileWorkPlace' }
+      & WorkPlaceFullFragment
+    )
+  }
 );
 
 export type FlashMessageBaseFragment = (
   { __typename?: 'FlashMessage' }
   & Pick<FlashMessage, 'id' | 'type' | 'heading' | 'text'>
-  & { cta?: Maybe<(
-    { __typename?: 'Cta' }
-    & Pick<Cta, 'title' | 'link'>
-  )> }
+  & {
+    cta?: Maybe<(
+      { __typename?: 'Cta' }
+      & Pick<Cta, 'title' | 'link'>
+    )>
+  }
 );
 
 export type DeleteMessageMutationVariables = Exact<{
@@ -3467,14 +3732,18 @@ export type VisibleMessagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type VisibleMessagesQuery = (
   { __typename?: 'Query' }
-  & { visibleMessages: Array<(
-    { __typename?: 'FlashMessage' }
-    & Pick<FlashMessage, 'id' | 'type' | 'heading' | 'text'>
-    & { cta?: Maybe<(
-      { __typename?: 'Cta' }
-      & Pick<Cta, 'title' | 'link'>
-    )> }
-  )> }
+  & {
+    visibleMessages: Array<(
+      { __typename?: 'FlashMessage' }
+      & Pick<FlashMessage, 'id' | 'type' | 'heading' | 'text'>
+      & {
+        cta?: Maybe<(
+          { __typename?: 'Cta' }
+          & Pick<Cta, 'title' | 'link'>
+        )>
+      }
+    )>
+  }
 );
 
 export const CandidateProfileBaseFragmentDoc = /*#__PURE__*/ gql`
@@ -3787,6 +4056,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   rejectReason
   position
   companyName
+  city
   slug
   lastActionTime
 }
@@ -4150,8 +4420,8 @@ export type UpdateAdminSettingsMutationFn = Apollo.MutationFunction<UpdateAdminS
  * });
  */
 export function useUpdateAdminSettingsMutation(baseOptions?: Apollo.MutationHookOptions<UpdateAdminSettingsMutation, UpdateAdminSettingsMutationVariables>) {
-        return Apollo.useMutation<UpdateAdminSettingsMutation, UpdateAdminSettingsMutationVariables>(UpdateAdminSettingsDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateAdminSettingsMutation, UpdateAdminSettingsMutationVariables>(UpdateAdminSettingsDocument, baseOptions);
+}
 export type UpdateAdminSettingsMutationHookResult = ReturnType<typeof useUpdateAdminSettingsMutation>;
 export type UpdateAdminSettingsMutationResult = Apollo.MutationResult<UpdateAdminSettingsMutation>;
 export type UpdateAdminSettingsMutationOptions = Apollo.BaseMutationOptions<UpdateAdminSettingsMutation, UpdateAdminSettingsMutationVariables>;
@@ -4180,11 +4450,11 @@ export const CandidateProfileBySlugDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useCandidateProfileBySlugQuery(baseOptions?: Apollo.QueryHookOptions<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>) {
-        return Apollo.useQuery<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>(CandidateProfileBySlugDocument, baseOptions);
-      }
+  return Apollo.useQuery<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>(CandidateProfileBySlugDocument, baseOptions);
+}
 export function useCandidateProfileBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>) {
-          return Apollo.useLazyQuery<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>(CandidateProfileBySlugDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>(CandidateProfileBySlugDocument, baseOptions);
+}
 export type CandidateProfileBySlugQueryHookResult = ReturnType<typeof useCandidateProfileBySlugQuery>;
 export type CandidateProfileBySlugLazyQueryHookResult = ReturnType<typeof useCandidateProfileBySlugLazyQuery>;
 export type CandidateProfileBySlugQueryResult = Apollo.QueryResult<CandidateProfileBySlugQuery, CandidateProfileBySlugQueryVariables>;
@@ -4212,8 +4482,8 @@ export type DeactivateCandidateProfilesMutationFn = Apollo.MutationFunction<Deac
  * });
  */
 export function useDeactivateCandidateProfilesMutation(baseOptions?: Apollo.MutationHookOptions<DeactivateCandidateProfilesMutation, DeactivateCandidateProfilesMutationVariables>) {
-        return Apollo.useMutation<DeactivateCandidateProfilesMutation, DeactivateCandidateProfilesMutationVariables>(DeactivateCandidateProfilesDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeactivateCandidateProfilesMutation, DeactivateCandidateProfilesMutationVariables>(DeactivateCandidateProfilesDocument, baseOptions);
+}
 export type DeactivateCandidateProfilesMutationHookResult = ReturnType<typeof useDeactivateCandidateProfilesMutation>;
 export type DeactivateCandidateProfilesMutationResult = Apollo.MutationResult<DeactivateCandidateProfilesMutation>;
 export type DeactivateCandidateProfilesMutationOptions = Apollo.BaseMutationOptions<DeactivateCandidateProfilesMutation, DeactivateCandidateProfilesMutationVariables>;
@@ -4243,11 +4513,11 @@ export const CandidateProfilesBySubscriptionDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useCandidateProfilesBySubscriptionQuery(baseOptions?: Apollo.QueryHookOptions<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>) {
-        return Apollo.useQuery<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>(CandidateProfilesBySubscriptionDocument, baseOptions);
-      }
+  return Apollo.useQuery<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>(CandidateProfilesBySubscriptionDocument, baseOptions);
+}
 export function useCandidateProfilesBySubscriptionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>) {
-          return Apollo.useLazyQuery<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>(CandidateProfilesBySubscriptionDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>(CandidateProfilesBySubscriptionDocument, baseOptions);
+}
 export type CandidateProfilesBySubscriptionQueryHookResult = ReturnType<typeof useCandidateProfilesBySubscriptionQuery>;
 export type CandidateProfilesBySubscriptionLazyQueryHookResult = ReturnType<typeof useCandidateProfilesBySubscriptionLazyQuery>;
 export type CandidateProfilesBySubscriptionQueryResult = Apollo.QueryResult<CandidateProfilesBySubscriptionQuery, CandidateProfilesBySubscriptionQueryVariables>;
@@ -4276,11 +4546,11 @@ export const LatestActiveCandidateProfileDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useLatestActiveCandidateProfileQuery(baseOptions?: Apollo.QueryHookOptions<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>) {
-        return Apollo.useQuery<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>(LatestActiveCandidateProfileDocument, baseOptions);
-      }
+  return Apollo.useQuery<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>(LatestActiveCandidateProfileDocument, baseOptions);
+}
 export function useLatestActiveCandidateProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>) {
-          return Apollo.useLazyQuery<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>(LatestActiveCandidateProfileDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>(LatestActiveCandidateProfileDocument, baseOptions);
+}
 export type LatestActiveCandidateProfileQueryHookResult = ReturnType<typeof useLatestActiveCandidateProfileQuery>;
 export type LatestActiveCandidateProfileLazyQueryHookResult = ReturnType<typeof useLatestActiveCandidateProfileLazyQuery>;
 export type LatestActiveCandidateProfileQueryResult = Apollo.QueryResult<LatestActiveCandidateProfileQuery, LatestActiveCandidateProfileQueryVariables>;
@@ -4308,11 +4578,11 @@ export const LatestCandidateProfileDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useLatestCandidateProfileQuery(baseOptions?: Apollo.QueryHookOptions<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>) {
-        return Apollo.useQuery<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>(LatestCandidateProfileDocument, baseOptions);
-      }
+  return Apollo.useQuery<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>(LatestCandidateProfileDocument, baseOptions);
+}
 export function useLatestCandidateProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>) {
-          return Apollo.useLazyQuery<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>(LatestCandidateProfileDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>(LatestCandidateProfileDocument, baseOptions);
+}
 export type LatestCandidateProfileQueryHookResult = ReturnType<typeof useLatestCandidateProfileQuery>;
 export type LatestCandidateProfileLazyQueryHookResult = ReturnType<typeof useLatestCandidateProfileLazyQuery>;
 export type LatestCandidateProfileQueryResult = Apollo.QueryResult<LatestCandidateProfileQuery, LatestCandidateProfileQueryVariables>;
@@ -4339,11 +4609,11 @@ export const PerfectCandidatesAmountDocument = /*#__PURE__*/ gql`
  * });
  */
 export function usePerfectCandidatesAmountQuery(baseOptions?: Apollo.QueryHookOptions<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>) {
-        return Apollo.useQuery<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>(PerfectCandidatesAmountDocument, baseOptions);
-      }
+  return Apollo.useQuery<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>(PerfectCandidatesAmountDocument, baseOptions);
+}
 export function usePerfectCandidatesAmountLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>) {
-          return Apollo.useLazyQuery<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>(PerfectCandidatesAmountDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>(PerfectCandidatesAmountDocument, baseOptions);
+}
 export type PerfectCandidatesAmountQueryHookResult = ReturnType<typeof usePerfectCandidatesAmountQuery>;
 export type PerfectCandidatesAmountLazyQueryHookResult = ReturnType<typeof usePerfectCandidatesAmountLazyQuery>;
 export type PerfectCandidatesAmountQueryResult = Apollo.QueryResult<PerfectCandidatesAmountQuery, PerfectCandidatesAmountQueryVariables>;
@@ -4371,8 +4641,8 @@ export const CandidateProfileStatusUpdatedDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useCandidateProfileStatusUpdatedSubscription(baseOptions?: Apollo.SubscriptionHookOptions<CandidateProfileStatusUpdatedSubscription, CandidateProfileStatusUpdatedSubscriptionVariables>) {
-        return Apollo.useSubscription<CandidateProfileStatusUpdatedSubscription, CandidateProfileStatusUpdatedSubscriptionVariables>(CandidateProfileStatusUpdatedDocument, baseOptions);
-      }
+  return Apollo.useSubscription<CandidateProfileStatusUpdatedSubscription, CandidateProfileStatusUpdatedSubscriptionVariables>(CandidateProfileStatusUpdatedDocument, baseOptions);
+}
 export type CandidateProfileStatusUpdatedSubscriptionHookResult = ReturnType<typeof useCandidateProfileStatusUpdatedSubscription>;
 export type CandidateProfileStatusUpdatedSubscriptionResult = Apollo.SubscriptionResult<CandidateProfileStatusUpdatedSubscription>;
 export const PublicCandidateProfilesDocument = /*#__PURE__*/ gql`
@@ -4425,11 +4695,11 @@ ${CandidateProfileUserWithNftFragmentDoc}`;
  * });
  */
 export function usePublicCandidateProfilesQuery(baseOptions?: Apollo.QueryHookOptions<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>) {
-        return Apollo.useQuery<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>(PublicCandidateProfilesDocument, baseOptions);
-      }
+  return Apollo.useQuery<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>(PublicCandidateProfilesDocument, baseOptions);
+}
 export function usePublicCandidateProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>(PublicCandidateProfilesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>(PublicCandidateProfilesDocument, baseOptions);
+}
 export type PublicCandidateProfilesQueryHookResult = ReturnType<typeof usePublicCandidateProfilesQuery>;
 export type PublicCandidateProfilesLazyQueryHookResult = ReturnType<typeof usePublicCandidateProfilesLazyQuery>;
 export type PublicCandidateProfilesQueryResult = Apollo.QueryResult<PublicCandidateProfilesQuery, PublicCandidateProfilesQueryVariables>;
@@ -4459,8 +4729,8 @@ export type SendCandidateProfileToReviewMutationFn = Apollo.MutationFunction<Sen
  * });
  */
 export function useSendCandidateProfileToReviewMutation(baseOptions?: Apollo.MutationHookOptions<SendCandidateProfileToReviewMutation, SendCandidateProfileToReviewMutationVariables>) {
-        return Apollo.useMutation<SendCandidateProfileToReviewMutation, SendCandidateProfileToReviewMutationVariables>(SendCandidateProfileToReviewDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendCandidateProfileToReviewMutation, SendCandidateProfileToReviewMutationVariables>(SendCandidateProfileToReviewDocument, baseOptions);
+}
 export type SendCandidateProfileToReviewMutationHookResult = ReturnType<typeof useSendCandidateProfileToReviewMutation>;
 export type SendCandidateProfileToReviewMutationResult = Apollo.MutationResult<SendCandidateProfileToReviewMutation>;
 export type SendCandidateProfileToReviewMutationOptions = Apollo.BaseMutationOptions<SendCandidateProfileToReviewMutation, SendCandidateProfileToReviewMutationVariables>;
@@ -4505,8 +4775,8 @@ export type UpdateCandidateProfileMutationFn = Apollo.MutationFunction<UpdateCan
  * });
  */
 export function useUpdateCandidateProfileMutation(baseOptions?: Apollo.MutationHookOptions<UpdateCandidateProfileMutation, UpdateCandidateProfileMutationVariables>) {
-        return Apollo.useMutation<UpdateCandidateProfileMutation, UpdateCandidateProfileMutationVariables>(UpdateCandidateProfileDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateCandidateProfileMutation, UpdateCandidateProfileMutationVariables>(UpdateCandidateProfileDocument, baseOptions);
+}
 export type UpdateCandidateProfileMutationHookResult = ReturnType<typeof useUpdateCandidateProfileMutation>;
 export type UpdateCandidateProfileMutationResult = Apollo.MutationResult<UpdateCandidateProfileMutation>;
 export type UpdateCandidateProfileMutationOptions = Apollo.BaseMutationOptions<UpdateCandidateProfileMutation, UpdateCandidateProfileMutationVariables>;
@@ -4534,8 +4804,8 @@ export const NewMessageDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useNewMessageSubscription(baseOptions?: Apollo.SubscriptionHookOptions<NewMessageSubscription, NewMessageSubscriptionVariables>) {
-        return Apollo.useSubscription<NewMessageSubscription, NewMessageSubscriptionVariables>(NewMessageDocument, baseOptions);
-      }
+  return Apollo.useSubscription<NewMessageSubscription, NewMessageSubscriptionVariables>(NewMessageDocument, baseOptions);
+}
 export type NewMessageSubscriptionHookResult = ReturnType<typeof useNewMessageSubscription>;
 export type NewMessageSubscriptionResult = Apollo.SubscriptionResult<NewMessageSubscription>;
 export const SendMessageDocument = /*#__PURE__*/ gql`
@@ -4566,8 +4836,8 @@ export type SendMessageMutationFn = Apollo.MutationFunction<SendMessageMutation,
  * });
  */
 export function useSendMessageMutation(baseOptions?: Apollo.MutationHookOptions<SendMessageMutation, SendMessageMutationVariables>) {
-        return Apollo.useMutation<SendMessageMutation, SendMessageMutationVariables>(SendMessageDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendMessageMutation, SendMessageMutationVariables>(SendMessageDocument, baseOptions);
+}
 export type SendMessageMutationHookResult = ReturnType<typeof useSendMessageMutation>;
 export type SendMessageMutationResult = Apollo.MutationResult<SendMessageMutation>;
 export type SendMessageMutationOptions = Apollo.BaseMutationOptions<SendMessageMutation, SendMessageMutationVariables>;
@@ -4599,8 +4869,8 @@ export type UpdateMessageMutationFn = Apollo.MutationFunction<UpdateMessageMutat
  * });
  */
 export function useUpdateMessageMutation(baseOptions?: Apollo.MutationHookOptions<UpdateMessageMutation, UpdateMessageMutationVariables>) {
-        return Apollo.useMutation<UpdateMessageMutation, UpdateMessageMutationVariables>(UpdateMessageDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateMessageMutation, UpdateMessageMutationVariables>(UpdateMessageDocument, baseOptions);
+}
 export type UpdateMessageMutationHookResult = ReturnType<typeof useUpdateMessageMutation>;
 export type UpdateMessageMutationResult = Apollo.MutationResult<UpdateMessageMutation>;
 export type UpdateMessageMutationOptions = Apollo.BaseMutationOptions<UpdateMessageMutation, UpdateMessageMutationVariables>;
@@ -4628,11 +4898,11 @@ export const EmploymentLocationsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useEmploymentLocationsQuery(baseOptions?: Apollo.QueryHookOptions<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>) {
-        return Apollo.useQuery<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>(EmploymentLocationsDocument, baseOptions);
-      }
+  return Apollo.useQuery<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>(EmploymentLocationsDocument, baseOptions);
+}
 export function useEmploymentLocationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>) {
-          return Apollo.useLazyQuery<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>(EmploymentLocationsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>(EmploymentLocationsDocument, baseOptions);
+}
 export type EmploymentLocationsQueryHookResult = ReturnType<typeof useEmploymentLocationsQuery>;
 export type EmploymentLocationsLazyQueryHookResult = ReturnType<typeof useEmploymentLocationsLazyQuery>;
 export type EmploymentLocationsQueryResult = Apollo.QueryResult<EmploymentLocationsQuery, EmploymentLocationsQueryVariables>;
@@ -4660,11 +4930,11 @@ export const EmploymentTypesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useEmploymentTypesQuery(baseOptions?: Apollo.QueryHookOptions<EmploymentTypesQuery, EmploymentTypesQueryVariables>) {
-        return Apollo.useQuery<EmploymentTypesQuery, EmploymentTypesQueryVariables>(EmploymentTypesDocument, baseOptions);
-      }
+  return Apollo.useQuery<EmploymentTypesQuery, EmploymentTypesQueryVariables>(EmploymentTypesDocument, baseOptions);
+}
 export function useEmploymentTypesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<EmploymentTypesQuery, EmploymentTypesQueryVariables>) {
-          return Apollo.useLazyQuery<EmploymentTypesQuery, EmploymentTypesQueryVariables>(EmploymentTypesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<EmploymentTypesQuery, EmploymentTypesQueryVariables>(EmploymentTypesDocument, baseOptions);
+}
 export type EmploymentTypesQueryHookResult = ReturnType<typeof useEmploymentTypesQuery>;
 export type EmploymentTypesLazyQueryHookResult = ReturnType<typeof useEmploymentTypesLazyQuery>;
 export type EmploymentTypesQueryResult = Apollo.QueryResult<EmploymentTypesQuery, EmploymentTypesQueryVariables>;
@@ -4692,11 +4962,11 @@ export const EnglishLevelsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useEnglishLevelsQuery(baseOptions?: Apollo.QueryHookOptions<EnglishLevelsQuery, EnglishLevelsQueryVariables>) {
-        return Apollo.useQuery<EnglishLevelsQuery, EnglishLevelsQueryVariables>(EnglishLevelsDocument, baseOptions);
-      }
+  return Apollo.useQuery<EnglishLevelsQuery, EnglishLevelsQueryVariables>(EnglishLevelsDocument, baseOptions);
+}
 export function useEnglishLevelsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<EnglishLevelsQuery, EnglishLevelsQueryVariables>) {
-          return Apollo.useLazyQuery<EnglishLevelsQuery, EnglishLevelsQueryVariables>(EnglishLevelsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<EnglishLevelsQuery, EnglishLevelsQueryVariables>(EnglishLevelsDocument, baseOptions);
+}
 export type EnglishLevelsQueryHookResult = ReturnType<typeof useEnglishLevelsQuery>;
 export type EnglishLevelsLazyQueryHookResult = ReturnType<typeof useEnglishLevelsLazyQuery>;
 export type EnglishLevelsQueryResult = Apollo.QueryResult<EnglishLevelsQuery, EnglishLevelsQueryVariables>;
@@ -4725,11 +4995,11 @@ export const FeatureDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useFeatureQuery(baseOptions?: Apollo.QueryHookOptions<FeatureQuery, FeatureQueryVariables>) {
-        return Apollo.useQuery<FeatureQuery, FeatureQueryVariables>(FeatureDocument, baseOptions);
-      }
+  return Apollo.useQuery<FeatureQuery, FeatureQueryVariables>(FeatureDocument, baseOptions);
+}
 export function useFeatureLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<FeatureQuery, FeatureQueryVariables>) {
-          return Apollo.useLazyQuery<FeatureQuery, FeatureQueryVariables>(FeatureDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<FeatureQuery, FeatureQueryVariables>(FeatureDocument, baseOptions);
+}
 export type FeatureQueryHookResult = ReturnType<typeof useFeatureQuery>;
 export type FeatureLazyQueryHookResult = ReturnType<typeof useFeatureLazyQuery>;
 export type FeatureQueryResult = Apollo.QueryResult<FeatureQuery, FeatureQueryVariables>;
@@ -4757,11 +5027,11 @@ export const FeaturesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useFeaturesQuery(baseOptions?: Apollo.QueryHookOptions<FeaturesQuery, FeaturesQueryVariables>) {
-        return Apollo.useQuery<FeaturesQuery, FeaturesQueryVariables>(FeaturesDocument, baseOptions);
-      }
+  return Apollo.useQuery<FeaturesQuery, FeaturesQueryVariables>(FeaturesDocument, baseOptions);
+}
 export function useFeaturesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<FeaturesQuery, FeaturesQueryVariables>) {
-          return Apollo.useLazyQuery<FeaturesQuery, FeaturesQueryVariables>(FeaturesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<FeaturesQuery, FeaturesQueryVariables>(FeaturesDocument, baseOptions);
+}
 export type FeaturesQueryHookResult = ReturnType<typeof useFeaturesQuery>;
 export type FeaturesLazyQueryHookResult = ReturnType<typeof useFeaturesLazyQuery>;
 export type FeaturesQueryResult = Apollo.QueryResult<FeaturesQuery, FeaturesQueryVariables>;
@@ -4791,8 +5061,8 @@ export type SendFeedbackMutationFn = Apollo.MutationFunction<SendFeedbackMutatio
  * });
  */
 export function useSendFeedbackMutation(baseOptions?: Apollo.MutationHookOptions<SendFeedbackMutation, SendFeedbackMutationVariables>) {
-        return Apollo.useMutation<SendFeedbackMutation, SendFeedbackMutationVariables>(SendFeedbackDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendFeedbackMutation, SendFeedbackMutationVariables>(SendFeedbackDocument, baseOptions);
+}
 export type SendFeedbackMutationHookResult = ReturnType<typeof useSendFeedbackMutation>;
 export type SendFeedbackMutationResult = Apollo.MutationResult<SendFeedbackMutation>;
 export type SendFeedbackMutationOptions = Apollo.BaseMutationOptions<SendFeedbackMutation, SendFeedbackMutationVariables>;
@@ -4820,11 +5090,11 @@ export const JobExperiencesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useJobExperiencesQuery(baseOptions?: Apollo.QueryHookOptions<JobExperiencesQuery, JobExperiencesQueryVariables>) {
-        return Apollo.useQuery<JobExperiencesQuery, JobExperiencesQueryVariables>(JobExperiencesDocument, baseOptions);
-      }
+  return Apollo.useQuery<JobExperiencesQuery, JobExperiencesQueryVariables>(JobExperiencesDocument, baseOptions);
+}
 export function useJobExperiencesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<JobExperiencesQuery, JobExperiencesQueryVariables>) {
-          return Apollo.useLazyQuery<JobExperiencesQuery, JobExperiencesQueryVariables>(JobExperiencesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<JobExperiencesQuery, JobExperiencesQueryVariables>(JobExperiencesDocument, baseOptions);
+}
 export type JobExperiencesQueryHookResult = ReturnType<typeof useJobExperiencesQuery>;
 export type JobExperiencesLazyQueryHookResult = ReturnType<typeof useJobExperiencesLazyQuery>;
 export type JobExperiencesQueryResult = Apollo.QueryResult<JobExperiencesQuery, JobExperiencesQueryVariables>;
@@ -4852,11 +5122,11 @@ export const AllNftsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useAllNftsQuery(baseOptions?: Apollo.QueryHookOptions<AllNftsQuery, AllNftsQueryVariables>) {
-        return Apollo.useQuery<AllNftsQuery, AllNftsQueryVariables>(AllNftsDocument, baseOptions);
-      }
+  return Apollo.useQuery<AllNftsQuery, AllNftsQueryVariables>(AllNftsDocument, baseOptions);
+}
 export function useAllNftsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AllNftsQuery, AllNftsQueryVariables>) {
-          return Apollo.useLazyQuery<AllNftsQuery, AllNftsQueryVariables>(AllNftsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AllNftsQuery, AllNftsQueryVariables>(AllNftsDocument, baseOptions);
+}
 export type AllNftsQueryHookResult = ReturnType<typeof useAllNftsQuery>;
 export type AllNftsLazyQueryHookResult = ReturnType<typeof useAllNftsLazyQuery>;
 export type AllNftsQueryResult = Apollo.QueryResult<AllNftsQuery, AllNftsQueryVariables>;
@@ -4887,8 +5157,8 @@ export type ClaimNftMutationFn = Apollo.MutationFunction<ClaimNftMutation, Claim
  * });
  */
 export function useClaimNftMutation(baseOptions?: Apollo.MutationHookOptions<ClaimNftMutation, ClaimNftMutationVariables>) {
-        return Apollo.useMutation<ClaimNftMutation, ClaimNftMutationVariables>(ClaimNftDocument, baseOptions);
-      }
+  return Apollo.useMutation<ClaimNftMutation, ClaimNftMutationVariables>(ClaimNftDocument, baseOptions);
+}
 export type ClaimNftMutationHookResult = ReturnType<typeof useClaimNftMutation>;
 export type ClaimNftMutationResult = Apollo.MutationResult<ClaimNftMutation>;
 export type ClaimNftMutationOptions = Apollo.BaseMutationOptions<ClaimNftMutation, ClaimNftMutationVariables>;
@@ -4919,8 +5189,8 @@ export type ConnectOAuthProviderMutationFn = Apollo.MutationFunction<ConnectOAut
  * });
  */
 export function useConnectOAuthProviderMutation(baseOptions?: Apollo.MutationHookOptions<ConnectOAuthProviderMutation, ConnectOAuthProviderMutationVariables>) {
-        return Apollo.useMutation<ConnectOAuthProviderMutation, ConnectOAuthProviderMutationVariables>(ConnectOAuthProviderDocument, baseOptions);
-      }
+  return Apollo.useMutation<ConnectOAuthProviderMutation, ConnectOAuthProviderMutationVariables>(ConnectOAuthProviderDocument, baseOptions);
+}
 export type ConnectOAuthProviderMutationHookResult = ReturnType<typeof useConnectOAuthProviderMutation>;
 export type ConnectOAuthProviderMutationResult = Apollo.MutationResult<ConnectOAuthProviderMutation>;
 export type ConnectOAuthProviderMutationOptions = Apollo.BaseMutationOptions<ConnectOAuthProviderMutation, ConnectOAuthProviderMutationVariables>;
@@ -4949,8 +5219,8 @@ export type DisconnectOAuthProviderMutationFn = Apollo.MutationFunction<Disconne
  * });
  */
 export function useDisconnectOAuthProviderMutation(baseOptions?: Apollo.MutationHookOptions<DisconnectOAuthProviderMutation, DisconnectOAuthProviderMutationVariables>) {
-        return Apollo.useMutation<DisconnectOAuthProviderMutation, DisconnectOAuthProviderMutationVariables>(DisconnectOAuthProviderDocument, baseOptions);
-      }
+  return Apollo.useMutation<DisconnectOAuthProviderMutation, DisconnectOAuthProviderMutationVariables>(DisconnectOAuthProviderDocument, baseOptions);
+}
 export type DisconnectOAuthProviderMutationHookResult = ReturnType<typeof useDisconnectOAuthProviderMutation>;
 export type DisconnectOAuthProviderMutationResult = Apollo.MutationResult<DisconnectOAuthProviderMutation>;
 export type DisconnectOAuthProviderMutationOptions = Apollo.BaseMutationOptions<DisconnectOAuthProviderMutation, DisconnectOAuthProviderMutationVariables>;
@@ -5007,8 +5277,8 @@ export type SocialSignUpMutationFn = Apollo.MutationFunction<SocialSignUpMutatio
  * });
  */
 export function useSocialSignUpMutation(baseOptions?: Apollo.MutationHookOptions<SocialSignUpMutation, SocialSignUpMutationVariables>) {
-        return Apollo.useMutation<SocialSignUpMutation, SocialSignUpMutationVariables>(SocialSignUpDocument, baseOptions);
-      }
+  return Apollo.useMutation<SocialSignUpMutation, SocialSignUpMutationVariables>(SocialSignUpDocument, baseOptions);
+}
 export type SocialSignUpMutationHookResult = ReturnType<typeof useSocialSignUpMutation>;
 export type SocialSignUpMutationResult = Apollo.MutationResult<SocialSignUpMutation>;
 export type SocialSignUpMutationOptions = Apollo.BaseMutationOptions<SocialSignUpMutation, SocialSignUpMutationVariables>;
@@ -5066,8 +5336,8 @@ export type SocialSignUpAsInactiveUserMutationFn = Apollo.MutationFunction<Socia
  * });
  */
 export function useSocialSignUpAsInactiveUserMutation(baseOptions?: Apollo.MutationHookOptions<SocialSignUpAsInactiveUserMutation, SocialSignUpAsInactiveUserMutationVariables>) {
-        return Apollo.useMutation<SocialSignUpAsInactiveUserMutation, SocialSignUpAsInactiveUserMutationVariables>(SocialSignUpAsInactiveUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<SocialSignUpAsInactiveUserMutation, SocialSignUpAsInactiveUserMutationVariables>(SocialSignUpAsInactiveUserDocument, baseOptions);
+}
 export type SocialSignUpAsInactiveUserMutationHookResult = ReturnType<typeof useSocialSignUpAsInactiveUserMutation>;
 export type SocialSignUpAsInactiveUserMutationResult = Apollo.MutationResult<SocialSignUpAsInactiveUserMutation>;
 export type SocialSignUpAsInactiveUserMutationOptions = Apollo.BaseMutationOptions<SocialSignUpAsInactiveUserMutation, SocialSignUpAsInactiveUserMutationVariables>;
@@ -5098,11 +5368,11 @@ export const UsersOAuthProvidersDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUsersOAuthProvidersQuery(baseOptions?: Apollo.QueryHookOptions<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>) {
-        return Apollo.useQuery<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>(UsersOAuthProvidersDocument, baseOptions);
-      }
+  return Apollo.useQuery<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>(UsersOAuthProvidersDocument, baseOptions);
+}
 export function useUsersOAuthProvidersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>) {
-          return Apollo.useLazyQuery<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>(UsersOAuthProvidersDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>(UsersOAuthProvidersDocument, baseOptions);
+}
 export type UsersOAuthProvidersQueryHookResult = ReturnType<typeof useUsersOAuthProvidersQuery>;
 export type UsersOAuthProvidersLazyQueryHookResult = ReturnType<typeof useUsersOAuthProvidersLazyQuery>;
 export type UsersOAuthProvidersQueryResult = Apollo.QueryResult<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>;
@@ -5135,8 +5405,8 @@ export type SendPaymentRequestMutationFn = Apollo.MutationFunction<SendPaymentRe
  * });
  */
 export function useSendPaymentRequestMutation(baseOptions?: Apollo.MutationHookOptions<SendPaymentRequestMutation, SendPaymentRequestMutationVariables>) {
-        return Apollo.useMutation<SendPaymentRequestMutation, SendPaymentRequestMutationVariables>(SendPaymentRequestDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendPaymentRequestMutation, SendPaymentRequestMutationVariables>(SendPaymentRequestDocument, baseOptions);
+}
 export type SendPaymentRequestMutationHookResult = ReturnType<typeof useSendPaymentRequestMutation>;
 export type SendPaymentRequestMutationResult = Apollo.MutationResult<SendPaymentRequestMutation>;
 export type SendPaymentRequestMutationOptions = Apollo.BaseMutationOptions<SendPaymentRequestMutation, SendPaymentRequestMutationVariables>;
@@ -5165,8 +5435,8 @@ export type ArchiveProfileConnectionForUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useArchiveProfileConnectionForUserMutation(baseOptions?: Apollo.MutationHookOptions<ArchiveProfileConnectionForUserMutation, ArchiveProfileConnectionForUserMutationVariables>) {
-        return Apollo.useMutation<ArchiveProfileConnectionForUserMutation, ArchiveProfileConnectionForUserMutationVariables>(ArchiveProfileConnectionForUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<ArchiveProfileConnectionForUserMutation, ArchiveProfileConnectionForUserMutationVariables>(ArchiveProfileConnectionForUserDocument, baseOptions);
+}
 export type ArchiveProfileConnectionForUserMutationHookResult = ReturnType<typeof useArchiveProfileConnectionForUserMutation>;
 export type ArchiveProfileConnectionForUserMutationResult = Apollo.MutationResult<ArchiveProfileConnectionForUserMutation>;
 export type ArchiveProfileConnectionForUserMutationOptions = Apollo.BaseMutationOptions<ArchiveProfileConnectionForUserMutation, ArchiveProfileConnectionForUserMutationVariables>;
@@ -5195,8 +5465,8 @@ export type DeleteProfileConnectionForUserMutationFn = Apollo.MutationFunction<D
  * });
  */
 export function useDeleteProfileConnectionForUserMutation(baseOptions?: Apollo.MutationHookOptions<DeleteProfileConnectionForUserMutation, DeleteProfileConnectionForUserMutationVariables>) {
-        return Apollo.useMutation<DeleteProfileConnectionForUserMutation, DeleteProfileConnectionForUserMutationVariables>(DeleteProfileConnectionForUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeleteProfileConnectionForUserMutation, DeleteProfileConnectionForUserMutationVariables>(DeleteProfileConnectionForUserDocument, baseOptions);
+}
 export type DeleteProfileConnectionForUserMutationHookResult = ReturnType<typeof useDeleteProfileConnectionForUserMutation>;
 export type DeleteProfileConnectionForUserMutationResult = Apollo.MutationResult<DeleteProfileConnectionForUserMutation>;
 export type DeleteProfileConnectionForUserMutationOptions = Apollo.BaseMutationOptions<DeleteProfileConnectionForUserMutation, DeleteProfileConnectionForUserMutationVariables>;
@@ -5228,11 +5498,11 @@ export const ProfileConnectionMessagesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useProfileConnectionMessagesQuery(baseOptions?: Apollo.QueryHookOptions<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>) {
-        return Apollo.useQuery<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>(ProfileConnectionMessagesDocument, baseOptions);
-      }
+  return Apollo.useQuery<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>(ProfileConnectionMessagesDocument, baseOptions);
+}
 export function useProfileConnectionMessagesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>) {
-          return Apollo.useLazyQuery<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>(ProfileConnectionMessagesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>(ProfileConnectionMessagesDocument, baseOptions);
+}
 export type ProfileConnectionMessagesQueryHookResult = ReturnType<typeof useProfileConnectionMessagesQuery>;
 export type ProfileConnectionMessagesLazyQueryHookResult = ReturnType<typeof useProfileConnectionMessagesLazyQuery>;
 export type ProfileConnectionMessagesQueryResult = Apollo.QueryResult<ProfileConnectionMessagesQuery, ProfileConnectionMessagesQueryVariables>;
@@ -5269,11 +5539,11 @@ ${ProfileConnectionUnreadMessagesCountFragmentDoc}`;
  * });
  */
 export function useProfileConnectionMetaQuery(baseOptions?: Apollo.QueryHookOptions<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>) {
-        return Apollo.useQuery<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>(ProfileConnectionMetaDocument, baseOptions);
-      }
+  return Apollo.useQuery<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>(ProfileConnectionMetaDocument, baseOptions);
+}
 export function useProfileConnectionMetaLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>) {
-          return Apollo.useLazyQuery<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>(ProfileConnectionMetaDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>(ProfileConnectionMetaDocument, baseOptions);
+}
 export type ProfileConnectionMetaQueryHookResult = ReturnType<typeof useProfileConnectionMetaQuery>;
 export type ProfileConnectionMetaLazyQueryHookResult = ReturnType<typeof useProfileConnectionMetaLazyQuery>;
 export type ProfileConnectionMetaQueryResult = Apollo.QueryResult<ProfileConnectionMetaQuery, ProfileConnectionMetaQueryVariables>;
@@ -5312,11 +5582,11 @@ ${ProfileConnectionMessagesFragmentDoc}`;
  * });
  */
 export function useProfileConnectionMetaWithMessagesQuery(baseOptions?: Apollo.QueryHookOptions<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>) {
-        return Apollo.useQuery<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>(ProfileConnectionMetaWithMessagesDocument, baseOptions);
-      }
+  return Apollo.useQuery<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>(ProfileConnectionMetaWithMessagesDocument, baseOptions);
+}
 export function useProfileConnectionMetaWithMessagesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>) {
-          return Apollo.useLazyQuery<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>(ProfileConnectionMetaWithMessagesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>(ProfileConnectionMetaWithMessagesDocument, baseOptions);
+}
 export type ProfileConnectionMetaWithMessagesQueryHookResult = ReturnType<typeof useProfileConnectionMetaWithMessagesQuery>;
 export type ProfileConnectionMetaWithMessagesLazyQueryHookResult = ReturnType<typeof useProfileConnectionMetaWithMessagesLazyQuery>;
 export type ProfileConnectionMetaWithMessagesQueryResult = Apollo.QueryResult<ProfileConnectionMetaWithMessagesQuery, ProfileConnectionMetaWithMessagesQueryVariables>;
@@ -5350,8 +5620,8 @@ ${ProfileConnectionWithUsersMetaFragmentDoc}`;
  * });
  */
 export function useProfileConnectionUpdatedSubscription(baseOptions?: Apollo.SubscriptionHookOptions<ProfileConnectionUpdatedSubscription, ProfileConnectionUpdatedSubscriptionVariables>) {
-        return Apollo.useSubscription<ProfileConnectionUpdatedSubscription, ProfileConnectionUpdatedSubscriptionVariables>(ProfileConnectionUpdatedDocument, baseOptions);
-      }
+  return Apollo.useSubscription<ProfileConnectionUpdatedSubscription, ProfileConnectionUpdatedSubscriptionVariables>(ProfileConnectionUpdatedDocument, baseOptions);
+}
 export type ProfileConnectionUpdatedSubscriptionHookResult = ReturnType<typeof useProfileConnectionUpdatedSubscription>;
 export type ProfileConnectionUpdatedSubscriptionResult = Apollo.SubscriptionResult<ProfileConnectionUpdatedSubscription>;
 export const ReportOfferStatusDocument = /*#__PURE__*/ gql`
@@ -5382,8 +5652,8 @@ export type ReportOfferStatusMutationFn = Apollo.MutationFunction<ReportOfferSta
  * });
  */
 export function useReportOfferStatusMutation(baseOptions?: Apollo.MutationHookOptions<ReportOfferStatusMutation, ReportOfferStatusMutationVariables>) {
-        return Apollo.useMutation<ReportOfferStatusMutation, ReportOfferStatusMutationVariables>(ReportOfferStatusDocument, baseOptions);
-      }
+  return Apollo.useMutation<ReportOfferStatusMutation, ReportOfferStatusMutationVariables>(ReportOfferStatusDocument, baseOptions);
+}
 export type ReportOfferStatusMutationHookResult = ReturnType<typeof useReportOfferStatusMutation>;
 export type ReportOfferStatusMutationResult = Apollo.MutationResult<ReportOfferStatusMutation>;
 export type ReportOfferStatusMutationOptions = Apollo.BaseMutationOptions<ReportOfferStatusMutation, ReportOfferStatusMutationVariables>;
@@ -5415,8 +5685,8 @@ export type ReviewProfileConnectionRequestMutationFn = Apollo.MutationFunction<R
  * });
  */
 export function useReviewProfileConnectionRequestMutation(baseOptions?: Apollo.MutationHookOptions<ReviewProfileConnectionRequestMutation, ReviewProfileConnectionRequestMutationVariables>) {
-        return Apollo.useMutation<ReviewProfileConnectionRequestMutation, ReviewProfileConnectionRequestMutationVariables>(ReviewProfileConnectionRequestDocument, baseOptions);
-      }
+  return Apollo.useMutation<ReviewProfileConnectionRequestMutation, ReviewProfileConnectionRequestMutationVariables>(ReviewProfileConnectionRequestDocument, baseOptions);
+}
 export type ReviewProfileConnectionRequestMutationHookResult = ReturnType<typeof useReviewProfileConnectionRequestMutation>;
 export type ReviewProfileConnectionRequestMutationResult = Apollo.MutationResult<ReviewProfileConnectionRequestMutation>;
 export type ReviewProfileConnectionRequestMutationOptions = Apollo.BaseMutationOptions<ReviewProfileConnectionRequestMutation, ReviewProfileConnectionRequestMutationVariables>;
@@ -5448,8 +5718,8 @@ export type SendProfileConnectionRequestMutationFn = Apollo.MutationFunction<Sen
  * });
  */
 export function useSendProfileConnectionRequestMutation(baseOptions?: Apollo.MutationHookOptions<SendProfileConnectionRequestMutation, SendProfileConnectionRequestMutationVariables>) {
-        return Apollo.useMutation<SendProfileConnectionRequestMutation, SendProfileConnectionRequestMutationVariables>(SendProfileConnectionRequestDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendProfileConnectionRequestMutation, SendProfileConnectionRequestMutationVariables>(SendProfileConnectionRequestDocument, baseOptions);
+}
 export type SendProfileConnectionRequestMutationHookResult = ReturnType<typeof useSendProfileConnectionRequestMutation>;
 export type SendProfileConnectionRequestMutationResult = Apollo.MutationResult<SendProfileConnectionRequestMutation>;
 export type SendProfileConnectionRequestMutationOptions = Apollo.BaseMutationOptions<SendProfileConnectionRequestMutation, SendProfileConnectionRequestMutationVariables>;
@@ -5478,8 +5748,8 @@ export type UnarchiveProfileConnectionForUserMutationFn = Apollo.MutationFunctio
  * });
  */
 export function useUnarchiveProfileConnectionForUserMutation(baseOptions?: Apollo.MutationHookOptions<UnarchiveProfileConnectionForUserMutation, UnarchiveProfileConnectionForUserMutationVariables>) {
-        return Apollo.useMutation<UnarchiveProfileConnectionForUserMutation, UnarchiveProfileConnectionForUserMutationVariables>(UnarchiveProfileConnectionForUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<UnarchiveProfileConnectionForUserMutation, UnarchiveProfileConnectionForUserMutationVariables>(UnarchiveProfileConnectionForUserDocument, baseOptions);
+}
 export type UnarchiveProfileConnectionForUserMutationHookResult = ReturnType<typeof useUnarchiveProfileConnectionForUserMutation>;
 export type UnarchiveProfileConnectionForUserMutationResult = Apollo.MutationResult<UnarchiveProfileConnectionForUserMutation>;
 export type UnarchiveProfileConnectionForUserMutationOptions = Apollo.BaseMutationOptions<UnarchiveProfileConnectionForUserMutation, UnarchiveProfileConnectionForUserMutationVariables>;
@@ -5515,8 +5785,8 @@ export type UpdateConnectionLastActionTimeMutationFn = Apollo.MutationFunction<U
  * });
  */
 export function useUpdateConnectionLastActionTimeMutation(baseOptions?: Apollo.MutationHookOptions<UpdateConnectionLastActionTimeMutation, UpdateConnectionLastActionTimeMutationVariables>) {
-        return Apollo.useMutation<UpdateConnectionLastActionTimeMutation, UpdateConnectionLastActionTimeMutationVariables>(UpdateConnectionLastActionTimeDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateConnectionLastActionTimeMutation, UpdateConnectionLastActionTimeMutationVariables>(UpdateConnectionLastActionTimeDocument, baseOptions);
+}
 export type UpdateConnectionLastActionTimeMutationHookResult = ReturnType<typeof useUpdateConnectionLastActionTimeMutation>;
 export type UpdateConnectionLastActionTimeMutationResult = Apollo.MutationResult<UpdateConnectionLastActionTimeMutation>;
 export type UpdateConnectionLastActionTimeMutationOptions = Apollo.BaseMutationOptions<UpdateConnectionLastActionTimeMutation, UpdateConnectionLastActionTimeMutationVariables>;
@@ -5545,8 +5815,8 @@ export type BulkReportOfferStatusMutationFn = Apollo.MutationFunction<BulkReport
  * });
  */
 export function useBulkReportOfferStatusMutation(baseOptions?: Apollo.MutationHookOptions<BulkReportOfferStatusMutation, BulkReportOfferStatusMutationVariables>) {
-        return Apollo.useMutation<BulkReportOfferStatusMutation, BulkReportOfferStatusMutationVariables>(BulkReportOfferStatusDocument, baseOptions);
-      }
+  return Apollo.useMutation<BulkReportOfferStatusMutation, BulkReportOfferStatusMutationVariables>(BulkReportOfferStatusDocument, baseOptions);
+}
 export type BulkReportOfferStatusMutationHookResult = ReturnType<typeof useBulkReportOfferStatusMutation>;
 export type BulkReportOfferStatusMutationResult = Apollo.MutationResult<BulkReportOfferStatusMutation>;
 export type BulkReportOfferStatusMutationOptions = Apollo.BaseMutationOptions<BulkReportOfferStatusMutation, BulkReportOfferStatusMutationVariables>;
@@ -5577,8 +5847,8 @@ export type BulkSendMessageMutationFn = Apollo.MutationFunction<BulkSendMessageM
  * });
  */
 export function useBulkSendMessageMutation(baseOptions?: Apollo.MutationHookOptions<BulkSendMessageMutation, BulkSendMessageMutationVariables>) {
-        return Apollo.useMutation<BulkSendMessageMutation, BulkSendMessageMutationVariables>(BulkSendMessageDocument, baseOptions);
-      }
+  return Apollo.useMutation<BulkSendMessageMutation, BulkSendMessageMutationVariables>(BulkSendMessageDocument, baseOptions);
+}
 export type BulkSendMessageMutationHookResult = ReturnType<typeof useBulkSendMessageMutation>;
 export type BulkSendMessageMutationResult = Apollo.MutationResult<BulkSendMessageMutation>;
 export type BulkSendMessageMutationOptions = Apollo.BaseMutationOptions<BulkSendMessageMutation, BulkSendMessageMutationVariables>;
@@ -5611,8 +5881,8 @@ export type CreateRecruiterProfileMutationFn = Apollo.MutationFunction<CreateRec
  * });
  */
 export function useCreateRecruiterProfileMutation(baseOptions?: Apollo.MutationHookOptions<CreateRecruiterProfileMutation, CreateRecruiterProfileMutationVariables>) {
-        return Apollo.useMutation<CreateRecruiterProfileMutation, CreateRecruiterProfileMutationVariables>(CreateRecruiterProfileDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateRecruiterProfileMutation, CreateRecruiterProfileMutationVariables>(CreateRecruiterProfileDocument, baseOptions);
+}
 export type CreateRecruiterProfileMutationHookResult = ReturnType<typeof useCreateRecruiterProfileMutation>;
 export type CreateRecruiterProfileMutationResult = Apollo.MutationResult<CreateRecruiterProfileMutation>;
 export type CreateRecruiterProfileMutationOptions = Apollo.BaseMutationOptions<CreateRecruiterProfileMutation, CreateRecruiterProfileMutationVariables>;
@@ -5640,8 +5910,8 @@ export type DeactivateRecruiterProfilesMutationFn = Apollo.MutationFunction<Deac
  * });
  */
 export function useDeactivateRecruiterProfilesMutation(baseOptions?: Apollo.MutationHookOptions<DeactivateRecruiterProfilesMutation, DeactivateRecruiterProfilesMutationVariables>) {
-        return Apollo.useMutation<DeactivateRecruiterProfilesMutation, DeactivateRecruiterProfilesMutationVariables>(DeactivateRecruiterProfilesDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeactivateRecruiterProfilesMutation, DeactivateRecruiterProfilesMutationVariables>(DeactivateRecruiterProfilesDocument, baseOptions);
+}
 export type DeactivateRecruiterProfilesMutationHookResult = ReturnType<typeof useDeactivateRecruiterProfilesMutation>;
 export type DeactivateRecruiterProfilesMutationResult = Apollo.MutationResult<DeactivateRecruiterProfilesMutation>;
 export type DeactivateRecruiterProfilesMutationOptions = Apollo.BaseMutationOptions<DeactivateRecruiterProfilesMutation, DeactivateRecruiterProfilesMutationVariables>;
@@ -5669,11 +5939,11 @@ export const LatestRecruiterProfileDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useLatestRecruiterProfileQuery(baseOptions?: Apollo.QueryHookOptions<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>) {
-        return Apollo.useQuery<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>(LatestRecruiterProfileDocument, baseOptions);
-      }
+  return Apollo.useQuery<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>(LatestRecruiterProfileDocument, baseOptions);
+}
 export function useLatestRecruiterProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>) {
-          return Apollo.useLazyQuery<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>(LatestRecruiterProfileDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>(LatestRecruiterProfileDocument, baseOptions);
+}
 export type LatestRecruiterProfileQueryHookResult = ReturnType<typeof useLatestRecruiterProfileQuery>;
 export type LatestRecruiterProfileLazyQueryHookResult = ReturnType<typeof useLatestRecruiterProfileLazyQuery>;
 export type LatestRecruiterProfileQueryResult = Apollo.QueryResult<LatestRecruiterProfileQuery, LatestRecruiterProfileQueryVariables>;
@@ -5702,11 +5972,11 @@ export const LatestRecruiterProfileByUserIdDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useLatestRecruiterProfileByUserIdQuery(baseOptions?: Apollo.QueryHookOptions<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>) {
-        return Apollo.useQuery<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>(LatestRecruiterProfileByUserIdDocument, baseOptions);
-      }
+  return Apollo.useQuery<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>(LatestRecruiterProfileByUserIdDocument, baseOptions);
+}
 export function useLatestRecruiterProfileByUserIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>) {
-          return Apollo.useLazyQuery<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>(LatestRecruiterProfileByUserIdDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>(LatestRecruiterProfileByUserIdDocument, baseOptions);
+}
 export type LatestRecruiterProfileByUserIdQueryHookResult = ReturnType<typeof useLatestRecruiterProfileByUserIdQuery>;
 export type LatestRecruiterProfileByUserIdLazyQueryHookResult = ReturnType<typeof useLatestRecruiterProfileByUserIdLazyQuery>;
 export type LatestRecruiterProfileByUserIdQueryResult = Apollo.QueryResult<LatestRecruiterProfileByUserIdQuery, LatestRecruiterProfileByUserIdQueryVariables>;
@@ -5734,11 +6004,11 @@ export const PublicRecruiterProfilesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function usePublicRecruiterProfilesQuery(baseOptions?: Apollo.QueryHookOptions<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>) {
-        return Apollo.useQuery<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>(PublicRecruiterProfilesDocument, baseOptions);
-      }
+  return Apollo.useQuery<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>(PublicRecruiterProfilesDocument, baseOptions);
+}
 export function usePublicRecruiterProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>(PublicRecruiterProfilesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>(PublicRecruiterProfilesDocument, baseOptions);
+}
 export type PublicRecruiterProfilesQueryHookResult = ReturnType<typeof usePublicRecruiterProfilesQuery>;
 export type PublicRecruiterProfilesLazyQueryHookResult = ReturnType<typeof usePublicRecruiterProfilesLazyQuery>;
 export type PublicRecruiterProfilesQueryResult = Apollo.QueryResult<PublicRecruiterProfilesQuery, PublicRecruiterProfilesQueryVariables>;
@@ -5774,11 +6044,11 @@ ${ProfileConnectionWithProfilesFragmentDoc}`;
  * });
  */
 export function useRecruiterProfileActiveConnectionQuery(baseOptions?: Apollo.QueryHookOptions<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>) {
-        return Apollo.useQuery<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>(RecruiterProfileActiveConnectionDocument, baseOptions);
-      }
+  return Apollo.useQuery<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>(RecruiterProfileActiveConnectionDocument, baseOptions);
+}
 export function useRecruiterProfileActiveConnectionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>) {
-          return Apollo.useLazyQuery<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>(RecruiterProfileActiveConnectionDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>(RecruiterProfileActiveConnectionDocument, baseOptions);
+}
 export type RecruiterProfileActiveConnectionQueryHookResult = ReturnType<typeof useRecruiterProfileActiveConnectionQuery>;
 export type RecruiterProfileActiveConnectionLazyQueryHookResult = ReturnType<typeof useRecruiterProfileActiveConnectionLazyQuery>;
 export type RecruiterProfileActiveConnectionQueryResult = Apollo.QueryResult<RecruiterProfileActiveConnectionQuery, RecruiterProfileActiveConnectionQueryVariables>;
@@ -5807,11 +6077,11 @@ export const RecruiterProfileBySlugDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useRecruiterProfileBySlugQuery(baseOptions?: Apollo.QueryHookOptions<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>) {
-        return Apollo.useQuery<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>(RecruiterProfileBySlugDocument, baseOptions);
-      }
+  return Apollo.useQuery<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>(RecruiterProfileBySlugDocument, baseOptions);
+}
 export function useRecruiterProfileBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>) {
-          return Apollo.useLazyQuery<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>(RecruiterProfileBySlugDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>(RecruiterProfileBySlugDocument, baseOptions);
+}
 export type RecruiterProfileBySlugQueryHookResult = ReturnType<typeof useRecruiterProfileBySlugQuery>;
 export type RecruiterProfileBySlugLazyQueryHookResult = ReturnType<typeof useRecruiterProfileBySlugLazyQuery>;
 export type RecruiterProfileBySlugQueryResult = Apollo.QueryResult<RecruiterProfileBySlugQuery, RecruiterProfileBySlugQueryVariables>;
@@ -5839,8 +6109,8 @@ export const RecruiterProfileStatusUpdatedDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useRecruiterProfileStatusUpdatedSubscription(baseOptions?: Apollo.SubscriptionHookOptions<RecruiterProfileStatusUpdatedSubscription, RecruiterProfileStatusUpdatedSubscriptionVariables>) {
-        return Apollo.useSubscription<RecruiterProfileStatusUpdatedSubscription, RecruiterProfileStatusUpdatedSubscriptionVariables>(RecruiterProfileStatusUpdatedDocument, baseOptions);
-      }
+  return Apollo.useSubscription<RecruiterProfileStatusUpdatedSubscription, RecruiterProfileStatusUpdatedSubscriptionVariables>(RecruiterProfileStatusUpdatedDocument, baseOptions);
+}
 export type RecruiterProfileStatusUpdatedSubscriptionHookResult = ReturnType<typeof useRecruiterProfileStatusUpdatedSubscription>;
 export type RecruiterProfileStatusUpdatedSubscriptionResult = Apollo.SubscriptionResult<RecruiterProfileStatusUpdatedSubscription>;
 export const SendRecruiterProfileToReviewDocument = /*#__PURE__*/ gql`
@@ -5869,8 +6139,8 @@ export type SendRecruiterProfileToReviewMutationFn = Apollo.MutationFunction<Sen
  * });
  */
 export function useSendRecruiterProfileToReviewMutation(baseOptions?: Apollo.MutationHookOptions<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>) {
-        return Apollo.useMutation<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>(SendRecruiterProfileToReviewDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>(SendRecruiterProfileToReviewDocument, baseOptions);
+}
 export type SendRecruiterProfileToReviewMutationHookResult = ReturnType<typeof useSendRecruiterProfileToReviewMutation>;
 export type SendRecruiterProfileToReviewMutationResult = Apollo.MutationResult<SendRecruiterProfileToReviewMutation>;
 export type SendRecruiterProfileToReviewMutationOptions = Apollo.BaseMutationOptions<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>;
@@ -5902,8 +6172,8 @@ export type UpdateRecruiterProfileMutationFn = Apollo.MutationFunction<UpdateRec
  * });
  */
 export function useUpdateRecruiterProfileMutation(baseOptions?: Apollo.MutationHookOptions<UpdateRecruiterProfileMutation, UpdateRecruiterProfileMutationVariables>) {
-        return Apollo.useMutation<UpdateRecruiterProfileMutation, UpdateRecruiterProfileMutationVariables>(UpdateRecruiterProfileDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateRecruiterProfileMutation, UpdateRecruiterProfileMutationVariables>(UpdateRecruiterProfileDocument, baseOptions);
+}
 export type UpdateRecruiterProfileMutationHookResult = ReturnType<typeof useUpdateRecruiterProfileMutation>;
 export type UpdateRecruiterProfileMutationResult = Apollo.MutationResult<UpdateRecruiterProfileMutation>;
 export type UpdateRecruiterProfileMutationOptions = Apollo.BaseMutationOptions<UpdateRecruiterProfileMutation, UpdateRecruiterProfileMutationVariables>;
@@ -5932,11 +6202,11 @@ export const SpecializationDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useSpecializationQuery(baseOptions?: Apollo.QueryHookOptions<SpecializationQuery, SpecializationQueryVariables>) {
-        return Apollo.useQuery<SpecializationQuery, SpecializationQueryVariables>(SpecializationDocument, baseOptions);
-      }
+  return Apollo.useQuery<SpecializationQuery, SpecializationQueryVariables>(SpecializationDocument, baseOptions);
+}
 export function useSpecializationLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SpecializationQuery, SpecializationQueryVariables>) {
-          return Apollo.useLazyQuery<SpecializationQuery, SpecializationQueryVariables>(SpecializationDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<SpecializationQuery, SpecializationQueryVariables>(SpecializationDocument, baseOptions);
+}
 export type SpecializationQueryHookResult = ReturnType<typeof useSpecializationQuery>;
 export type SpecializationLazyQueryHookResult = ReturnType<typeof useSpecializationLazyQuery>;
 export type SpecializationQueryResult = Apollo.QueryResult<SpecializationQuery, SpecializationQueryVariables>;
@@ -5967,8 +6237,8 @@ export type CreateTechnologiesMutationFn = Apollo.MutationFunction<CreateTechnol
  * });
  */
 export function useCreateTechnologiesMutation(baseOptions?: Apollo.MutationHookOptions<CreateTechnologiesMutation, CreateTechnologiesMutationVariables>) {
-        return Apollo.useMutation<CreateTechnologiesMutation, CreateTechnologiesMutationVariables>(CreateTechnologiesDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateTechnologiesMutation, CreateTechnologiesMutationVariables>(CreateTechnologiesDocument, baseOptions);
+}
 export type CreateTechnologiesMutationHookResult = ReturnType<typeof useCreateTechnologiesMutation>;
 export type CreateTechnologiesMutationResult = Apollo.MutationResult<CreateTechnologiesMutation>;
 export type CreateTechnologiesMutationOptions = Apollo.BaseMutationOptions<CreateTechnologiesMutation, CreateTechnologiesMutationVariables>;
@@ -5999,8 +6269,8 @@ export type CreateTechnologyMutationFn = Apollo.MutationFunction<CreateTechnolog
  * });
  */
 export function useCreateTechnologyMutation(baseOptions?: Apollo.MutationHookOptions<CreateTechnologyMutation, CreateTechnologyMutationVariables>) {
-        return Apollo.useMutation<CreateTechnologyMutation, CreateTechnologyMutationVariables>(CreateTechnologyDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateTechnologyMutation, CreateTechnologyMutationVariables>(CreateTechnologyDocument, baseOptions);
+}
 export type CreateTechnologyMutationHookResult = ReturnType<typeof useCreateTechnologyMutation>;
 export type CreateTechnologyMutationResult = Apollo.MutationResult<CreateTechnologyMutation>;
 export type CreateTechnologyMutationOptions = Apollo.BaseMutationOptions<CreateTechnologyMutation, CreateTechnologyMutationVariables>;
@@ -6030,11 +6300,11 @@ export const TechnologiesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useTechnologiesQuery(baseOptions?: Apollo.QueryHookOptions<TechnologiesQuery, TechnologiesQueryVariables>) {
-        return Apollo.useQuery<TechnologiesQuery, TechnologiesQueryVariables>(TechnologiesDocument, baseOptions);
-      }
+  return Apollo.useQuery<TechnologiesQuery, TechnologiesQueryVariables>(TechnologiesDocument, baseOptions);
+}
 export function useTechnologiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TechnologiesQuery, TechnologiesQueryVariables>) {
-          return Apollo.useLazyQuery<TechnologiesQuery, TechnologiesQueryVariables>(TechnologiesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<TechnologiesQuery, TechnologiesQueryVariables>(TechnologiesDocument, baseOptions);
+}
 export type TechnologiesQueryHookResult = ReturnType<typeof useTechnologiesQuery>;
 export type TechnologiesLazyQueryHookResult = ReturnType<typeof useTechnologiesLazyQuery>;
 export type TechnologiesQueryResult = Apollo.QueryResult<TechnologiesQuery, TechnologiesQueryVariables>;
@@ -6063,11 +6333,11 @@ export const TechnologiesByNamesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useTechnologiesByNamesQuery(baseOptions?: Apollo.QueryHookOptions<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>) {
-        return Apollo.useQuery<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>(TechnologiesByNamesDocument, baseOptions);
-      }
+  return Apollo.useQuery<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>(TechnologiesByNamesDocument, baseOptions);
+}
 export function useTechnologiesByNamesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>) {
-          return Apollo.useLazyQuery<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>(TechnologiesByNamesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>(TechnologiesByNamesDocument, baseOptions);
+}
 export type TechnologiesByNamesQueryHookResult = ReturnType<typeof useTechnologiesByNamesQuery>;
 export type TechnologiesByNamesLazyQueryHookResult = ReturnType<typeof useTechnologiesByNamesLazyQuery>;
 export type TechnologiesByNamesQueryResult = Apollo.QueryResult<TechnologiesByNamesQuery, TechnologiesByNamesQueryVariables>;
@@ -6096,11 +6366,11 @@ export const AdminSettingsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useAdminSettingsQuery(baseOptions?: Apollo.QueryHookOptions<AdminSettingsQuery, AdminSettingsQueryVariables>) {
-        return Apollo.useQuery<AdminSettingsQuery, AdminSettingsQueryVariables>(AdminSettingsDocument, baseOptions);
-      }
+  return Apollo.useQuery<AdminSettingsQuery, AdminSettingsQueryVariables>(AdminSettingsDocument, baseOptions);
+}
 export function useAdminSettingsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AdminSettingsQuery, AdminSettingsQueryVariables>) {
-          return Apollo.useLazyQuery<AdminSettingsQuery, AdminSettingsQueryVariables>(AdminSettingsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AdminSettingsQuery, AdminSettingsQueryVariables>(AdminSettingsDocument, baseOptions);
+}
 export type AdminSettingsQueryHookResult = ReturnType<typeof useAdminSettingsQuery>;
 export type AdminSettingsLazyQueryHookResult = ReturnType<typeof useAdminSettingsLazyQuery>;
 export type AdminSettingsQueryResult = Apollo.QueryResult<AdminSettingsQuery, AdminSettingsQueryVariables>;
@@ -6128,11 +6398,11 @@ export const AdminUserDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useAdminUserQuery(baseOptions?: Apollo.QueryHookOptions<AdminUserQuery, AdminUserQueryVariables>) {
-        return Apollo.useQuery<AdminUserQuery, AdminUserQueryVariables>(AdminUserDocument, baseOptions);
-      }
+  return Apollo.useQuery<AdminUserQuery, AdminUserQueryVariables>(AdminUserDocument, baseOptions);
+}
 export function useAdminUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AdminUserQuery, AdminUserQueryVariables>) {
-          return Apollo.useLazyQuery<AdminUserQuery, AdminUserQueryVariables>(AdminUserDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AdminUserQuery, AdminUserQueryVariables>(AdminUserDocument, baseOptions);
+}
 export type AdminUserQueryHookResult = ReturnType<typeof useAdminUserQuery>;
 export type AdminUserLazyQueryHookResult = ReturnType<typeof useAdminUserLazyQuery>;
 export type AdminUserQueryResult = Apollo.QueryResult<AdminUserQuery, AdminUserQueryVariables>;
@@ -6178,11 +6448,11 @@ ${UserNftFragmentDoc}`;
  * });
  */
 export function useAuthUserQuery(baseOptions?: Apollo.QueryHookOptions<AuthUserQuery, AuthUserQueryVariables>) {
-        return Apollo.useQuery<AuthUserQuery, AuthUserQueryVariables>(AuthUserDocument, baseOptions);
-      }
+  return Apollo.useQuery<AuthUserQuery, AuthUserQueryVariables>(AuthUserDocument, baseOptions);
+}
 export function useAuthUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AuthUserQuery, AuthUserQueryVariables>) {
-          return Apollo.useLazyQuery<AuthUserQuery, AuthUserQueryVariables>(AuthUserDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AuthUserQuery, AuthUserQueryVariables>(AuthUserDocument, baseOptions);
+}
 export type AuthUserQueryHookResult = ReturnType<typeof useAuthUserQuery>;
 export type AuthUserLazyQueryHookResult = ReturnType<typeof useAuthUserLazyQuery>;
 export type AuthUserQueryResult = Apollo.QueryResult<AuthUserQuery, AuthUserQueryVariables>;
@@ -6223,11 +6493,11 @@ ${ProfileConnectionWithUsersMetaFragmentDoc}`;
  * });
  */
 export function useAuthUserConnectionsQuery(baseOptions?: Apollo.QueryHookOptions<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>) {
-        return Apollo.useQuery<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>(AuthUserConnectionsDocument, baseOptions);
-      }
+  return Apollo.useQuery<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>(AuthUserConnectionsDocument, baseOptions);
+}
 export function useAuthUserConnectionsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>) {
-          return Apollo.useLazyQuery<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>(AuthUserConnectionsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>(AuthUserConnectionsDocument, baseOptions);
+}
 export type AuthUserConnectionsQueryHookResult = ReturnType<typeof useAuthUserConnectionsQuery>;
 export type AuthUserConnectionsLazyQueryHookResult = ReturnType<typeof useAuthUserConnectionsLazyQuery>;
 export type AuthUserConnectionsQueryResult = Apollo.QueryResult<AuthUserConnectionsQuery, AuthUserConnectionsQueryVariables>;
@@ -6267,11 +6537,11 @@ ${ProfileConnectionWithUsersMetaFragmentDoc}`;
  * });
  */
 export function useAuthUserHiresQuery(baseOptions?: Apollo.QueryHookOptions<AuthUserHiresQuery, AuthUserHiresQueryVariables>) {
-        return Apollo.useQuery<AuthUserHiresQuery, AuthUserHiresQueryVariables>(AuthUserHiresDocument, baseOptions);
-      }
+  return Apollo.useQuery<AuthUserHiresQuery, AuthUserHiresQueryVariables>(AuthUserHiresDocument, baseOptions);
+}
 export function useAuthUserHiresLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AuthUserHiresQuery, AuthUserHiresQueryVariables>) {
-          return Apollo.useLazyQuery<AuthUserHiresQuery, AuthUserHiresQueryVariables>(AuthUserHiresDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<AuthUserHiresQuery, AuthUserHiresQueryVariables>(AuthUserHiresDocument, baseOptions);
+}
 export type AuthUserHiresQueryHookResult = ReturnType<typeof useAuthUserHiresQuery>;
 export type AuthUserHiresLazyQueryHookResult = ReturnType<typeof useAuthUserHiresLazyQuery>;
 export type AuthUserHiresQueryResult = Apollo.QueryResult<AuthUserHiresQuery, AuthUserHiresQueryVariables>;
@@ -6302,8 +6572,8 @@ export type ChangePasswordMutationFn = Apollo.MutationFunction<ChangePasswordMut
  * });
  */
 export function useChangePasswordMutation(baseOptions?: Apollo.MutationHookOptions<ChangePasswordMutation, ChangePasswordMutationVariables>) {
-        return Apollo.useMutation<ChangePasswordMutation, ChangePasswordMutationVariables>(ChangePasswordDocument, baseOptions);
-      }
+  return Apollo.useMutation<ChangePasswordMutation, ChangePasswordMutationVariables>(ChangePasswordDocument, baseOptions);
+}
 export type ChangePasswordMutationHookResult = ReturnType<typeof useChangePasswordMutation>;
 export type ChangePasswordMutationResult = Apollo.MutationResult<ChangePasswordMutation>;
 export type ChangePasswordMutationOptions = Apollo.BaseMutationOptions<ChangePasswordMutation, ChangePasswordMutationVariables>;
@@ -6332,8 +6602,8 @@ export type ConfirmEmailMutationFn = Apollo.MutationFunction<ConfirmEmailMutatio
  * });
  */
 export function useConfirmEmailMutation(baseOptions?: Apollo.MutationHookOptions<ConfirmEmailMutation, ConfirmEmailMutationVariables>) {
-        return Apollo.useMutation<ConfirmEmailMutation, ConfirmEmailMutationVariables>(ConfirmEmailDocument, baseOptions);
-      }
+  return Apollo.useMutation<ConfirmEmailMutation, ConfirmEmailMutationVariables>(ConfirmEmailDocument, baseOptions);
+}
 export type ConfirmEmailMutationHookResult = ReturnType<typeof useConfirmEmailMutation>;
 export type ConfirmEmailMutationResult = Apollo.MutationResult<ConfirmEmailMutation>;
 export type ConfirmEmailMutationOptions = Apollo.BaseMutationOptions<ConfirmEmailMutation, ConfirmEmailMutationVariables>;
@@ -6365,8 +6635,8 @@ export type CreateUserMutationFn = Apollo.MutationFunction<CreateUserMutation, C
  * });
  */
 export function useCreateUserMutation(baseOptions?: Apollo.MutationHookOptions<CreateUserMutation, CreateUserMutationVariables>) {
-        return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, baseOptions);
+}
 export type CreateUserMutationHookResult = ReturnType<typeof useCreateUserMutation>;
 export type CreateUserMutationResult = Apollo.MutationResult<CreateUserMutation>;
 export type CreateUserMutationOptions = Apollo.BaseMutationOptions<CreateUserMutation, CreateUserMutationVariables>;
@@ -6395,8 +6665,8 @@ export type ForgotPasswordMutationFn = Apollo.MutationFunction<ForgotPasswordMut
  * });
  */
 export function useForgotPasswordMutation(baseOptions?: Apollo.MutationHookOptions<ForgotPasswordMutation, ForgotPasswordMutationVariables>) {
-        return Apollo.useMutation<ForgotPasswordMutation, ForgotPasswordMutationVariables>(ForgotPasswordDocument, baseOptions);
-      }
+  return Apollo.useMutation<ForgotPasswordMutation, ForgotPasswordMutationVariables>(ForgotPasswordDocument, baseOptions);
+}
 export type ForgotPasswordMutationHookResult = ReturnType<typeof useForgotPasswordMutation>;
 export type ForgotPasswordMutationResult = Apollo.MutationResult<ForgotPasswordMutation>;
 export type ForgotPasswordMutationOptions = Apollo.BaseMutationOptions<ForgotPasswordMutation, ForgotPasswordMutationVariables>;
@@ -6425,11 +6695,11 @@ export const IsFirstTimeFillingCandidateProfileDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useIsFirstTimeFillingCandidateProfileQuery(baseOptions?: Apollo.QueryHookOptions<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>) {
-        return Apollo.useQuery<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>(IsFirstTimeFillingCandidateProfileDocument, baseOptions);
-      }
+  return Apollo.useQuery<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>(IsFirstTimeFillingCandidateProfileDocument, baseOptions);
+}
 export function useIsFirstTimeFillingCandidateProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>) {
-          return Apollo.useLazyQuery<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>(IsFirstTimeFillingCandidateProfileDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>(IsFirstTimeFillingCandidateProfileDocument, baseOptions);
+}
 export type IsFirstTimeFillingCandidateProfileQueryHookResult = ReturnType<typeof useIsFirstTimeFillingCandidateProfileQuery>;
 export type IsFirstTimeFillingCandidateProfileLazyQueryHookResult = ReturnType<typeof useIsFirstTimeFillingCandidateProfileLazyQuery>;
 export type IsFirstTimeFillingCandidateProfileQueryResult = Apollo.QueryResult<IsFirstTimeFillingCandidateProfileQuery, IsFirstTimeFillingCandidateProfileQueryVariables>;
@@ -6458,11 +6728,11 @@ export const IsFirstTimeFillingRecruiterProfileDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useIsFirstTimeFillingRecruiterProfileQuery(baseOptions?: Apollo.QueryHookOptions<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>) {
-        return Apollo.useQuery<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>(IsFirstTimeFillingRecruiterProfileDocument, baseOptions);
-      }
+  return Apollo.useQuery<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>(IsFirstTimeFillingRecruiterProfileDocument, baseOptions);
+}
 export function useIsFirstTimeFillingRecruiterProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>) {
-          return Apollo.useLazyQuery<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>(IsFirstTimeFillingRecruiterProfileDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>(IsFirstTimeFillingRecruiterProfileDocument, baseOptions);
+}
 export type IsFirstTimeFillingRecruiterProfileQueryHookResult = ReturnType<typeof useIsFirstTimeFillingRecruiterProfileQuery>;
 export type IsFirstTimeFillingRecruiterProfileLazyQueryHookResult = ReturnType<typeof useIsFirstTimeFillingRecruiterProfileLazyQuery>;
 export type IsFirstTimeFillingRecruiterProfileQueryResult = Apollo.QueryResult<IsFirstTimeFillingRecruiterProfileQuery, IsFirstTimeFillingRecruiterProfileQueryVariables>;
@@ -6490,8 +6760,8 @@ export type LogOutMutationFn = Apollo.MutationFunction<LogOutMutation, LogOutMut
  * });
  */
 export function useLogOutMutation(baseOptions?: Apollo.MutationHookOptions<LogOutMutation, LogOutMutationVariables>) {
-        return Apollo.useMutation<LogOutMutation, LogOutMutationVariables>(LogOutDocument, baseOptions);
-      }
+  return Apollo.useMutation<LogOutMutation, LogOutMutationVariables>(LogOutDocument, baseOptions);
+}
 export type LogOutMutationHookResult = ReturnType<typeof useLogOutMutation>;
 export type LogOutMutationResult = Apollo.MutationResult<LogOutMutation>;
 export type LogOutMutationOptions = Apollo.BaseMutationOptions<LogOutMutation, LogOutMutationVariables>;
@@ -6521,8 +6791,8 @@ export type LogOutFromUserMutationFn = Apollo.MutationFunction<LogOutFromUserMut
  * });
  */
 export function useLogOutFromUserMutation(baseOptions?: Apollo.MutationHookOptions<LogOutFromUserMutation, LogOutFromUserMutationVariables>) {
-        return Apollo.useMutation<LogOutFromUserMutation, LogOutFromUserMutationVariables>(LogOutFromUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<LogOutFromUserMutation, LogOutFromUserMutationVariables>(LogOutFromUserDocument, baseOptions);
+}
 export type LogOutFromUserMutationHookResult = ReturnType<typeof useLogOutFromUserMutation>;
 export type LogOutFromUserMutationResult = Apollo.MutationResult<LogOutFromUserMutation>;
 export type LogOutFromUserMutationOptions = Apollo.BaseMutationOptions<LogOutFromUserMutation, LogOutFromUserMutationVariables>;
@@ -6552,8 +6822,8 @@ export type RemoveCvFileMutationFn = Apollo.MutationFunction<RemoveCvFileMutatio
  * });
  */
 export function useRemoveCvFileMutation(baseOptions?: Apollo.MutationHookOptions<RemoveCvFileMutation, RemoveCvFileMutationVariables>) {
-        return Apollo.useMutation<RemoveCvFileMutation, RemoveCvFileMutationVariables>(RemoveCvFileDocument, baseOptions);
-      }
+  return Apollo.useMutation<RemoveCvFileMutation, RemoveCvFileMutationVariables>(RemoveCvFileDocument, baseOptions);
+}
 export type RemoveCvFileMutationHookResult = ReturnType<typeof useRemoveCvFileMutation>;
 export type RemoveCvFileMutationResult = Apollo.MutationResult<RemoveCvFileMutation>;
 export type RemoveCvFileMutationOptions = Apollo.BaseMutationOptions<RemoveCvFileMutation, RemoveCvFileMutationVariables>;
@@ -6584,8 +6854,8 @@ export type ResetPasswordMutationFn = Apollo.MutationFunction<ResetPasswordMutat
  * });
  */
 export function useResetPasswordMutation(baseOptions?: Apollo.MutationHookOptions<ResetPasswordMutation, ResetPasswordMutationVariables>) {
-        return Apollo.useMutation<ResetPasswordMutation, ResetPasswordMutationVariables>(ResetPasswordDocument, baseOptions);
-      }
+  return Apollo.useMutation<ResetPasswordMutation, ResetPasswordMutationVariables>(ResetPasswordDocument, baseOptions);
+}
 export type ResetPasswordMutationHookResult = ReturnType<typeof useResetPasswordMutation>;
 export type ResetPasswordMutationResult = Apollo.MutationResult<ResetPasswordMutation>;
 export type ResetPasswordMutationOptions = Apollo.BaseMutationOptions<ResetPasswordMutation, ResetPasswordMutationVariables>;
@@ -6613,8 +6883,8 @@ export type SendConfirmEmailLinkMutationFn = Apollo.MutationFunction<SendConfirm
  * });
  */
 export function useSendConfirmEmailLinkMutation(baseOptions?: Apollo.MutationHookOptions<SendConfirmEmailLinkMutation, SendConfirmEmailLinkMutationVariables>) {
-        return Apollo.useMutation<SendConfirmEmailLinkMutation, SendConfirmEmailLinkMutationVariables>(SendConfirmEmailLinkDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendConfirmEmailLinkMutation, SendConfirmEmailLinkMutationVariables>(SendConfirmEmailLinkDocument, baseOptions);
+}
 export type SendConfirmEmailLinkMutationHookResult = ReturnType<typeof useSendConfirmEmailLinkMutation>;
 export type SendConfirmEmailLinkMutationResult = Apollo.MutationResult<SendConfirmEmailLinkMutation>;
 export type SendConfirmEmailLinkMutationOptions = Apollo.BaseMutationOptions<SendConfirmEmailLinkMutation, SendConfirmEmailLinkMutationVariables>;
@@ -6642,11 +6912,11 @@ export const ServiceUserDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useServiceUserQuery(baseOptions?: Apollo.QueryHookOptions<ServiceUserQuery, ServiceUserQueryVariables>) {
-        return Apollo.useQuery<ServiceUserQuery, ServiceUserQueryVariables>(ServiceUserDocument, baseOptions);
-      }
+  return Apollo.useQuery<ServiceUserQuery, ServiceUserQueryVariables>(ServiceUserDocument, baseOptions);
+}
 export function useServiceUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ServiceUserQuery, ServiceUserQueryVariables>) {
-          return Apollo.useLazyQuery<ServiceUserQuery, ServiceUserQueryVariables>(ServiceUserDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ServiceUserQuery, ServiceUserQueryVariables>(ServiceUserDocument, baseOptions);
+}
 export type ServiceUserQueryHookResult = ReturnType<typeof useServiceUserQuery>;
 export type ServiceUserLazyQueryHookResult = ReturnType<typeof useServiceUserLazyQuery>;
 export type ServiceUserQueryResult = Apollo.QueryResult<ServiceUserQuery, ServiceUserQueryVariables>;
@@ -6677,8 +6947,8 @@ export type SetNftAvatarMutationFn = Apollo.MutationFunction<SetNftAvatarMutatio
  * });
  */
 export function useSetNftAvatarMutation(baseOptions?: Apollo.MutationHookOptions<SetNftAvatarMutation, SetNftAvatarMutationVariables>) {
-        return Apollo.useMutation<SetNftAvatarMutation, SetNftAvatarMutationVariables>(SetNftAvatarDocument, baseOptions);
-      }
+  return Apollo.useMutation<SetNftAvatarMutation, SetNftAvatarMutationVariables>(SetNftAvatarDocument, baseOptions);
+}
 export type SetNftAvatarMutationHookResult = ReturnType<typeof useSetNftAvatarMutation>;
 export type SetNftAvatarMutationResult = Apollo.MutationResult<SetNftAvatarMutation>;
 export type SetNftAvatarMutationOptions = Apollo.BaseMutationOptions<SetNftAvatarMutation, SetNftAvatarMutationVariables>;
@@ -6714,8 +6984,8 @@ export type SignInMutationFn = Apollo.MutationFunction<SignInMutation, SignInMut
  * });
  */
 export function useSignInMutation(baseOptions?: Apollo.MutationHookOptions<SignInMutation, SignInMutationVariables>) {
-        return Apollo.useMutation<SignInMutation, SignInMutationVariables>(SignInDocument, baseOptions);
-      }
+  return Apollo.useMutation<SignInMutation, SignInMutationVariables>(SignInDocument, baseOptions);
+}
 export type SignInMutationHookResult = ReturnType<typeof useSignInMutation>;
 export type SignInMutationResult = Apollo.MutationResult<SignInMutation>;
 export type SignInMutationOptions = Apollo.BaseMutationOptions<SignInMutation, SignInMutationVariables>;
@@ -6750,8 +7020,8 @@ export type SignInAsUserMutationFn = Apollo.MutationFunction<SignInAsUserMutatio
  * });
  */
 export function useSignInAsUserMutation(baseOptions?: Apollo.MutationHookOptions<SignInAsUserMutation, SignInAsUserMutationVariables>) {
-        return Apollo.useMutation<SignInAsUserMutation, SignInAsUserMutationVariables>(SignInAsUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<SignInAsUserMutation, SignInAsUserMutationVariables>(SignInAsUserDocument, baseOptions);
+}
 export type SignInAsUserMutationHookResult = ReturnType<typeof useSignInAsUserMutation>;
 export type SignInAsUserMutationResult = Apollo.MutationResult<SignInAsUserMutation>;
 export type SignInAsUserMutationOptions = Apollo.BaseMutationOptions<SignInAsUserMutation, SignInAsUserMutationVariables>;
@@ -6807,8 +7077,8 @@ export type SignUpMutationFn = Apollo.MutationFunction<SignUpMutation, SignUpMut
  * });
  */
 export function useSignUpMutation(baseOptions?: Apollo.MutationHookOptions<SignUpMutation, SignUpMutationVariables>) {
-        return Apollo.useMutation<SignUpMutation, SignUpMutationVariables>(SignUpDocument, baseOptions);
-      }
+  return Apollo.useMutation<SignUpMutation, SignUpMutationVariables>(SignUpDocument, baseOptions);
+}
 export type SignUpMutationHookResult = ReturnType<typeof useSignUpMutation>;
 export type SignUpMutationResult = Apollo.MutationResult<SignUpMutation>;
 export type SignUpMutationOptions = Apollo.BaseMutationOptions<SignUpMutation, SignUpMutationVariables>;
@@ -6865,8 +7135,8 @@ export type SignUpAsInactiveUserMutationFn = Apollo.MutationFunction<SignUpAsIna
  * });
  */
 export function useSignUpAsInactiveUserMutation(baseOptions?: Apollo.MutationHookOptions<SignUpAsInactiveUserMutation, SignUpAsInactiveUserMutationVariables>) {
-        return Apollo.useMutation<SignUpAsInactiveUserMutation, SignUpAsInactiveUserMutationVariables>(SignUpAsInactiveUserDocument, baseOptions);
-      }
+  return Apollo.useMutation<SignUpAsInactiveUserMutation, SignUpAsInactiveUserMutationVariables>(SignUpAsInactiveUserDocument, baseOptions);
+}
 export type SignUpAsInactiveUserMutationHookResult = ReturnType<typeof useSignUpAsInactiveUserMutation>;
 export type SignUpAsInactiveUserMutationResult = Apollo.MutationResult<SignUpAsInactiveUserMutation>;
 export type SignUpAsInactiveUserMutationOptions = Apollo.BaseMutationOptions<SignUpAsInactiveUserMutation, SignUpAsInactiveUserMutationVariables>;
@@ -6905,8 +7175,8 @@ export type UpdateProfileContactsMutationFn = Apollo.MutationFunction<UpdateProf
  * });
  */
 export function useUpdateProfileContactsMutation(baseOptions?: Apollo.MutationHookOptions<UpdateProfileContactsMutation, UpdateProfileContactsMutationVariables>) {
-        return Apollo.useMutation<UpdateProfileContactsMutation, UpdateProfileContactsMutationVariables>(UpdateProfileContactsDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateProfileContactsMutation, UpdateProfileContactsMutationVariables>(UpdateProfileContactsDocument, baseOptions);
+}
 export type UpdateProfileContactsMutationHookResult = ReturnType<typeof useUpdateProfileContactsMutation>;
 export type UpdateProfileContactsMutationResult = Apollo.MutationResult<UpdateProfileContactsMutation>;
 export type UpdateProfileContactsMutationOptions = Apollo.BaseMutationOptions<UpdateProfileContactsMutation, UpdateProfileContactsMutationVariables>;
@@ -6938,8 +7208,8 @@ export type UploadAvatarMutationFn = Apollo.MutationFunction<UploadAvatarMutatio
  * });
  */
 export function useUploadAvatarMutation(baseOptions?: Apollo.MutationHookOptions<UploadAvatarMutation, UploadAvatarMutationVariables>) {
-        return Apollo.useMutation<UploadAvatarMutation, UploadAvatarMutationVariables>(UploadAvatarDocument, baseOptions);
-      }
+  return Apollo.useMutation<UploadAvatarMutation, UploadAvatarMutationVariables>(UploadAvatarDocument, baseOptions);
+}
 export type UploadAvatarMutationHookResult = ReturnType<typeof useUploadAvatarMutation>;
 export type UploadAvatarMutationResult = Apollo.MutationResult<UploadAvatarMutation>;
 export type UploadAvatarMutationOptions = Apollo.BaseMutationOptions<UploadAvatarMutation, UploadAvatarMutationVariables>;
@@ -6971,8 +7241,8 @@ export type UploadCvFileMutationFn = Apollo.MutationFunction<UploadCvFileMutatio
  * });
  */
 export function useUploadCvFileMutation(baseOptions?: Apollo.MutationHookOptions<UploadCvFileMutation, UploadCvFileMutationVariables>) {
-        return Apollo.useMutation<UploadCvFileMutation, UploadCvFileMutationVariables>(UploadCvFileDocument, baseOptions);
-      }
+  return Apollo.useMutation<UploadCvFileMutation, UploadCvFileMutationVariables>(UploadCvFileDocument, baseOptions);
+}
 export type UploadCvFileMutationHookResult = ReturnType<typeof useUploadCvFileMutation>;
 export type UploadCvFileMutationResult = Apollo.MutationResult<UploadCvFileMutation>;
 export type UploadCvFileMutationOptions = Apollo.BaseMutationOptions<UploadCvFileMutation, UploadCvFileMutationVariables>;
@@ -7000,11 +7270,11 @@ export const UserAvatarDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserAvatarQuery(baseOptions?: Apollo.QueryHookOptions<UserAvatarQuery, UserAvatarQueryVariables>) {
-        return Apollo.useQuery<UserAvatarQuery, UserAvatarQueryVariables>(UserAvatarDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserAvatarQuery, UserAvatarQueryVariables>(UserAvatarDocument, baseOptions);
+}
 export function useUserAvatarLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserAvatarQuery, UserAvatarQueryVariables>) {
-          return Apollo.useLazyQuery<UserAvatarQuery, UserAvatarQueryVariables>(UserAvatarDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserAvatarQuery, UserAvatarQueryVariables>(UserAvatarDocument, baseOptions);
+}
 export type UserAvatarQueryHookResult = ReturnType<typeof useUserAvatarQuery>;
 export type UserAvatarLazyQueryHookResult = ReturnType<typeof useUserAvatarLazyQuery>;
 export type UserAvatarQueryResult = Apollo.QueryResult<UserAvatarQuery, UserAvatarQueryVariables>;
@@ -7033,11 +7303,11 @@ export const UserByUsernameDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserByUsernameQuery(baseOptions?: Apollo.QueryHookOptions<UserByUsernameQuery, UserByUsernameQueryVariables>) {
-        return Apollo.useQuery<UserByUsernameQuery, UserByUsernameQueryVariables>(UserByUsernameDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserByUsernameQuery, UserByUsernameQueryVariables>(UserByUsernameDocument, baseOptions);
+}
 export function useUserByUsernameLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserByUsernameQuery, UserByUsernameQueryVariables>) {
-          return Apollo.useLazyQuery<UserByUsernameQuery, UserByUsernameQueryVariables>(UserByUsernameDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserByUsernameQuery, UserByUsernameQueryVariables>(UserByUsernameDocument, baseOptions);
+}
 export type UserByUsernameQueryHookResult = ReturnType<typeof useUserByUsernameQuery>;
 export type UserByUsernameLazyQueryHookResult = ReturnType<typeof useUserByUsernameLazyQuery>;
 export type UserByUsernameQueryResult = Apollo.QueryResult<UserByUsernameQuery, UserByUsernameQueryVariables>;
@@ -7065,11 +7335,11 @@ export const UserCvDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserCvQuery(baseOptions?: Apollo.QueryHookOptions<UserCvQuery, UserCvQueryVariables>) {
-        return Apollo.useQuery<UserCvQuery, UserCvQueryVariables>(UserCvDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserCvQuery, UserCvQueryVariables>(UserCvDocument, baseOptions);
+}
 export function useUserCvLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserCvQuery, UserCvQueryVariables>) {
-          return Apollo.useLazyQuery<UserCvQuery, UserCvQueryVariables>(UserCvDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserCvQuery, UserCvQueryVariables>(UserCvDocument, baseOptions);
+}
 export type UserCvQueryHookResult = ReturnType<typeof useUserCvQuery>;
 export type UserCvLazyQueryHookResult = ReturnType<typeof useUserCvLazyQuery>;
 export type UserCvQueryResult = Apollo.QueryResult<UserCvQuery, UserCvQueryVariables>;
@@ -7101,11 +7371,11 @@ export const UserMessageTemplatesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserMessageTemplatesQuery(baseOptions?: Apollo.QueryHookOptions<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>) {
-        return Apollo.useQuery<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>(UserMessageTemplatesDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>(UserMessageTemplatesDocument, baseOptions);
+}
 export function useUserMessageTemplatesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>) {
-          return Apollo.useLazyQuery<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>(UserMessageTemplatesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>(UserMessageTemplatesDocument, baseOptions);
+}
 export type UserMessageTemplatesQueryHookResult = ReturnType<typeof useUserMessageTemplatesQuery>;
 export type UserMessageTemplatesLazyQueryHookResult = ReturnType<typeof useUserMessageTemplatesLazyQuery>;
 export type UserMessageTemplatesQueryResult = Apollo.QueryResult<UserMessageTemplatesQuery, UserMessageTemplatesQueryVariables>;
@@ -7133,11 +7403,11 @@ export const UserNftDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserNftQuery(baseOptions?: Apollo.QueryHookOptions<UserNftQuery, UserNftQueryVariables>) {
-        return Apollo.useQuery<UserNftQuery, UserNftQueryVariables>(UserNftDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserNftQuery, UserNftQueryVariables>(UserNftDocument, baseOptions);
+}
 export function useUserNftLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserNftQuery, UserNftQueryVariables>) {
-          return Apollo.useLazyQuery<UserNftQuery, UserNftQueryVariables>(UserNftDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserNftQuery, UserNftQueryVariables>(UserNftDocument, baseOptions);
+}
 export type UserNftQueryHookResult = ReturnType<typeof useUserNftQuery>;
 export type UserNftLazyQueryHookResult = ReturnType<typeof useUserNftLazyQuery>;
 export type UserNftQueryResult = Apollo.QueryResult<UserNftQuery, UserNftQueryVariables>;
@@ -7166,11 +7436,11 @@ export const UserSettingsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserSettingsQuery(baseOptions?: Apollo.QueryHookOptions<UserSettingsQuery, UserSettingsQueryVariables>) {
-        return Apollo.useQuery<UserSettingsQuery, UserSettingsQueryVariables>(UserSettingsDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserSettingsQuery, UserSettingsQueryVariables>(UserSettingsDocument, baseOptions);
+}
 export function useUserSettingsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserSettingsQuery, UserSettingsQueryVariables>) {
-          return Apollo.useLazyQuery<UserSettingsQuery, UserSettingsQueryVariables>(UserSettingsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserSettingsQuery, UserSettingsQueryVariables>(UserSettingsDocument, baseOptions);
+}
 export type UserSettingsQueryHookResult = ReturnType<typeof useUserSettingsQuery>;
 export type UserSettingsLazyQueryHookResult = ReturnType<typeof useUserSettingsLazyQuery>;
 export type UserSettingsQueryResult = Apollo.QueryResult<UserSettingsQuery, UserSettingsQueryVariables>;
@@ -7199,11 +7469,11 @@ export const UserSubscriptionsDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserSubscriptionsQuery(baseOptions?: Apollo.QueryHookOptions<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>) {
-        return Apollo.useQuery<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>(UserSubscriptionsDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>(UserSubscriptionsDocument, baseOptions);
+}
 export function useUserSubscriptionsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>) {
-          return Apollo.useLazyQuery<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>(UserSubscriptionsDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>(UserSubscriptionsDocument, baseOptions);
+}
 export type UserSubscriptionsQueryHookResult = ReturnType<typeof useUserSubscriptionsQuery>;
 export type UserSubscriptionsLazyQueryHookResult = ReturnType<typeof useUserSubscriptionsLazyQuery>;
 export type UserSubscriptionsQueryResult = Apollo.QueryResult<UserSubscriptionsQuery, UserSubscriptionsQueryVariables>;
@@ -7231,11 +7501,11 @@ export const UserUnreadMessagesCountDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserUnreadMessagesCountQuery(baseOptions?: Apollo.QueryHookOptions<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>) {
-        return Apollo.useQuery<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>(UserUnreadMessagesCountDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>(UserUnreadMessagesCountDocument, baseOptions);
+}
 export function useUserUnreadMessagesCountLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>) {
-          return Apollo.useLazyQuery<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>(UserUnreadMessagesCountDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>(UserUnreadMessagesCountDocument, baseOptions);
+}
 export type UserUnreadMessagesCountQueryHookResult = ReturnType<typeof useUserUnreadMessagesCountQuery>;
 export type UserUnreadMessagesCountLazyQueryHookResult = ReturnType<typeof useUserUnreadMessagesCountLazyQuery>;
 export type UserUnreadMessagesCountQueryResult = Apollo.QueryResult<UserUnreadMessagesCountQuery, UserUnreadMessagesCountQueryVariables>;
@@ -7263,8 +7533,8 @@ export const UserUnreadMessagesCountUpdatedDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserUnreadMessagesCountUpdatedSubscription(baseOptions?: Apollo.SubscriptionHookOptions<UserUnreadMessagesCountUpdatedSubscription, UserUnreadMessagesCountUpdatedSubscriptionVariables>) {
-        return Apollo.useSubscription<UserUnreadMessagesCountUpdatedSubscription, UserUnreadMessagesCountUpdatedSubscriptionVariables>(UserUnreadMessagesCountUpdatedDocument, baseOptions);
-      }
+  return Apollo.useSubscription<UserUnreadMessagesCountUpdatedSubscription, UserUnreadMessagesCountUpdatedSubscriptionVariables>(UserUnreadMessagesCountUpdatedDocument, baseOptions);
+}
 export type UserUnreadMessagesCountUpdatedSubscriptionHookResult = ReturnType<typeof useUserUnreadMessagesCountUpdatedSubscription>;
 export type UserUnreadMessagesCountUpdatedSubscriptionResult = Apollo.SubscriptionResult<UserUnreadMessagesCountUpdatedSubscription>;
 export const CreateMessageTemplateDocument = /*#__PURE__*/ gql`
@@ -7297,8 +7567,8 @@ export type CreateMessageTemplateMutationFn = Apollo.MutationFunction<CreateMess
  * });
  */
 export function useCreateMessageTemplateMutation(baseOptions?: Apollo.MutationHookOptions<CreateMessageTemplateMutation, CreateMessageTemplateMutationVariables>) {
-        return Apollo.useMutation<CreateMessageTemplateMutation, CreateMessageTemplateMutationVariables>(CreateMessageTemplateDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateMessageTemplateMutation, CreateMessageTemplateMutationVariables>(CreateMessageTemplateDocument, baseOptions);
+}
 export type CreateMessageTemplateMutationHookResult = ReturnType<typeof useCreateMessageTemplateMutation>;
 export type CreateMessageTemplateMutationResult = Apollo.MutationResult<CreateMessageTemplateMutation>;
 export type CreateMessageTemplateMutationOptions = Apollo.BaseMutationOptions<CreateMessageTemplateMutation, CreateMessageTemplateMutationVariables>;
@@ -7328,8 +7598,8 @@ export type DeleteMessageTemplateMutationFn = Apollo.MutationFunction<DeleteMess
  * });
  */
 export function useDeleteMessageTemplateMutation(baseOptions?: Apollo.MutationHookOptions<DeleteMessageTemplateMutation, DeleteMessageTemplateMutationVariables>) {
-        return Apollo.useMutation<DeleteMessageTemplateMutation, DeleteMessageTemplateMutationVariables>(DeleteMessageTemplateDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeleteMessageTemplateMutation, DeleteMessageTemplateMutationVariables>(DeleteMessageTemplateDocument, baseOptions);
+}
 export type DeleteMessageTemplateMutationHookResult = ReturnType<typeof useDeleteMessageTemplateMutation>;
 export type DeleteMessageTemplateMutationResult = Apollo.MutationResult<DeleteMessageTemplateMutation>;
 export type DeleteMessageTemplateMutationOptions = Apollo.BaseMutationOptions<DeleteMessageTemplateMutation, DeleteMessageTemplateMutationVariables>;
@@ -7362,8 +7632,8 @@ export type UpdateMessageTemplateMutationFn = Apollo.MutationFunction<UpdateMess
  * });
  */
 export function useUpdateMessageTemplateMutation(baseOptions?: Apollo.MutationHookOptions<UpdateMessageTemplateMutation, UpdateMessageTemplateMutationVariables>) {
-        return Apollo.useMutation<UpdateMessageTemplateMutation, UpdateMessageTemplateMutationVariables>(UpdateMessageTemplateDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateMessageTemplateMutation, UpdateMessageTemplateMutationVariables>(UpdateMessageTemplateDocument, baseOptions);
+}
 export type UpdateMessageTemplateMutationHookResult = ReturnType<typeof useUpdateMessageTemplateMutation>;
 export type UpdateMessageTemplateMutationResult = Apollo.MutationResult<UpdateMessageTemplateMutation>;
 export type UpdateMessageTemplateMutationOptions = Apollo.BaseMutationOptions<UpdateMessageTemplateMutation, UpdateMessageTemplateMutationVariables>;
@@ -7396,8 +7666,8 @@ export type SubscribeToCandidatesSearchMutationFn = Apollo.MutationFunction<Subs
  * });
  */
 export function useSubscribeToCandidatesSearchMutation(baseOptions?: Apollo.MutationHookOptions<SubscribeToCandidatesSearchMutation, SubscribeToCandidatesSearchMutationVariables>) {
-        return Apollo.useMutation<SubscribeToCandidatesSearchMutation, SubscribeToCandidatesSearchMutationVariables>(SubscribeToCandidatesSearchDocument, baseOptions);
-      }
+  return Apollo.useMutation<SubscribeToCandidatesSearchMutation, SubscribeToCandidatesSearchMutationVariables>(SubscribeToCandidatesSearchDocument, baseOptions);
+}
 export type SubscribeToCandidatesSearchMutationHookResult = ReturnType<typeof useSubscribeToCandidatesSearchMutation>;
 export type SubscribeToCandidatesSearchMutationResult = Apollo.MutationResult<SubscribeToCandidatesSearchMutation>;
 export type SubscribeToCandidatesSearchMutationOptions = Apollo.BaseMutationOptions<SubscribeToCandidatesSearchMutation, SubscribeToCandidatesSearchMutationVariables>;
@@ -7427,8 +7697,8 @@ export type UnsubscribeFromCandidatesSearchMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useUnsubscribeFromCandidatesSearchMutation(baseOptions?: Apollo.MutationHookOptions<UnsubscribeFromCandidatesSearchMutation, UnsubscribeFromCandidatesSearchMutationVariables>) {
-        return Apollo.useMutation<UnsubscribeFromCandidatesSearchMutation, UnsubscribeFromCandidatesSearchMutationVariables>(UnsubscribeFromCandidatesSearchDocument, baseOptions);
-      }
+  return Apollo.useMutation<UnsubscribeFromCandidatesSearchMutation, UnsubscribeFromCandidatesSearchMutationVariables>(UnsubscribeFromCandidatesSearchDocument, baseOptions);
+}
 export type UnsubscribeFromCandidatesSearchMutationHookResult = ReturnType<typeof useUnsubscribeFromCandidatesSearchMutation>;
 export type UnsubscribeFromCandidatesSearchMutationResult = Apollo.MutationResult<UnsubscribeFromCandidatesSearchMutation>;
 export type UnsubscribeFromCandidatesSearchMutationOptions = Apollo.BaseMutationOptions<UnsubscribeFromCandidatesSearchMutation, UnsubscribeFromCandidatesSearchMutationVariables>;
@@ -7460,8 +7730,8 @@ export type UpdateSubscriptionLastUsedMutationFn = Apollo.MutationFunction<Updat
  * });
  */
 export function useUpdateSubscriptionLastUsedMutation(baseOptions?: Apollo.MutationHookOptions<UpdateSubscriptionLastUsedMutation, UpdateSubscriptionLastUsedMutationVariables>) {
-        return Apollo.useMutation<UpdateSubscriptionLastUsedMutation, UpdateSubscriptionLastUsedMutationVariables>(UpdateSubscriptionLastUsedDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateSubscriptionLastUsedMutation, UpdateSubscriptionLastUsedMutationVariables>(UpdateSubscriptionLastUsedDocument, baseOptions);
+}
 export type UpdateSubscriptionLastUsedMutationHookResult = ReturnType<typeof useUpdateSubscriptionLastUsedMutation>;
 export type UpdateSubscriptionLastUsedMutationResult = Apollo.MutationResult<UpdateSubscriptionLastUsedMutation>;
 export type UpdateSubscriptionLastUsedMutationOptions = Apollo.BaseMutationOptions<UpdateSubscriptionLastUsedMutation, UpdateSubscriptionLastUsedMutationVariables>;
@@ -7494,8 +7764,8 @@ export type UpdateSubscriptionTitleMutationFn = Apollo.MutationFunction<UpdateSu
  * });
  */
 export function useUpdateSubscriptionTitleMutation(baseOptions?: Apollo.MutationHookOptions<UpdateSubscriptionTitleMutation, UpdateSubscriptionTitleMutationVariables>) {
-        return Apollo.useMutation<UpdateSubscriptionTitleMutation, UpdateSubscriptionTitleMutationVariables>(UpdateSubscriptionTitleDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateSubscriptionTitleMutation, UpdateSubscriptionTitleMutationVariables>(UpdateSubscriptionTitleDocument, baseOptions);
+}
 export type UpdateSubscriptionTitleMutationHookResult = ReturnType<typeof useUpdateSubscriptionTitleMutation>;
 export type UpdateSubscriptionTitleMutationResult = Apollo.MutationResult<UpdateSubscriptionTitleMutation>;
 export type UpdateSubscriptionTitleMutationOptions = Apollo.BaseMutationOptions<UpdateSubscriptionTitleMutation, UpdateSubscriptionTitleMutationVariables>;
@@ -7524,11 +7794,11 @@ export const UserSearchSubscriptionsByUserIdDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useUserSearchSubscriptionsByUserIdQuery(baseOptions?: Apollo.QueryHookOptions<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>) {
-        return Apollo.useQuery<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>(UserSearchSubscriptionsByUserIdDocument, baseOptions);
-      }
+  return Apollo.useQuery<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>(UserSearchSubscriptionsByUserIdDocument, baseOptions);
+}
 export function useUserSearchSubscriptionsByUserIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>) {
-          return Apollo.useLazyQuery<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>(UserSearchSubscriptionsByUserIdDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>(UserSearchSubscriptionsByUserIdDocument, baseOptions);
+}
 export type UserSearchSubscriptionsByUserIdQueryHookResult = ReturnType<typeof useUserSearchSubscriptionsByUserIdQuery>;
 export type UserSearchSubscriptionsByUserIdLazyQueryHookResult = ReturnType<typeof useUserSearchSubscriptionsByUserIdLazyQuery>;
 export type UserSearchSubscriptionsByUserIdQueryResult = Apollo.QueryResult<UserSearchSubscriptionsByUserIdQuery, UserSearchSubscriptionsByUserIdQueryVariables>;
@@ -7557,8 +7827,8 @@ export type CreateMultipleVacanciesSourcesMutationFn = Apollo.MutationFunction<C
  * });
  */
 export function useCreateMultipleVacanciesSourcesMutation(baseOptions?: Apollo.MutationHookOptions<CreateMultipleVacanciesSourcesMutation, CreateMultipleVacanciesSourcesMutationVariables>) {
-        return Apollo.useMutation<CreateMultipleVacanciesSourcesMutation, CreateMultipleVacanciesSourcesMutationVariables>(CreateMultipleVacanciesSourcesDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateMultipleVacanciesSourcesMutation, CreateMultipleVacanciesSourcesMutationVariables>(CreateMultipleVacanciesSourcesDocument, baseOptions);
+}
 export type CreateMultipleVacanciesSourcesMutationHookResult = ReturnType<typeof useCreateMultipleVacanciesSourcesMutation>;
 export type CreateMultipleVacanciesSourcesMutationResult = Apollo.MutationResult<CreateMultipleVacanciesSourcesMutation>;
 export type CreateMultipleVacanciesSourcesMutationOptions = Apollo.BaseMutationOptions<CreateMultipleVacanciesSourcesMutation, CreateMultipleVacanciesSourcesMutationVariables>;
@@ -7590,8 +7860,8 @@ export type CreateVacanciesSourceMutationFn = Apollo.MutationFunction<CreateVaca
  * });
  */
 export function useCreateVacanciesSourceMutation(baseOptions?: Apollo.MutationHookOptions<CreateVacanciesSourceMutation, CreateVacanciesSourceMutationVariables>) {
-        return Apollo.useMutation<CreateVacanciesSourceMutation, CreateVacanciesSourceMutationVariables>(CreateVacanciesSourceDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateVacanciesSourceMutation, CreateVacanciesSourceMutationVariables>(CreateVacanciesSourceDocument, baseOptions);
+}
 export type CreateVacanciesSourceMutationHookResult = ReturnType<typeof useCreateVacanciesSourceMutation>;
 export type CreateVacanciesSourceMutationResult = Apollo.MutationResult<CreateVacanciesSourceMutation>;
 export type CreateVacanciesSourceMutationOptions = Apollo.BaseMutationOptions<CreateVacanciesSourceMutation, CreateVacanciesSourceMutationVariables>;
@@ -7620,8 +7890,8 @@ export type AddVacanciesLogoMutationFn = Apollo.MutationFunction<AddVacanciesLog
  * });
  */
 export function useAddVacanciesLogoMutation(baseOptions?: Apollo.MutationHookOptions<AddVacanciesLogoMutation, AddVacanciesLogoMutationVariables>) {
-        return Apollo.useMutation<AddVacanciesLogoMutation, AddVacanciesLogoMutationVariables>(AddVacanciesLogoDocument, baseOptions);
-      }
+  return Apollo.useMutation<AddVacanciesLogoMutation, AddVacanciesLogoMutationVariables>(AddVacanciesLogoDocument, baseOptions);
+}
 export type AddVacanciesLogoMutationHookResult = ReturnType<typeof useAddVacanciesLogoMutation>;
 export type AddVacanciesLogoMutationResult = Apollo.MutationResult<AddVacanciesLogoMutation>;
 export type AddVacanciesLogoMutationOptions = Apollo.BaseMutationOptions<AddVacanciesLogoMutation, AddVacanciesLogoMutationVariables>;
@@ -7657,11 +7927,11 @@ ${CompanyLogoFragmentDoc}`;
  * });
  */
 export function useHotVacanciesQuery(baseOptions?: Apollo.QueryHookOptions<HotVacanciesQuery, HotVacanciesQueryVariables>) {
-        return Apollo.useQuery<HotVacanciesQuery, HotVacanciesQueryVariables>(HotVacanciesDocument, baseOptions);
-      }
+  return Apollo.useQuery<HotVacanciesQuery, HotVacanciesQueryVariables>(HotVacanciesDocument, baseOptions);
+}
 export function useHotVacanciesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<HotVacanciesQuery, HotVacanciesQueryVariables>) {
-          return Apollo.useLazyQuery<HotVacanciesQuery, HotVacanciesQueryVariables>(HotVacanciesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<HotVacanciesQuery, HotVacanciesQueryVariables>(HotVacanciesDocument, baseOptions);
+}
 export type HotVacanciesQueryHookResult = ReturnType<typeof useHotVacanciesQuery>;
 export type HotVacanciesLazyQueryHookResult = ReturnType<typeof useHotVacanciesLazyQuery>;
 export type HotVacanciesQueryResult = Apollo.QueryResult<HotVacanciesQuery, HotVacanciesQueryVariables>;
@@ -7692,11 +7962,11 @@ export const SalariesDataByCategoryDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useSalariesDataByCategoryQuery(baseOptions?: Apollo.QueryHookOptions<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>) {
-        return Apollo.useQuery<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>(SalariesDataByCategoryDocument, baseOptions);
-      }
+  return Apollo.useQuery<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>(SalariesDataByCategoryDocument, baseOptions);
+}
 export function useSalariesDataByCategoryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>) {
-          return Apollo.useLazyQuery<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>(SalariesDataByCategoryDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>(SalariesDataByCategoryDocument, baseOptions);
+}
 export type SalariesDataByCategoryQueryHookResult = ReturnType<typeof useSalariesDataByCategoryQuery>;
 export type SalariesDataByCategoryLazyQueryHookResult = ReturnType<typeof useSalariesDataByCategoryLazyQuery>;
 export type SalariesDataByCategoryQueryResult = Apollo.QueryResult<SalariesDataByCategoryQuery, SalariesDataByCategoryQueryVariables>;
@@ -7726,8 +7996,8 @@ export type SendNewVacancyApplicationMutationFn = Apollo.MutationFunction<SendNe
  * });
  */
 export function useSendNewVacancyApplicationMutation(baseOptions?: Apollo.MutationHookOptions<SendNewVacancyApplicationMutation, SendNewVacancyApplicationMutationVariables>) {
-        return Apollo.useMutation<SendNewVacancyApplicationMutation, SendNewVacancyApplicationMutationVariables>(SendNewVacancyApplicationDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendNewVacancyApplicationMutation, SendNewVacancyApplicationMutationVariables>(SendNewVacancyApplicationDocument, baseOptions);
+}
 export type SendNewVacancyApplicationMutationHookResult = ReturnType<typeof useSendNewVacancyApplicationMutation>;
 export type SendNewVacancyApplicationMutationResult = Apollo.MutationResult<SendNewVacancyApplicationMutation>;
 export type SendNewVacancyApplicationMutationOptions = Apollo.BaseMutationOptions<SendNewVacancyApplicationMutation, SendNewVacancyApplicationMutationVariables>;
@@ -7757,8 +8027,8 @@ export type SendNewVacancyRequestMutationFn = Apollo.MutationFunction<SendNewVac
  * });
  */
 export function useSendNewVacancyRequestMutation(baseOptions?: Apollo.MutationHookOptions<SendNewVacancyRequestMutation, SendNewVacancyRequestMutationVariables>) {
-        return Apollo.useMutation<SendNewVacancyRequestMutation, SendNewVacancyRequestMutationVariables>(SendNewVacancyRequestDocument, baseOptions);
-      }
+  return Apollo.useMutation<SendNewVacancyRequestMutation, SendNewVacancyRequestMutationVariables>(SendNewVacancyRequestDocument, baseOptions);
+}
 export type SendNewVacancyRequestMutationHookResult = ReturnType<typeof useSendNewVacancyRequestMutation>;
 export type SendNewVacancyRequestMutationResult = Apollo.MutationResult<SendNewVacancyRequestMutation>;
 export type SendNewVacancyRequestMutationOptions = Apollo.BaseMutationOptions<SendNewVacancyRequestMutation, SendNewVacancyRequestMutationVariables>;
@@ -7791,11 +8061,11 @@ export const VacanciesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useVacanciesQuery(baseOptions?: Apollo.QueryHookOptions<VacanciesQuery, VacanciesQueryVariables>) {
-        return Apollo.useQuery<VacanciesQuery, VacanciesQueryVariables>(VacanciesDocument, baseOptions);
-      }
+  return Apollo.useQuery<VacanciesQuery, VacanciesQueryVariables>(VacanciesDocument, baseOptions);
+}
 export function useVacanciesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<VacanciesQuery, VacanciesQueryVariables>) {
-          return Apollo.useLazyQuery<VacanciesQuery, VacanciesQueryVariables>(VacanciesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<VacanciesQuery, VacanciesQueryVariables>(VacanciesDocument, baseOptions);
+}
 export type VacanciesQueryHookResult = ReturnType<typeof useVacanciesQuery>;
 export type VacanciesLazyQueryHookResult = ReturnType<typeof useVacanciesLazyQuery>;
 export type VacanciesQueryResult = Apollo.QueryResult<VacanciesQuery, VacanciesQueryVariables>;
@@ -7824,11 +8094,11 @@ export const VacanciesByCompanyDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useVacanciesByCompanyQuery(baseOptions?: Apollo.QueryHookOptions<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>) {
-        return Apollo.useQuery<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>(VacanciesByCompanyDocument, baseOptions);
-      }
+  return Apollo.useQuery<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>(VacanciesByCompanyDocument, baseOptions);
+}
 export function useVacanciesByCompanyLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>) {
-          return Apollo.useLazyQuery<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>(VacanciesByCompanyDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>(VacanciesByCompanyDocument, baseOptions);
+}
 export type VacanciesByCompanyQueryHookResult = ReturnType<typeof useVacanciesByCompanyQuery>;
 export type VacanciesByCompanyLazyQueryHookResult = ReturnType<typeof useVacanciesByCompanyLazyQuery>;
 export type VacanciesByCompanyQueryResult = Apollo.QueryResult<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>;
@@ -7871,8 +8141,8 @@ export type CreateWorkPlaceMutationFn = Apollo.MutationFunction<CreateWorkPlaceM
  * });
  */
 export function useCreateWorkPlaceMutation(baseOptions?: Apollo.MutationHookOptions<CreateWorkPlaceMutation, CreateWorkPlaceMutationVariables>) {
-        return Apollo.useMutation<CreateWorkPlaceMutation, CreateWorkPlaceMutationVariables>(CreateWorkPlaceDocument, baseOptions);
-      }
+  return Apollo.useMutation<CreateWorkPlaceMutation, CreateWorkPlaceMutationVariables>(CreateWorkPlaceDocument, baseOptions);
+}
 export type CreateWorkPlaceMutationHookResult = ReturnType<typeof useCreateWorkPlaceMutation>;
 export type CreateWorkPlaceMutationResult = Apollo.MutationResult<CreateWorkPlaceMutation>;
 export type CreateWorkPlaceMutationOptions = Apollo.BaseMutationOptions<CreateWorkPlaceMutation, CreateWorkPlaceMutationVariables>;
@@ -7901,8 +8171,8 @@ export type DeleteWorkPlaceMutationFn = Apollo.MutationFunction<DeleteWorkPlaceM
  * });
  */
 export function useDeleteWorkPlaceMutation(baseOptions?: Apollo.MutationHookOptions<DeleteWorkPlaceMutation, DeleteWorkPlaceMutationVariables>) {
-        return Apollo.useMutation<DeleteWorkPlaceMutation, DeleteWorkPlaceMutationVariables>(DeleteWorkPlaceDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeleteWorkPlaceMutation, DeleteWorkPlaceMutationVariables>(DeleteWorkPlaceDocument, baseOptions);
+}
 export type DeleteWorkPlaceMutationHookResult = ReturnType<typeof useDeleteWorkPlaceMutation>;
 export type DeleteWorkPlaceMutationResult = Apollo.MutationResult<DeleteWorkPlaceMutation>;
 export type DeleteWorkPlaceMutationOptions = Apollo.BaseMutationOptions<DeleteWorkPlaceMutation, DeleteWorkPlaceMutationVariables>;
@@ -7935,8 +8205,8 @@ export type FetchWorkPlacesMutationFn = Apollo.MutationFunction<FetchWorkPlacesM
  * });
  */
 export function useFetchWorkPlacesMutation(baseOptions?: Apollo.MutationHookOptions<FetchWorkPlacesMutation, FetchWorkPlacesMutationVariables>) {
-        return Apollo.useMutation<FetchWorkPlacesMutation, FetchWorkPlacesMutationVariables>(FetchWorkPlacesDocument, baseOptions);
-      }
+  return Apollo.useMutation<FetchWorkPlacesMutation, FetchWorkPlacesMutationVariables>(FetchWorkPlacesDocument, baseOptions);
+}
 export type FetchWorkPlacesMutationHookResult = ReturnType<typeof useFetchWorkPlacesMutation>;
 export type FetchWorkPlacesMutationResult = Apollo.MutationResult<FetchWorkPlacesMutation>;
 export type FetchWorkPlacesMutationOptions = Apollo.BaseMutationOptions<FetchWorkPlacesMutation, FetchWorkPlacesMutationVariables>;
@@ -7979,8 +8249,8 @@ export type UpdateWorkPlaceMutationFn = Apollo.MutationFunction<UpdateWorkPlaceM
  * });
  */
 export function useUpdateWorkPlaceMutation(baseOptions?: Apollo.MutationHookOptions<UpdateWorkPlaceMutation, UpdateWorkPlaceMutationVariables>) {
-        return Apollo.useMutation<UpdateWorkPlaceMutation, UpdateWorkPlaceMutationVariables>(UpdateWorkPlaceDocument, baseOptions);
-      }
+  return Apollo.useMutation<UpdateWorkPlaceMutation, UpdateWorkPlaceMutationVariables>(UpdateWorkPlaceDocument, baseOptions);
+}
 export type UpdateWorkPlaceMutationHookResult = ReturnType<typeof useUpdateWorkPlaceMutation>;
 export type UpdateWorkPlaceMutationResult = Apollo.MutationResult<UpdateWorkPlaceMutation>;
 export type UpdateWorkPlaceMutationOptions = Apollo.BaseMutationOptions<UpdateWorkPlaceMutation, UpdateWorkPlaceMutationVariables>;
@@ -8009,8 +8279,8 @@ export type DeleteMessageMutationFn = Apollo.MutationFunction<DeleteMessageMutat
  * });
  */
 export function useDeleteMessageMutation(baseOptions?: Apollo.MutationHookOptions<DeleteMessageMutation, DeleteMessageMutationVariables>) {
-        return Apollo.useMutation<DeleteMessageMutation, DeleteMessageMutationVariables>(DeleteMessageDocument, baseOptions);
-      }
+  return Apollo.useMutation<DeleteMessageMutation, DeleteMessageMutationVariables>(DeleteMessageDocument, baseOptions);
+}
 export type DeleteMessageMutationHookResult = ReturnType<typeof useDeleteMessageMutation>;
 export type DeleteMessageMutationResult = Apollo.MutationResult<DeleteMessageMutation>;
 export type DeleteMessageMutationOptions = Apollo.BaseMutationOptions<DeleteMessageMutation, DeleteMessageMutationVariables>;
@@ -8042,8 +8312,8 @@ export type PostMessageMutationFn = Apollo.MutationFunction<PostMessageMutation,
  * });
  */
 export function usePostMessageMutation(baseOptions?: Apollo.MutationHookOptions<PostMessageMutation, PostMessageMutationVariables>) {
-        return Apollo.useMutation<PostMessageMutation, PostMessageMutationVariables>(PostMessageDocument, baseOptions);
-      }
+  return Apollo.useMutation<PostMessageMutation, PostMessageMutationVariables>(PostMessageDocument, baseOptions);
+}
 export type PostMessageMutationHookResult = ReturnType<typeof usePostMessageMutation>;
 export type PostMessageMutationResult = Apollo.MutationResult<PostMessageMutation>;
 export type PostMessageMutationOptions = Apollo.BaseMutationOptions<PostMessageMutation, PostMessageMutationVariables>;
@@ -8078,11 +8348,11 @@ export const VisibleMessagesDocument = /*#__PURE__*/ gql`
  * });
  */
 export function useVisibleMessagesQuery(baseOptions?: Apollo.QueryHookOptions<VisibleMessagesQuery, VisibleMessagesQueryVariables>) {
-        return Apollo.useQuery<VisibleMessagesQuery, VisibleMessagesQueryVariables>(VisibleMessagesDocument, baseOptions);
-      }
+  return Apollo.useQuery<VisibleMessagesQuery, VisibleMessagesQueryVariables>(VisibleMessagesDocument, baseOptions);
+}
 export function useVisibleMessagesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<VisibleMessagesQuery, VisibleMessagesQueryVariables>) {
-          return Apollo.useLazyQuery<VisibleMessagesQuery, VisibleMessagesQueryVariables>(VisibleMessagesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<VisibleMessagesQuery, VisibleMessagesQueryVariables>(VisibleMessagesDocument, baseOptions);
+}
 export type VisibleMessagesQueryHookResult = ReturnType<typeof useVisibleMessagesQuery>;
 export type VisibleMessagesLazyQueryHookResult = ReturnType<typeof useVisibleMessagesLazyQuery>;
 export type VisibleMessagesQueryResult = Apollo.QueryResult<VisibleMessagesQuery, VisibleMessagesQueryVariables>;
