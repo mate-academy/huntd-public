@@ -993,7 +993,6 @@ export type RecruiterProfile = {
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
-  city?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
@@ -1324,12 +1323,10 @@ export type ReviewCandidateProfileMutationVariables = Exact<{
 
 export type ReviewCandidateProfileMutation = (
   { __typename?: 'Mutation' }
-  & {
-    reviewCandidateProfile: (
-      { __typename?: 'CandidateProfile' }
-      & Pick<CandidateProfile, 'id' | 'status'>
-    )
-  }
+  & { reviewCandidateProfile: (
+    { __typename?: 'CandidateProfile' }
+    & Pick<CandidateProfile, 'id' | 'status'>
+  ) }
 );
 
 export type ReviewRecruiterProfileMutationVariables = Exact<{
@@ -1341,12 +1338,10 @@ export type ReviewRecruiterProfileMutationVariables = Exact<{
 
 export type ReviewRecruiterProfileMutation = (
   { __typename?: 'Mutation' }
-  & {
-    reviewRecruiterProfile: (
-      { __typename?: 'RecruiterProfile' }
-      & Pick<RecruiterProfile, 'id' | 'status'>
-    )
-  }
+  & { reviewRecruiterProfile: (
+    { __typename?: 'RecruiterProfile' }
+    & Pick<RecruiterProfile, 'id' | 'status'>
+  ) }
 );
 
 

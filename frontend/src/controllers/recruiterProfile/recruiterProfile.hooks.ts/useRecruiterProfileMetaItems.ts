@@ -1,11 +1,13 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { RecruiterProfile } from '@/controllers/graphql/generated';
 import { getFilledValue } from '@/lib/getFilledValue';
+import { IconLocation } from '@/ui/icons/general/IconLocation';
 import { RecruiterProfileMetaItems } from '../recruiterProfile.typedefs';
 
 export interface MetaItem {
   name: RecruiterProfileMetaItems,
   text: string,
+  icon?: React.ElementType,
 }
 
 interface UseRecruiterProfileMetaItems {
@@ -19,7 +21,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       return [];
     }
 
-    const metaItems = [
+    const metaItems: MetaItem[] = [
       {
         name: RecruiterProfileMetaItems.Position,
         text: getFilledValue(profile.position),
@@ -34,6 +36,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       metaItems.push({
         name: RecruiterProfileMetaItems.City,
         text: getFilledValue(profile.city),
+        icon: IconLocation,
       });
     }
 

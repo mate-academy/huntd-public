@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import { MetaItem } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems';
 import typography from '@/ui/typography/typography.module.scss';
-import { IconMapLocation } from '@/ui/icons/custom/IconMapLocation';
 import styles from './ProfileMeta.module.scss';
 
 interface Props {
@@ -18,7 +17,7 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
           className={cn(styles.recruiterMetaItem, typography.smallHeading)}
           key={item.name}
         >
-          {item.name === 'city' && <IconMapLocation />}
+          {item.icon && <item.icon />}
           {item.text}
         </li>
       ))}
