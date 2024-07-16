@@ -25,9 +25,9 @@ module.exports = {
         const city = cities[Math.floor(Math.random() * cities.length)];
         await queryInterface.bulkUpdate(
           'recruiter_profiles',
-          { city },           // what we will add
-          { id: profile.id }, // where we will add  (to user with id equal to profile.id)
-          { transaction: t }  // transaction
+          { city },
+          { id: profile.id },
+          { transaction: t }
         );
       }
     });
@@ -39,15 +39,10 @@ module.exports = {
     await sequelize.transaction(async (t) => {
       await queryInterface.bulkUpdate(
         'recruiter_profiles',
-        { city: null },     // what value will we set
-        {},                 // this parameter has to be passed to add third parameter
-        { transaction: t }  // transaction
+        { city: null },
+        {},
+        { transaction: t }
       );
     });
   }
 };
-
-// this seeder could be easily done without transaction
-// but it still has sense to be here, to limit result to two scenarios
-// 1. every row would be filled
-// 2. none will be filled, if error will occur in the process

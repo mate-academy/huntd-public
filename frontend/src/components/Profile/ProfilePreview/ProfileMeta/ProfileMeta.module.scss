@@ -2,14 +2,6 @@
 
 .metaWrapper {
   @include icon-styles {
-    // width: 18px;
-    // height: 18px;
-    //
-    // had to comment this so location icon would look like on design
-    // however we have to keep in mind, that this could affect other icons
-    // if we don't want that to happen, it would be a good idea to make separate class for icons
-    // and not define icon's size in wrapper for meta
-    // OR we can make another wrapper without defining icons' size
     margin-right: rem-calc(4);
     color: $c-semidark-chocolate;
   }
