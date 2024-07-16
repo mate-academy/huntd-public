@@ -6,7 +6,7 @@ import {
   GetServiceUserUseCase,
   GetServiceUserUseCaseOptions,
   GetServiceUserUseCaseResult,
-} from '@/modules/user/user.useCases/GetServiceUser.useCase';
+} from '@/modules/user/user.useCases/GetServiceUser.UseCase';
 import { AuthErrors } from '@/auth/auth.constants';
 
 export const isServiceUserAuthenticatedGuard = makeResolver<

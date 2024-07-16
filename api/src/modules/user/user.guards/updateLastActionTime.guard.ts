@@ -5,7 +5,7 @@ import {
   UpdateLastActionTimeUseCase,
   UpdateLastActionTimeUseCaseOptions,
   UpdateLastActionTimeUseCaseResult,
-} from '@/modules/user/user.useCases/UpdateLastActionTime.useCase';
+} from '@/modules/user/user.useCases/UpdateLastActionTime.UseCase';
 
 export const updateLastActionTimeGuard = makeResolver<
     UpdateLastActionTimeUseCaseOptions,
