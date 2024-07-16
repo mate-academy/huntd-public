@@ -14,7 +14,7 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
   const { items } = props;
 
   return (
-    <ul className={styles.metaWrapper}>
+    <ul className={styles.recruiterMetaWrapper}>
       {items.map((item) => (
         <li
           className={cn(styles.recruiterMetaItem, typography.smallHeading)}

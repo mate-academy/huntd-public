@@ -2,6 +2,22 @@
 
 .metaWrapper {
   @include icon-styles {
+    width: 18px;
+    height: 18px;
+    margin-right: rem-calc(4);
+    color: $c-semidark-chocolate;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.recruiterMetaWrapper {
+  @include icon-styles {
     margin-right: rem-calc(4);
     color: $c-semidark-chocolate;
   }
