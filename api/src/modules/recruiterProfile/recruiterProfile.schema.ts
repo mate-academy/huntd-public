@@ -19,13 +19,13 @@ export const RecruiterProfileSchema = gql`
       userId: Int!
       position: String!
       companyName: String!
-      city: String!
+      city: String
     ): RecruiterProfile!
 
     updateRecruiterProfile(
       position: String
       companyName: String
-      city: String!
+      city: String
     ): RecruiterProfile!
 
     sendRecruiterProfileToReview: RecruiterProfile!

@@ -1,6 +1,5 @@
 'use strict';
 
-// random set of cities to add, just for diversity
 const cities = [
   'Kyiv', 'Kharkiv', 'Odessa', 'Dnipro', 'Donetsk',
   'Zaporizhzhia', 'Lviv', 'Mykolaiv', 'Luhansk', 'Vinnytsia',
@@ -8,7 +7,6 @@ const cities = [
   'Sumy', 'Zhytomyr', 'Chernivtsi', 'Ivano-Frankivsk', 'Khmelnytskyi',
   'Kropyvnytskyi', 'Rivne', 'Ternopil', 'Uzhhorod'
 ];
-
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -21,19 +19,16 @@ module.exports = {
         { type: queryInterface.sequelize.QueryTypes.SELECT, transaction: t }
       );
 
-      for (const profile of profiles) {
+      const bulkUpdateQuery = profiles.map(profile => {
         const city = cities[Math.floor(Math.random() * cities.length)];
-        await queryInterface.bulkUpdate(
-          'recruiter_profiles',
-          { city },
-          { id: profile.id },
-          { transaction: t }
-        );
-      }
+        return `UPDATE recruiter_profiles SET city = '${city}' WHERE id = ${profile.id}`;
+      }).join('; ');
+
+      await sequelize.query(bulkUpdateQuery, { transaction: t });
     });
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     const sequelize = queryInterface.sequelize;
 
     await sequelize.transaction(async (t) => {
