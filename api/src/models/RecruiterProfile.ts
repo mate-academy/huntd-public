@@ -71,6 +71,7 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   @AllowNull(true)
   @Column({
     type: DataType.STRING(255),
+    allowNull: true,
   })
-  city: string;
+  city: string | null;
 }
