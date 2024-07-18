@@ -1,11 +1,14 @@
 import { useMemo } from 'react';
+import { FCIcon } from '@/ui/icons/typedefs';
 import { RecruiterProfile } from '@/controllers/graphql/generated';
 import { getFilledValue } from '@/lib/getFilledValue';
+import { IconLocation } from '@/ui/icons/general/IconLocation';
 import { RecruiterProfileMetaItems } from '../recruiterProfile.typedefs';
 
 export interface MetaItem {
   name: RecruiterProfileMetaItems,
   text: string,
+  icon?: FCIcon
 }
 
 interface UseRecruiterProfileMetaItems {
@@ -31,6 +34,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       {
         name: RecruiterProfileMetaItems.City,
         text: getFilledValue(profile.city),
+        icon: IconLocation,
       },
     ];
   },
