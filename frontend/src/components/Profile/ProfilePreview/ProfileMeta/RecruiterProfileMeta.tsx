@@ -12,12 +12,13 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
 
   return (
     <ul className={styles.metaWrapper}>
-      {items.map((item) => (
+      {items.map(({ name, text, Icon }) => (
         <li
           className={cn(styles.recruiterMetaItem, typography.smallHeading)}
-          key={item.name}
+          key={name}
         >
-          {item.text}
+          {!!Icon && <Icon />}
+          {text}
         </li>
       ))}
     </ul>
