@@ -3,7 +3,6 @@ node_modules/**/*
 npm-debug.*
 web-build/
 .env
-.env.sample
 .env.development
 .env.production
 .tmp

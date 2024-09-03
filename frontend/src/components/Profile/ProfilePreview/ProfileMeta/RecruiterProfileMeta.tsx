@@ -18,7 +18,6 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
           key={item.name}
         >
           {item.icon && <item.icon />}
-          {item.name === 'city'}
           {item.text}
         </li>
       ))}
