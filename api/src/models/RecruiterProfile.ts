@@ -10,10 +10,10 @@ import {
   Index,
   Table, Unique,
 } from 'sequelize-typescript';
+import { ModelBase } from '@/models/ModelBase';
+import { ProfileConnection } from '@/models/ProfileConnection';
 import { User } from '@/models/User';
 import { RecruiterProfileStatusEnum } from '@/modules/recruiterProfile/recruiterProfile.typedefs';
-import { ProfileConnection } from '@/models/ProfileConnection';
-import { ModelBase } from '@/models/ModelBase';
 
 @Table({
   tableName: 'recruiter_profiles',
@@ -67,4 +67,10 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'deleted_at',
   })
   deletedAt: Date
+
+  @AllowNull(true)
+  @Column({
+    type: DataType.STRING(255),
+  })
+  city: string;
 }
