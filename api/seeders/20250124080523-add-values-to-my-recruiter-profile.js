@@ -7,7 +7,7 @@ const email = 'stashohulia@gmail.com';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const users = await queryInterface.sequelize.query(
-      'SELECT * FROM "users" WHERE "email" = :email',
+      'SELECT * FROM "users" WHERE "email" = :email LIMIT 1',
       {
         replacements: { email },
         type: QueryTypes.SELECT
@@ -27,7 +27,7 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     const users = await queryInterface.sequelize.query(
-      'SELECT * FROM "users" WHERE "email" = :email',
+      'SELECT * FROM "users" WHERE "email" = :email LIMIT 1',
       {
         replacements: { email },
         type: QueryTypes.SELECT
