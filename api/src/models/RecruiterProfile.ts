@@ -67,7 +67,7 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     type: DataType.STRING(255),
     field: 'city',
   })
-  city: string
+  city: string | null
 
   @DeletedAt
   @Column({
