@@ -67,4 +67,8 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'deleted_at',
   })
   deletedAt: Date
+
+  @AllowNull
+  @Column({ type: DataType.STRING(255) })
+  city: string | null
 }

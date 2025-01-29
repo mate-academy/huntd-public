@@ -16,6 +16,9 @@
 # Ignore node_modules
 node_modules
 
+# ignore makefile with secret npm token
+Makefile
+
 # Ignore deploy logs
 deploy_logs.json
 
