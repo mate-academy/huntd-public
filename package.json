@@ -7,6 +7,8 @@
     "lint:styles:frontend": "stylelint frontend/**/*.scss --fix",
     "lint": "concurrently \"npm run lint:frontend\" \"npm run lint:api\"",
     "graphql:cms:generate": "graphql-codegen --config graphql-codegen.cms.yml",
+    "graphql:api:generate": "graphql-codegen --config graphql-codegen.api.yml",
+    "graphql:frontend:generate": "graphql-codegen --config graphql-codegen.frontend.yml",
     "graphql:cms:watch": "graphql-codegen --config graphql-codegen.cms.yml --watch",
     "graphql:generate": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml\" \"graphql-codegen --config graphql-codegen.api.yml\"  \"graphql-codegen --config graphql-codegen.mobile.yml\" \"graphql-codegen --config graphql-codegen.serverless.yml\"",
     "graphql:watch": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml --watch\" \"graphql-codegen --config graphql-codegen.api.yml --watch\" \"graphql-codegen --config graphql-codegen.mobile.yml --watch\" \"graphql-codegen --config graphql-codegen.serverless.yml --watch\"",
