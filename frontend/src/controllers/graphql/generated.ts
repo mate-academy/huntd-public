@@ -168,6 +168,7 @@ export type MutationCreateRecruiterProfileArgs = {
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -558,6 +559,7 @@ export type MutationUpdateProfileContactsArgs = {
 export type MutationUpdateRecruiterProfileArgs = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -1008,6 +1010,7 @@ export type RecruiterProfile = {
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
@@ -2170,7 +2173,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'city' | 'slug' | 'lastActionTime'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -2213,6 +2216,7 @@ export type CreateRecruiterProfileMutationVariables = Exact<{
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city: Maybe<Scalars['String']>;
 }>;
 
 
@@ -2324,6 +2328,7 @@ export type SendRecruiterProfileToReviewMutation = (
 export type UpdateRecruiterProfileMutationVariables = Exact<{
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 }>;
 
 
@@ -3787,6 +3792,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   rejectReason
   position
   companyName
+  city
   slug
   lastActionTime
 }
@@ -5583,8 +5589,8 @@ export type BulkSendMessageMutationHookResult = ReturnType<typeof useBulkSendMes
 export type BulkSendMessageMutationResult = Apollo.MutationResult<BulkSendMessageMutation>;
 export type BulkSendMessageMutationOptions = Apollo.BaseMutationOptions<BulkSendMessageMutation, BulkSendMessageMutationVariables>;
 export const CreateRecruiterProfileDocument = /*#__PURE__*/ gql`
-    mutation createRecruiterProfile($userId: Int!, $position: String!, $companyName: String!) {
-  createRecruiterProfile(userId: $userId, position: $position, companyName: $companyName) {
+    mutation createRecruiterProfile($userId: Int!, $position: String!, $companyName: String!, $city: String!) {
+  createRecruiterProfile(userId: $userId, position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }
@@ -5875,8 +5881,8 @@ export type SendRecruiterProfileToReviewMutationHookResult = ReturnType<typeof u
 export type SendRecruiterProfileToReviewMutationResult = Apollo.MutationResult<SendRecruiterProfileToReviewMutation>;
 export type SendRecruiterProfileToReviewMutationOptions = Apollo.BaseMutationOptions<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>;
 export const UpdateRecruiterProfileDocument = /*#__PURE__*/ gql`
-    mutation updateRecruiterProfile($position: String, $companyName: String) {
-  updateRecruiterProfile(position: $position, companyName: $companyName) {
+    mutation updateRecruiterProfile($position: String, $companyName: String, $city: String) {
+  updateRecruiterProfile(position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }
