@@ -62,6 +62,13 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   statusesNotificationSentAt: Date
 
+  @AllowNull(true)
+  @Column({
+    type: DataType.STRING(255),
+    field: 'city',
+  })
+  city: string | null
+
   @DeletedAt
   @Column({
     field: 'deleted_at',
