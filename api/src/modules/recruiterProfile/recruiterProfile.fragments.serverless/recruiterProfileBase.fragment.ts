@@ -10,5 +10,6 @@ export const RECRUITER_PROFILE_BASE_FRAGMENT = gql`
     slug
     lastActionTime
     statusesNotificationSentAt
+    city
   }
 `;
