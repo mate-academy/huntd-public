@@ -3790,6 +3790,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   rejectReason
   position
   companyName
+  city
   slug
   lastActionTime
 }
