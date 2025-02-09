@@ -19,11 +19,13 @@ export const RecruiterProfileSchema = gql`
       userId: Int!
       position: String!
       companyName: String!
+      city: String
     ): RecruiterProfile!
 
     updateRecruiterProfile(
       position: String
       companyName: String
+      city: String
     ): RecruiterProfile!
 
     sendRecruiterProfileToReview: RecruiterProfile!
@@ -59,7 +61,9 @@ export const RecruiterProfileSchema = gql`
     rejectReason: String
     position: String
     companyName: String
+    city: String
     user: User
+    posts: [Post!]
     lastActionTime: GraphQLDateTime
     statusesNotificationSentAt: GraphQLDateTime
     activeConnectionWithCandidate(candidateProfileId: Int!): ProfileConnection

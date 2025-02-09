@@ -28,6 +28,7 @@ import { FeedbacksSchema } from '@/modules/feedbacks/feedbacks.schema';
 import { WorkPlaceSchema } from '@/modules/workPlace/workPlace.schema';
 import { PaymentsSchema } from '@/modules/payments/payments.schema';
 import { NFTSchema } from '@/modules/nft/nft.schema';
+import { RecruiterPostSchema } from '@/modules/post/post.schema';
 
 const ModulesSchemas = [
   DateSchema,
@@ -35,6 +36,7 @@ const ModulesSchemas = [
   OAuthSchema,
   CandidateProfileSchema,
   RecruiterProfileSchema,
+  RecruiterPostSchema,
   ProfileConnectionSchema,
   ChatMessageSchema,
   TechnologySchema,
