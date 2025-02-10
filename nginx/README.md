@@ -23,7 +23,6 @@ Uses certificates in ./local-ssl
     127.0.0.1       localunixsocket.local
     + 127.0.0.1     local.huntd.tech
     ```
-- note: on Windows hosts file is located in `C:\Windows\System32\drivers\etc\hosts`
 
 ## Add certificate to trusted
 - Download certificate from the https://local.huntd.tech page [learn how](https://medium.com/@menakajain/export-download-ssl-certificate-from-server-site-url-bcfc41ea46a2)
