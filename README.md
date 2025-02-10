@@ -13,7 +13,7 @@ Anonymous job search in IT(public version).
 3. Setup local `.env` file
   - Run `make init` to copy `.env.sample` -> `.env`
   - Insert on the 4th line the NPM_TOKEN you were given
-4. Install dependencies (node modules) for primary services locally:
+4. Install dependencies (node modules) for primary services locally(make sure correct node version is used, check .nvmrc file):
     ```bash
     npm install # in root, ./frontend, ./api, ./cms
     ```
