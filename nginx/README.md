@@ -3,9 +3,12 @@ Uses certificates in ./local-ssl
 
 ## Add local.huntd.tech to /etc/hosts
 
-- open `/etc/hosts` for editing
+- edit `hosts` file
 
   - **MacOS / Linux**
+
+    open `/etc/hosts` for editing
+
     **note:** vi is a text editor, you can use any other
       ```bash
       sudo vi /etc/hosts
