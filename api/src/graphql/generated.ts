@@ -168,6 +168,7 @@ export type MutationCreateRecruiterProfileArgs = {
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -545,6 +546,7 @@ export type MutationUpdateProfileContactsArgs = {
 export type MutationUpdateRecruiterProfileArgs = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -998,6 +1000,7 @@ export type RecruiterProfile = {
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
