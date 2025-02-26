@@ -1,32 +1,28 @@
-const path = require('path');
+const path = require("path");
 
 const resolve = {
-  extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.svg'],
+  extensions: [".js", ".jsx", ".json", ".ts", ".tsx", ".svg"],
   alias: {
-    '@': path.resolve(__dirname, 'src'),
+    "@": path.resolve(__dirname, "src"),
   },
 };
 
 module.exports = {
-  extends: [
-    '@mate-academy/eslint-config-react-internal',
-  ],
+  extends: ["@mate-academy/eslint-config-react-internal"],
   ignorePatterns: [
-    'next-env.d.ts',
-    '**/*/graphql/generated.ts',
-    '**/node_modules/*',
+    "next-env.d.ts",
+    "**/*/graphql/generated.ts",
+    "**/node_modules/*",
   ],
   rules: {
     // TODO: move to internal config
-    'jsx-a11y/label-has-associated-control': 'off',
-    'react/button-has-type': 'off',
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/button-has-type": "off",
   },
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       alias: {
-        map: [
-          ...Object.entries(resolve.alias),
-        ],
+        map: [...Object.entries(resolve.alias)],
         extensions: resolve.extensions,
       },
       node: {

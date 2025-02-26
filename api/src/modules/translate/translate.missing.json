@@ -2,6 +2,18 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "burger_menu",
+    "value": "burger_menu"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "chats_link",
+    "value": "chats_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "hire_web3_developer_seo_link",
     "value": "hire_web3_developer_seo_link"
   },
@@ -10,6 +22,12 @@
     "namespace": "common",
     "code": "hire_web3_developer_seo_title",
     "value": "hire_web3_developer_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "my_profile",
+    "value": "my_profile"
   },
   {
     "language": "en",
@@ -44,6 +62,12 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "sign_out",
+    "value": "sign_out"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "switcher_for_companies",
     "value": "switcher_for_companies"
   },
@@ -52,6 +76,18 @@
     "namespace": "common",
     "code": "switcher_for_engineers",
     "value": "switcher_for_engineers"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "twitter_bonus",
+    "value": "twitter_bonus"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "twitter_bonus_description",
+    "value": "twitter_bonus_description"
   },
   {
     "language": "en",
@@ -332,13 +368,97 @@
   {
     "language": "en",
     "namespace": "profile",
+    "code": "account_settings",
+    "value": "account_settings"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "considering_roles",
+    "value": "considering_roles"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "contacts_overhead",
+    "value": "contacts_overhead"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "core_technical_skills",
+    "value": "core_technical_skills"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "edit_profile",
+    "value": "edit_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "experience_label",
+    "value": "experience_label"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "hiring_management",
+    "value": "hiring_management"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile",
+    "value": "profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_not_published",
+    "value": "profile_not_published"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_preview",
+    "value": "profile_preview"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "ready_to_work",
+    "value": "ready_to_work"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "send_and_post",
+    "value": "send_and_post"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "vacancies_list",
+    "value": "vacancies_list"
   },
   {
     "language": "en",
     "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Please write a greeting message",
+    "value": "Please write a greeting message"
   }
 ]

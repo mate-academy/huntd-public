@@ -25,17 +25,13 @@
     "debounce-promise": "^3.1.2",
     "deep-equal": "^2.0.5",
     "foundation-sites": "^6.6.3",
-    "graphql": "^15.3.0",
     "i18next-http-backend": "^1.0.17",
-    "next": "^12.0.10",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^6.0.2",
     "next-seo": "^4.20.0",
     "query-string": "^7.0.1",
     "rc-slider": "^9.6.3",
-    "react": "^17.0.2",
     "react-circular-progressbar": "^2.0.4",
-    "react-dom": "^17.0.2",
     "react-google-places-autocomplete": "^3.0.0",
     "react-hook-form": "^6.11.3",
     "react-linkify": "^1.0.0-alpha",
@@ -53,6 +49,7 @@
     "timeago-react": "^3.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
     "@mate-academy/eslint-config-react-internal": "0.0.9",
     "@mate-academy/ts-config": "^1.0.4",
     "@types/amplitude-js": "^6.0.0",
@@ -75,9 +72,14 @@
     "@types/react-textarea-autosize": "^4.3.5",
     "@types/react-transition-group": "^4.4.0",
     "@types/swiper": "^5.4.2",
-    "eslint": "^7.13.0",
+    "cosmiconfig": "^8.3.6",
+    "eslint": "^7.32.0",
     "eslint-config-next": "^11.0.0",
+    "graphql": "^16.10.0",
+    "next": "^12.0.10",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "sass": "^1.29.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.9.5"
   }
 }

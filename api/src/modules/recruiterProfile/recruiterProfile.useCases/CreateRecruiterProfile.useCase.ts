@@ -7,6 +7,7 @@ export interface CreateRecruiterProfileUseCaseOptions {
   userId: number;
   position: string;
   companyName: string;
+  city?: string;
 }
 export type CreateRecruiterProfileUseCaseResult = RecruiterProfile;
 
@@ -25,10 +26,14 @@ export class CreateRecruiterProfileUseCase extends AuthUseCase<
       userId: ['required', 'positive_integer'],
       position: ['required', 'string'],
       companyName: ['required', 'string'],
+      city: ['string', { max_length: 255 }],
     };
   }
 
   protected async run(options: Options): Promise<Result> {
-    return this.recruiterProfileRepository.createInactiveProfile(options);
+    return this.recruiterProfileRepository.createInactiveProfile({
+      ...options,
+      city: options.city,
+    });
   }
 }

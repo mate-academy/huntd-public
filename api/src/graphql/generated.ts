@@ -168,6 +168,7 @@ export type MutationCreateRecruiterProfileArgs = {
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city: Scalars['String'];
 };
 
 
@@ -545,6 +546,7 @@ export type MutationUpdateProfileContactsArgs = {
 export type MutationUpdateRecruiterProfileArgs = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city: Scalars['String'];
 };
 
 
@@ -994,6 +996,7 @@ export type RecruiterProfile = {
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
@@ -1606,6 +1609,7 @@ export type SendRecruiterProfileToReviewMutation = (
 export type UpdateRecruiterProfileMutationVariables = Exact<{
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city: Scalars['String'];
 }>;
 
 
@@ -2353,8 +2357,8 @@ export const SendRecruiterProfileToReviewDocument = gql`
 }
     ${RecruiterProfileBaseFragmentDoc}`;
 export const UpdateRecruiterProfileDocument = gql`
-    mutation updateRecruiterProfile($position: String, $companyName: String) {
-  updateRecruiterProfile(position: $position, companyName: $companyName) {
+    mutation updateRecruiterProfile($position: String, $companyName: String, $city: String!) {
+  updateRecruiterProfile(position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }
@@ -2524,7 +2528,7 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     sendRecruiterProfileToReview(variables?: SendRecruiterProfileToReviewMutationVariables): Promise<{ data?: SendRecruiterProfileToReviewMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
         return withWrapper(() => client.rawRequest<SendRecruiterProfileToReviewMutation>(print(SendRecruiterProfileToReviewDocument), variables));
     },
-    updateRecruiterProfile(variables?: UpdateRecruiterProfileMutationVariables): Promise<{ data?: UpdateRecruiterProfileMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+    updateRecruiterProfile(variables: UpdateRecruiterProfileMutationVariables): Promise<{ data?: UpdateRecruiterProfileMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
         return withWrapper(() => client.rawRequest<UpdateRecruiterProfileMutation>(print(UpdateRecruiterProfileDocument), variables));
     },
     authUser(variables?: AuthUserQueryVariables): Promise<{ data?: AuthUserQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {

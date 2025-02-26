@@ -34,13 +34,17 @@ export class RecruiterProfileRepository extends Repository {
     userId: number,
     position: string,
     companyName: string,
+    city?: string,
   }) {
-    const { userId, position, companyName } = options;
+    const {
+      userId, position, companyName, city,
+    } = options;
 
     return this.models.RecruiterProfile.create({
       userId,
       position,
       companyName,
+      city,
       status: RecruiterProfileStatusEnum.Inactive,
     });
   }
@@ -49,6 +53,12 @@ export class RecruiterProfileRepository extends Repository {
     id: number,
     details: Partial<RecruiterProfile>,
   ) {
+    if (details.city !== undefined && typeof details.city !== 'string') {
+      throw new ClientError({
+        message: 'City must be a string',
+      });
+    }
+
     const [count, updatedValues] = await this.models.RecruiterProfile.update(
       details,
       {
