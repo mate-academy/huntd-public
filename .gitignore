@@ -20,3 +20,5 @@ node_modules
 deploy_logs.json
 
 temp
+
+*.bak
