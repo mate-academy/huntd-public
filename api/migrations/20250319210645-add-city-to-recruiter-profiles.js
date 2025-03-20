@@ -12,4 +12,3 @@ module.exports = {
     return queryInterface.removeColumn('recruiter_profiles', 'city');
   }
 };
-// used this one
