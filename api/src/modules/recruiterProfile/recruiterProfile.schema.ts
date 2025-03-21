@@ -58,6 +58,7 @@ export const RecruiterProfileSchema = gql`
     status: RecruiterProfileStatus!
     rejectReason: String
     position: String
+    city: String
     companyName: String
     user: User
     lastActionTime: GraphQLDateTime

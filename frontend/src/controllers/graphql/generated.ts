@@ -3788,6 +3788,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   position
   companyName
   slug
+  city
   lastActionTime
 }
     `;
