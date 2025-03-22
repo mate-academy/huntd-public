@@ -1,7 +1,9 @@
-import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import { gql } from "@apollo/client";
+import * as Apollo from "@apollo/client";
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -24,7 +26,7 @@ export type Scalars = {
 };
 
 export type Query = {
-  __typename?: 'Query';
+  __typename?: "Query";
   candidateProfile?: Maybe<CandidateProfiles>;
   candidateProfiles?: Maybe<Array<Maybe<CandidateProfiles>>>;
   candidateProfilesConnection?: Maybe<CandidateProfilesConnection>;
@@ -53,270 +55,248 @@ export type Query = {
   me?: Maybe<UsersPermissionsMe>;
 };
 
-
 export type QueryCandidateProfileArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryCandidateProfilesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryCandidateProfilesConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryHuntdUserArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryHuntdUsersArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryHuntdUsersConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryRecruiterProfileArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryRecruiterProfilesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryRecruiterProfilesConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryServiceAccessTokenArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryServiceAccessTokensArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryServiceAccessTokensConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryTranslateArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryTranslatesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryTranslatesConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryFilesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryFilesConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryRoleArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryRolesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryRolesConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
-
 
 export type QueryUserArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type QueryUsersArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
-
 export type QueryUsersConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
 export type CandidateProfiles = {
-  __typename?: 'CandidateProfiles';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
+  __typename?: "CandidateProfiles";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
   status: Enum_Candidateprofiles_Status;
-  position?: Maybe<Scalars['String']>;
-  salary?: Maybe<Scalars['Float']>;
-  candidate_description?: Maybe<Scalars['String']>;
-  experience_description?: Maybe<Scalars['String']>;
-  reject_reason?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars["String"]>;
+  salary?: Maybe<Scalars["Float"]>;
+  candidate_description?: Maybe<Scalars["String"]>;
+  experience_description?: Maybe<Scalars["String"]>;
+  reject_reason?: Maybe<Scalars["String"]>;
   user_id?: Maybe<HuntdUsers>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
-
 export enum Enum_Candidateprofiles_Status {
-  Draft = 'DRAFT',
-  OnReview = 'ON_REVIEW',
-  Rejected = 'REJECTED',
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE'
+  Draft = "DRAFT",
+  OnReview = "ON_REVIEW",
+  Rejected = "REJECTED",
+  Active = "ACTIVE",
+  Inactive = "INACTIVE",
 }
 
 export type HuntdUsers = {
-  __typename?: 'HuntdUsers';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
-  last_name?: Maybe<Scalars['String']>;
+  __typename?: "HuntdUsers";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  email?: Maybe<Scalars["String"]>;
+  first_name?: Maybe<Scalars["String"]>;
+  last_name?: Maybe<Scalars["String"]>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
   recruiter_profiles?: Maybe<Array<Maybe<RecruiterProfiles>>>;
   candidate_profiles?: Maybe<Array<Maybe<CandidateProfiles>>>;
 };
 
-
 export type HuntdUsersRecruiter_ProfilesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
-
 export type HuntdUsersCandidate_ProfilesArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
 export type AdminUser = {
-  __typename?: 'AdminUser';
-  id: Scalars['ID'];
-  username?: Maybe<Scalars['String']>;
+  __typename?: "AdminUser";
+  id: Scalars["ID"];
+  username?: Maybe<Scalars["String"]>;
 };
 
-
 export type RecruiterProfiles = {
-  __typename?: 'RecruiterProfiles';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
+  __typename?: "RecruiterProfiles";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
   status: Enum_Recruiterprofiles_Status;
-  position?: Maybe<Scalars['String']>;
-  company_name?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars["String"]>;
+  position?: Maybe<Scalars["String"]>;
+  company_name?: Maybe<Scalars["String"]>;
   user_id?: Maybe<HuntdUsers>;
-  reject_reason?: Maybe<Scalars['String']>;
+  reject_reason?: Maybe<Scalars["String"]>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export enum Enum_Recruiterprofiles_Status {
-  Draft = 'DRAFT',
-  OnReview = 'ON_REVIEW',
-  Rejected = 'REJECTED',
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE'
+  Draft = "DRAFT",
+  OnReview = "ON_REVIEW",
+  Rejected = "REJECTED",
+  Active = "ACTIVE",
+  Inactive = "INACTIVE",
 }
 
 export type CandidateProfilesConnection = {
-  __typename?: 'CandidateProfilesConnection';
+  __typename?: "CandidateProfilesConnection";
   values?: Maybe<Array<Maybe<CandidateProfiles>>>;
   groupBy?: Maybe<CandidateProfilesGroupBy>;
   aggregate?: Maybe<CandidateProfilesAggregator>;
 };
 
 export type CandidateProfilesGroupBy = {
-  __typename?: 'CandidateProfilesGroupBy';
+  __typename?: "CandidateProfilesGroupBy";
   id?: Maybe<Array<Maybe<CandidateProfilesConnectionId>>>;
   created_at?: Maybe<Array<Maybe<CandidateProfilesConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<CandidateProfilesConnectionUpdated_At>>>;
   status?: Maybe<Array<Maybe<CandidateProfilesConnectionStatus>>>;
   position?: Maybe<Array<Maybe<CandidateProfilesConnectionPosition>>>;
   salary?: Maybe<Array<Maybe<CandidateProfilesConnectionSalary>>>;
-  candidate_description?: Maybe<Array<Maybe<CandidateProfilesConnectionCandidate_Description>>>;
-  experience_description?: Maybe<Array<Maybe<CandidateProfilesConnectionExperience_Description>>>;
+  candidate_description?: Maybe<
+    Array<Maybe<CandidateProfilesConnectionCandidate_Description>>
+  >;
+  experience_description?: Maybe<
+    Array<Maybe<CandidateProfilesConnectionExperience_Description>>
+  >;
   reject_reason?: Maybe<Array<Maybe<CandidateProfilesConnectionReject_Reason>>>;
   user_id?: Maybe<Array<Maybe<CandidateProfilesConnectionUser_Id>>>;
   created_by?: Maybe<Array<Maybe<CandidateProfilesConnectionCreated_By>>>;
@@ -324,81 +304,81 @@ export type CandidateProfilesGroupBy = {
 };
 
 export type CandidateProfilesConnectionId = {
-  __typename?: 'CandidateProfilesConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "CandidateProfilesConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionCreated_At = {
-  __typename?: 'CandidateProfilesConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "CandidateProfilesConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionUpdated_At = {
-  __typename?: 'CandidateProfilesConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "CandidateProfilesConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionStatus = {
-  __typename?: 'CandidateProfilesConnectionStatus';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "CandidateProfilesConnectionStatus";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionPosition = {
-  __typename?: 'CandidateProfilesConnectionPosition';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "CandidateProfilesConnectionPosition";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionSalary = {
-  __typename?: 'CandidateProfilesConnectionSalary';
-  key?: Maybe<Scalars['Float']>;
+  __typename?: "CandidateProfilesConnectionSalary";
+  key?: Maybe<Scalars["Float"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionCandidate_Description = {
-  __typename?: 'CandidateProfilesConnectionCandidate_description';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "CandidateProfilesConnectionCandidate_description";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionExperience_Description = {
-  __typename?: 'CandidateProfilesConnectionExperience_description';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "CandidateProfilesConnectionExperience_description";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionReject_Reason = {
-  __typename?: 'CandidateProfilesConnectionReject_reason';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "CandidateProfilesConnectionReject_reason";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionUser_Id = {
-  __typename?: 'CandidateProfilesConnectionUser_id';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "CandidateProfilesConnectionUser_id";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionCreated_By = {
-  __typename?: 'CandidateProfilesConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "CandidateProfilesConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesConnectionUpdated_By = {
-  __typename?: 'CandidateProfilesConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "CandidateProfilesConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<CandidateProfilesConnection>;
 };
 
 export type CandidateProfilesAggregator = {
-  __typename?: 'CandidateProfilesAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "CandidateProfilesAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
   sum?: Maybe<CandidateProfilesAggregatorSum>;
   avg?: Maybe<CandidateProfilesAggregatorAvg>;
   min?: Maybe<CandidateProfilesAggregatorMin>;
@@ -406,34 +386,34 @@ export type CandidateProfilesAggregator = {
 };
 
 export type CandidateProfilesAggregatorSum = {
-  __typename?: 'CandidateProfilesAggregatorSum';
-  salary?: Maybe<Scalars['Float']>;
+  __typename?: "CandidateProfilesAggregatorSum";
+  salary?: Maybe<Scalars["Float"]>;
 };
 
 export type CandidateProfilesAggregatorAvg = {
-  __typename?: 'CandidateProfilesAggregatorAvg';
-  salary?: Maybe<Scalars['Float']>;
+  __typename?: "CandidateProfilesAggregatorAvg";
+  salary?: Maybe<Scalars["Float"]>;
 };
 
 export type CandidateProfilesAggregatorMin = {
-  __typename?: 'CandidateProfilesAggregatorMin';
-  salary?: Maybe<Scalars['Float']>;
+  __typename?: "CandidateProfilesAggregatorMin";
+  salary?: Maybe<Scalars["Float"]>;
 };
 
 export type CandidateProfilesAggregatorMax = {
-  __typename?: 'CandidateProfilesAggregatorMax';
-  salary?: Maybe<Scalars['Float']>;
+  __typename?: "CandidateProfilesAggregatorMax";
+  salary?: Maybe<Scalars["Float"]>;
 };
 
 export type HuntdUsersConnection = {
-  __typename?: 'HuntdUsersConnection';
+  __typename?: "HuntdUsersConnection";
   values?: Maybe<Array<Maybe<HuntdUsers>>>;
   groupBy?: Maybe<HuntdUsersGroupBy>;
   aggregate?: Maybe<HuntdUsersAggregator>;
 };
 
 export type HuntdUsersGroupBy = {
-  __typename?: 'HuntdUsersGroupBy';
+  __typename?: "HuntdUsersGroupBy";
   id?: Maybe<Array<Maybe<HuntdUsersConnectionId>>>;
   created_at?: Maybe<Array<Maybe<HuntdUsersConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<HuntdUsersConnectionUpdated_At>>>;
@@ -445,68 +425,68 @@ export type HuntdUsersGroupBy = {
 };
 
 export type HuntdUsersConnectionId = {
-  __typename?: 'HuntdUsersConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "HuntdUsersConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionCreated_At = {
-  __typename?: 'HuntdUsersConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "HuntdUsersConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionUpdated_At = {
-  __typename?: 'HuntdUsersConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "HuntdUsersConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionEmail = {
-  __typename?: 'HuntdUsersConnectionEmail';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "HuntdUsersConnectionEmail";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionFirst_Name = {
-  __typename?: 'HuntdUsersConnectionFirst_name';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "HuntdUsersConnectionFirst_name";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionLast_Name = {
-  __typename?: 'HuntdUsersConnectionLast_name';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "HuntdUsersConnectionLast_name";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionCreated_By = {
-  __typename?: 'HuntdUsersConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "HuntdUsersConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersConnectionUpdated_By = {
-  __typename?: 'HuntdUsersConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "HuntdUsersConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<HuntdUsersConnection>;
 };
 
 export type HuntdUsersAggregator = {
-  __typename?: 'HuntdUsersAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "HuntdUsersAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type RecruiterProfilesConnection = {
-  __typename?: 'RecruiterProfilesConnection';
+  __typename?: "RecruiterProfilesConnection";
   values?: Maybe<Array<Maybe<RecruiterProfiles>>>;
   groupBy?: Maybe<RecruiterProfilesGroupBy>;
   aggregate?: Maybe<RecruiterProfilesAggregator>;
 };
 
 export type RecruiterProfilesGroupBy = {
-  __typename?: 'RecruiterProfilesGroupBy';
+  __typename?: "RecruiterProfilesGroupBy";
   id?: Maybe<Array<Maybe<RecruiterProfilesConnectionId>>>;
   created_at?: Maybe<Array<Maybe<RecruiterProfilesConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<RecruiterProfilesConnectionUpdated_At>>>;
@@ -520,91 +500,91 @@ export type RecruiterProfilesGroupBy = {
 };
 
 export type RecruiterProfilesConnectionId = {
-  __typename?: 'RecruiterProfilesConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "RecruiterProfilesConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionCreated_At = {
-  __typename?: 'RecruiterProfilesConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "RecruiterProfilesConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionUpdated_At = {
-  __typename?: 'RecruiterProfilesConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "RecruiterProfilesConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionStatus = {
-  __typename?: 'RecruiterProfilesConnectionStatus';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfilesConnectionStatus";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionPosition = {
-  __typename?: 'RecruiterProfilesConnectionPosition';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfilesConnectionPosition";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionCompany_Name = {
-  __typename?: 'RecruiterProfilesConnectionCompany_name';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfilesConnectionCompany_name";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionUser_Id = {
-  __typename?: 'RecruiterProfilesConnectionUser_id';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "RecruiterProfilesConnectionUser_id";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionReject_Reason = {
-  __typename?: 'RecruiterProfilesConnectionReject_reason';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfilesConnectionReject_reason";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionCreated_By = {
-  __typename?: 'RecruiterProfilesConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "RecruiterProfilesConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesConnectionUpdated_By = {
-  __typename?: 'RecruiterProfilesConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "RecruiterProfilesConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<RecruiterProfilesConnection>;
 };
 
 export type RecruiterProfilesAggregator = {
-  __typename?: 'RecruiterProfilesAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "RecruiterProfilesAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type ServiceAccessTokens = {
-  __typename?: 'ServiceAccessTokens';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  token: Scalars['String'];
+  __typename?: "ServiceAccessTokens";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  token: Scalars["String"];
   user_id?: Maybe<HuntdUsers>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export type ServiceAccessTokensConnection = {
-  __typename?: 'ServiceAccessTokensConnection';
+  __typename?: "ServiceAccessTokensConnection";
   values?: Maybe<Array<Maybe<ServiceAccessTokens>>>;
   groupBy?: Maybe<ServiceAccessTokensGroupBy>;
   aggregate?: Maybe<ServiceAccessTokensAggregator>;
 };
 
 export type ServiceAccessTokensGroupBy = {
-  __typename?: 'ServiceAccessTokensGroupBy';
+  __typename?: "ServiceAccessTokensGroupBy";
   id?: Maybe<Array<Maybe<ServiceAccessTokensConnectionId>>>;
   created_at?: Maybe<Array<Maybe<ServiceAccessTokensConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<ServiceAccessTokensConnectionUpdated_At>>>;
@@ -615,86 +595,86 @@ export type ServiceAccessTokensGroupBy = {
 };
 
 export type ServiceAccessTokensConnectionId = {
-  __typename?: 'ServiceAccessTokensConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "ServiceAccessTokensConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionCreated_At = {
-  __typename?: 'ServiceAccessTokensConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "ServiceAccessTokensConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionUpdated_At = {
-  __typename?: 'ServiceAccessTokensConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "ServiceAccessTokensConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionToken = {
-  __typename?: 'ServiceAccessTokensConnectionToken';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "ServiceAccessTokensConnectionToken";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionUser_Id = {
-  __typename?: 'ServiceAccessTokensConnectionUser_id';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "ServiceAccessTokensConnectionUser_id";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionCreated_By = {
-  __typename?: 'ServiceAccessTokensConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "ServiceAccessTokensConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensConnectionUpdated_By = {
-  __typename?: 'ServiceAccessTokensConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "ServiceAccessTokensConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<ServiceAccessTokensConnection>;
 };
 
 export type ServiceAccessTokensAggregator = {
-  __typename?: 'ServiceAccessTokensAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "ServiceAccessTokensAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type Settings = {
-  __typename?: 'Settings';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  api_graphql_endpoint: Scalars['String'];
-  api_graphql_token: Scalars['String'];
+  __typename?: "Settings";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  api_graphql_endpoint: Scalars["String"];
+  api_graphql_token: Scalars["String"];
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export type Translates = {
-  __typename?: 'Translates';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  code: Scalars['String'];
-  namespace: Scalars['String'];
-  language: Scalars['String'];
-  value?: Maybe<Scalars['String']>;
+  __typename?: "Translates";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  code: Scalars["String"];
+  namespace: Scalars["String"];
+  language: Scalars["String"];
+  value?: Maybe<Scalars["String"]>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export type TranslatesConnection = {
-  __typename?: 'TranslatesConnection';
+  __typename?: "TranslatesConnection";
   values?: Maybe<Array<Maybe<Translates>>>;
   groupBy?: Maybe<TranslatesGroupBy>;
   aggregate?: Maybe<TranslatesAggregator>;
 };
 
 export type TranslatesGroupBy = {
-  __typename?: 'TranslatesGroupBy';
+  __typename?: "TranslatesGroupBy";
   id?: Maybe<Array<Maybe<TranslatesConnectionId>>>;
   created_at?: Maybe<Array<Maybe<TranslatesConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<TranslatesConnectionUpdated_At>>>;
@@ -707,222 +687,372 @@ export type TranslatesGroupBy = {
 };
 
 export type TranslatesConnectionId = {
-  __typename?: 'TranslatesConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "TranslatesConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionCreated_At = {
-  __typename?: 'TranslatesConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "TranslatesConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionUpdated_At = {
-  __typename?: 'TranslatesConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "TranslatesConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionCode = {
-  __typename?: 'TranslatesConnectionCode';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "TranslatesConnectionCode";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionNamespace = {
-  __typename?: 'TranslatesConnectionNamespace';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "TranslatesConnectionNamespace";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionLanguage = {
-  __typename?: 'TranslatesConnectionLanguage';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "TranslatesConnectionLanguage";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionValue = {
-  __typename?: 'TranslatesConnectionValue';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "TranslatesConnectionValue";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionCreated_By = {
-  __typename?: 'TranslatesConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "TranslatesConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesConnectionUpdated_By = {
-  __typename?: 'TranslatesConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "TranslatesConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<TranslatesConnection>;
 };
 
 export type TranslatesAggregator = {
-  __typename?: 'TranslatesAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "TranslatesAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type UploadFile = {
-  __typename?: 'UploadFile';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  name: Scalars['String'];
-  alternativeText?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
-  width?: Maybe<Scalars['Int']>;
-  height?: Maybe<Scalars['Int']>;
-  formats?: Maybe<Scalars['JSON']>;
-  hash: Scalars['String'];
-  ext?: Maybe<Scalars['String']>;
-  mime: Scalars['String'];
-  size: Scalars['Float'];
-  url: Scalars['String'];
-  previewUrl?: Maybe<Scalars['String']>;
-  provider: Scalars['String'];
-  provider_metadata?: Maybe<Scalars['JSON']>;
+  __typename?: "UploadFile";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  name: Scalars["String"];
+  alternativeText?: Maybe<Scalars["String"]>;
+  caption?: Maybe<Scalars["String"]>;
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  formats?: Maybe<Scalars["JSON"]>;
+  hash: Scalars["String"];
+  ext?: Maybe<Scalars["String"]>;
+  mime: Scalars["String"];
+  size: Scalars["Float"];
+  url: Scalars["String"];
+  previewUrl?: Maybe<Scalars["String"]>;
+  provider: Scalars["String"];
+  provider_metadata?: Maybe<Scalars["JSON"]>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
   related?: Maybe<Array<Maybe<Morph>>>;
 };
 
-
 export type UploadFileRelatedArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | CandidateProfiles | CandidateProfilesConnection | CandidateProfilesAggregator | CandidateProfilesAggregatorSum | CandidateProfilesAggregatorAvg | CandidateProfilesAggregatorMin | CandidateProfilesAggregatorMax | CandidateProfilesGroupBy | CandidateProfilesConnectionId | CandidateProfilesConnectionCreated_At | CandidateProfilesConnectionUpdated_At | CandidateProfilesConnectionStatus | CandidateProfilesConnectionPosition | CandidateProfilesConnectionSalary | CandidateProfilesConnectionCandidate_Description | CandidateProfilesConnectionExperience_Description | CandidateProfilesConnectionReject_Reason | CandidateProfilesConnectionUser_Id | CandidateProfilesConnectionCreated_By | CandidateProfilesConnectionUpdated_By | CreateCandidateProfilePayload | UpdateCandidateProfilePayload | DeleteCandidateProfilePayload | HuntdUsers | HuntdUsersConnection | HuntdUsersAggregator | HuntdUsersGroupBy | HuntdUsersConnectionId | HuntdUsersConnectionCreated_At | HuntdUsersConnectionUpdated_At | HuntdUsersConnectionEmail | HuntdUsersConnectionFirst_Name | HuntdUsersConnectionLast_Name | HuntdUsersConnectionCreated_By | HuntdUsersConnectionUpdated_By | CreateHuntdUserPayload | UpdateHuntdUserPayload | DeleteHuntdUserPayload | RecruiterProfiles | RecruiterProfilesConnection | RecruiterProfilesAggregator | RecruiterProfilesGroupBy | RecruiterProfilesConnectionId | RecruiterProfilesConnectionCreated_At | RecruiterProfilesConnectionUpdated_At | RecruiterProfilesConnectionStatus | RecruiterProfilesConnectionPosition | RecruiterProfilesConnectionCompany_Name | RecruiterProfilesConnectionUser_Id | RecruiterProfilesConnectionReject_Reason | RecruiterProfilesConnectionCreated_By | RecruiterProfilesConnectionUpdated_By | CreateRecruiterProfilePayload | UpdateRecruiterProfilePayload | DeleteRecruiterProfilePayload | ServiceAccessTokens | ServiceAccessTokensConnection | ServiceAccessTokensAggregator | ServiceAccessTokensGroupBy | ServiceAccessTokensConnectionId | ServiceAccessTokensConnectionCreated_At | ServiceAccessTokensConnectionUpdated_At | ServiceAccessTokensConnectionToken | ServiceAccessTokensConnectionUser_Id | ServiceAccessTokensConnectionCreated_By | ServiceAccessTokensConnectionUpdated_By | CreateServiceAccessTokenPayload | UpdateServiceAccessTokenPayload | DeleteServiceAccessTokenPayload | Settings | UpdateSettingPayload | DeleteSettingPayload | Translates | TranslatesConnection | TranslatesAggregator | TranslatesGroupBy | TranslatesConnectionId | TranslatesConnectionCreated_At | TranslatesConnectionUpdated_At | TranslatesConnectionCode | TranslatesConnectionNamespace | TranslatesConnectionLanguage | TranslatesConnectionValue | TranslatesConnectionCreated_By | TranslatesConnectionUpdated_By | CreateTranslatePayload | UpdateTranslatePayload | DeleteTranslatePayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionCreated_By | UploadFileConnectionUpdated_By | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnectionCreated_By | UsersPermissionsRoleConnectionUpdated_By | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionCreated_By | UsersPermissionsUserConnectionUpdated_By | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph =
+  | UsersPermissionsMe
+  | UsersPermissionsMeRole
+  | UsersPermissionsLoginPayload
+  | UserPermissionsPasswordPayload
+  | CandidateProfiles
+  | CandidateProfilesConnection
+  | CandidateProfilesAggregator
+  | CandidateProfilesAggregatorSum
+  | CandidateProfilesAggregatorAvg
+  | CandidateProfilesAggregatorMin
+  | CandidateProfilesAggregatorMax
+  | CandidateProfilesGroupBy
+  | CandidateProfilesConnectionId
+  | CandidateProfilesConnectionCreated_At
+  | CandidateProfilesConnectionUpdated_At
+  | CandidateProfilesConnectionStatus
+  | CandidateProfilesConnectionPosition
+  | CandidateProfilesConnectionSalary
+  | CandidateProfilesConnectionCandidate_Description
+  | CandidateProfilesConnectionExperience_Description
+  | CandidateProfilesConnectionReject_Reason
+  | CandidateProfilesConnectionUser_Id
+  | CandidateProfilesConnectionCreated_By
+  | CandidateProfilesConnectionUpdated_By
+  | CreateCandidateProfilePayload
+  | UpdateCandidateProfilePayload
+  | DeleteCandidateProfilePayload
+  | HuntdUsers
+  | HuntdUsersConnection
+  | HuntdUsersAggregator
+  | HuntdUsersGroupBy
+  | HuntdUsersConnectionId
+  | HuntdUsersConnectionCreated_At
+  | HuntdUsersConnectionUpdated_At
+  | HuntdUsersConnectionEmail
+  | HuntdUsersConnectionFirst_Name
+  | HuntdUsersConnectionLast_Name
+  | HuntdUsersConnectionCreated_By
+  | HuntdUsersConnectionUpdated_By
+  | CreateHuntdUserPayload
+  | UpdateHuntdUserPayload
+  | DeleteHuntdUserPayload
+  | RecruiterProfiles
+  | RecruiterProfilesConnection
+  | RecruiterProfilesAggregator
+  | RecruiterProfilesGroupBy
+  | RecruiterProfilesConnectionId
+  | RecruiterProfilesConnectionCreated_At
+  | RecruiterProfilesConnectionUpdated_At
+  | RecruiterProfilesConnectionStatus
+  | RecruiterProfilesConnectionPosition
+  | RecruiterProfilesConnectionCompany_Name
+  | RecruiterProfilesConnectionUser_Id
+  | RecruiterProfilesConnectionReject_Reason
+  | RecruiterProfilesConnectionCreated_By
+  | RecruiterProfilesConnectionUpdated_By
+  | CreateRecruiterProfilePayload
+  | UpdateRecruiterProfilePayload
+  | DeleteRecruiterProfilePayload
+  | ServiceAccessTokens
+  | ServiceAccessTokensConnection
+  | ServiceAccessTokensAggregator
+  | ServiceAccessTokensGroupBy
+  | ServiceAccessTokensConnectionId
+  | ServiceAccessTokensConnectionCreated_At
+  | ServiceAccessTokensConnectionUpdated_At
+  | ServiceAccessTokensConnectionToken
+  | ServiceAccessTokensConnectionUser_Id
+  | ServiceAccessTokensConnectionCreated_By
+  | ServiceAccessTokensConnectionUpdated_By
+  | CreateServiceAccessTokenPayload
+  | UpdateServiceAccessTokenPayload
+  | DeleteServiceAccessTokenPayload
+  | Settings
+  | UpdateSettingPayload
+  | DeleteSettingPayload
+  | Translates
+  | TranslatesConnection
+  | TranslatesAggregator
+  | TranslatesGroupBy
+  | TranslatesConnectionId
+  | TranslatesConnectionCreated_At
+  | TranslatesConnectionUpdated_At
+  | TranslatesConnectionCode
+  | TranslatesConnectionNamespace
+  | TranslatesConnectionLanguage
+  | TranslatesConnectionValue
+  | TranslatesConnectionCreated_By
+  | TranslatesConnectionUpdated_By
+  | CreateTranslatePayload
+  | UpdateTranslatePayload
+  | DeleteTranslatePayload
+  | UploadFile
+  | UploadFileConnection
+  | UploadFileAggregator
+  | UploadFileAggregatorSum
+  | UploadFileAggregatorAvg
+  | UploadFileAggregatorMin
+  | UploadFileAggregatorMax
+  | UploadFileGroupBy
+  | UploadFileConnectionId
+  | UploadFileConnectionCreated_At
+  | UploadFileConnectionUpdated_At
+  | UploadFileConnectionName
+  | UploadFileConnectionAlternativeText
+  | UploadFileConnectionCaption
+  | UploadFileConnectionWidth
+  | UploadFileConnectionHeight
+  | UploadFileConnectionFormats
+  | UploadFileConnectionHash
+  | UploadFileConnectionExt
+  | UploadFileConnectionMime
+  | UploadFileConnectionSize
+  | UploadFileConnectionUrl
+  | UploadFileConnectionPreviewUrl
+  | UploadFileConnectionProvider
+  | UploadFileConnectionProvider_Metadata
+  | UploadFileConnectionCreated_By
+  | UploadFileConnectionUpdated_By
+  | UsersPermissionsPermission
+  | UsersPermissionsRole
+  | UsersPermissionsRoleConnection
+  | UsersPermissionsRoleAggregator
+  | UsersPermissionsRoleGroupBy
+  | UsersPermissionsRoleConnectionId
+  | UsersPermissionsRoleConnectionName
+  | UsersPermissionsRoleConnectionDescription
+  | UsersPermissionsRoleConnectionType
+  | UsersPermissionsRoleConnectionCreated_By
+  | UsersPermissionsRoleConnectionUpdated_By
+  | CreateRolePayload
+  | UpdateRolePayload
+  | DeleteRolePayload
+  | UsersPermissionsUser
+  | UsersPermissionsUserConnection
+  | UsersPermissionsUserAggregator
+  | UsersPermissionsUserGroupBy
+  | UsersPermissionsUserConnectionId
+  | UsersPermissionsUserConnectionCreated_At
+  | UsersPermissionsUserConnectionUpdated_At
+  | UsersPermissionsUserConnectionUsername
+  | UsersPermissionsUserConnectionEmail
+  | UsersPermissionsUserConnectionProvider
+  | UsersPermissionsUserConnectionConfirmed
+  | UsersPermissionsUserConnectionBlocked
+  | UsersPermissionsUserConnectionRole
+  | UsersPermissionsUserConnectionCreated_By
+  | UsersPermissionsUserConnectionUpdated_By
+  | CreateUserPayload
+  | UpdateUserPayload
+  | DeleteUserPayload;
 
 export type UsersPermissionsMe = {
-  __typename?: 'UsersPermissionsMe';
-  id: Scalars['ID'];
-  username: Scalars['String'];
-  email: Scalars['String'];
-  confirmed?: Maybe<Scalars['Boolean']>;
-  blocked?: Maybe<Scalars['Boolean']>;
+  __typename?: "UsersPermissionsMe";
+  id: Scalars["ID"];
+  username: Scalars["String"];
+  email: Scalars["String"];
+  confirmed?: Maybe<Scalars["Boolean"]>;
+  blocked?: Maybe<Scalars["Boolean"]>;
   role?: Maybe<UsersPermissionsMeRole>;
 };
 
 export type UsersPermissionsMeRole = {
-  __typename?: 'UsersPermissionsMeRole';
-  id: Scalars['ID'];
-  name: Scalars['String'];
-  description?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsMeRole";
+  id: Scalars["ID"];
+  name: Scalars["String"];
+  description?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
 };
 
 export type UsersPermissionsLoginPayload = {
-  __typename?: 'UsersPermissionsLoginPayload';
-  jwt?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsLoginPayload";
+  jwt?: Maybe<Scalars["String"]>;
   user: UsersPermissionsMe;
 };
 
 export type UserPermissionsPasswordPayload = {
-  __typename?: 'UserPermissionsPasswordPayload';
-  ok: Scalars['Boolean'];
+  __typename?: "UserPermissionsPasswordPayload";
+  ok: Scalars["Boolean"];
 };
 
 export type CreateCandidateProfilePayload = {
-  __typename?: 'createCandidateProfilePayload';
+  __typename?: "createCandidateProfilePayload";
   candidateProfile?: Maybe<CandidateProfiles>;
 };
 
 export type UpdateCandidateProfilePayload = {
-  __typename?: 'updateCandidateProfilePayload';
+  __typename?: "updateCandidateProfilePayload";
   candidateProfile?: Maybe<CandidateProfiles>;
 };
 
 export type DeleteCandidateProfilePayload = {
-  __typename?: 'deleteCandidateProfilePayload';
+  __typename?: "deleteCandidateProfilePayload";
   candidateProfile?: Maybe<CandidateProfiles>;
 };
 
 export type CreateHuntdUserPayload = {
-  __typename?: 'createHuntdUserPayload';
+  __typename?: "createHuntdUserPayload";
   huntdUser?: Maybe<HuntdUsers>;
 };
 
 export type UpdateHuntdUserPayload = {
-  __typename?: 'updateHuntdUserPayload';
+  __typename?: "updateHuntdUserPayload";
   huntdUser?: Maybe<HuntdUsers>;
 };
 
 export type DeleteHuntdUserPayload = {
-  __typename?: 'deleteHuntdUserPayload';
+  __typename?: "deleteHuntdUserPayload";
   huntdUser?: Maybe<HuntdUsers>;
 };
 
 export type CreateRecruiterProfilePayload = {
-  __typename?: 'createRecruiterProfilePayload';
+  __typename?: "createRecruiterProfilePayload";
   recruiterProfile?: Maybe<RecruiterProfiles>;
 };
 
 export type UpdateRecruiterProfilePayload = {
-  __typename?: 'updateRecruiterProfilePayload';
+  __typename?: "updateRecruiterProfilePayload";
   recruiterProfile?: Maybe<RecruiterProfiles>;
 };
 
 export type DeleteRecruiterProfilePayload = {
-  __typename?: 'deleteRecruiterProfilePayload';
+  __typename?: "deleteRecruiterProfilePayload";
   recruiterProfile?: Maybe<RecruiterProfiles>;
 };
 
 export type CreateServiceAccessTokenPayload = {
-  __typename?: 'createServiceAccessTokenPayload';
+  __typename?: "createServiceAccessTokenPayload";
   serviceAccessToken?: Maybe<ServiceAccessTokens>;
 };
 
 export type UpdateServiceAccessTokenPayload = {
-  __typename?: 'updateServiceAccessTokenPayload';
+  __typename?: "updateServiceAccessTokenPayload";
   serviceAccessToken?: Maybe<ServiceAccessTokens>;
 };
 
 export type DeleteServiceAccessTokenPayload = {
-  __typename?: 'deleteServiceAccessTokenPayload';
+  __typename?: "deleteServiceAccessTokenPayload";
   serviceAccessToken?: Maybe<ServiceAccessTokens>;
 };
 
 export type UpdateSettingPayload = {
-  __typename?: 'updateSettingPayload';
+  __typename?: "updateSettingPayload";
   setting?: Maybe<Settings>;
 };
 
 export type DeleteSettingPayload = {
-  __typename?: 'deleteSettingPayload';
+  __typename?: "deleteSettingPayload";
   setting?: Maybe<Settings>;
 };
 
 export type CreateTranslatePayload = {
-  __typename?: 'createTranslatePayload';
+  __typename?: "createTranslatePayload";
   translate?: Maybe<Translates>;
 };
 
 export type UpdateTranslatePayload = {
-  __typename?: 'updateTranslatePayload';
+  __typename?: "updateTranslatePayload";
   translate?: Maybe<Translates>;
 };
 
 export type DeleteTranslatePayload = {
-  __typename?: 'deleteTranslatePayload';
+  __typename?: "deleteTranslatePayload";
   translate?: Maybe<Translates>;
 };
 
 export type UploadFileConnection = {
-  __typename?: 'UploadFileConnection';
+  __typename?: "UploadFileConnection";
   values?: Maybe<Array<Maybe<UploadFile>>>;
   groupBy?: Maybe<UploadFileGroupBy>;
   aggregate?: Maybe<UploadFileAggregator>;
 };
 
 export type UploadFileGroupBy = {
-  __typename?: 'UploadFileGroupBy';
+  __typename?: "UploadFileGroupBy";
   id?: Maybe<Array<Maybe<UploadFileConnectionId>>>;
   created_at?: Maybe<Array<Maybe<UploadFileConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<UploadFileConnectionUpdated_At>>>;
@@ -939,129 +1069,131 @@ export type UploadFileGroupBy = {
   url?: Maybe<Array<Maybe<UploadFileConnectionUrl>>>;
   previewUrl?: Maybe<Array<Maybe<UploadFileConnectionPreviewUrl>>>;
   provider?: Maybe<Array<Maybe<UploadFileConnectionProvider>>>;
-  provider_metadata?: Maybe<Array<Maybe<UploadFileConnectionProvider_Metadata>>>;
+  provider_metadata?: Maybe<
+    Array<Maybe<UploadFileConnectionProvider_Metadata>>
+  >;
   created_by?: Maybe<Array<Maybe<UploadFileConnectionCreated_By>>>;
   updated_by?: Maybe<Array<Maybe<UploadFileConnectionUpdated_By>>>;
 };
 
 export type UploadFileConnectionId = {
-  __typename?: 'UploadFileConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UploadFileConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionCreated_At = {
-  __typename?: 'UploadFileConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "UploadFileConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionUpdated_At = {
-  __typename?: 'UploadFileConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "UploadFileConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionName = {
-  __typename?: 'UploadFileConnectionName';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionName";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionAlternativeText = {
-  __typename?: 'UploadFileConnectionAlternativeText';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionAlternativeText";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionCaption = {
-  __typename?: 'UploadFileConnectionCaption';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionCaption";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionWidth = {
-  __typename?: 'UploadFileConnectionWidth';
-  key?: Maybe<Scalars['Int']>;
+  __typename?: "UploadFileConnectionWidth";
+  key?: Maybe<Scalars["Int"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionHeight = {
-  __typename?: 'UploadFileConnectionHeight';
-  key?: Maybe<Scalars['Int']>;
+  __typename?: "UploadFileConnectionHeight";
+  key?: Maybe<Scalars["Int"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionFormats = {
-  __typename?: 'UploadFileConnectionFormats';
-  key?: Maybe<Scalars['JSON']>;
+  __typename?: "UploadFileConnectionFormats";
+  key?: Maybe<Scalars["JSON"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionHash = {
-  __typename?: 'UploadFileConnectionHash';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionHash";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionExt = {
-  __typename?: 'UploadFileConnectionExt';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionExt";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionMime = {
-  __typename?: 'UploadFileConnectionMime';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionMime";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionSize = {
-  __typename?: 'UploadFileConnectionSize';
-  key?: Maybe<Scalars['Float']>;
+  __typename?: "UploadFileConnectionSize";
+  key?: Maybe<Scalars["Float"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionUrl = {
-  __typename?: 'UploadFileConnectionUrl';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionUrl";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionPreviewUrl = {
-  __typename?: 'UploadFileConnectionPreviewUrl';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionPreviewUrl";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionProvider = {
-  __typename?: 'UploadFileConnectionProvider';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UploadFileConnectionProvider";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionProvider_Metadata = {
-  __typename?: 'UploadFileConnectionProvider_metadata';
-  key?: Maybe<Scalars['JSON']>;
+  __typename?: "UploadFileConnectionProvider_metadata";
+  key?: Maybe<Scalars["JSON"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionCreated_By = {
-  __typename?: 'UploadFileConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UploadFileConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionUpdated_By = {
-  __typename?: 'UploadFileConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UploadFileConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileAggregator = {
-  __typename?: 'UploadFileAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "UploadFileAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
   sum?: Maybe<UploadFileAggregatorSum>;
   avg?: Maybe<UploadFileAggregatorAvg>;
   min?: Maybe<UploadFileAggregatorMin>;
@@ -1069,98 +1201,96 @@ export type UploadFileAggregator = {
 };
 
 export type UploadFileAggregatorSum = {
-  __typename?: 'UploadFileAggregatorSum';
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  size?: Maybe<Scalars['Float']>;
+  __typename?: "UploadFileAggregatorSum";
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  size?: Maybe<Scalars["Float"]>;
 };
 
 export type UploadFileAggregatorAvg = {
-  __typename?: 'UploadFileAggregatorAvg';
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  size?: Maybe<Scalars['Float']>;
+  __typename?: "UploadFileAggregatorAvg";
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  size?: Maybe<Scalars["Float"]>;
 };
 
 export type UploadFileAggregatorMin = {
-  __typename?: 'UploadFileAggregatorMin';
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  size?: Maybe<Scalars['Float']>;
+  __typename?: "UploadFileAggregatorMin";
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  size?: Maybe<Scalars["Float"]>;
 };
 
 export type UploadFileAggregatorMax = {
-  __typename?: 'UploadFileAggregatorMax';
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  size?: Maybe<Scalars['Float']>;
+  __typename?: "UploadFileAggregatorMax";
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  size?: Maybe<Scalars["Float"]>;
 };
 
 export type UsersPermissionsPermission = {
-  __typename?: 'UsersPermissionsPermission';
-  id: Scalars['ID'];
-  type: Scalars['String'];
-  controller: Scalars['String'];
-  action: Scalars['String'];
-  enabled: Scalars['Boolean'];
-  policy?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsPermission";
+  id: Scalars["ID"];
+  type: Scalars["String"];
+  controller: Scalars["String"];
+  action: Scalars["String"];
+  enabled: Scalars["Boolean"];
+  policy?: Maybe<Scalars["String"]>;
   role?: Maybe<UsersPermissionsRole>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export type UsersPermissionsRole = {
-  __typename?: 'UsersPermissionsRole';
-  id: Scalars['ID'];
-  name: Scalars['String'];
-  description?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsRole";
+  id: Scalars["ID"];
+  name: Scalars["String"];
+  description?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
   permissions?: Maybe<Array<Maybe<UsersPermissionsPermission>>>;
   users?: Maybe<Array<Maybe<UsersPermissionsUser>>>;
 };
 
-
 export type UsersPermissionsRolePermissionsArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
-
 export type UsersPermissionsRoleUsersArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 };
 
 export type UsersPermissionsUser = {
-  __typename?: 'UsersPermissionsUser';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  username: Scalars['String'];
-  email: Scalars['String'];
-  provider?: Maybe<Scalars['String']>;
-  confirmed?: Maybe<Scalars['Boolean']>;
-  blocked?: Maybe<Scalars['Boolean']>;
+  __typename?: "UsersPermissionsUser";
+  id: Scalars["ID"];
+  created_at: Scalars["DateTime"];
+  updated_at: Scalars["DateTime"];
+  username: Scalars["String"];
+  email: Scalars["String"];
+  provider?: Maybe<Scalars["String"]>;
+  confirmed?: Maybe<Scalars["Boolean"]>;
+  blocked?: Maybe<Scalars["Boolean"]>;
   role?: Maybe<UsersPermissionsRole>;
   created_by?: Maybe<AdminUser>;
   updated_by?: Maybe<AdminUser>;
 };
 
 export type UsersPermissionsRoleConnection = {
-  __typename?: 'UsersPermissionsRoleConnection';
+  __typename?: "UsersPermissionsRoleConnection";
   values?: Maybe<Array<Maybe<UsersPermissionsRole>>>;
   groupBy?: Maybe<UsersPermissionsRoleGroupBy>;
   aggregate?: Maybe<UsersPermissionsRoleAggregator>;
 };
 
 export type UsersPermissionsRoleGroupBy = {
-  __typename?: 'UsersPermissionsRoleGroupBy';
+  __typename?: "UsersPermissionsRoleGroupBy";
   id?: Maybe<Array<Maybe<UsersPermissionsRoleConnectionId>>>;
   name?: Maybe<Array<Maybe<UsersPermissionsRoleConnectionName>>>;
   description?: Maybe<Array<Maybe<UsersPermissionsRoleConnectionDescription>>>;
@@ -1170,71 +1300,71 @@ export type UsersPermissionsRoleGroupBy = {
 };
 
 export type UsersPermissionsRoleConnectionId = {
-  __typename?: 'UsersPermissionsRoleConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsRoleConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionName = {
-  __typename?: 'UsersPermissionsRoleConnectionName';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsRoleConnectionName";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionDescription = {
-  __typename?: 'UsersPermissionsRoleConnectionDescription';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsRoleConnectionDescription";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionType = {
-  __typename?: 'UsersPermissionsRoleConnectionType';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsRoleConnectionType";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionCreated_By = {
-  __typename?: 'UsersPermissionsRoleConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsRoleConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionUpdated_By = {
-  __typename?: 'UsersPermissionsRoleConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsRoleConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleAggregator = {
-  __typename?: 'UsersPermissionsRoleAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "UsersPermissionsRoleAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type CreateRolePayload = {
-  __typename?: 'createRolePayload';
+  __typename?: "createRolePayload";
   role?: Maybe<UsersPermissionsRole>;
 };
 
 export type UpdateRolePayload = {
-  __typename?: 'updateRolePayload';
+  __typename?: "updateRolePayload";
   role?: Maybe<UsersPermissionsRole>;
 };
 
 export type DeleteRolePayload = {
-  __typename?: 'deleteRolePayload';
+  __typename?: "deleteRolePayload";
   role?: Maybe<UsersPermissionsRole>;
 };
 
 export type UsersPermissionsUserConnection = {
-  __typename?: 'UsersPermissionsUserConnection';
+  __typename?: "UsersPermissionsUserConnection";
   values?: Maybe<Array<Maybe<UsersPermissionsUser>>>;
   groupBy?: Maybe<UsersPermissionsUserGroupBy>;
   aggregate?: Maybe<UsersPermissionsUserAggregator>;
 };
 
 export type UsersPermissionsUserGroupBy = {
-  __typename?: 'UsersPermissionsUserGroupBy';
+  __typename?: "UsersPermissionsUserGroupBy";
   id?: Maybe<Array<Maybe<UsersPermissionsUserConnectionId>>>;
   created_at?: Maybe<Array<Maybe<UsersPermissionsUserConnectionCreated_At>>>;
   updated_at?: Maybe<Array<Maybe<UsersPermissionsUserConnectionUpdated_At>>>;
@@ -1249,94 +1379,94 @@ export type UsersPermissionsUserGroupBy = {
 };
 
 export type UsersPermissionsUserConnectionId = {
-  __typename?: 'UsersPermissionsUserConnectionId';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsUserConnectionId";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionCreated_At = {
-  __typename?: 'UsersPermissionsUserConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "UsersPermissionsUserConnectionCreated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionUpdated_At = {
-  __typename?: 'UsersPermissionsUserConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
+  __typename?: "UsersPermissionsUserConnectionUpdated_at";
+  key?: Maybe<Scalars["DateTime"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionUsername = {
-  __typename?: 'UsersPermissionsUserConnectionUsername';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsUserConnectionUsername";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionEmail = {
-  __typename?: 'UsersPermissionsUserConnectionEmail';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsUserConnectionEmail";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionProvider = {
-  __typename?: 'UsersPermissionsUserConnectionProvider';
-  key?: Maybe<Scalars['String']>;
+  __typename?: "UsersPermissionsUserConnectionProvider";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionConfirmed = {
-  __typename?: 'UsersPermissionsUserConnectionConfirmed';
-  key?: Maybe<Scalars['Boolean']>;
+  __typename?: "UsersPermissionsUserConnectionConfirmed";
+  key?: Maybe<Scalars["Boolean"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionBlocked = {
-  __typename?: 'UsersPermissionsUserConnectionBlocked';
-  key?: Maybe<Scalars['Boolean']>;
+  __typename?: "UsersPermissionsUserConnectionBlocked";
+  key?: Maybe<Scalars["Boolean"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionRole = {
-  __typename?: 'UsersPermissionsUserConnectionRole';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsUserConnectionRole";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionCreated_By = {
-  __typename?: 'UsersPermissionsUserConnectionCreated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsUserConnectionCreated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionUpdated_By = {
-  __typename?: 'UsersPermissionsUserConnectionUpdated_by';
-  key?: Maybe<Scalars['ID']>;
+  __typename?: "UsersPermissionsUserConnectionUpdated_by";
+  key?: Maybe<Scalars["ID"]>;
   connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserAggregator = {
-  __typename?: 'UsersPermissionsUserAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
+  __typename?: "UsersPermissionsUserAggregator";
+  count?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars["Int"]>;
 };
 
 export type CreateUserPayload = {
-  __typename?: 'createUserPayload';
+  __typename?: "createUserPayload";
   user?: Maybe<UsersPermissionsUser>;
 };
 
 export type UpdateUserPayload = {
-  __typename?: 'updateUserPayload';
+  __typename?: "updateUserPayload";
   user?: Maybe<UsersPermissionsUser>;
 };
 
 export type DeleteUserPayload = {
-  __typename?: 'deleteUserPayload';
+  __typename?: "deleteUserPayload";
   user?: Maybe<UsersPermissionsUser>;
 };
 
 export type Mutation = {
-  __typename?: 'Mutation';
+  __typename?: "Mutation";
   createCandidateProfile?: Maybe<CreateCandidateProfilePayload>;
   updateCandidateProfile?: Maybe<UpdateCandidateProfilePayload>;
   deleteCandidateProfile?: Maybe<DeleteCandidateProfilePayload>;
@@ -1376,165 +1506,135 @@ export type Mutation = {
   emailConfirmation?: Maybe<UsersPermissionsLoginPayload>;
 };
 
-
 export type MutationCreateCandidateProfileArgs = {
   input?: Maybe<CreateCandidateProfileInput>;
 };
-
 
 export type MutationUpdateCandidateProfileArgs = {
   input?: Maybe<UpdateCandidateProfileInput>;
 };
 
-
 export type MutationDeleteCandidateProfileArgs = {
   input?: Maybe<DeleteCandidateProfileInput>;
 };
-
 
 export type MutationCreateHuntdUserArgs = {
   input?: Maybe<CreateHuntdUserInput>;
 };
 
-
 export type MutationUpdateHuntdUserArgs = {
   input?: Maybe<UpdateHuntdUserInput>;
 };
-
 
 export type MutationDeleteHuntdUserArgs = {
   input?: Maybe<DeleteHuntdUserInput>;
 };
 
-
 export type MutationCreateRecruiterProfileArgs = {
   input?: Maybe<CreateRecruiterProfileInput>;
 };
-
 
 export type MutationUpdateRecruiterProfileArgs = {
   input?: Maybe<UpdateRecruiterProfileInput>;
 };
 
-
 export type MutationDeleteRecruiterProfileArgs = {
   input?: Maybe<DeleteRecruiterProfileInput>;
 };
-
 
 export type MutationCreateServiceAccessTokenArgs = {
   input?: Maybe<CreateServiceAccessTokenInput>;
 };
 
-
 export type MutationUpdateServiceAccessTokenArgs = {
   input?: Maybe<UpdateServiceAccessTokenInput>;
 };
-
 
 export type MutationDeleteServiceAccessTokenArgs = {
   input?: Maybe<DeleteServiceAccessTokenInput>;
 };
 
-
 export type MutationUpdateSettingArgs = {
   input?: Maybe<UpdateSettingInput>;
 };
-
 
 export type MutationCreateTranslateArgs = {
   input?: Maybe<CreateTranslateInput>;
 };
 
-
 export type MutationUpdateTranslateArgs = {
   input?: Maybe<UpdateTranslateInput>;
 };
-
 
 export type MutationDeleteTranslateArgs = {
   input?: Maybe<DeleteTranslateInput>;
 };
 
-
 export type MutationCreateRoleArgs = {
   input?: Maybe<CreateRoleInput>;
 };
-
 
 export type MutationUpdateRoleArgs = {
   input?: Maybe<UpdateRoleInput>;
 };
 
-
 export type MutationDeleteRoleArgs = {
   input?: Maybe<DeleteRoleInput>;
 };
-
 
 export type MutationCreateUserArgs = {
   input?: Maybe<CreateUserInput>;
 };
 
-
 export type MutationUpdateUserArgs = {
   input?: Maybe<UpdateUserInput>;
 };
-
 
 export type MutationDeleteUserArgs = {
   input?: Maybe<DeleteUserInput>;
 };
 
-
 export type MutationUploadArgs = {
-  refId?: Maybe<Scalars['ID']>;
-  ref?: Maybe<Scalars['String']>;
-  field?: Maybe<Scalars['String']>;
-  source?: Maybe<Scalars['String']>;
-  file: Scalars['Upload'];
+  refId?: Maybe<Scalars["ID"]>;
+  ref?: Maybe<Scalars["String"]>;
+  field?: Maybe<Scalars["String"]>;
+  source?: Maybe<Scalars["String"]>;
+  file: Scalars["Upload"];
 };
-
 
 export type MutationMultipleUploadArgs = {
-  refId?: Maybe<Scalars['ID']>;
-  ref?: Maybe<Scalars['String']>;
-  field?: Maybe<Scalars['String']>;
-  source?: Maybe<Scalars['String']>;
-  files: Array<Maybe<Scalars['Upload']>>;
+  refId?: Maybe<Scalars["ID"]>;
+  ref?: Maybe<Scalars["String"]>;
+  field?: Maybe<Scalars["String"]>;
+  source?: Maybe<Scalars["String"]>;
+  files: Array<Maybe<Scalars["Upload"]>>;
 };
-
 
 export type MutationUpdateFileInfoArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
   info: FileInfoInput;
 };
-
 
 export type MutationLoginArgs = {
   input: UsersPermissionsLoginInput;
 };
 
-
 export type MutationRegisterArgs = {
   input: UsersPermissionsRegisterInput;
 };
 
-
 export type MutationForgotPasswordArgs = {
-  email: Scalars['String'];
+  email: Scalars["String"];
 };
-
 
 export type MutationResetPasswordArgs = {
-  password: Scalars['String'];
-  passwordConfirmation: Scalars['String'];
-  code: Scalars['String'];
+  password: Scalars["String"];
+  passwordConfirmation: Scalars["String"];
+  code: Scalars["String"];
 };
 
-
 export type MutationEmailConfirmationArgs = {
-  confirmation: Scalars['String'];
+  confirmation: Scalars["String"];
 };
 
 export type CreateCandidateProfileInput = {
@@ -1543,14 +1643,14 @@ export type CreateCandidateProfileInput = {
 
 export type CandidateProfileInput = {
   status?: Maybe<Enum_Candidateprofiles_Status>;
-  position?: Maybe<Scalars['String']>;
-  salary?: Maybe<Scalars['Float']>;
-  candidate_description?: Maybe<Scalars['String']>;
-  experience_description?: Maybe<Scalars['String']>;
-  reject_reason?: Maybe<Scalars['String']>;
-  user_id?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  position?: Maybe<Scalars["String"]>;
+  salary?: Maybe<Scalars["Float"]>;
+  candidate_description?: Maybe<Scalars["String"]>;
+  experience_description?: Maybe<Scalars["String"]>;
+  reject_reason?: Maybe<Scalars["String"]>;
+  user_id?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateCandidateProfileInput = {
@@ -1559,19 +1659,19 @@ export type UpdateCandidateProfileInput = {
 };
 
 export type InputId = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
 
 export type EditCandidateProfileInput = {
   status?: Maybe<Enum_Candidateprofiles_Status>;
-  position?: Maybe<Scalars['String']>;
-  salary?: Maybe<Scalars['Float']>;
-  candidate_description?: Maybe<Scalars['String']>;
-  experience_description?: Maybe<Scalars['String']>;
-  reject_reason?: Maybe<Scalars['String']>;
-  user_id?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  position?: Maybe<Scalars["String"]>;
+  salary?: Maybe<Scalars["Float"]>;
+  candidate_description?: Maybe<Scalars["String"]>;
+  experience_description?: Maybe<Scalars["String"]>;
+  reject_reason?: Maybe<Scalars["String"]>;
+  user_id?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteCandidateProfileInput = {
@@ -1583,13 +1683,13 @@ export type CreateHuntdUserInput = {
 };
 
 export type HuntdUserInput = {
-  email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
-  last_name?: Maybe<Scalars['String']>;
-  recruiter_profiles?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  candidate_profiles?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  email?: Maybe<Scalars["String"]>;
+  first_name?: Maybe<Scalars["String"]>;
+  last_name?: Maybe<Scalars["String"]>;
+  recruiter_profiles?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  candidate_profiles?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateHuntdUserInput = {
@@ -1598,13 +1698,13 @@ export type UpdateHuntdUserInput = {
 };
 
 export type EditHuntdUserInput = {
-  email?: Maybe<Scalars['String']>;
-  first_name?: Maybe<Scalars['String']>;
-  last_name?: Maybe<Scalars['String']>;
-  recruiter_profiles?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  candidate_profiles?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  email?: Maybe<Scalars["String"]>;
+  first_name?: Maybe<Scalars["String"]>;
+  last_name?: Maybe<Scalars["String"]>;
+  recruiter_profiles?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  candidate_profiles?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteHuntdUserInput = {
@@ -1617,12 +1717,12 @@ export type CreateRecruiterProfileInput = {
 
 export type RecruiterProfileInput = {
   status?: Maybe<Enum_Recruiterprofiles_Status>;
-  position?: Maybe<Scalars['String']>;
-  company_name?: Maybe<Scalars['String']>;
-  user_id?: Maybe<Scalars['ID']>;
-  reject_reason?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  position?: Maybe<Scalars["String"]>;
+  company_name?: Maybe<Scalars["String"]>;
+  user_id?: Maybe<Scalars["ID"]>;
+  reject_reason?: Maybe<Scalars["String"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateRecruiterProfileInput = {
@@ -1632,12 +1732,12 @@ export type UpdateRecruiterProfileInput = {
 
 export type EditRecruiterProfileInput = {
   status?: Maybe<Enum_Recruiterprofiles_Status>;
-  position?: Maybe<Scalars['String']>;
-  company_name?: Maybe<Scalars['String']>;
-  user_id?: Maybe<Scalars['ID']>;
-  reject_reason?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  position?: Maybe<Scalars["String"]>;
+  company_name?: Maybe<Scalars["String"]>;
+  user_id?: Maybe<Scalars["ID"]>;
+  reject_reason?: Maybe<Scalars["String"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteRecruiterProfileInput = {
@@ -1649,10 +1749,10 @@ export type CreateServiceAccessTokenInput = {
 };
 
 export type ServiceAccessTokenInput = {
-  token: Scalars['String'];
-  user_id?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  token: Scalars["String"];
+  user_id?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateServiceAccessTokenInput = {
@@ -1661,10 +1761,10 @@ export type UpdateServiceAccessTokenInput = {
 };
 
 export type EditServiceAccessTokenInput = {
-  token?: Maybe<Scalars['String']>;
-  user_id?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  token?: Maybe<Scalars["String"]>;
+  user_id?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteServiceAccessTokenInput = {
@@ -1676,10 +1776,10 @@ export type UpdateSettingInput = {
 };
 
 export type EditSettingInput = {
-  api_graphql_endpoint?: Maybe<Scalars['String']>;
-  api_graphql_token?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  api_graphql_endpoint?: Maybe<Scalars["String"]>;
+  api_graphql_token?: Maybe<Scalars["String"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type CreateTranslateInput = {
@@ -1687,12 +1787,12 @@ export type CreateTranslateInput = {
 };
 
 export type TranslateInput = {
-  code: Scalars['String'];
-  namespace: Scalars['String'];
-  language?: Maybe<Scalars['String']>;
-  value?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  code: Scalars["String"];
+  namespace: Scalars["String"];
+  language?: Maybe<Scalars["String"]>;
+  value?: Maybe<Scalars["String"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateTranslateInput = {
@@ -1701,12 +1801,12 @@ export type UpdateTranslateInput = {
 };
 
 export type EditTranslateInput = {
-  code?: Maybe<Scalars['String']>;
-  namespace?: Maybe<Scalars['String']>;
-  language?: Maybe<Scalars['String']>;
-  value?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  code?: Maybe<Scalars["String"]>;
+  namespace?: Maybe<Scalars["String"]>;
+  language?: Maybe<Scalars["String"]>;
+  value?: Maybe<Scalars["String"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteTranslateInput = {
@@ -1718,13 +1818,13 @@ export type CreateRoleInput = {
 };
 
 export type RoleInput = {
-  name: Scalars['String'];
-  description?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  permissions?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  users?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  name: Scalars["String"];
+  description?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+  permissions?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  users?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateRoleInput = {
@@ -1733,13 +1833,13 @@ export type UpdateRoleInput = {
 };
 
 export type EditRoleInput = {
-  name?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  permissions?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  users?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+  permissions?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  users?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteRoleInput = {
@@ -1751,16 +1851,16 @@ export type CreateUserInput = {
 };
 
 export type UserInput = {
-  username: Scalars['String'];
-  email: Scalars['String'];
-  provider?: Maybe<Scalars['String']>;
-  password?: Maybe<Scalars['String']>;
-  resetPasswordToken?: Maybe<Scalars['String']>;
-  confirmed?: Maybe<Scalars['Boolean']>;
-  blocked?: Maybe<Scalars['Boolean']>;
-  role?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  username: Scalars["String"];
+  email: Scalars["String"];
+  provider?: Maybe<Scalars["String"]>;
+  password?: Maybe<Scalars["String"]>;
+  resetPasswordToken?: Maybe<Scalars["String"]>;
+  confirmed?: Maybe<Scalars["Boolean"]>;
+  blocked?: Maybe<Scalars["Boolean"]>;
+  role?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type UpdateUserInput = {
@@ -1769,201 +1869,212 @@ export type UpdateUserInput = {
 };
 
 export type EditUserInput = {
-  username?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  provider?: Maybe<Scalars['String']>;
-  password?: Maybe<Scalars['String']>;
-  resetPasswordToken?: Maybe<Scalars['String']>;
-  confirmed?: Maybe<Scalars['Boolean']>;
-  blocked?: Maybe<Scalars['Boolean']>;
-  role?: Maybe<Scalars['ID']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  username?: Maybe<Scalars["String"]>;
+  email?: Maybe<Scalars["String"]>;
+  provider?: Maybe<Scalars["String"]>;
+  password?: Maybe<Scalars["String"]>;
+  resetPasswordToken?: Maybe<Scalars["String"]>;
+  confirmed?: Maybe<Scalars["Boolean"]>;
+  blocked?: Maybe<Scalars["Boolean"]>;
+  role?: Maybe<Scalars["ID"]>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type DeleteUserInput = {
   where?: Maybe<InputId>;
 };
 
-
 export type FileInfoInput = {
-  name?: Maybe<Scalars['String']>;
-  alternativeText?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars["String"]>;
+  alternativeText?: Maybe<Scalars["String"]>;
+  caption?: Maybe<Scalars["String"]>;
 };
 
 export type UsersPermissionsLoginInput = {
-  identifier: Scalars['String'];
-  password: Scalars['String'];
-  provider?: Maybe<Scalars['String']>;
+  identifier: Scalars["String"];
+  password: Scalars["String"];
+  provider?: Maybe<Scalars["String"]>;
 };
 
 export type UsersPermissionsRegisterInput = {
-  username: Scalars['String'];
-  email: Scalars['String'];
-  password: Scalars['String'];
+  username: Scalars["String"];
+  email: Scalars["String"];
+  password: Scalars["String"];
 };
 
 export type SettingInput = {
-  api_graphql_endpoint: Scalars['String'];
-  api_graphql_token: Scalars['String'];
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  api_graphql_endpoint: Scalars["String"];
+  api_graphql_token: Scalars["String"];
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type FileInput = {
-  name: Scalars['String'];
-  alternativeText?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
-  width?: Maybe<Scalars['Int']>;
-  height?: Maybe<Scalars['Int']>;
-  formats?: Maybe<Scalars['JSON']>;
-  hash: Scalars['String'];
-  ext?: Maybe<Scalars['String']>;
-  mime: Scalars['String'];
-  size: Scalars['Float'];
-  url: Scalars['String'];
-  previewUrl?: Maybe<Scalars['String']>;
-  provider: Scalars['String'];
-  provider_metadata?: Maybe<Scalars['JSON']>;
-  related?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  name: Scalars["String"];
+  alternativeText?: Maybe<Scalars["String"]>;
+  caption?: Maybe<Scalars["String"]>;
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  formats?: Maybe<Scalars["JSON"]>;
+  hash: Scalars["String"];
+  ext?: Maybe<Scalars["String"]>;
+  mime: Scalars["String"];
+  size: Scalars["Float"];
+  url: Scalars["String"];
+  previewUrl?: Maybe<Scalars["String"]>;
+  provider: Scalars["String"];
+  provider_metadata?: Maybe<Scalars["JSON"]>;
+  related?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
 export type EditFileInput = {
-  name?: Maybe<Scalars['String']>;
-  alternativeText?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
-  width?: Maybe<Scalars['Int']>;
-  height?: Maybe<Scalars['Int']>;
-  formats?: Maybe<Scalars['JSON']>;
-  hash?: Maybe<Scalars['String']>;
-  ext?: Maybe<Scalars['String']>;
-  mime?: Maybe<Scalars['String']>;
-  size?: Maybe<Scalars['Float']>;
-  url?: Maybe<Scalars['String']>;
-  previewUrl?: Maybe<Scalars['String']>;
-  provider?: Maybe<Scalars['String']>;
-  provider_metadata?: Maybe<Scalars['JSON']>;
-  related?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars["String"]>;
+  alternativeText?: Maybe<Scalars["String"]>;
+  caption?: Maybe<Scalars["String"]>;
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  formats?: Maybe<Scalars["JSON"]>;
+  hash?: Maybe<Scalars["String"]>;
+  ext?: Maybe<Scalars["String"]>;
+  mime?: Maybe<Scalars["String"]>;
+  size?: Maybe<Scalars["Float"]>;
+  url?: Maybe<Scalars["String"]>;
+  previewUrl?: Maybe<Scalars["String"]>;
+  provider?: Maybe<Scalars["String"]>;
+  provider_metadata?: Maybe<Scalars["JSON"]>;
+  related?: Maybe<Array<Maybe<Scalars["ID"]>>>;
+  created_by?: Maybe<Scalars["ID"]>;
+  updated_by?: Maybe<Scalars["ID"]>;
 };
 
-
-
-
 export enum CacheControlScope {
-  Public = 'PUBLIC',
-  Private = 'PRIVATE'
+  Public = "PUBLIC",
+  Private = "PRIVATE",
 }
 
-export type CandidateProfilesBaseFragment = (
-  { __typename?: 'CandidateProfiles' }
-  & Pick<CandidateProfiles, 'id' | 'candidate_description' | 'experience_description' | 'position' | 'status' | 'salary'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
-);
+export type CandidateProfilesBaseFragment = {
+  __typename?: "CandidateProfiles";
+} & Pick<
+  CandidateProfiles,
+  | "id"
+  | "candidate_description"
+  | "experience_description"
+  | "position"
+  | "status"
+  | "salary"
+> & { user_id?: Maybe<{ __typename?: "HuntdUsers" } & HuntdUsersBaseFragment> };
 
 export type CandidateProfilesQueryVariables = Exact<{
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 }>;
 
+export type CandidateProfilesQuery = { __typename?: "Query" } & {
+  candidateProfiles?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: "CandidateProfiles" } & CandidateProfilesBaseFragment
+      >
+    >
+  >;
+};
 
-export type CandidateProfilesQuery = (
-  { __typename?: 'Query' }
-  & { candidateProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'CandidateProfiles' }
-    & CandidateProfilesBaseFragment
-  )>>> }
-);
+export type HuntdUsersBaseFragment = { __typename?: "HuntdUsers" } & Pick<
+  HuntdUsers,
+  "id" | "email" | "first_name" | "last_name"
+>;
 
-export type HuntdUsersBaseFragment = (
-  { __typename?: 'HuntdUsers' }
-  & Pick<HuntdUsers, 'id' | 'email' | 'first_name' | 'last_name'>
-);
-
-export type RecruiterProfilesBaseFragment = (
-  { __typename?: 'RecruiterProfiles' }
-  & Pick<RecruiterProfiles, 'id' | 'company_name' | 'position' | 'status'>
-  & { user_id?: Maybe<(
-    { __typename?: 'HuntdUsers' }
-    & HuntdUsersBaseFragment
-  )> }
-);
+export type RecruiterProfilesBaseFragment = {
+  __typename?: "RecruiterProfiles";
+} & Pick<RecruiterProfiles, "id" | "company_name" | "position" | "status"> & {
+    user_id?: Maybe<{ __typename?: "HuntdUsers" } & HuntdUsersBaseFragment>;
+  };
 
 export type RecruiterProfilesQueryVariables = Exact<{
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+  sort?: Maybe<Scalars["String"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  start?: Maybe<Scalars["Int"]>;
+  where?: Maybe<Scalars["JSON"]>;
 }>;
 
+export type RecruiterProfilesQuery = { __typename?: "Query" } & {
+  recruiterProfiles?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: "RecruiterProfiles" } & RecruiterProfilesBaseFragment
+      >
+    >
+  >;
+};
 
-export type RecruiterProfilesQuery = (
-  { __typename?: 'Query' }
-  & { recruiterProfiles?: Maybe<Array<Maybe<(
-    { __typename?: 'RecruiterProfiles' }
-    & RecruiterProfilesBaseFragment
-  )>>> }
-);
+export type SettingsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type SettingsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SettingsQuery = (
-  { __typename?: 'Query' }
-  & { setting?: Maybe<(
-    { __typename?: 'Settings' }
-    & Pick<Settings, 'id' | 'api_graphql_endpoint' | 'api_graphql_token'>
-  )> }
-);
+export type SettingsQuery = { __typename?: "Query" } & {
+  setting?: Maybe<
+    { __typename?: "Settings" } & Pick<
+      Settings,
+      "id" | "api_graphql_endpoint" | "api_graphql_token"
+    >
+  >;
+};
 
 export const HuntdUsersBaseFragmentDoc = /*#__PURE__*/ gql`
-    fragment HuntdUsersBase on HuntdUsers {
-  id
-  email
-  first_name
-  last_name
-}
-    `;
+  fragment HuntdUsersBase on HuntdUsers {
+    id
+    email
+    first_name
+    last_name
+  }
+`;
 export const CandidateProfilesBaseFragmentDoc = /*#__PURE__*/ gql`
-    fragment CandidateProfilesBase on CandidateProfiles {
-  id
-  candidate_description
-  experience_description
-  position
-  status
-  salary
-  user_id {
-    ...HuntdUsersBase
+  fragment CandidateProfilesBase on CandidateProfiles {
+    id
+    candidate_description
+    experience_description
+    position
+    status
+    salary
+    user_id {
+      ...HuntdUsersBase
+    }
   }
-}
-    ${HuntdUsersBaseFragmentDoc}`;
+  ${HuntdUsersBaseFragmentDoc}
+`;
 export const RecruiterProfilesBaseFragmentDoc = /*#__PURE__*/ gql`
-    fragment RecruiterProfilesBase on RecruiterProfiles {
-  id
-  company_name
-  position
-  status
-  user_id {
-    ...HuntdUsersBase
+  fragment RecruiterProfilesBase on RecruiterProfiles {
+    id
+    company_name
+    position
+    status
+    user_id {
+      ...HuntdUsersBase
+    }
   }
-}
-    ${HuntdUsersBaseFragmentDoc}`;
+  ${HuntdUsersBaseFragmentDoc}
+`;
 export const CandidateProfilesDocument = /*#__PURE__*/ gql`
-    query candidateProfiles($sort: String, $limit: Int, $start: Int, $where: JSON) {
-  candidateProfiles(sort: $sort, limit: $limit, start: $start, where: $where) {
-    ...CandidateProfilesBase
+  query candidateProfiles(
+    $sort: String
+    $limit: Int
+    $start: Int
+    $where: JSON
+  ) {
+    candidateProfiles(
+      sort: $sort
+      limit: $limit
+      start: $start
+      where: $where
+    ) {
+      ...CandidateProfilesBase
+    }
   }
-}
-    ${CandidateProfilesBaseFragmentDoc}`;
+  ${CandidateProfilesBaseFragmentDoc}
+`;
 
 /**
  * __useCandidateProfilesQuery__
@@ -1984,22 +2095,56 @@ export const CandidateProfilesDocument = /*#__PURE__*/ gql`
  *   },
  * });
  */
-export function useCandidateProfilesQuery(baseOptions?: Apollo.QueryHookOptions<CandidateProfilesQuery, CandidateProfilesQueryVariables>) {
-        return Apollo.useQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
-      }
-export function useCandidateProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CandidateProfilesQuery, CandidateProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<CandidateProfilesQuery, CandidateProfilesQueryVariables>(CandidateProfilesDocument, baseOptions);
-        }
-export type CandidateProfilesQueryHookResult = ReturnType<typeof useCandidateProfilesQuery>;
-export type CandidateProfilesLazyQueryHookResult = ReturnType<typeof useCandidateProfilesLazyQuery>;
-export type CandidateProfilesQueryResult = Apollo.QueryResult<CandidateProfilesQuery, CandidateProfilesQueryVariables>;
-export const RecruiterProfilesDocument = /*#__PURE__*/ gql`
-    query recruiterProfiles($sort: String, $limit: Int, $start: Int, $where: JSON) {
-  recruiterProfiles(sort: $sort, limit: $limit, start: $start, where: $where) {
-    ...RecruiterProfilesBase
-  }
+export function useCandidateProfilesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    CandidateProfilesQuery,
+    CandidateProfilesQueryVariables
+  >
+) {
+  return Apollo.useQuery<
+    CandidateProfilesQuery,
+    CandidateProfilesQueryVariables
+  >(CandidateProfilesDocument, baseOptions);
 }
-    ${RecruiterProfilesBaseFragmentDoc}`;
+export function useCandidateProfilesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    CandidateProfilesQuery,
+    CandidateProfilesQueryVariables
+  >
+) {
+  return Apollo.useLazyQuery<
+    CandidateProfilesQuery,
+    CandidateProfilesQueryVariables
+  >(CandidateProfilesDocument, baseOptions);
+}
+export type CandidateProfilesQueryHookResult = ReturnType<
+  typeof useCandidateProfilesQuery
+>;
+export type CandidateProfilesLazyQueryHookResult = ReturnType<
+  typeof useCandidateProfilesLazyQuery
+>;
+export type CandidateProfilesQueryResult = Apollo.QueryResult<
+  CandidateProfilesQuery,
+  CandidateProfilesQueryVariables
+>;
+export const RecruiterProfilesDocument = /*#__PURE__*/ gql`
+  query recruiterProfiles(
+    $sort: String
+    $limit: Int
+    $start: Int
+    $where: JSON
+  ) {
+    recruiterProfiles(
+      sort: $sort
+      limit: $limit
+      start: $start
+      where: $where
+    ) {
+      ...RecruiterProfilesBase
+    }
+  }
+  ${RecruiterProfilesBaseFragmentDoc}
+`;
 
 /**
  * __useRecruiterProfilesQuery__
@@ -2020,24 +2165,47 @@ export const RecruiterProfilesDocument = /*#__PURE__*/ gql`
  *   },
  * });
  */
-export function useRecruiterProfilesQuery(baseOptions?: Apollo.QueryHookOptions<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>) {
-        return Apollo.useQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
-      }
-export function useRecruiterProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>(RecruiterProfilesDocument, baseOptions);
-        }
-export type RecruiterProfilesQueryHookResult = ReturnType<typeof useRecruiterProfilesQuery>;
-export type RecruiterProfilesLazyQueryHookResult = ReturnType<typeof useRecruiterProfilesLazyQuery>;
-export type RecruiterProfilesQueryResult = Apollo.QueryResult<RecruiterProfilesQuery, RecruiterProfilesQueryVariables>;
-export const SettingsDocument = /*#__PURE__*/ gql`
-    query settings {
-  setting {
-    id
-    api_graphql_endpoint
-    api_graphql_token
-  }
+export function useRecruiterProfilesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    RecruiterProfilesQuery,
+    RecruiterProfilesQueryVariables
+  >
+) {
+  return Apollo.useQuery<
+    RecruiterProfilesQuery,
+    RecruiterProfilesQueryVariables
+  >(RecruiterProfilesDocument, baseOptions);
 }
-    `;
+export function useRecruiterProfilesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    RecruiterProfilesQuery,
+    RecruiterProfilesQueryVariables
+  >
+) {
+  return Apollo.useLazyQuery<
+    RecruiterProfilesQuery,
+    RecruiterProfilesQueryVariables
+  >(RecruiterProfilesDocument, baseOptions);
+}
+export type RecruiterProfilesQueryHookResult = ReturnType<
+  typeof useRecruiterProfilesQuery
+>;
+export type RecruiterProfilesLazyQueryHookResult = ReturnType<
+  typeof useRecruiterProfilesLazyQuery
+>;
+export type RecruiterProfilesQueryResult = Apollo.QueryResult<
+  RecruiterProfilesQuery,
+  RecruiterProfilesQueryVariables
+>;
+export const SettingsDocument = /*#__PURE__*/ gql`
+  query settings {
+    setting {
+      id
+      api_graphql_endpoint
+      api_graphql_token
+    }
+  }
+`;
 
 /**
  * __useSettingsQuery__
@@ -2054,12 +2222,30 @@ export const SettingsDocument = /*#__PURE__*/ gql`
  *   },
  * });
  */
-export function useSettingsQuery(baseOptions?: Apollo.QueryHookOptions<SettingsQuery, SettingsQueryVariables>) {
-        return Apollo.useQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
-      }
-export function useSettingsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SettingsQuery, SettingsQueryVariables>) {
-          return Apollo.useLazyQuery<SettingsQuery, SettingsQueryVariables>(SettingsDocument, baseOptions);
-        }
+export function useSettingsQuery(
+  baseOptions?: Apollo.QueryHookOptions<SettingsQuery, SettingsQueryVariables>
+) {
+  return Apollo.useQuery<SettingsQuery, SettingsQueryVariables>(
+    SettingsDocument,
+    baseOptions
+  );
+}
+export function useSettingsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    SettingsQuery,
+    SettingsQueryVariables
+  >
+) {
+  return Apollo.useLazyQuery<SettingsQuery, SettingsQueryVariables>(
+    SettingsDocument,
+    baseOptions
+  );
+}
 export type SettingsQueryHookResult = ReturnType<typeof useSettingsQuery>;
-export type SettingsLazyQueryHookResult = ReturnType<typeof useSettingsLazyQuery>;
-export type SettingsQueryResult = Apollo.QueryResult<SettingsQuery, SettingsQueryVariables>;
+export type SettingsLazyQueryHookResult = ReturnType<
+  typeof useSettingsLazyQuery
+>;
+export type SettingsQueryResult = Apollo.QueryResult<
+  SettingsQuery,
+  SettingsQueryVariables
+>;

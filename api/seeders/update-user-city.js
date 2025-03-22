@@ -1,6 +1,7 @@
 const COMPANY_NAME = 'TM';
 const CITY = 'Kiew';
 const QUERY = `SELECT id FROM recruiter_profiles WHERE company_name = :companyName LIMIT 1`;
+const TABLE_NAME = 'recruiter_profiles';
 
 module.exports = {
   up: async (queryInterface) => {
@@ -11,7 +12,7 @@ module.exports = {
 
     if (user) {
       await queryInterface.bulkUpdate(
-        'recruiter_profiles',
+        TABLE_NAME,
         { city: CITY },
         { id: user.id },
       );
@@ -26,7 +27,7 @@ module.exports = {
 
     if (user) {
       await queryInterface.bulkUpdate(
-        'recruiter_profiles',
+        TABLE_NAME,
         { city: null },
         { id: user.id },
       );
