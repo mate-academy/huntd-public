@@ -1,7 +1,7 @@
 TAG ?= latest
 APP_ENV ?= local
 t ?= 20
-NPM_TOKEN ?= INSERT_HERE
+NPM_TOKEN ?= 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
 
 .PHONY: api front cms
 
