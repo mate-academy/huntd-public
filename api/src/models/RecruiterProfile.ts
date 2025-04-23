@@ -58,6 +58,12 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   slug: string
 
   @Column({
+    type: DataType.STRING(255),
+    allowNull: true,
+  })
+    city: string;
+
+  @Column({
     field: 'statuses_notification_sent_at',
   })
   statusesNotificationSentAt: Date
