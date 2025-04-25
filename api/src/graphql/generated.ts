@@ -998,7 +998,7 @@ export type RecruiterProfile = {
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
-  city?: Maybe<Scalars['String']>
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -2299,14 +2299,35 @@ export const SendCandidateProfileToReviewDocument = gql`
     ${CandidateProfileBaseFragmentDoc}`;
 export const UpdateCandidateProfileDocument = gql`
     mutation updateCandidateProfile($position: String, $salary: Float, $candidateDescription: String, $experienceDescription: String, $workExpectations: String, $achievements: String, $technologiesIds: [Int!], $jobExperienceId: Int, $employmentTypesIds: [Int!], $employmentLocationsIds: [Int!], $englishLevelId: Int, $specializationId: Int, $specializationsIds: [Int!], $cities: [CandidateProfileCityInput!]) {
-  updateCandidateProfile(position: $position, salary: $salary, candidateDescription: $candidateDescription, experienceDescription: $experienceDescription, workExpectations: $workExpectations, achievements: $achievements, technologiesIds: $technologiesIds, jobExperienceId: $jobExperienceId, employmentTypesIds: $employmentTypesIds, employmentLocationsIds: $employmentLocationsIds, englishLevelId: $englishLevelId, specializationId: $specializationId, specializationsIds: $specializationsIds, cities: $cities) {
+  updateCandidateProfile(
+    position: $position
+    salary: $salary
+    candidateDescription: $candidateDescription
+    experienceDescription: $experienceDescription
+    workExpectations: $workExpectations
+    achievements: $achievements
+    technologiesIds: $technologiesIds
+    jobExperienceId: $jobExperienceId
+    employmentTypesIds: $employmentTypesIds
+    employmentLocationsIds: $employmentLocationsIds
+    englishLevelId: $englishLevelId
+    specializationId: $specializationId
+    specializationsIds: $specializationsIds
+    cities: $cities
+  ) {
     ...CandidateProfileBase
   }
 }
     ${CandidateProfileBaseFragmentDoc}`;
 export const RegisterDeviceDocument = gql`
     mutation registerDevice($token: String!, $devicePlatform: DevicePlatform!, $deviceYear: String, $systemVersion: String, $deviceName: String) {
-  registerDevice(token: $token, devicePlatform: $devicePlatform, deviceYear: $deviceYear, systemVersion: $systemVersion, deviceName: $deviceName) {
+  registerDevice(
+    token: $token
+    devicePlatform: $devicePlatform
+    deviceYear: $deviceYear
+    systemVersion: $systemVersion
+    deviceName: $deviceName
+  ) {
     ...DeviceTokenBase
     ...DeviceTokenExtra
   }
@@ -2391,7 +2412,11 @@ export const LogOutDocument = gql`
     `;
 export const ResetPasswordDocument = gql`
     mutation resetPassword($token: String!, $password: String!, $repeatPassword: String!) {
-  resetPassword(token: $token, password: $password, repeatPassword: $repeatPassword)
+  resetPassword(
+    token: $token
+    password: $password
+    repeatPassword: $repeatPassword
+  )
 }
     `;
 export const SendConfirmEmailLinkDocument = gql`
@@ -2412,7 +2437,30 @@ ${UserPrimaryProfileFragmentDoc}
 ${UserEngagementFieldsFragmentDoc}`;
 export const SignUpDocument = gql`
     mutation signUp($email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUp(email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
+  signUp(
+    email: $email
+    phone: $phone
+    password: $password
+    repeatPassword: $repeatPassword
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -2423,7 +2471,31 @@ ${UserPrimaryProfileFragmentDoc}
 ${UserEngagementFieldsFragmentDoc}`;
 export const SignUpAsInactiveUserDocument = gql`
     mutation signUpAsInactiveUser($username: String!, $email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUpAsInactiveUser(username: $username, email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
+  signUpAsInactiveUser(
+    username: $username
+    email: $email
+    phone: $phone
+    password: $password
+    repeatPassword: $repeatPassword
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -2458,7 +2530,11 @@ export const UpdateUserSettingsDocument = gql`
     ${UserSettingsBaseFragmentDoc}`;
 export const SubscribeToCandidatesSearchDocument = gql`
     mutation subscribeToCandidatesSearch($title: String!, $userId: Int, $searchParams: PublicProfilesParameters!) {
-  subscribeToCandidatesSearch(title: $title, userId: $userId, searchParams: $searchParams) {
+  subscribeToCandidatesSearch(
+    title: $title
+    userId: $userId
+    searchParams: $searchParams
+  ) {
     ...UsersSearchSubscriptionBase
     ...UsersSearchSubscriptionParams
   }
