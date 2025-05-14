@@ -6,7 +6,7 @@ import {
   GetAdminUserUseCase,
   GetAdminUserOptions,
   GetAdminUserResult,
-} from '@/modules/user/user.useCases/GetAdminUser.useCase';
+} from '@/modules/user/user.useCases/GetAdminUser.UseCase';
 import { AuthErrors } from '@/auth/auth.constants';
 
 export const isAdminAuthenticatedGuard = makeResolver<
