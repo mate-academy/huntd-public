@@ -1012,6 +1012,7 @@ export type RecruiterProfile = {
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -2170,7 +2171,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime' | 'city'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -3789,6 +3790,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   companyName
   slug
   lastActionTime
+  city
 }
     `;
 export const ProfileConnectionWithProfilesFragmentDoc = /*#__PURE__*/ gql`
@@ -4219,7 +4221,10 @@ export type DeactivateCandidateProfilesMutationResult = Apollo.MutationResult<De
 export type DeactivateCandidateProfilesMutationOptions = Apollo.BaseMutationOptions<DeactivateCandidateProfilesMutation, DeactivateCandidateProfilesMutationVariables>;
 export const CandidateProfilesBySubscriptionDocument = /*#__PURE__*/ gql`
     query candidateProfilesBySubscription($subscriptionLastInteract: GraphQLDateTime!, $where: PublicProfilesParameters!) {
-  candidateProfilesBySubscription(subscriptionLastInteract: $subscriptionLastInteract, where: $where) {
+  candidateProfilesBySubscription(
+    subscriptionLastInteract: $subscriptionLastInteract
+    where: $where
+  ) {
     ...CandidateProfileBase
   }
 }
@@ -4466,7 +4471,23 @@ export type SendCandidateProfileToReviewMutationResult = Apollo.MutationResult<S
 export type SendCandidateProfileToReviewMutationOptions = Apollo.BaseMutationOptions<SendCandidateProfileToReviewMutation, SendCandidateProfileToReviewMutationVariables>;
 export const UpdateCandidateProfileDocument = /*#__PURE__*/ gql`
     mutation updateCandidateProfile($position: String, $salary: Float, $candidateDescription: String, $experienceDescription: String, $workExpectations: String, $achievements: String, $technologiesIds: [Int!], $jobExperienceId: Int, $employmentTypesIds: [Int!], $employmentLocationsIds: [Int!], $englishLevelId: Int, $specializationId: Int, $specializationsIds: [Int!], $cities: [CandidateProfileCityInput!], $workPlaces: [CandidateProfileWorkPlaceInput!]) {
-  updateCandidateProfile(position: $position, salary: $salary, candidateDescription: $candidateDescription, experienceDescription: $experienceDescription, workExpectations: $workExpectations, achievements: $achievements, technologiesIds: $technologiesIds, jobExperienceId: $jobExperienceId, employmentTypesIds: $employmentTypesIds, employmentLocationsIds: $employmentLocationsIds, englishLevelId: $englishLevelId, specializationId: $specializationId, specializationsIds: $specializationsIds, cities: $cities, workPlaces: $workPlaces) {
+  updateCandidateProfile(
+    position: $position
+    salary: $salary
+    candidateDescription: $candidateDescription
+    experienceDescription: $experienceDescription
+    workExpectations: $workExpectations
+    achievements: $achievements
+    technologiesIds: $technologiesIds
+    jobExperienceId: $jobExperienceId
+    employmentTypesIds: $employmentTypesIds
+    employmentLocationsIds: $employmentLocationsIds
+    englishLevelId: $englishLevelId
+    specializationId: $specializationId
+    specializationsIds: $specializationsIds
+    cities: $cities
+    workPlaces: $workPlaces
+  ) {
     ...CandidateProfileBase
   }
 }
@@ -4956,7 +4977,31 @@ export type DisconnectOAuthProviderMutationResult = Apollo.MutationResult<Discon
 export type DisconnectOAuthProviderMutationOptions = Apollo.BaseMutationOptions<DisconnectOAuthProviderMutation, DisconnectOAuthProviderMutationVariables>;
 export const SocialSignUpDocument = /*#__PURE__*/ gql`
     mutation socialSignUp($email: String!, $phone: String, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String, $providerId: String!, $providerName: String!, $token: String) {
-  socialSignUp(email: $email, phone: $phone, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid, providerId: $providerId, providerName: $providerName, token: $token) {
+  socialSignUp(
+    email: $email
+    phone: $phone
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+    providerId: $providerId
+    providerName: $providerName
+    token: $token
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -5014,7 +5059,32 @@ export type SocialSignUpMutationResult = Apollo.MutationResult<SocialSignUpMutat
 export type SocialSignUpMutationOptions = Apollo.BaseMutationOptions<SocialSignUpMutation, SocialSignUpMutationVariables>;
 export const SocialSignUpAsInactiveUserDocument = /*#__PURE__*/ gql`
     mutation socialSignUpAsInactiveUser($username: String!, $email: String!, $phone: String, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String, $providerId: String!, $providerName: String!, $token: String) {
-  socialSignUpAsInactiveUser(username: $username, email: $email, phone: $phone, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid, providerId: $providerId, providerName: $providerName, token: $token) {
+  socialSignUpAsInactiveUser(
+    username: $username
+    email: $email
+    phone: $phone
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+    providerId: $providerId
+    providerName: $providerName
+    token: $token
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -5108,7 +5178,11 @@ export type UsersOAuthProvidersLazyQueryHookResult = ReturnType<typeof useUsersO
 export type UsersOAuthProvidersQueryResult = Apollo.QueryResult<UsersOAuthProvidersQuery, UsersOAuthProvidersQueryVariables>;
 export const SendPaymentRequestDocument = /*#__PURE__*/ gql`
     mutation sendPaymentRequest($profileConnectionId: Int!, $paymentAmount: Int!, $candidateSlug: String!) {
-  sendPaymentRequest(profileConnectionId: $profileConnectionId, paymentAmount: $paymentAmount, candidateSlug: $candidateSlug) {
+  sendPaymentRequest(
+    profileConnectionId: $profileConnectionId
+    paymentAmount: $paymentAmount
+    candidateSlug: $candidateSlug
+  ) {
     ...ProfileConnectionBase
   }
 }
@@ -5422,7 +5496,10 @@ export type ReviewProfileConnectionRequestMutationResult = Apollo.MutationResult
 export type ReviewProfileConnectionRequestMutationOptions = Apollo.BaseMutationOptions<ReviewProfileConnectionRequestMutation, ReviewProfileConnectionRequestMutationVariables>;
 export const SendProfileConnectionRequestDocument = /*#__PURE__*/ gql`
     mutation sendProfileConnectionRequest($candidateProfileId: Int!, $recruiterProfileId: Int!) {
-  sendProfileConnectionRequest(candidateProfileId: $candidateProfileId, recruiterProfileId: $recruiterProfileId) {
+  sendProfileConnectionRequest(
+    candidateProfileId: $candidateProfileId
+    recruiterProfileId: $recruiterProfileId
+  ) {
     ...ProfileConnectionBase
   }
 }
@@ -5552,7 +5629,11 @@ export type BulkReportOfferStatusMutationResult = Apollo.MutationResult<BulkRepo
 export type BulkReportOfferStatusMutationOptions = Apollo.BaseMutationOptions<BulkReportOfferStatusMutation, BulkReportOfferStatusMutationVariables>;
 export const BulkSendMessageDocument = /*#__PURE__*/ gql`
     mutation bulkSendMessage($recruiterProfileId: Int!, $candidateProfileIds: [Int!]!, $message: String!) {
-  bulkSendMessage(recruiterProfileId: $recruiterProfileId, candidateProfileIds: $candidateProfileIds, message: $message)
+  bulkSendMessage(
+    recruiterProfileId: $recruiterProfileId
+    candidateProfileIds: $candidateProfileIds
+    message: $message
+  )
 }
     `;
 export type BulkSendMessageMutationFn = Apollo.MutationFunction<BulkSendMessageMutation, BulkSendMessageMutationVariables>;
@@ -5584,7 +5665,11 @@ export type BulkSendMessageMutationResult = Apollo.MutationResult<BulkSendMessag
 export type BulkSendMessageMutationOptions = Apollo.BaseMutationOptions<BulkSendMessageMutation, BulkSendMessageMutationVariables>;
 export const CreateRecruiterProfileDocument = /*#__PURE__*/ gql`
     mutation createRecruiterProfile($userId: Int!, $position: String!, $companyName: String!) {
-  createRecruiterProfile(userId: $userId, position: $position, companyName: $companyName) {
+  createRecruiterProfile(
+    userId: $userId
+    position: $position
+    companyName: $companyName
+  ) {
     ...RecruiterProfileBase
   }
 }
@@ -6277,7 +6362,11 @@ export type AuthUserHiresLazyQueryHookResult = ReturnType<typeof useAuthUserHire
 export type AuthUserHiresQueryResult = Apollo.QueryResult<AuthUserHiresQuery, AuthUserHiresQueryVariables>;
 export const ChangePasswordDocument = /*#__PURE__*/ gql`
     mutation changePassword($currentPassword: String!, $password: String!, $repeatPassword: String!) {
-  changePassword(currentPassword: $currentPassword, password: $password, repeatPassword: $repeatPassword)
+  changePassword(
+    currentPassword: $currentPassword
+    password: $password
+    repeatPassword: $repeatPassword
+  )
 }
     `;
 export type ChangePasswordMutationFn = Apollo.MutationFunction<ChangePasswordMutation, ChangePasswordMutationVariables>;
@@ -6559,7 +6648,11 @@ export type RemoveCvFileMutationResult = Apollo.MutationResult<RemoveCvFileMutat
 export type RemoveCvFileMutationOptions = Apollo.BaseMutationOptions<RemoveCvFileMutation, RemoveCvFileMutationVariables>;
 export const ResetPasswordDocument = /*#__PURE__*/ gql`
     mutation resetPassword($token: String!, $password: String!, $repeatPassword: String!) {
-  resetPassword(token: $token, password: $password, repeatPassword: $repeatPassword)
+  resetPassword(
+    token: $token
+    password: $password
+    repeatPassword: $repeatPassword
+  )
 }
     `;
 export type ResetPasswordMutationFn = Apollo.MutationFunction<ResetPasswordMutation, ResetPasswordMutationVariables>;
@@ -6757,7 +6850,30 @@ export type SignInAsUserMutationResult = Apollo.MutationResult<SignInAsUserMutat
 export type SignInAsUserMutationOptions = Apollo.BaseMutationOptions<SignInAsUserMutation, SignInAsUserMutationVariables>;
 export const SignUpDocument = /*#__PURE__*/ gql`
     mutation signUp($email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUp(email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
+  signUp(
+    email: $email
+    phone: $phone
+    password: $password
+    repeatPassword: $repeatPassword
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -6814,7 +6930,31 @@ export type SignUpMutationResult = Apollo.MutationResult<SignUpMutation>;
 export type SignUpMutationOptions = Apollo.BaseMutationOptions<SignUpMutation, SignUpMutationVariables>;
 export const SignUpAsInactiveUserDocument = /*#__PURE__*/ gql`
     mutation signUpAsInactiveUser($username: String!, $email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUpAsInactiveUser(username: $username, email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
+  signUpAsInactiveUser(
+    username: $username
+    email: $email
+    phone: $phone
+    password: $password
+    repeatPassword: $repeatPassword
+    firstName: $firstName
+    lastName: $lastName
+    fvType: $fvType
+    fvSource: $fvSource
+    fvMedium: $fvMedium
+    fvCampaign: $fvCampaign
+    fvContent: $fvContent
+    fvTerm: $fvTerm
+    lvType: $lvType
+    lvSource: $lvSource
+    lvMedium: $lvMedium
+    lvCampaign: $lvCampaign
+    lvContent: $lvContent
+    lvTerm: $lvTerm
+    gClientid: $gClientid
+    gIp: $gIp
+    gAgent: $gAgent
+    gclid: $gclid
+  ) {
     ...UserBase
     ...UserPrimaryProfile
     ...UserEngagementFields
@@ -6872,7 +7012,15 @@ export type SignUpAsInactiveUserMutationResult = Apollo.MutationResult<SignUpAsI
 export type SignUpAsInactiveUserMutationOptions = Apollo.BaseMutationOptions<SignUpAsInactiveUserMutation, SignUpAsInactiveUserMutationVariables>;
 export const UpdateProfileContactsDocument = /*#__PURE__*/ gql`
     mutation updateProfileContacts($phone: String, $firstName: String, $lastName: String, $linkedinUrl: String, $behanceUrl: String, $githubUrl: String, $ethWalletAddress: String) {
-  updateProfileContacts(firstName: $firstName, lastName: $lastName, phone: $phone, linkedinUrl: $linkedinUrl, behanceUrl: $behanceUrl, githubUrl: $githubUrl, ethWalletAddress: $ethWalletAddress) {
+  updateProfileContacts(
+    firstName: $firstName
+    lastName: $lastName
+    phone: $phone
+    linkedinUrl: $linkedinUrl
+    behanceUrl: $behanceUrl
+    githubUrl: $githubUrl
+    ethWalletAddress: $ethWalletAddress
+  ) {
     ...UserBase
     ...UserPrimaryProfile
   }
@@ -7269,7 +7417,12 @@ export type UserUnreadMessagesCountUpdatedSubscriptionHookResult = ReturnType<ty
 export type UserUnreadMessagesCountUpdatedSubscriptionResult = Apollo.SubscriptionResult<UserUnreadMessagesCountUpdatedSubscription>;
 export const CreateMessageTemplateDocument = /*#__PURE__*/ gql`
     mutation createMessageTemplate($userId: Int!, $messageType: PrimaryProfile!, $messageTitle: String!, $messageBody: String!) {
-  createMessageTemplate(userId: $userId, messageType: $messageType, messageTitle: $messageTitle, messageBody: $messageBody) {
+  createMessageTemplate(
+    userId: $userId
+    messageType: $messageType
+    messageTitle: $messageTitle
+    messageBody: $messageBody
+  ) {
     ...MessageTemplateBase
   }
 }
@@ -7369,7 +7522,11 @@ export type UpdateMessageTemplateMutationResult = Apollo.MutationResult<UpdateMe
 export type UpdateMessageTemplateMutationOptions = Apollo.BaseMutationOptions<UpdateMessageTemplateMutation, UpdateMessageTemplateMutationVariables>;
 export const SubscribeToCandidatesSearchDocument = /*#__PURE__*/ gql`
     mutation subscribeToCandidatesSearch($userId: Int, $title: String!, $searchParams: PublicProfilesParameters!) {
-  subscribeToCandidatesSearch(userId: $userId, title: $title, searchParams: $searchParams) {
+  subscribeToCandidatesSearch(
+    userId: $userId
+    title: $title
+    searchParams: $searchParams
+  ) {
     ...UsersSearchSubscriptionBase
   }
 }
@@ -7834,7 +7991,21 @@ export type VacanciesByCompanyLazyQueryHookResult = ReturnType<typeof useVacanci
 export type VacanciesByCompanyQueryResult = Apollo.QueryResult<VacanciesByCompanyQuery, VacanciesByCompanyQueryVariables>;
 export const CreateWorkPlaceDocument = /*#__PURE__*/ gql`
     mutation createWorkPlace($candidateProfileId: Int!, $companyName: String!, $companyUrl: String, $companySizeFrom: Int, $companySizeTo: Int, $companyIndustry: String, $companyCategories: String, $companySpecialities: String, $companyFundingType: String, $title: String!, $description: String, $startDate: String!, $endDate: String) {
-  createWorkPlace(candidateProfileId: $candidateProfileId, companyName: $companyName, companyUrl: $companyUrl, companySizeFrom: $companySizeFrom, companySizeTo: $companySizeTo, companyIndustry: $companyIndustry, companyCategories: $companyCategories, companySpecialities: $companySpecialities, companyFundingType: $companyFundingType, title: $title, description: $description, startDate: $startDate, endDate: $endDate) {
+  createWorkPlace(
+    candidateProfileId: $candidateProfileId
+    companyName: $companyName
+    companyUrl: $companyUrl
+    companySizeFrom: $companySizeFrom
+    companySizeTo: $companySizeTo
+    companyIndustry: $companyIndustry
+    companyCategories: $companyCategories
+    companySpecialities: $companySpecialities
+    companyFundingType: $companyFundingType
+    title: $title
+    description: $description
+    startDate: $startDate
+    endDate: $endDate
+  ) {
     ...WorkPlaceFull
   }
 }
@@ -7908,7 +8079,11 @@ export type DeleteWorkPlaceMutationResult = Apollo.MutationResult<DeleteWorkPlac
 export type DeleteWorkPlaceMutationOptions = Apollo.BaseMutationOptions<DeleteWorkPlaceMutation, DeleteWorkPlaceMutationVariables>;
 export const FetchWorkPlacesDocument = /*#__PURE__*/ gql`
     mutation fetchWorkPlaces($linkedinUrl: String!, $candidateProfileId: Int!, $liveScrape: Boolean) {
-  fetchWorkPlaces(linkedinUrl: $linkedinUrl, candidateProfileId: $candidateProfileId, liveScrape: $liveScrape) {
+  fetchWorkPlaces(
+    linkedinUrl: $linkedinUrl
+    candidateProfileId: $candidateProfileId
+    liveScrape: $liveScrape
+  ) {
     ...WorkPlaceFull
   }
 }
@@ -7942,7 +8117,21 @@ export type FetchWorkPlacesMutationResult = Apollo.MutationResult<FetchWorkPlace
 export type FetchWorkPlacesMutationOptions = Apollo.BaseMutationOptions<FetchWorkPlacesMutation, FetchWorkPlacesMutationVariables>;
 export const UpdateWorkPlaceDocument = /*#__PURE__*/ gql`
     mutation updateWorkPlace($id: Int!, $companyName: String!, $companyUrl: String, $companySizeFrom: Int, $companySizeTo: Int, $companyIndustry: String, $companyCategories: String, $companySpecialities: String, $companyFundingType: String, $title: String, $description: String, $startDate: String, $endDate: String) {
-  updateWorkPlace(id: $id, companyName: $companyName, companyUrl: $companyUrl, companySizeFrom: $companySizeFrom, companySizeTo: $companySizeTo, companyIndustry: $companyIndustry, companyCategories: $companyCategories, companySpecialities: $companySpecialities, companyFundingType: $companyFundingType, title: $title, description: $description, startDate: $startDate, endDate: $endDate) {
+  updateWorkPlace(
+    id: $id
+    companyName: $companyName
+    companyUrl: $companyUrl
+    companySizeFrom: $companySizeFrom
+    companySizeTo: $companySizeTo
+    companyIndustry: $companyIndustry
+    companyCategories: $companyCategories
+    companySpecialities: $companySpecialities
+    companyFundingType: $companyFundingType
+    title: $title
+    description: $description
+    startDate: $startDate
+    endDate: $endDate
+  ) {
     ...WorkPlaceFull
   }
 }

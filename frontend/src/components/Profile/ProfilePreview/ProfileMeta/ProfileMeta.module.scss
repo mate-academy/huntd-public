@@ -2,8 +2,6 @@
 
 .metaWrapper {
   @include icon-styles {
-    width: 18px;
-    height: 18px;
     margin-right: rem-calc(4);
     color: $c-semidark-chocolate;
   }
@@ -41,7 +39,7 @@
 
     &::after {
       margin: rem-calc(0 24);
-      content: '|';
+      content: "|";
     }
   }
 }
