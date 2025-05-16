@@ -165,9 +165,10 @@ export type MutationCreateMultipleVacanciesSourcesArgs = {
 
 
 export type MutationCreateRecruiterProfileArgs = {
-  userId: Scalars['Int'];
-  position: Scalars['String'];
-  companyName: Scalars['String'];
+  userId: Scalars["Int"];
+  position: Scalars["String"];
+  companyName: Scalars["String"];
+  city?: Maybe<Scalars["String"]>;
 };
 
 
@@ -556,8 +557,9 @@ export type MutationUpdateProfileContactsArgs = {
 
 
 export type MutationUpdateRecruiterProfileArgs = {
-  position?: Maybe<Scalars['String']>;
-  companyName?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars["String"]>;
+  companyName?: Maybe<Scalars["String"]>;
+  city?: Maybe<Scalars["String"]>;
 };
 
 
@@ -1001,17 +1003,18 @@ export enum RecruiterProfileStatus {
 }
 
 export type RecruiterProfile = {
-  __typename?: 'RecruiterProfile';
-  id: Scalars['Int'];
-  slug?: Maybe<Scalars['String']>;
+  __typename?: "RecruiterProfile";
+  id: Scalars["Int"];
+  slug?: Maybe<Scalars["String"]>;
   status: RecruiterProfileStatus;
-  rejectReason?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['String']>;
-  companyName?: Maybe<Scalars['String']>;
+  rejectReason?: Maybe<Scalars["String"]>;
+  position?: Maybe<Scalars["String"]>;
+  companyName?: Maybe<Scalars["String"]>;
   user?: Maybe<User>;
-  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
-  statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
+  lastActionTime?: Maybe<Scalars["GraphQLDateTime"]>;
+  statusesNotificationSentAt?: Maybe<Scalars["GraphQLDateTime"]>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: Maybe<Scalars["String"]>;
 };
 
 
@@ -3781,16 +3784,17 @@ export const ProfileConnectionUnreadMessagesCountFragmentDoc = /*#__PURE__*/ gql
 }
     `;
 export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
-    fragment RecruiterProfileBase on RecruiterProfile {
-  id
-  status
-  rejectReason
-  position
-  companyName
-  slug
-  lastActionTime
-}
-    `;
+  fragment RecruiterProfileBase on RecruiterProfile {
+    id
+    status
+    rejectReason
+    position
+    companyName
+    city
+    slug
+    lastActionTime
+  }
+`;
 export const ProfileConnectionWithProfilesFragmentDoc = /*#__PURE__*/ gql`
     fragment ProfileConnectionWithProfiles on ProfileConnection {
   candidateProfile {
