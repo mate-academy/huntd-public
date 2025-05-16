@@ -337,8 +337,32 @@
   },
   {
     "language": "en",
+    "namespace": "profile",
+    "code": "settings_changepassword_tab",
+    "value": "settings_changepassword_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "settings_socialprofiles_tab",
+    "value": "settings_socialprofiles_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Invalid credentials",
+    "value": "Invalid credentials"
+  },
+  {
+    "language": "en",
     "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "undefined",
+    "value": "undefined"
   }
 ]
