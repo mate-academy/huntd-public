@@ -12,6 +12,7 @@
 
 # Ignore env config
 .env
+.env.sample
 
 # Ignore node_modules
 node_modules
@@ -20,3 +21,4 @@ node_modules
 deploy_logs.json
 
 temp
+Makefile
