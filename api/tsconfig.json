@@ -1,32 +1,31 @@
 {
-  "extends": "@mate-academy/ts-config",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "module": "commonjs",
-    "noUnusedLocals": false,
-    "lib": [
-      "dom",
-      "es2020",
-      "esnext.asynciterable"
+    "extends": "@mate-academy/ts-config",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "module": "commonjs",
+        "noUnusedLocals": false,
+        "lib": [
+            "dom",
+            "es2020",
+            "esnext.asynciterable"
+        ],
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
+    },
+    "files": [
+        "node_modules/@mate-academy/notifications-gateway/typings/custom.d.ts",
+        "node_modules/@mate-academy/core/typings/custom.d.ts"
     ],
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
-  },
-  "files": [
-    "node_modules/@mate-academy/notifications-gateway/typings/custom.d.ts",
-    "node_modules/@mate-academy/core/typings/custom.d.ts"
-  ],
-  "include": [
-    "src/**/*",
-    "typings/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "include": [
+        "src/**/*",
+        "typings/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }
-

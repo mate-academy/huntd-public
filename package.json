@@ -1,54 +1,54 @@
 {
-  "name": "huntd",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:frontend": "npm run lint --prefix frontend",
-    "lint:api": "npm run lint --prefix api",
-    "lint:styles:frontend": "stylelint frontend/**/*.scss --fix",
-    "lint": "concurrently \"npm run lint:frontend\" \"npm run lint:api\"",
-    "graphql:cms:generate": "graphql-codegen --config graphql-codegen.cms.yml",
-    "graphql:cms:watch": "graphql-codegen --config graphql-codegen.cms.yml --watch",
-    "graphql:generate": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml\" \"graphql-codegen --config graphql-codegen.api.yml\"  \"graphql-codegen --config graphql-codegen.mobile.yml\" \"graphql-codegen --config graphql-codegen.serverless.yml\"",
-    "graphql:watch": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml --watch\" \"graphql-codegen --config graphql-codegen.api.yml --watch\" \"graphql-codegen --config graphql-codegen.mobile.yml --watch\" \"graphql-codegen --config graphql-codegen.serverless.yml --watch\"",
-    "stylelint:check": "stylelint-config-prettier-check"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mate-academy/huntd.git"
-  },
-  "author": "mate-academy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mate-academy/huntd/issues"
-  },
-  "homepage": "https://github.com/mate-academy/huntd#readme",
-  "dependencies": {
-    "eslint": "^7.6.0",
-    "graphql": "^15.3.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.2.11"
-  },
-  "husky": {
-    "hooks": {
-      "post-commit": "git update-index --again",
-      "pre-commit": "lint-staged"
+    "name": "huntd",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint:frontend": "npm run lint --prefix frontend",
+        "lint:api": "npm run lint --prefix api",
+        "lint:styles:frontend": "stylelint frontend/**/*.scss --fix",
+        "lint": "concurrently \"npm run lint:frontend\" \"npm run lint:api\"",
+        "graphql:cms:generate": "graphql-codegen --config graphql-codegen.cms.yml",
+        "graphql:cms:watch": "graphql-codegen --config graphql-codegen.cms.yml --watch",
+        "graphql:generate": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml\" \"graphql-codegen --config graphql-codegen.api.yml\"  \"graphql-codegen --config graphql-codegen.mobile.yml\" \"graphql-codegen --config graphql-codegen.serverless.yml\"",
+        "graphql:watch": "concurrently \"graphql-codegen --config graphql-codegen.frontend.yml --watch\" \"graphql-codegen --config graphql-codegen.api.yml --watch\" \"graphql-codegen --config graphql-codegen.mobile.yml --watch\" \"graphql-codegen --config graphql-codegen.serverless.yml --watch\"",
+        "stylelint:check": "stylelint-config-prettier-check"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mate-academy/huntd.git"
+    },
+    "author": "mate-academy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mate-academy/huntd/issues"
+    },
+    "homepage": "https://github.com/mate-academy/huntd#readme",
+    "dependencies": {
+        "eslint": "^7.6.0",
+        "graphql": "^15.3.0",
+        "husky": "^4.3.8",
+        "lint-staged": "^10.2.11"
+    },
+    "husky": {
+        "hooks": {
+            "post-commit": "git update-index --again",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "devDependencies": {
+        "@graphql-codegen/cli": "1.17.8",
+        "@graphql-codegen/schema-ast": "^1.17.8",
+        "@graphql-codegen/typescript": "^1.17.9",
+        "@graphql-codegen/typescript-document-nodes": "^1.17.8",
+        "@graphql-codegen/typescript-graphql-request": "^2.0.0",
+        "@graphql-codegen/typescript-operations": "^1.17.8",
+        "@graphql-codegen/typescript-react-apollo": "^2.0.6",
+        "@mate-academy/stylelint-config": "0.0.9",
+        "concurrently": "^5.3.0",
+        "prettier": "2.1.1",
+        "stylelint": "^13.6.1",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-config-recess-order": "^2.1.0",
+        "stylelint-declaration-use-variable": "^1.7.2",
+        "stylelint-order": "^4.1.0"
     }
-  },
-  "devDependencies": {
-    "@graphql-codegen/cli": "1.17.8",
-    "@graphql-codegen/schema-ast": "^1.17.8",
-    "@graphql-codegen/typescript": "^1.17.9",
-    "@graphql-codegen/typescript-document-nodes": "^1.17.8",
-    "@graphql-codegen/typescript-graphql-request": "^2.0.0",
-    "@graphql-codegen/typescript-operations": "^1.17.8",
-    "@graphql-codegen/typescript-react-apollo": "^2.0.6",
-    "@mate-academy/stylelint-config": "0.0.9",
-    "concurrently": "^5.3.0",
-    "prettier": "2.1.1",
-    "stylelint": "^13.6.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-recess-order": "^2.1.0",
-    "stylelint-declaration-use-variable": "^1.7.2",
-    "stylelint-order": "^4.1.0"
-  }
 }
