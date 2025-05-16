@@ -10,6 +10,7 @@ interface Props {
 export const RecruiterProfileMeta = React.memo<Props>((props) => {
   const { items } = props;
 
+  // todo -- add support for using icons to other items
   return (
     <ul className={styles.metaWrapper}>
       {items.map((item) => (
@@ -17,6 +18,7 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
           className={cn(styles.recruiterMetaItem, typography.smallHeading)}
           key={item.name}
         >
+          {item.icon && <item.icon />}
           {item.text}
         </li>
       ))}
