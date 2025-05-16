@@ -1,6 +1,36 @@
 [
   {
     "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_link",
+    "value": "sign_in_link"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_with",
+    "value": "sign_in_with"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_link",
+    "value": "sign_up_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "burger_menu",
+    "value": "burger_menu"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "chats_link",
+    "value": "chats_link"
+  },
+  {
+    "language": "en",
     "namespace": "common",
     "code": "hire_web3_developer_seo_link",
     "value": "hire_web3_developer_seo_link"
@@ -10,6 +40,12 @@
     "namespace": "common",
     "code": "hire_web3_developer_seo_title",
     "value": "hire_web3_developer_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "my_profile",
+    "value": "my_profile"
   },
   {
     "language": "en",
@@ -44,6 +80,12 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "sign_out",
+    "value": "sign_out"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "switcher_for_companies",
     "value": "switcher_for_companies"
   },
@@ -56,6 +98,24 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "twitter_bonus",
+    "value": "twitter_bonus"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "twitter_bonus_description",
+    "value": "twitter_bonus_description"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "usd_sign",
+    "value": "usd_sign"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "web3_companies_subtitle",
     "value": "web3_companies_subtitle"
   },
@@ -64,6 +124,102 @@
     "namespace": "common",
     "code": "web3_companies_title",
     "value": "web3_companies_title"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "avatar_upload",
+    "value": "avatar_upload"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "company_name_label",
+    "value": "company_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "email_label",
+    "value": "email_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "first_name_label",
+    "value": "first_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "intermediate",
+    "value": "intermediate"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "last_name_label",
+    "value": "last_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "linkedin_url_label",
+    "value": "linkedin_url_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "one-three-years",
+    "value": "one-three-years"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "recruiter_position_label",
+    "value": "recruiter_position_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "recruiter_position_placeholder",
+    "value": "recruiter_position_placeholder"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "three-five-years",
+    "value": "three-five-years"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "tooltip_wallet_address",
+    "value": "tooltip_wallet_address"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "upper-intermediate",
+    "value": "upper-intermediate"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "wallet_address_label",
+    "value": "wallet_address_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "wallet_address_placeholder",
+    "value": "wallet_address_placeholder"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "appy_to_hot_job",
+    "value": "appy_to_hot_job"
   },
   {
     "language": "en",
@@ -128,6 +284,60 @@
   {
     "language": "en",
     "namespace": "home",
+    "code": "fifth_review_name",
+    "value": "fifth_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fifth_review_position",
+    "value": "fifth_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fifth_review_text",
+    "value": "fifth_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_name",
+    "value": "first_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_position",
+    "value": "first_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_text",
+    "value": "first_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_name",
+    "value": "fourth_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_position",
+    "value": "fourth_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_text",
+    "value": "fourth_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
     "code": "frontend_new_hero_company_name",
     "value": "frontend_new_hero_company_name"
   },
@@ -164,8 +374,38 @@
   {
     "language": "en",
     "namespace": "home",
+    "code": "funded_startups_subtitle",
+    "value": "funded_startups_subtitle"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "funded_startups_title",
+    "value": "funded_startups_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
     "code": "homepage_web3_title",
     "value": "homepage_web3_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "how_it_works_title",
+    "value": "how_it_works_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_app_hero_description",
+    "value": "mobile_app_hero_description"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_app_hero_title",
+    "value": "mobile_app_hero_title"
   },
   {
     "language": "en",
@@ -308,6 +548,42 @@
   {
     "language": "en",
     "namespace": "home",
+    "code": "second_review_name",
+    "value": "second_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "second_review_position",
+    "value": "second_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "second_review_text",
+    "value": "second_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_name",
+    "value": "third_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_position",
+    "value": "third_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_text",
+    "value": "third_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
     "code": "web2_start",
     "value": "web2_start"
   },
@@ -332,8 +608,122 @@
   {
     "language": "en",
     "namespace": "profile",
+    "code": "account_settings",
+    "value": "account_settings"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "considering_roles",
+    "value": "considering_roles"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "contacts_overhead",
+    "value": "contacts_overhead"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "core_technical_skills",
+    "value": "core_technical_skills"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "deactivate_profile",
+    "value": "deactivate_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "edit_profile",
+    "value": "edit_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "experience_label",
+    "value": "experience_label"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "hiring_management",
+    "value": "hiring_management"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile",
+    "value": "profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_active",
+    "value": "profile_active"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_preview",
+    "value": "profile_preview"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_recruiter_title",
+    "value": "profile_recruiter_title"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_status_ACTIVE",
+    "value": "profile_status_ACTIVE"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "ready_to_work",
+    "value": "ready_to_work"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_contacts_tab",
+    "value": "recruiter_profile_contacts_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "vacancies_list",
+    "value": "vacancies_list"
+  },
+  {
+    "language": "en",
+    "namespace": "vacancy",
+    "code": "job_category_worldwide",
+    "value": "job_category_worldwide"
+  },
+  {
+    "language": "en",
+    "namespace": "vacancy",
+    "code": "job_type_full_time",
+    "value": "job_type_full_time"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "invalid_social_profile_url",
+    "value": "invalid_social_profile_url"
   },
   {
     "language": "en",

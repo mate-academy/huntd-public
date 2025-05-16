@@ -16,6 +16,20 @@
   }
 }
 
+.recruiterMetaWrapper {
+  @include icon-styles {
+    margin-right: rem-calc(4);
+    color: $c-semidark-chocolate;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
 .baseItem {
   color: currentColor;
 }
