@@ -8,6 +8,7 @@ export const RECRUITER_PROFILE_BASE_FRAGMENT = gql`
     position
     companyName
     slug
+    city
     lastActionTime
     statusesNotificationSentAt
   }
