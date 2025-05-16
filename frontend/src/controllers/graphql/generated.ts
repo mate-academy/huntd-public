@@ -1004,6 +1004,7 @@ export type RecruiterProfile = {
   __typename?: 'RecruiterProfile';
   id: Scalars['Int'];
   slug?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   status: RecruiterProfileStatus;
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
@@ -3789,6 +3790,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   companyName
   slug
   lastActionTime
+  city
 }
     `;
 export const ProfileConnectionWithProfilesFragmentDoc = /*#__PURE__*/ gql`

@@ -57,6 +57,9 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   @Column
   slug: string
 
+  @Column({ allowNull: true })
+  city?: string;
+
   @Column({
     field: 'statuses_notification_sent_at',
   })
