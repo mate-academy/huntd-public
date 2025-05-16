@@ -338,6 +338,12 @@
   {
     "language": "en",
     "namespace": "validations",
+    "code": "Invalid credentials",
+    "value": "Invalid credentials"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
   }

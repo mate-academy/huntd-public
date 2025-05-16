@@ -285,6 +285,7 @@ export type RecruiterProfiles = {
   created_at: Scalars['DateTime'];
   updated_at: Scalars['DateTime'];
   status: Enum_Recruiterprofiles_Status;
+  city?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   company_name?: Maybe<Scalars['String']>;
   user_id?: Maybe<HuntdUsers>;

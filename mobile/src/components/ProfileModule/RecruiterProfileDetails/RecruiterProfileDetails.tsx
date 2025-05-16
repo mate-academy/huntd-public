@@ -13,9 +13,7 @@ interface Props {
 export const RecruiterProfileDetails: FC<Props> = (props) => {
   const { profile } = props;
 
-  const { t } = useTranslation([
-    Namespaces.Profile,
-  ]);
+  const { t } = useTranslation([Namespaces.Profile]);
 
   return (
     <ScrollView style={profileDetailsStyles.container}>
@@ -34,6 +32,9 @@ export const RecruiterProfileDetails: FC<Props> = (props) => {
         </Text>
         <Text style={[profileDetailsStyles.text, typography.text]}>
           {profile.companyName}
+        </Text>
+        <Text style={[profileDetailsStyles.text, typography.text]}>
+          {profile.city}
         </Text>
       </View>
       <View style={{ height: 24 }} />
