@@ -1,6 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { MetaItem } from '@/controllers/recruiterProfile/recruiterProfile.hooks.ts/useRecruiterProfileMetaItems';
+import { IconLocation } from '@/ui/icons/general/IconLocation';
+import { RecruiterProfileMetaItems } from '@/controllers/recruiterProfile/recruiterProfile.typedefs';
 import typography from '@/ui/typography/typography.module.scss';
 import styles from './ProfileMeta.module.scss';
 
@@ -17,6 +19,9 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
           className={cn(styles.recruiterMetaItem, typography.smallHeading)}
           key={item.name}
         >
+          {item.name === RecruiterProfileMetaItems.City
+            ? <IconLocation /> : null}
+          {' '}
           {item.text}
         </li>
       ))}

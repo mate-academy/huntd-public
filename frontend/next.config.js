@@ -1,3 +1,5 @@
+// @ts-check
+
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -8,6 +10,7 @@ const { nextI18NextRewrites } = require('next-i18next/rewrites');
 
 const localeSubpaths = {};
 
+/** @type {import('next').NextConfig} */
 const config = {
   images: {
     domains: [
@@ -39,9 +42,7 @@ const config = {
       path.join(__dirname, 'src', 'style'),
     ],
   },
-  experimental: {
-    optimizeFonts: true,
-  },
+  optimizeFonts: true,
 };
 
 module.exports = withPlugins([
