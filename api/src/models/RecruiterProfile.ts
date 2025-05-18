@@ -62,6 +62,9 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   statusesNotificationSentAt: Date
 
+  @Column
+  city: string;
+
   @DeletedAt
   @Column({
     field: 'deleted_at',

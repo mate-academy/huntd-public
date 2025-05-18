@@ -2,9 +2,9 @@
 
 .metaWrapper {
   @include icon-styles {
-    width: 18px;
-    height: 18px;
-    margin-right: rem-calc(4);
+    width: 24px;
+    height: 24px;
+    margin-right: rem-calc(8);
     color: $c-semidark-chocolate;
   }
 
@@ -34,7 +34,8 @@
 
 .recruiterMetaItem {
   @extend .baseItem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   @include text-truncate;
 
   &:not(:last-child) {
@@ -53,4 +54,11 @@
   color: var(--icon-color, currentColor);
   background-color: $c-citrus;
   border-radius: 50%;
+}
+
+.iconContainer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 }
