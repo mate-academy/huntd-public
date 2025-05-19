@@ -48,7 +48,7 @@
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.1.0",
-    "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-declaration-use-variable": "^1.7.3",
     "stylelint-order": "^4.1.0"
   }
 }

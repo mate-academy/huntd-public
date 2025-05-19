@@ -29,6 +29,10 @@
       "type": "string",
       "required": false
     },
+    "city": {
+      "type": "string",
+      "required": false
+    },
     "user_id": {
       "via": "recruiter_profiles",
       "model": "huntd-users"
