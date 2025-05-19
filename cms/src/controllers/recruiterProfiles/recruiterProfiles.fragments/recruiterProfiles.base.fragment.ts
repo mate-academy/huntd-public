@@ -5,6 +5,7 @@ export const RECRUITER_PROFILES_BASE_FRAGMENT = gql`
   fragment RecruiterProfilesBase on RecruiterProfiles {
     id
     company_name
+    city
     position
     status
     user_id {
