@@ -8,7 +8,8 @@ import {
   ForeignKey,
   HasMany,
   Index,
-  Table, Unique,
+  Table,
+  Unique,
 } from 'sequelize-typescript';
 import { User } from '@/models/User';
 import { RecruiterProfileStatusEnum } from '@/modules/recruiterProfile/recruiterProfile.typedefs';
@@ -32,7 +33,7 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   userId: number;
 
   @BelongsTo(() => User)
-  user: User
+  user: User;
 
   @Default(RecruiterProfileStatusEnum.Draft)
   @Column({
@@ -55,16 +56,23 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
 
   @Unique
   @Column
-  slug: string
+  slug: string;
 
   @Column({
     field: 'statuses_notification_sent_at',
   })
-  statusesNotificationSentAt: Date
+  statusesNotificationSentAt: Date;
 
   @DeletedAt
   @Column({
     field: 'deleted_at',
   })
-  deletedAt: Date
+  deletedAt: Date;
+
+  // NEW COLUMN CITY
+  @AllowNull(true)
+  @Column({
+    type: DataType.STRING(255),
+  })
+  city: string;
 }

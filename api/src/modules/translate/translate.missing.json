@@ -67,6 +67,18 @@
   },
   {
     "language": "en",
+    "namespace": "form",
+    "code": "city_label",
+    "value": "city_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "city_placeholder",
+    "value": "city_placeholder"
+  },
+  {
+    "language": "en",
     "namespace": "home",
     "code": "backend_new_hero_company_name",
     "value": "backend_new_hero_company_name"

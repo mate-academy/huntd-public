@@ -1,5 +1,6 @@
 {
   "extends": "@mate-academy/ts-config",
+  ///home/artur/projects/huntd-public/node_modules/@mate-academy/ts-config/tsconfig.json
   "compilerOptions": {
     "outDir": "./dist",
     "module": "commonjs",
@@ -16,10 +17,10 @@
       ]
     }
   },
-  "files": [
+  /*   "files": [
     "node_modules/@mate-academy/notifications-gateway/typings/custom.d.ts",
     "node_modules/@mate-academy/core/typings/custom.d.ts"
-  ],
+  ], */
   "include": [
     "src/**/*",
     "typings/**/*"
@@ -29,4 +30,3 @@
     "dist"
   ]
 }
-

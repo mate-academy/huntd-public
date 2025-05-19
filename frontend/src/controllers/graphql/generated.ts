@@ -1012,6 +1012,7 @@ export type RecruiterProfile = {
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
+  city?: string;
 };
 
 

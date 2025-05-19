@@ -71,7 +71,7 @@ export const CompanyInfoForm = () => {
     } catch (error) {
       const validationErrors = processValidationErrors<
         UpdateRecruiterProfileMutationVariables
-        >(error, setError);
+      >(error, setError);
 
       if (!validationErrors) {
         await flashMessage.postMessage({
@@ -141,26 +141,30 @@ export const CompanyInfoForm = () => {
               <div className="cell large-3">
                 <FormField
                   label={{
-                    for: 'companyName',
-                    text: t(`${Namespaces.Form}:company_name_label`),
+                    for: 'city',
+                    text: t(`${Namespaces.Form}:city_label`),
                   }}
-                  error={errors.companyName}
+                  error={errors.city}
                   disabled={loading}
                   className="mb-40"
                   renderInput={(props) => (
-                    <InputText
-                      {...props}
-                      defaultValue={profile?.companyName || ''}
-                      name="companyName"
-                      control={control}
-                      placeholder={t(`${Namespaces.Form}:company_name_label`)}
-                      validation={{
-                        required: {
-                          value: true,
-                          message: 'company_is_required',
-                        },
-                      }}
-                    />
+                    <div className="input-with-icon">
+                      <InputText
+                        {...props}
+
+                        defaultValue={profile?.city || ''}
+                        name="city"
+                        control={control}
+                        placeholder={t(`${Namespaces.Form}:city_placeholder`)}
+                        validation={{
+                          required: {
+                            value: true,
+                            message: 'city_is_required',
+                          },
+                        }}
+                      />
+                    </div>
+
                   )}
                 />
               </div>

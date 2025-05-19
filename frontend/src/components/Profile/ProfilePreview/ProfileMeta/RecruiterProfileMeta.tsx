@@ -11,6 +11,7 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
   const { items } = props;
 
   return (
+
     <ul className={styles.metaWrapper}>
       {items.map((item) => (
         <li
@@ -18,8 +19,10 @@ export const RecruiterProfileMeta = React.memo<Props>((props) => {
           key={item.name}
         >
           {item.text}
+
         </li>
       ))}
+
     </ul>
   );
 });
