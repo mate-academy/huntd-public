@@ -14,6 +14,8 @@ import { Loader } from '@/ui/Loader';
 import { RecruiterProfileMeta } from '@/components/Profile/ProfilePreview/ProfileMeta/RecruiterProfileMeta';
 import { RecruiterProfileStatus } from '@/controllers/graphql/generated';
 import styles from './RecruiterProfilePreviewModule.module.scss';
+import { IconLocation } from '@/ui/icons/general/IconLocation';
+// import { IconLocation } from '@/components/icons';
 
 export const RecruiterProfilePreviewModule = () => {
   const [profile, { loading, subscribeToMore }] = useLatestRecruiterProfile();
@@ -61,6 +63,8 @@ export const RecruiterProfilePreviewModule = () => {
                 subscribeToRecruiterUpdates={subscribeToMore}
               />
             </div>
+
+             
           </div>
         </div>
 

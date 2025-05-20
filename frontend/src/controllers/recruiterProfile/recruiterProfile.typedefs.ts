@@ -10,6 +10,7 @@ export enum RecruiterProfileTabs {
 export enum RecruiterProfileMetaItems {
   Position = 'position',
   CompanyName = 'companyName',
+  City = 'сity',
 }
 
 export enum RecruiterProfileNavigationModes {
