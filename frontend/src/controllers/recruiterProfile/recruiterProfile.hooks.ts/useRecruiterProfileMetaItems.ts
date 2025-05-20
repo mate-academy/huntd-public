@@ -6,6 +6,7 @@ import { RecruiterProfileMetaItems } from '../recruiterProfile.typedefs';
 export interface MetaItem {
   name: RecruiterProfileMetaItems,
   text: string,
+  icon?: React.ReactNode
 }
 
 interface UseRecruiterProfileMetaItems {
@@ -27,6 +28,10 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       {
         name: RecruiterProfileMetaItems.CompanyName,
         text: getFilledValue(profile.companyName),
+      },
+      {
+        name: RecruiterProfileMetaItems.City,
+        text: getFilledValue(profile.city),
       },
     ];
   },
