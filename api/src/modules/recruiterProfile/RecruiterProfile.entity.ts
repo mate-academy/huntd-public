@@ -11,7 +11,8 @@ export class RecruiterProfileEntity {
       return this.recruiterProfile.slug;
     }
 
-    if (!this.recruiterProfile.position || !this.recruiterProfile.companyName) {
+    if (!this.recruiterProfile.position || !this.recruiterProfile.companyName
+      || !this.recruiterProfile.city) {
       return null;
     }
 
@@ -20,7 +21,7 @@ export class RecruiterProfileEntity {
 
   async generateSlug(counter = 0): Promise<string | null> {
     const slug = slugify(
-      `${this.recruiterProfile.position}-at-${this.recruiterProfile.companyName}`,
+      `${this.recruiterProfile.position}-at-${this.recruiterProfile.companyName}-at-${this.recruiterProfile.city}`,
       {
         lower: true,
         remove: /[*+~.,/()'"!:@]/g,
