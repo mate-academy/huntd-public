@@ -337,6 +337,30 @@
   },
   {
     "language": "en",
+    "namespace": "profile",
+    "code": "settings_changepassword_tab",
+    "value": "settings_changepassword_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "settings_socialprofiles_tab",
+    "value": "settings_socialprofiles_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "vacancy",
+    "code": "web3_salaries",
+    "value": "web3_salaries"
+  },
+  {
+    "language": "en",
+    "namespace": "vacancy",
+    "code": "web3_top_companies",
+    "value": "web3_top_companies"
+  },
+  {
+    "language": "en",
     "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
