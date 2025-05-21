@@ -7,6 +7,7 @@ import { RecruiterProfileEntity } from '@/modules/recruiterProfile/RecruiterProf
 export interface UpdateRecruiterProfileUseCaseOptions {
   position: string
   companyName: string
+  city: string
 }
 export type UpdateRecruiterProfileUseCaseResult = RecruiterProfile;
 
@@ -20,6 +21,7 @@ export class UpdateRecruiterProfileUseCase extends AuthUseCase<
     return {
       position: ['required', 'string'],
       companyName: ['required', 'string'],
+      city: ['required', 'string'],
     };
   }
 
@@ -68,7 +70,7 @@ export class UpdateRecruiterProfileUseCase extends AuthUseCase<
 
     await profile.update(options);
 
-    if (options.position || options.companyName) {
+    if (options.position || options.companyName || options.city) {
       await UpdateRecruiterProfileUseCase.updateProfileSlug(profile);
     }
 

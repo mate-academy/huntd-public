@@ -21,10 +21,230 @@ export type AdminSettings = {
   silentProfileUpdate: Scalars['Boolean'];
 };
 
-export type UpdateAdminSettingsValues = {
-  contactsVisibilityPermission: Scalars['Boolean'];
-  silentProfileUpdate: Scalars['Boolean'];
+export type CandidateProfile = {
+  __typename?: 'CandidateProfile';
+  id: Scalars['Int'];
+  userId: Scalars['Int'];
+  slug?: Maybe<Scalars['String']>;
+  status: CandidateProfileStatus;
+  rejectReason?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  salary?: Maybe<Scalars['Float']>;
+  candidateDescription?: Maybe<Scalars['String']>;
+  experienceDescription?: Maybe<Scalars['String']>;
+  workExpectations?: Maybe<Scalars['String']>;
+  achievements?: Maybe<Scalars['String']>;
+  specializations?: Maybe<Array<Specialization>>;
+  technologies?: Maybe<Array<Technology>>;
+  employmentTypes?: Maybe<Array<EmploymentType>>;
+  employmentLocations?: Maybe<Array<EmploymentLocation>>;
+  englishLevel?: Maybe<EnglishLevel>;
+  jobExperience?: Maybe<JobExperience>;
+  specialization?: Maybe<Specialization>;
+  user?: Maybe<User>;
+  cities?: Maybe<Array<CandidateProfileCity>>;
+  workPlaces?: Maybe<Array<CandidateProfileWorkPlace>>;
+  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
+  connectionsCount?: Maybe<Scalars['Int']>;
 };
+
+export type CandidateProfileCity = {
+  __typename?: 'CandidateProfileCity';
+  id: Scalars['Int'];
+  cityId: Scalars['String'];
+  cityName: Scalars['String'];
+  cityTimezone?: Maybe<Scalars['Int']>;
+  cityCountrySlug?: Maybe<Scalars['String']>;
+  cityCountryName?: Maybe<Scalars['String']>;
+  type: CityTypes;
+};
+
+export type CandidateProfileCityInput = {
+  cityId: Scalars['String'];
+  cityName: Scalars['String'];
+  cityTimezone?: Maybe<Scalars['Int']>;
+  cityCountrySlug?: Maybe<Scalars['String']>;
+  cityCountryName?: Maybe<Scalars['String']>;
+  type?: Maybe<CityTypes>;
+};
+
+export enum CandidateProfileStatus {
+  Draft = 'DRAFT',
+  OnReview = 'ON_REVIEW',
+  Rejected = 'REJECTED',
+  Active = 'ACTIVE',
+  Inactive = 'INACTIVE'
+}
+
+export type CandidateProfileWorkPlace = {
+  __typename?: 'CandidateProfileWorkPlace';
+  id: Scalars['Int'];
+  companyName: Scalars['String'];
+  companyUrl?: Maybe<Scalars['String']>;
+  companySizeFrom?: Maybe<Scalars['Int']>;
+  companySizeTo?: Maybe<Scalars['Int']>;
+  companyIndustry?: Maybe<Scalars['String']>;
+  companyCategories?: Maybe<Scalars['String']>;
+  companySpecialities?: Maybe<Scalars['String']>;
+  companyFundingType?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  startDate: Scalars['GraphQLDateTime'];
+  endDate?: Maybe<Scalars['GraphQLDateTime']>;
+};
+
+export type CandidateProfileWorkPlaceInput = {
+  companyName: Scalars['String'];
+  companyUrl?: Maybe<Scalars['String']>;
+  companySizeFrom?: Maybe<Scalars['Int']>;
+  companySizeTo?: Maybe<Scalars['Int']>;
+  companyIndustry?: Maybe<Scalars['String']>;
+  companyCategories?: Maybe<Scalars['String']>;
+  companySpecialities?: Maybe<Scalars['String']>;
+  companyFundingType?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  startDate: Scalars['GraphQLDateTime'];
+  endDate?: Maybe<Scalars['GraphQLDateTime']>;
+};
+
+export type CandidatesSearchParams = {
+  __typename?: 'CandidatesSearchParams';
+  cities?: Maybe<Array<Scalars['String']>>;
+  countries?: Maybe<Array<Scalars['String']>>;
+  specializations?: Maybe<Array<Scalars['String']>>;
+  salaryFrom?: Maybe<Scalars['Int']>;
+  salaryTo?: Maybe<Scalars['Int']>;
+  timezoneFrom?: Maybe<Scalars['Int']>;
+  timezoneTo?: Maybe<Scalars['Int']>;
+  timezoneReverseMode?: Maybe<Scalars['Boolean']>;
+  searchQuery?: Maybe<Scalars['String']>;
+  experienceIds?: Maybe<Array<Scalars['Int']>>;
+  englishLevelIds?: Maybe<Array<Scalars['Int']>>;
+  employmentTypesIds?: Maybe<Array<Scalars['Int']>>;
+  technologiesIds?: Maybe<Array<Scalars['Int']>>;
+};
+
+export type ChatMessage = {
+  __typename?: 'ChatMessage';
+  id: Scalars['Int'];
+  message?: Maybe<Scalars['String']>;
+  senderUser?: Maybe<User>;
+  recipientUser?: Maybe<User>;
+  profileConnectionId: Scalars['Int'];
+  isSystemMessage?: Maybe<Scalars['Boolean']>;
+  createdAt: Scalars['GraphQLDateTime'];
+  updatedAt: Scalars['GraphQLDateTime'];
+};
+
+export type ChurnedUser = {
+  __typename?: 'ChurnedUser';
+  id: Scalars['Int'];
+  firstName?: Maybe<Scalars['String']>;
+  email: Scalars['String'];
+  profilesCount: Scalars['Int'];
+  profileId: Scalars['Int'];
+  slug?: Maybe<Scalars['String']>;
+  profileCreatedAt: Scalars['GraphQLDateTime'];
+};
+
+export enum CityTypes {
+  CandidateCity = 'CANDIDATE_CITY',
+  OfficeCity = 'OFFICE_CITY'
+}
+
+export type CreateMultipleVacanciesSourcesParameters = {
+  atsIds: Scalars['String'];
+  companyNames: Scalars['String'];
+  salaryRanges: Scalars['String'];
+  type: VacancySourceType;
+};
+
+export type Cta = {
+  __typename?: 'Cta';
+  title: Scalars['String'];
+  link: Scalars['String'];
+};
+
+export type CtaInput = {
+  title: Scalars['String'];
+  link: Scalars['String'];
+};
+
+export enum DevicePlatform {
+  Ios = 'IOS',
+  Android = 'ANDROID'
+}
+
+export type DeviceToken = {
+  __typename?: 'DeviceToken';
+  id: Scalars['Int'];
+  userId: Scalars['Int'];
+  token: Scalars['String'];
+  devicePlatform: DevicePlatform;
+  deviceYear?: Maybe<Scalars['String']>;
+  systemVersion?: Maybe<Scalars['String']>;
+  deviceName?: Maybe<Scalars['String']>;
+};
+
+export type EmploymentLocation = {
+  __typename?: 'EmploymentLocation';
+  id: Scalars['Int'];
+  slug: Scalars['String'];
+};
+
+export type EmploymentType = {
+  __typename?: 'EmploymentType';
+  id: Scalars['Int'];
+  slug: Scalars['String'];
+};
+
+export type EnglishLevel = {
+  __typename?: 'EnglishLevel';
+  id: Scalars['Int'];
+  slug: Scalars['String'];
+};
+
+export type Feature = {
+  __typename?: 'Feature';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  status: FeatureStatus;
+};
+
+export enum FeatureStatus {
+  Enabled = 'ENABLED',
+  Disabled = 'DISABLED'
+}
+
+export type FlashMessage = {
+  __typename?: 'FlashMessage';
+  id: Scalars['Int'];
+  type: FlashMessageType;
+  heading: Scalars['String'];
+  text: Scalars['String'];
+  cta?: Maybe<Cta>;
+};
+
+export enum FlashMessageType {
+  Info = 'INFO',
+  Success = 'SUCCESS',
+  Warning = 'WARNING',
+  Error = 'ERROR'
+}
+
+
+export type JobExperience = {
+  __typename?: 'JobExperience';
+  id: Scalars['Int'];
+  slug: Scalars['String'];
+};
+
+export enum MessageUserRole {
+  Sender = 'SENDER',
+  Recipient = 'RECIPIENT',
+  NotDefined = 'NOT_DEFINED'
+}
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -168,6 +388,7 @@ export type MutationCreateRecruiterProfileArgs = {
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city: Scalars['String'];
 };
 
 
@@ -558,6 +779,7 @@ export type MutationUpdateProfileContactsArgs = {
 export type MutationUpdateRecruiterProfileArgs = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 };
 
 
@@ -617,13 +839,111 @@ export type MutationUploadCvFileArgs = {
   size?: Maybe<Scalars['Int']>;
 };
 
-export type Subscription = {
-  __typename?: 'Subscription';
-  candidateProfileStatusUpdated: CandidateProfile;
-  newMessage?: Maybe<ChatMessage>;
-  profileConnectionUpdated: ProfileConnection;
-  recruiterProfileStatusUpdated: RecruiterProfile;
-  userUnreadMessagesCountUpdated?: Maybe<User>;
+export type Nft = {
+  __typename?: 'Nft';
+  id: Scalars['Int'];
+  openseaUrl: Scalars['String'];
+  userId?: Maybe<Scalars['Int']>;
+  entity: UploadedFile;
+};
+
+export enum NotificationChannel {
+  Push = 'PUSH'
+}
+
+export enum OAuthProviders {
+  Github = 'GITHUB',
+  Google = 'GOOGLE',
+  Linkedin = 'LINKEDIN',
+  Apple = 'APPLE'
+}
+
+export type OAuthToken = {
+  __typename?: 'OAuthToken';
+  id: Scalars['Int'];
+  providerName: Scalars['String'];
+  providerId: Scalars['String'];
+  token: Scalars['String'];
+};
+
+export enum OfferStatus {
+  Offer = 'OFFER',
+  NoOffer = 'NO_OFFER'
+}
+
+export enum PrimaryProfile {
+  Recruiter = 'RECRUITER',
+  Candidate = 'CANDIDATE',
+  NotDefined = 'NOT_DEFINED'
+}
+
+export type ProfileConnection = {
+  __typename?: 'ProfileConnection';
+  id: Scalars['Int'];
+  candidateUser?: Maybe<User>;
+  recruiterUser: User;
+  candidateProfile: CandidateProfile;
+  recruiterProfile: RecruiterProfile;
+  initiator: ProfileConnectionInitiator;
+  status: ProfileConnectionStatus;
+  chatMessages?: Maybe<Array<ChatMessage>>;
+  candidateReportedStatus?: Maybe<OfferStatus>;
+  recruiterReportedStatus?: Maybe<OfferStatus>;
+  userMeta?: Maybe<ProfileConnectionUserMeta>;
+  buddyMeta?: Maybe<ProfileConnectionUserMeta>;
+  candidateReportedAt?: Maybe<Scalars['GraphQLDateTime']>;
+  recruiterReportedAt?: Maybe<Scalars['GraphQLDateTime']>;
+  unreadMessagesCount?: Maybe<Scalars['Int']>;
+  paidAt?: Maybe<Scalars['GraphQLDateTime']>;
+  isPaymentRequested: Scalars['Boolean'];
+};
+
+export enum ProfileConnectionInitiator {
+  Candidate = 'CANDIDATE',
+  Recruiter = 'RECRUITER'
+}
+
+export enum ProfileConnectionStatus {
+  Pending = 'PENDING',
+  Approved = 'APPROVED',
+  Rejected = 'REJECTED'
+}
+
+export type ProfileConnectionUserMeta = {
+  __typename?: 'ProfileConnectionUserMeta';
+  id: Scalars['Int'];
+  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
+  archivedAt?: Maybe<Scalars['GraphQLDateTime']>;
+};
+
+export type PublicCandidateProfilesResult = {
+  __typename?: 'PublicCandidateProfilesResult';
+  rows: Array<CandidateProfile>;
+  hasMore: Scalars['Boolean'];
+  count: Scalars['Int'];
+};
+
+export type PublicProfilesOptions = {
+  offset?: Maybe<Scalars['Int']>;
+  username?: Maybe<Scalars['String']>;
+  forceRealList?: Maybe<Scalars['Boolean']>;
+};
+
+export type PublicProfilesParameters = {
+  cities?: Maybe<Array<Scalars['String']>>;
+  countries?: Maybe<Array<Scalars['String']>>;
+  locations?: Maybe<Array<Scalars['String']>>;
+  specializations?: Maybe<Array<Scalars['String']>>;
+  salaryFrom?: Maybe<Scalars['Int']>;
+  salaryTo?: Maybe<Scalars['Int']>;
+  timezoneFrom?: Maybe<Scalars['Int']>;
+  timezoneTo?: Maybe<Scalars['Int']>;
+  searchQuery?: Maybe<Scalars['String']>;
+  experienceIds?: Maybe<Array<Scalars['Int']>>;
+  englishLevelIds?: Maybe<Array<Scalars['Int']>>;
+  employmentTypesIds?: Maybe<Array<Scalars['Int']>>;
+  technologiesIds?: Maybe<Array<Scalars['Int']>>;
+  timezoneReverseMode?: Maybe<Scalars['Boolean']>;
 };
 
 export type Query = {
@@ -756,250 +1076,6 @@ export type QueryVacanciesByCompanyArgs = {
   options?: Maybe<VacanciesByCompanyParameters>;
 };
 
-export type PublicCandidateProfilesResult = {
-  __typename?: 'PublicCandidateProfilesResult';
-  rows: Array<CandidateProfile>;
-  hasMore: Scalars['Boolean'];
-  count: Scalars['Int'];
-};
-
-export enum CandidateProfileStatus {
-  Draft = 'DRAFT',
-  OnReview = 'ON_REVIEW',
-  Rejected = 'REJECTED',
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE'
-}
-
-export type CandidateProfile = {
-  __typename?: 'CandidateProfile';
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-  slug?: Maybe<Scalars['String']>;
-  status: CandidateProfileStatus;
-  rejectReason?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['String']>;
-  salary?: Maybe<Scalars['Float']>;
-  candidateDescription?: Maybe<Scalars['String']>;
-  experienceDescription?: Maybe<Scalars['String']>;
-  workExpectations?: Maybe<Scalars['String']>;
-  achievements?: Maybe<Scalars['String']>;
-  specializations?: Maybe<Array<Specialization>>;
-  technologies?: Maybe<Array<Technology>>;
-  employmentTypes?: Maybe<Array<EmploymentType>>;
-  employmentLocations?: Maybe<Array<EmploymentLocation>>;
-  englishLevel?: Maybe<EnglishLevel>;
-  jobExperience?: Maybe<JobExperience>;
-  specialization?: Maybe<Specialization>;
-  user?: Maybe<User>;
-  cities?: Maybe<Array<CandidateProfileCity>>;
-  workPlaces?: Maybe<Array<CandidateProfileWorkPlace>>;
-  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
-  connectionsCount?: Maybe<Scalars['Int']>;
-};
-
-export type PublicProfilesOptions = {
-  offset?: Maybe<Scalars['Int']>;
-  username?: Maybe<Scalars['String']>;
-  forceRealList?: Maybe<Scalars['Boolean']>;
-};
-
-export type PublicProfilesParameters = {
-  cities?: Maybe<Array<Scalars['String']>>;
-  countries?: Maybe<Array<Scalars['String']>>;
-  locations?: Maybe<Array<Scalars['String']>>;
-  specializations?: Maybe<Array<Scalars['String']>>;
-  salaryFrom?: Maybe<Scalars['Int']>;
-  salaryTo?: Maybe<Scalars['Int']>;
-  timezoneFrom?: Maybe<Scalars['Int']>;
-  timezoneTo?: Maybe<Scalars['Int']>;
-  searchQuery?: Maybe<Scalars['String']>;
-  experienceIds?: Maybe<Array<Scalars['Int']>>;
-  englishLevelIds?: Maybe<Array<Scalars['Int']>>;
-  employmentTypesIds?: Maybe<Array<Scalars['Int']>>;
-  technologiesIds?: Maybe<Array<Scalars['Int']>>;
-  timezoneReverseMode?: Maybe<Scalars['Boolean']>;
-};
-
-export type CandidateProfileCityInput = {
-  cityId: Scalars['String'];
-  cityName: Scalars['String'];
-  cityTimezone?: Maybe<Scalars['Int']>;
-  cityCountrySlug?: Maybe<Scalars['String']>;
-  cityCountryName?: Maybe<Scalars['String']>;
-  type?: Maybe<CityTypes>;
-};
-
-export type CandidateProfileCity = {
-  __typename?: 'CandidateProfileCity';
-  id: Scalars['Int'];
-  cityId: Scalars['String'];
-  cityName: Scalars['String'];
-  cityTimezone?: Maybe<Scalars['Int']>;
-  cityCountrySlug?: Maybe<Scalars['String']>;
-  cityCountryName?: Maybe<Scalars['String']>;
-  type: CityTypes;
-};
-
-export enum CityTypes {
-  CandidateCity = 'CANDIDATE_CITY',
-  OfficeCity = 'OFFICE_CITY'
-}
-
-export type UpdateMessageValues = {
-  message: Scalars['String'];
-};
-
-export type ChatMessage = {
-  __typename?: 'ChatMessage';
-  id: Scalars['Int'];
-  message?: Maybe<Scalars['String']>;
-  senderUser?: Maybe<User>;
-  recipientUser?: Maybe<User>;
-  profileConnectionId: Scalars['Int'];
-  isSystemMessage?: Maybe<Scalars['Boolean']>;
-  createdAt: Scalars['GraphQLDateTime'];
-  updatedAt: Scalars['GraphQLDateTime'];
-};
-
-export enum MessageUserRole {
-  Sender = 'SENDER',
-  Recipient = 'RECIPIENT',
-  NotDefined = 'NOT_DEFINED'
-}
-
-
-export enum DevicePlatform {
-  Ios = 'IOS',
-  Android = 'ANDROID'
-}
-
-export type DeviceToken = {
-  __typename?: 'DeviceToken';
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-  token: Scalars['String'];
-  devicePlatform: DevicePlatform;
-  deviceYear?: Maybe<Scalars['String']>;
-  systemVersion?: Maybe<Scalars['String']>;
-  deviceName?: Maybe<Scalars['String']>;
-};
-
-export type EmploymentLocation = {
-  __typename?: 'EmploymentLocation';
-  id: Scalars['Int'];
-  slug: Scalars['String'];
-};
-
-export type EmploymentType = {
-  __typename?: 'EmploymentType';
-  id: Scalars['Int'];
-  slug: Scalars['String'];
-};
-
-export type EnglishLevel = {
-  __typename?: 'EnglishLevel';
-  id: Scalars['Int'];
-  slug: Scalars['String'];
-};
-
-export type Feature = {
-  __typename?: 'Feature';
-  id: Scalars['Int'];
-  name: Scalars['String'];
-  status: FeatureStatus;
-};
-
-export enum FeatureStatus {
-  Enabled = 'ENABLED',
-  Disabled = 'DISABLED'
-}
-
-export type JobExperience = {
-  __typename?: 'JobExperience';
-  id: Scalars['Int'];
-  slug: Scalars['String'];
-};
-
-export type Nft = {
-  __typename?: 'Nft';
-  id: Scalars['Int'];
-  openseaUrl: Scalars['String'];
-  userId?: Maybe<Scalars['Int']>;
-  entity: UploadedFile;
-};
-
-export enum NotificationChannel {
-  Push = 'PUSH'
-}
-
-export enum OAuthProviders {
-  Github = 'GITHUB',
-  Google = 'GOOGLE',
-  Linkedin = 'LINKEDIN',
-  Apple = 'APPLE'
-}
-
-export type OAuthToken = {
-  __typename?: 'OAuthToken';
-  id: Scalars['Int'];
-  providerName: Scalars['String'];
-  providerId: Scalars['String'];
-  token: Scalars['String'];
-};
-
-export type ProfileConnection = {
-  __typename?: 'ProfileConnection';
-  id: Scalars['Int'];
-  candidateUser?: Maybe<User>;
-  recruiterUser: User;
-  candidateProfile: CandidateProfile;
-  recruiterProfile: RecruiterProfile;
-  initiator: ProfileConnectionInitiator;
-  status: ProfileConnectionStatus;
-  chatMessages?: Maybe<Array<ChatMessage>>;
-  candidateReportedStatus?: Maybe<OfferStatus>;
-  recruiterReportedStatus?: Maybe<OfferStatus>;
-  userMeta?: Maybe<ProfileConnectionUserMeta>;
-  buddyMeta?: Maybe<ProfileConnectionUserMeta>;
-  candidateReportedAt?: Maybe<Scalars['GraphQLDateTime']>;
-  recruiterReportedAt?: Maybe<Scalars['GraphQLDateTime']>;
-  unreadMessagesCount?: Maybe<Scalars['Int']>;
-  paidAt?: Maybe<Scalars['GraphQLDateTime']>;
-  isPaymentRequested: Scalars['Boolean'];
-};
-
-export enum ProfileConnectionInitiator {
-  Candidate = 'CANDIDATE',
-  Recruiter = 'RECRUITER'
-}
-
-export enum ProfileConnectionStatus {
-  Pending = 'PENDING',
-  Approved = 'APPROVED',
-  Rejected = 'REJECTED'
-}
-
-export enum OfferStatus {
-  Offer = 'OFFER',
-  NoOffer = 'NO_OFFER'
-}
-
-export type ProfileConnectionUserMeta = {
-  __typename?: 'ProfileConnectionUserMeta';
-  id: Scalars['Int'];
-  lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
-  archivedAt?: Maybe<Scalars['GraphQLDateTime']>;
-};
-
-export enum RecruiterProfileStatus {
-  Draft = 'DRAFT',
-  OnReview = 'ON_REVIEW',
-  Rejected = 'REJECTED',
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE'
-}
-
 export type RecruiterProfile = {
   __typename?: 'RecruiterProfile';
   id: Scalars['Int'];
@@ -1008,6 +1084,7 @@ export type RecruiterProfile = {
   rejectReason?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
@@ -1019,9 +1096,31 @@ export type RecruiterProfileActiveConnectionWithCandidateArgs = {
   candidateProfileId: Scalars['Int'];
 };
 
+export enum RecruiterProfileStatus {
+  Draft = 'DRAFT',
+  OnReview = 'ON_REVIEW',
+  Rejected = 'REJECTED',
+  Active = 'ACTIVE',
+  Inactive = 'INACTIVE'
+}
+
 export type ReportOfferStatusValues = {
   profileConnectionId: Scalars['Int'];
   status: OfferStatus;
+};
+
+export type SourcedVacancy = {
+  sourceId: Scalars['Int'];
+  userId: Scalars['Int'];
+  applyLink: Scalars['String'];
+  jobTitle: Scalars['String'];
+  jobDescription: Scalars['String'];
+  jobType: VacancyType;
+  jobCategory: VacancyCategory;
+  status: VacancyStatus;
+  companyName: Scalars['String'];
+  salaryFrom?: Maybe<Scalars['Float']>;
+  salaryTo?: Maybe<Scalars['Float']>;
 };
 
 export type Specialization = {
@@ -1030,11 +1129,48 @@ export type Specialization = {
   name: Scalars['String'];
 };
 
+export type Subscription = {
+  __typename?: 'Subscription';
+  candidateProfileStatusUpdated: CandidateProfile;
+  newMessage?: Maybe<ChatMessage>;
+  profileConnectionUpdated: ProfileConnection;
+  recruiterProfileStatusUpdated: RecruiterProfile;
+  userUnreadMessagesCountUpdated?: Maybe<User>;
+};
+
+export type SubscriptionStringifiedParams = {
+  __typename?: 'SubscriptionStringifiedParams';
+  id: Scalars['Int'];
+  employmentTypes?: Maybe<Array<EmploymentType>>;
+  technologies?: Maybe<Array<Technology>>;
+  jobExperiences?: Maybe<Array<JobExperience>>;
+  englishLevels?: Maybe<Array<EnglishLevel>>;
+};
+
 export type Technology = {
   __typename?: 'Technology';
   id: Scalars['Int'];
   name: Scalars['String'];
 };
+
+export type UpdateAdminSettingsValues = {
+  contactsVisibilityPermission: Scalars['Boolean'];
+  silentProfileUpdate: Scalars['Boolean'];
+};
+
+export type UpdateMessageValues = {
+  message: Scalars['String'];
+};
+
+export type UpdateSubscriptionsTitleValues = {
+  title: Scalars['String'];
+};
+
+export type UpdateTemplateMessageValues = {
+  messageTitle?: Maybe<Scalars['String']>;
+  messageBody?: Maybe<Scalars['String']>;
+};
+
 
 export type UploadedFile = {
   __typename?: 'UploadedFile';
@@ -1042,28 +1178,6 @@ export type UploadedFile = {
   name: Scalars['String'];
   mime: Scalars['String'];
   url: Scalars['String'];
-};
-
-export enum PrimaryProfile {
-  Recruiter = 'RECRUITER',
-  Candidate = 'CANDIDATE',
-  NotDefined = 'NOT_DEFINED'
-}
-
-export enum UserRole {
-  User = 'USER',
-  Admin = 'ADMIN'
-}
-
-export type ChurnedUser = {
-  __typename?: 'ChurnedUser';
-  id: Scalars['Int'];
-  firstName?: Maybe<Scalars['String']>;
-  email: Scalars['String'];
-  profilesCount: Scalars['Int'];
-  profileId: Scalars['Int'];
-  slug?: Maybe<Scalars['String']>;
-  profileCreatedAt: Scalars['GraphQLDateTime'];
 };
 
 export type User = {
@@ -1129,6 +1243,18 @@ export type UserProfileConnectionsArgs = {
   archived?: Maybe<Scalars['Boolean']>;
 };
 
+export enum UserRole {
+  User = 'USER',
+  Admin = 'ADMIN'
+}
+
+export type UserSettings = {
+  __typename?: 'UserSettings';
+  id: Scalars['Int'];
+  userId: Scalars['Int'];
+  pushNotificationsPermission: Scalars['Boolean'];
+};
+
 export type UserTemplateMessage = {
   __typename?: 'UserTemplateMessage';
   id: Scalars['Int'];
@@ -1136,18 +1262,6 @@ export type UserTemplateMessage = {
   messageTitle: Scalars['String'];
   messageBody: Scalars['String'];
   createdAt?: Maybe<Scalars['GraphQLDateTime']>;
-};
-
-export type UpdateTemplateMessageValues = {
-  messageTitle?: Maybe<Scalars['String']>;
-  messageBody?: Maybe<Scalars['String']>;
-};
-
-export type UserSettings = {
-  __typename?: 'UserSettings';
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-  pushNotificationsPermission: Scalars['Boolean'];
 };
 
 export type UsersSearchSubscription = {
@@ -1163,40 +1277,19 @@ export type UsersSearchSubscription = {
   subscriptionUrl: Scalars['String'];
 };
 
-export type UpdateSubscriptionsTitleValues = {
-  title: Scalars['String'];
+export type VacanciesByCompanyParameters = {
+  companyName: Scalars['String'];
 };
 
-export type SubscriptionStringifiedParams = {
-  __typename?: 'SubscriptionStringifiedParams';
-  id: Scalars['Int'];
-  employmentTypes?: Maybe<Array<EmploymentType>>;
-  technologies?: Maybe<Array<Technology>>;
-  jobExperiences?: Maybe<Array<JobExperience>>;
-  englishLevels?: Maybe<Array<EnglishLevel>>;
+export type VacanciesParameters = {
+  keywords?: Maybe<Array<Scalars['String']>>;
 };
 
-export type CandidatesSearchParams = {
-  __typename?: 'CandidatesSearchParams';
-  cities?: Maybe<Array<Scalars['String']>>;
-  countries?: Maybe<Array<Scalars['String']>>;
-  specializations?: Maybe<Array<Scalars['String']>>;
-  salaryFrom?: Maybe<Scalars['Int']>;
-  salaryTo?: Maybe<Scalars['Int']>;
-  timezoneFrom?: Maybe<Scalars['Int']>;
-  timezoneTo?: Maybe<Scalars['Int']>;
-  timezoneReverseMode?: Maybe<Scalars['Boolean']>;
-  searchQuery?: Maybe<Scalars['String']>;
-  experienceIds?: Maybe<Array<Scalars['Int']>>;
-  englishLevelIds?: Maybe<Array<Scalars['Int']>>;
-  employmentTypesIds?: Maybe<Array<Scalars['Int']>>;
-  technologiesIds?: Maybe<Array<Scalars['Int']>>;
+export type VacanciesResult = {
+  __typename?: 'VacanciesResult';
+  rows: Array<Vacancy>;
+  hasMore: Scalars['Boolean'];
 };
-
-export enum VacancySourceType {
-  Lever = 'LEVER',
-  Greenhouse = 'GREENHOUSE'
-}
 
 export type VacanciesSource = {
   __typename?: 'VacanciesSource';
@@ -1206,71 +1299,6 @@ export type VacanciesSource = {
   createdAt: Scalars['GraphQLDateTime'];
   deletedAt?: Maybe<Scalars['GraphQLDateTime']>;
 };
-
-export type CreateMultipleVacanciesSourcesParameters = {
-  atsIds: Scalars['String'];
-  companyNames: Scalars['String'];
-  salaryRanges: Scalars['String'];
-  type: VacancySourceType;
-};
-
-export type VacanciesResult = {
-  __typename?: 'VacanciesResult';
-  rows: Array<Vacancy>;
-  hasMore: Scalars['Boolean'];
-};
-
-export enum VacancyStatus {
-  Active = 'ACTIVE',
-  Inactive = 'INACTIVE'
-}
-
-export enum VacancyType {
-  FullTime = 'FULL_TIME',
-  PartTime = 'PART_TIME'
-}
-
-export type VacancySalaryData = {
-  __typename?: 'VacancySalaryData';
-  maxSalary: Scalars['Int'];
-  averageMinSalary: Scalars['Int'];
-  averageSalary: Scalars['Int'];
-};
-
-export type VacancyData = {
-  __typename?: 'VacancyData';
-  vacancies: Array<Vacancy>;
-  salaryData: VacancySalaryData;
-  hasMore: Scalars['Boolean'];
-};
-
-export type VacanciesParameters = {
-  keywords?: Maybe<Array<Scalars['String']>>;
-};
-
-export type VacanciesByCompanyParameters = {
-  companyName: Scalars['String'];
-};
-
-export type SourcedVacancy = {
-  sourceId: Scalars['Int'];
-  userId: Scalars['Int'];
-  applyLink: Scalars['String'];
-  jobTitle: Scalars['String'];
-  jobDescription: Scalars['String'];
-  jobType: VacancyType;
-  jobCategory: VacancyCategory;
-  status: VacancyStatus;
-  companyName: Scalars['String'];
-  salaryFrom?: Maybe<Scalars['Float']>;
-  salaryTo?: Maybe<Scalars['Float']>;
-};
-
-export enum VacancyCategory {
-  UsOnly = 'US_ONLY',
-  EuropeOnly = 'EUROPE_ONLY',
-  Worldwide = 'WORLDWIDE'
-}
 
 export type Vacancy = {
   __typename?: 'Vacancy';
@@ -1296,69 +1324,44 @@ export type Vacancy = {
   applyLink?: Maybe<Scalars['String']>;
 };
 
-export type CandidateProfileWorkPlace = {
-  __typename?: 'CandidateProfileWorkPlace';
-  id: Scalars['Int'];
-  companyName: Scalars['String'];
-  companyUrl?: Maybe<Scalars['String']>;
-  companySizeFrom?: Maybe<Scalars['Int']>;
-  companySizeTo?: Maybe<Scalars['Int']>;
-  companyIndustry?: Maybe<Scalars['String']>;
-  companyCategories?: Maybe<Scalars['String']>;
-  companySpecialities?: Maybe<Scalars['String']>;
-  companyFundingType?: Maybe<Scalars['String']>;
-  title: Scalars['String'];
-  description?: Maybe<Scalars['String']>;
-  startDate: Scalars['GraphQLDateTime'];
-  endDate?: Maybe<Scalars['GraphQLDateTime']>;
-};
-
-export type CandidateProfileWorkPlaceInput = {
-  companyName: Scalars['String'];
-  companyUrl?: Maybe<Scalars['String']>;
-  companySizeFrom?: Maybe<Scalars['Int']>;
-  companySizeTo?: Maybe<Scalars['Int']>;
-  companyIndustry?: Maybe<Scalars['String']>;
-  companyCategories?: Maybe<Scalars['String']>;
-  companySpecialities?: Maybe<Scalars['String']>;
-  companyFundingType?: Maybe<Scalars['String']>;
-  title: Scalars['String'];
-  description?: Maybe<Scalars['String']>;
-  startDate: Scalars['GraphQLDateTime'];
-  endDate?: Maybe<Scalars['GraphQLDateTime']>;
-};
-
-export type CtaInput = {
-  title: Scalars['String'];
-  link: Scalars['String'];
-};
-
-export type Cta = {
-  __typename?: 'Cta';
-  title: Scalars['String'];
-  link: Scalars['String'];
-};
-
-export enum FlashMessageType {
-  Info = 'INFO',
-  Success = 'SUCCESS',
-  Warning = 'WARNING',
-  Error = 'ERROR'
+export enum VacancyCategory {
+  UsOnly = 'US_ONLY',
+  EuropeOnly = 'EUROPE_ONLY',
+  Worldwide = 'WORLDWIDE'
 }
 
-export type FlashMessage = {
-  __typename?: 'FlashMessage';
-  id: Scalars['Int'];
-  type: FlashMessageType;
-  heading: Scalars['String'];
-  text: Scalars['String'];
-  cta?: Maybe<Cta>;
+export type VacancyData = {
+  __typename?: 'VacancyData';
+  vacancies: Array<Vacancy>;
+  salaryData: VacancySalaryData;
+  hasMore: Scalars['Boolean'];
 };
 
+export type VacancySalaryData = {
+  __typename?: 'VacancySalaryData';
+  maxSalary: Scalars['Int'];
+  averageMinSalary: Scalars['Int'];
+  averageSalary: Scalars['Int'];
+};
+
+export enum VacancySourceType {
+  Lever = 'LEVER',
+  Greenhouse = 'GREENHOUSE'
+}
+
+export enum VacancyStatus {
+  Active = 'ACTIVE',
+  Inactive = 'INACTIVE'
+}
+
+export enum VacancyType {
+  FullTime = 'FULL_TIME',
+  PartTime = 'PART_TIME'
+}
 
 export type AdminSettingsBaseFragment = (
   { __typename?: 'AdminSettings' }
-  & Pick<AdminSettings, 'id' | 'userId' | 'contactsVisibilityPermission' | 'silentProfileUpdate'>
+  & Pick<AdminSettings, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UpdateAdminSettingsMutationVariables = Exact<{
@@ -1390,7 +1393,7 @@ export type CandidateProfileFullFragment = (
 
 export type CandidateProfileBaseFragment = (
   { __typename?: 'CandidateProfile' }
-  & Pick<CandidateProfile, 'id' | 'userId' | 'status' | 'rejectReason' | 'position' | 'salary' | 'candidateDescription' | 'experienceDescription' | 'workExpectations' | 'achievements' | 'slug' | 'lastActionTime'>
+  & Pick<CandidateProfile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type CandidateProfileCitiesFragment = (
@@ -1403,7 +1406,7 @@ export type CandidateProfileCitiesFragment = (
 
 export type CandidateProfileConnectionsFragment = (
   { __typename?: 'CandidateProfile' }
-  & Pick<CandidateProfile, 'connectionsCount'>
+  & Pick<CandidateProfile, '[object Object]'>
 );
 
 export type CandidateProfileEmploymentLocationsFragment = (
@@ -1472,7 +1475,7 @@ export type CandidateProfileUserWithNftFragment = (
   { __typename?: 'CandidateProfile' }
   & { user?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & { nfts?: Maybe<Array<(
       { __typename?: 'Nft' }
       & NftBaseFragment
@@ -1506,7 +1509,7 @@ export type DeactivateCandidateProfilesMutationVariables = Exact<{ [key: string]
 
 export type DeactivateCandidateProfilesMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deactivateCandidateProfiles'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type CandidateProfilesBySubscriptionQueryVariables = Exact<{
@@ -1554,7 +1557,7 @@ export type PerfectCandidatesAmountQueryVariables = Exact<{
 
 export type PerfectCandidatesAmountQuery = (
   { __typename?: 'Query' }
-  & Pick<Query, 'perfectCandidatesAmount'>
+  & Pick<Query, '[object Object]'>
 );
 
 export type CandidateProfileStatusUpdatedSubscriptionVariables = Exact<{ [key: string]: never; }>;
@@ -1578,7 +1581,7 @@ export type PublicCandidateProfilesQuery = (
   { __typename?: 'Query' }
   & { publicCandidateProfiles: (
     { __typename?: 'PublicCandidateProfilesResult' }
-    & Pick<PublicCandidateProfilesResult, 'hasMore' | 'count'>
+    & Pick<PublicCandidateProfilesResult, '[object Object]' | '[object Object]'>
     & { rows: Array<(
       { __typename?: 'CandidateProfile' }
       & CandidateProfileBaseFragment
@@ -1636,18 +1639,18 @@ export type UpdateCandidateProfileMutation = (
 
 export type CandidateProfileCityBaseFragment = (
   { __typename?: 'CandidateProfileCity' }
-  & Pick<CandidateProfileCity, 'id' | 'cityId' | 'cityName' | 'cityCountryName' | 'cityCountrySlug' | 'cityTimezone' | 'type'>
+  & Pick<CandidateProfileCity, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type ChatMessageBaseFragment = (
   { __typename?: 'ChatMessage' }
-  & Pick<ChatMessage, 'id' | 'message' | 'profileConnectionId' | 'isSystemMessage' | 'createdAt' | 'updatedAt'>
+  & Pick<ChatMessage, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   & { senderUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
+    & Pick<User, '[object Object]'>
   )>, recipientUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
+    & Pick<User, '[object Object]'>
   )> }
 );
 
@@ -1692,7 +1695,7 @@ export type UpdateMessageMutation = (
 
 export type EmploymentLocationBaseFragment = (
   { __typename?: 'EmploymentLocation' }
-  & Pick<EmploymentLocation, 'id' | 'slug'>
+  & Pick<EmploymentLocation, '[object Object]' | '[object Object]'>
 );
 
 export type EmploymentLocationsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1708,7 +1711,7 @@ export type EmploymentLocationsQuery = (
 
 export type EmploymentTypeBaseFragment = (
   { __typename?: 'EmploymentType' }
-  & Pick<EmploymentType, 'id' | 'slug'>
+  & Pick<EmploymentType, '[object Object]' | '[object Object]'>
 );
 
 export type EmploymentTypesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1724,7 +1727,7 @@ export type EmploymentTypesQuery = (
 
 export type EnglishLevelBaseFragment = (
   { __typename?: 'EnglishLevel' }
-  & Pick<EnglishLevel, 'id' | 'slug'>
+  & Pick<EnglishLevel, '[object Object]' | '[object Object]'>
 );
 
 export type EnglishLevelsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1740,7 +1743,7 @@ export type EnglishLevelsQuery = (
 
 export type FeatureBaseFragment = (
   { __typename?: 'Feature' }
-  & Pick<Feature, 'id' | 'name' | 'status'>
+  & Pick<Feature, '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type FeatureQueryVariables = Exact<{
@@ -1775,12 +1778,12 @@ export type SendFeedbackMutationVariables = Exact<{
 
 export type SendFeedbackMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'sendFeedback'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type JobExperienceBaseFragment = (
   { __typename?: 'JobExperience' }
-  & Pick<JobExperience, 'id' | 'slug'>
+  & Pick<JobExperience, '[object Object]' | '[object Object]'>
 );
 
 export type JobExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1796,10 +1799,10 @@ export type JobExperiencesQuery = (
 
 export type NftBaseFragment = (
   { __typename?: 'Nft' }
-  & Pick<Nft, 'id' | 'userId' | 'openseaUrl'>
+  & Pick<Nft, '[object Object]' | '[object Object]' | '[object Object]'>
   & { entity: (
     { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'url' | 'name' | 'mime'>
+    & Pick<UploadedFile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   ) }
 );
 
@@ -1836,7 +1839,7 @@ export type ConnectOAuthProviderMutationVariables = Exact<{
 
 export type ConnectOAuthProviderMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'connectOAuthProvider'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type DisconnectOAuthProviderMutationVariables = Exact<{
@@ -1846,7 +1849,7 @@ export type DisconnectOAuthProviderMutationVariables = Exact<{
 
 export type DisconnectOAuthProviderMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'disconnectOAuthProvider'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type SocialSignUpMutationVariables = Exact<{
@@ -1931,7 +1934,7 @@ export type UsersOAuthProvidersQuery = (
   { __typename?: 'Query' }
   & { usersOAuthProviders?: Maybe<Array<(
     { __typename?: 'OAuthToken' }
-    & Pick<OAuthToken, 'id' | 'providerId' | 'providerName' | 'token'>
+    & Pick<OAuthToken, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   )>> }
 );
 
@@ -1957,7 +1960,7 @@ export type ArchiveProfileConnectionForUserMutationVariables = Exact<{
 
 export type ArchiveProfileConnectionForUserMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'archiveProfileConnectionForUser'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type DeleteProfileConnectionForUserMutationVariables = Exact<{
@@ -1967,7 +1970,7 @@ export type DeleteProfileConnectionForUserMutationVariables = Exact<{
 
 export type DeleteProfileConnectionForUserMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deleteProfileConnectionForUser'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type ProfileConnectionMessagesQueryVariables = Exact<{
@@ -1979,7 +1982,7 @@ export type ProfileConnectionMessagesQuery = (
   { __typename?: 'Query' }
   & { profileConnection?: Maybe<(
     { __typename?: 'ProfileConnection' }
-    & Pick<ProfileConnection, 'id'>
+    & Pick<ProfileConnection, '[object Object]'>
     & { chatMessages?: Maybe<Array<(
       { __typename?: 'ChatMessage' }
       & ChatMessageBaseFragment
@@ -2085,7 +2088,7 @@ export type UnarchiveProfileConnectionForUserMutationVariables = Exact<{
 
 export type UnarchiveProfileConnectionForUserMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'unarchiveProfileConnectionForUser'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type UpdateConnectionLastActionTimeMutationVariables = Exact<{
@@ -2098,17 +2101,17 @@ export type UpdateConnectionLastActionTimeMutation = (
   { __typename?: 'Mutation' }
   & { updateConnectionLastActionTime?: Maybe<(
     { __typename?: 'ProfileConnection' }
-    & Pick<ProfileConnection, 'id'>
+    & Pick<ProfileConnection, '[object Object]'>
     & { userMeta?: Maybe<(
       { __typename?: 'ProfileConnectionUserMeta' }
-      & Pick<ProfileConnectionUserMeta, 'id' | 'lastActionTime'>
+      & Pick<ProfileConnectionUserMeta, '[object Object]' | '[object Object]'>
     )> }
   )> }
 );
 
 export type ProfileConnectionBaseFragment = (
   { __typename?: 'ProfileConnection' }
-  & Pick<ProfileConnection, 'id' | 'status' | 'initiator' | 'candidateReportedStatus' | 'recruiterReportedStatus' | 'candidateReportedAt' | 'recruiterReportedAt' | 'paidAt' | 'isPaymentRequested'>
+  & Pick<ProfileConnection, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type ProfileConnectionMessagesFragment = (
@@ -2121,7 +2124,7 @@ export type ProfileConnectionMessagesFragment = (
 
 export type ProfileConnectionUnreadMessagesCountFragment = (
   { __typename?: 'ProfileConnection' }
-  & Pick<ProfileConnection, 'unreadMessagesCount'>
+  & Pick<ProfileConnection, '[object Object]'>
 );
 
 export type ProfileConnectionWithProfilesFragment = (
@@ -2139,13 +2142,13 @@ export type ProfileConnectionWithUsersFragment = (
   { __typename?: 'ProfileConnection' }
   & { candidateUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
+    & Pick<User, '[object Object]'>
     & UserBaseFragment
     & UserAvatarFragment
     & UserNftFragment
   )>, recruiterUser: (
     { __typename?: 'User' }
-    & Pick<User, 'isAuthUser'>
+    & Pick<User, '[object Object]'>
     & UserBaseFragment
     & UserAvatarFragment
     & UserNftFragment
@@ -2165,12 +2168,12 @@ export type ProfileConnectionWithUsersMetaFragment = (
 
 export type ProfileConnectionUserMetaBaseFragment = (
   { __typename?: 'ProfileConnectionUserMeta' }
-  & Pick<ProfileConnectionUserMeta, 'id' | 'lastActionTime' | 'archivedAt'>
+  & Pick<ProfileConnectionUserMeta, '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -2194,7 +2197,7 @@ export type BulkReportOfferStatusMutationVariables = Exact<{
 
 export type BulkReportOfferStatusMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'bulkReportOfferStatus'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type BulkSendMessageMutationVariables = Exact<{
@@ -2206,13 +2209,14 @@ export type BulkSendMessageMutationVariables = Exact<{
 
 export type BulkSendMessageMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'bulkSendMessage'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type CreateRecruiterProfileMutationVariables = Exact<{
   userId: Scalars['Int'];
   position: Scalars['String'];
   companyName: Scalars['String'];
+  city: Scalars['String'];
 }>;
 
 
@@ -2229,7 +2233,7 @@ export type DeactivateRecruiterProfilesMutationVariables = Exact<{ [key: string]
 
 export type DeactivateRecruiterProfilesMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deactivateRecruiterProfiles'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type LatestRecruiterProfileQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2276,7 +2280,7 @@ export type RecruiterProfileActiveConnectionQuery = (
   { __typename?: 'Query' }
   & { latestRecruiterProfile?: Maybe<(
     { __typename?: 'RecruiterProfile' }
-    & Pick<RecruiterProfile, 'id'>
+    & Pick<RecruiterProfile, '[object Object]'>
     & { activeConnectionWithCandidate?: Maybe<(
       { __typename?: 'ProfileConnection' }
       & ProfileConnectionBaseFragment
@@ -2324,6 +2328,7 @@ export type SendRecruiterProfileToReviewMutation = (
 export type UpdateRecruiterProfileMutationVariables = Exact<{
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
 }>;
 
 
@@ -2337,7 +2342,7 @@ export type UpdateRecruiterProfileMutation = (
 
 export type SpecializationBaseFragment = (
   { __typename?: 'Specialization' }
-  & Pick<Specialization, 'id' | 'name'>
+  & Pick<Specialization, '[object Object]' | '[object Object]'>
 );
 
 export type SpecializationQueryVariables = Exact<{
@@ -2355,7 +2360,7 @@ export type SpecializationQuery = (
 
 export type TechnologyBaseFragment = (
   { __typename?: 'Technology' }
-  & Pick<Technology, 'id' | 'name'>
+  & Pick<Technology, '[object Object]' | '[object Object]'>
 );
 
 export type CreateTechnologiesMutationVariables = Exact<{
@@ -2421,40 +2426,40 @@ export type AdminSettingsFragment = (
 
 export type IsFirstCandidateProfileFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'isFirstTimeFillingCandidateProfile'>
+  & Pick<User, '[object Object]'>
 );
 
 export type IsFirstRecruiterProfileFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'isFirstTimeFillingRecruiterProfile'>
+  & Pick<User, '[object Object]'>
 );
 
 export type UserAvatarFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id'>
+  & Pick<User, '[object Object]'>
   & { avatar?: Maybe<(
     { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    & Pick<UploadedFile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   )> }
 );
 
 export type UserBaseFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id' | 'firstName' | 'lastName' | 'computedName' | 'username' | 'email' | 'phone' | 'inactive' | 'confirmed' | 'lastActionTime' | 'created' | 'isAdminUser' | 'linkedinUrl' | 'behanceUrl' | 'githubUrl' | 'ethWalletAddress'>
+  & Pick<User, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UserCvFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id'>
+  & Pick<User, '[object Object]'>
   & { cv?: Maybe<(
     { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    & Pick<UploadedFile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   )> }
 );
 
 export type UserEngagementFieldsFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'fvType' | 'fvSource' | 'fvMedium' | 'fvCampaign' | 'fvContent' | 'fvTerm' | 'lvType' | 'lvSource' | 'lvMedium' | 'lvCampaign' | 'lvContent' | 'lvTerm' | 'gClientid' | 'gIp' | 'gAgent' | 'gclid'>
+  & Pick<User, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UserMessageTemplatesFragment = (
@@ -2467,20 +2472,20 @@ export type UserMessageTemplatesFragment = (
 
 export type UserNftFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id'>
+  & Pick<User, '[object Object]'>
   & { nfts?: Maybe<Array<(
     { __typename?: 'Nft' }
-    & Pick<Nft, 'id' | 'openseaUrl'>
+    & Pick<Nft, '[object Object]' | '[object Object]'>
     & { entity: (
       { __typename?: 'UploadedFile' }
-      & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+      & Pick<UploadedFile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
     ) }
   )>> }
 );
 
 export type UserPrimaryProfileFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'primaryProfile'>
+  & Pick<User, '[object Object]'>
 );
 
 export type UserSettingsFragment = (
@@ -2493,17 +2498,17 @@ export type UserSettingsFragment = (
 
 export type UserSocialLinksFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id' | 'linkedinUrl' | 'behanceUrl' | 'githubUrl'>
+  & Pick<User, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UserUnreadMessagesCountFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'id' | 'unreadMessagesCount'>
+  & Pick<User, '[object Object]' | '[object Object]'>
 );
 
 export type UserHasVacanciesSourceFragment = (
   { __typename?: 'User' }
-  & Pick<User, 'hasVacanciesSource'>
+  & Pick<User, '[object Object]'>
 );
 
 export type SearchSubscriptionsFragment = (
@@ -2521,7 +2526,7 @@ export type AdminSettingsQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & AdminSettingsFragment
   )> }
 );
@@ -2606,7 +2611,7 @@ export type ChangePasswordMutationVariables = Exact<{
 
 export type ChangePasswordMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'changePassword'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type ConfirmEmailMutationVariables = Exact<{
@@ -2616,7 +2621,7 @@ export type ConfirmEmailMutationVariables = Exact<{
 
 export type ConfirmEmailMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'confirmEmail'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type CreateUserMutationVariables = Exact<{
@@ -2640,7 +2645,7 @@ export type ForgotPasswordMutationVariables = Exact<{
 
 export type ForgotPasswordMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'forgotPassword'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type IsFirstTimeFillingCandidateProfileQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2650,7 +2655,7 @@ export type IsFirstTimeFillingCandidateProfileQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & { isFirstTimeFillingCandidateProfile: User['isFirstTimeFillingCandidateProfile'] }
   )> }
 );
@@ -2662,7 +2667,7 @@ export type IsFirstTimeFillingRecruiterProfileQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & { isFirstTimeFillingRecruiterProfile: User['isFirstTimeFillingRecruiterProfile'] }
   )> }
 );
@@ -2672,7 +2677,7 @@ export type LogOutMutationVariables = Exact<{ [key: string]: never; }>;
 
 export type LogOutMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'logOut'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type LogOutFromUserMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2706,7 +2711,7 @@ export type ResetPasswordMutationVariables = Exact<{
 
 export type ResetPasswordMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'resetPassword'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type SendConfirmEmailLinkMutationVariables = Exact<{ [key: string]: never; }>;
@@ -2714,7 +2719,7 @@ export type SendConfirmEmailLinkMutationVariables = Exact<{ [key: string]: never
 
 export type SendConfirmEmailLinkMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'sendConfirmEmailLink'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type ServiceUserQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2937,7 +2942,7 @@ export type UserMessageTemplatesQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & { messageTemplates?: Maybe<Array<(
       { __typename?: 'UserTemplateMessage' }
       & MessageTemplateBaseFragment
@@ -2963,7 +2968,7 @@ export type UserSettingsQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & UserSettingsFragment
   )> }
 );
@@ -2975,7 +2980,7 @@ export type UserSubscriptionsQuery = (
   { __typename?: 'Query' }
   & { authUser?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id'>
+    & Pick<User, '[object Object]'>
     & SearchSubscriptionsFragment
   )> }
 );
@@ -3004,7 +3009,7 @@ export type UserUnreadMessagesCountUpdatedSubscription = (
 
 export type MessageTemplateBaseFragment = (
   { __typename?: 'UserTemplateMessage' }
-  & Pick<UserTemplateMessage, 'id' | 'messageType' | 'messageTitle' | 'messageBody'>
+  & Pick<UserTemplateMessage, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type CreateMessageTemplateMutationVariables = Exact<{
@@ -3031,7 +3036,7 @@ export type DeleteMessageTemplateMutationVariables = Exact<{
 
 export type DeleteMessageTemplateMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deleteMessageTemplate'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type UpdateMessageTemplateMutationVariables = Exact<{
@@ -3051,7 +3056,7 @@ export type UpdateMessageTemplateMutation = (
 
 export type UserSettingsBaseFragment = (
   { __typename?: 'UserSettings' }
-  & Pick<UserSettings, 'id' | 'userId' | 'pushNotificationsPermission'>
+  & Pick<UserSettings, '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UsersSearchSubscriptionFullFragment = (
@@ -3063,14 +3068,14 @@ export type UsersSearchSubscriptionFullFragment = (
 
 export type UsersSearchSubscriptionBaseFragment = (
   { __typename?: 'UsersSearchSubscription' }
-  & Pick<UsersSearchSubscription, 'id' | 'title' | 'userId' | 'lastUsed' | 'lastNotified' | 'subscriptionUrl'>
+  & Pick<UsersSearchSubscription, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type UsersSearchSubscriptionParamsFragment = (
   { __typename?: 'UsersSearchSubscription' }
   & { searchParams: (
     { __typename?: 'CandidatesSearchParams' }
-    & Pick<CandidatesSearchParams, 'cities' | 'countries' | 'specializations' | 'salaryFrom' | 'salaryTo' | 'timezoneFrom' | 'timezoneTo' | 'timezoneReverseMode' | 'searchQuery' | 'experienceIds' | 'englishLevelIds' | 'employmentTypesIds' | 'technologiesIds'>
+    & Pick<CandidatesSearchParams, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   ) }
 );
 
@@ -3078,7 +3083,7 @@ export type UsersSearchSubscriptionStringifiedParamsFragment = (
   { __typename?: 'UsersSearchSubscription' }
   & { stringifiedSearchParams: (
     { __typename?: 'SubscriptionStringifiedParams' }
-    & Pick<SubscriptionStringifiedParams, 'id'>
+    & Pick<SubscriptionStringifiedParams, '[object Object]'>
     & { employmentTypes?: Maybe<Array<(
       { __typename?: 'EmploymentType' }
       & EmploymentTypeBaseFragment
@@ -3118,7 +3123,7 @@ export type UnsubscribeFromCandidatesSearchMutationVariables = Exact<{
 
 export type UnsubscribeFromCandidatesSearchMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'unsubscribeFromCandidatesSearch'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type UpdateSubscriptionLastUsedMutationVariables = Exact<{
@@ -3165,7 +3170,7 @@ export type UserSearchSubscriptionsByUserIdQuery = (
 
 export type VacanciesSourceBaseFragment = (
   { __typename?: 'VacanciesSource' }
-  & Pick<VacanciesSource, 'id' | 'userId' | 'url'>
+  & Pick<VacanciesSource, '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type CreateMultipleVacanciesSourcesMutationVariables = Exact<{
@@ -3175,7 +3180,7 @@ export type CreateMultipleVacanciesSourcesMutationVariables = Exact<{
 
 export type CreateMultipleVacanciesSourcesMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'createMultipleVacanciesSources'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type CreateVacanciesSourceMutationVariables = Exact<{
@@ -3194,16 +3199,16 @@ export type CreateVacanciesSourceMutation = (
 
 export type CompanyLogoFragment = (
   { __typename?: 'Vacancy' }
-  & Pick<Vacancy, 'id'>
+  & Pick<Vacancy, '[object Object]'>
   & { companyLogo?: Maybe<(
     { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
+    & Pick<UploadedFile, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   )> }
 );
 
 export type VacancyBaseFragment = (
   { __typename?: 'Vacancy' }
-  & Pick<Vacancy, 'id' | 'status' | 'companyName' | 'jobTitle' | 'jobDescription' | 'jobType' | 'jobCategory' | 'createdAt' | 'updatedAt' | 'salaryTo' | 'salaryFrom' | 'isTop' | 'userId' | 'sourceId' | 'applyLink'>
+  & Pick<Vacancy, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type VacancyEnglishLevelFragment = (
@@ -3255,7 +3260,7 @@ export type AddVacanciesLogoMutationVariables = Exact<{
 
 export type AddVacanciesLogoMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'addVacanciesLogo'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type HotVacanciesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3282,7 +3287,7 @@ export type SalariesDataByCategoryQuery = (
   { __typename?: 'Query' }
   & { salariesDataByCategory: (
     { __typename?: 'VacancySalaryData' }
-    & Pick<VacancySalaryData, 'maxSalary' | 'averageMinSalary' | 'averageSalary'>
+    & Pick<VacancySalaryData, '[object Object]' | '[object Object]' | '[object Object]'>
   ) }
 );
 
@@ -3294,7 +3299,7 @@ export type SendNewVacancyApplicationMutationVariables = Exact<{
 
 export type SendNewVacancyApplicationMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'sendNewVacancyApplication'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type SendNewVacancyRequestMutationVariables = Exact<{
@@ -3305,7 +3310,7 @@ export type SendNewVacancyRequestMutationVariables = Exact<{
 
 export type SendNewVacancyRequestMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'sendNewVacancyRequest'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type VacanciesQueryVariables = Exact<{
@@ -3318,7 +3323,7 @@ export type VacanciesQuery = (
   { __typename?: 'Query' }
   & { vacancies: (
     { __typename?: 'VacanciesResult' }
-    & Pick<VacanciesResult, 'hasMore'>
+    & Pick<VacanciesResult, '[object Object]'>
     & { rows: Array<(
       { __typename?: 'Vacancy' }
       & VacancyFullFragment
@@ -3341,12 +3346,12 @@ export type VacanciesByCompanyQuery = (
 
 export type WorkPlaceBaseFragment = (
   { __typename?: 'CandidateProfileWorkPlace' }
-  & Pick<CandidateProfileWorkPlace, 'id' | 'title' | 'description' | 'startDate' | 'endDate'>
+  & Pick<CandidateProfileWorkPlace, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type WorkPlaceCompanyInfoFragment = (
   { __typename?: 'CandidateProfileWorkPlace' }
-  & Pick<CandidateProfileWorkPlace, 'companyName' | 'companyUrl' | 'companySizeFrom' | 'companySizeTo' | 'companyIndustry' | 'companySpecialities' | 'companyCategories' | 'companyFundingType'>
+  & Pick<CandidateProfileWorkPlace, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
 );
 
 export type WorkPlaceFullFragment = (
@@ -3387,7 +3392,7 @@ export type DeleteWorkPlaceMutationVariables = Exact<{
 
 export type DeleteWorkPlaceMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deleteWorkPlace'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type FetchWorkPlacesMutationVariables = Exact<{
@@ -3432,10 +3437,10 @@ export type UpdateWorkPlaceMutation = (
 
 export type FlashMessageBaseFragment = (
   { __typename?: 'FlashMessage' }
-  & Pick<FlashMessage, 'id' | 'type' | 'heading' | 'text'>
+  & Pick<FlashMessage, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
   & { cta?: Maybe<(
     { __typename?: 'Cta' }
-    & Pick<Cta, 'title' | 'link'>
+    & Pick<Cta, '[object Object]' | '[object Object]'>
   )> }
 );
 
@@ -3446,7 +3451,7 @@ export type DeleteMessageMutationVariables = Exact<{
 
 export type DeleteMessageMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'deleteMessage'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type PostMessageMutationVariables = Exact<{
@@ -3459,7 +3464,7 @@ export type PostMessageMutationVariables = Exact<{
 
 export type PostMessageMutation = (
   { __typename?: 'Mutation' }
-  & Pick<Mutation, 'postMessage'>
+  & Pick<Mutation, '[object Object]'>
 );
 
 export type VisibleMessagesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3469,10 +3474,10 @@ export type VisibleMessagesQuery = (
   { __typename?: 'Query' }
   & { visibleMessages: Array<(
     { __typename?: 'FlashMessage' }
-    & Pick<FlashMessage, 'id' | 'type' | 'heading' | 'text'>
+    & Pick<FlashMessage, '[object Object]' | '[object Object]' | '[object Object]' | '[object Object]'>
     & { cta?: Maybe<(
       { __typename?: 'Cta' }
-      & Pick<Cta, 'title' | 'link'>
+      & Pick<Cta, '[object Object]' | '[object Object]'>
     )> }
   )> }
 );
@@ -3787,6 +3792,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   rejectReason
   position
   companyName
+  city
   slug
   lastActionTime
 }
@@ -5583,8 +5589,8 @@ export type BulkSendMessageMutationHookResult = ReturnType<typeof useBulkSendMes
 export type BulkSendMessageMutationResult = Apollo.MutationResult<BulkSendMessageMutation>;
 export type BulkSendMessageMutationOptions = Apollo.BaseMutationOptions<BulkSendMessageMutation, BulkSendMessageMutationVariables>;
 export const CreateRecruiterProfileDocument = /*#__PURE__*/ gql`
-    mutation createRecruiterProfile($userId: Int!, $position: String!, $companyName: String!) {
-  createRecruiterProfile(userId: $userId, position: $position, companyName: $companyName) {
+    mutation createRecruiterProfile($userId: Int!, $position: String!, $companyName: String!, $city: String!) {
+  createRecruiterProfile(userId: $userId, position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }
@@ -5607,6 +5613,7 @@ export type CreateRecruiterProfileMutationFn = Apollo.MutationFunction<CreateRec
  *      userId: // value for 'userId'
  *      position: // value for 'position'
  *      companyName: // value for 'companyName'
+ *      city: // value for 'city'
  *   },
  * });
  */
@@ -5875,8 +5882,8 @@ export type SendRecruiterProfileToReviewMutationHookResult = ReturnType<typeof u
 export type SendRecruiterProfileToReviewMutationResult = Apollo.MutationResult<SendRecruiterProfileToReviewMutation>;
 export type SendRecruiterProfileToReviewMutationOptions = Apollo.BaseMutationOptions<SendRecruiterProfileToReviewMutation, SendRecruiterProfileToReviewMutationVariables>;
 export const UpdateRecruiterProfileDocument = /*#__PURE__*/ gql`
-    mutation updateRecruiterProfile($position: String, $companyName: String) {
-  updateRecruiterProfile(position: $position, companyName: $companyName) {
+    mutation updateRecruiterProfile($position: String, $companyName: String, $city: String) {
+  updateRecruiterProfile(position: $position, companyName: $companyName, city: $city) {
     ...RecruiterProfileBase
   }
 }
@@ -5898,6 +5905,7 @@ export type UpdateRecruiterProfileMutationFn = Apollo.MutationFunction<UpdateRec
  *   variables: {
  *      position: // value for 'position'
  *      companyName: // value for 'companyName'
+ *      city: // value for 'city'
  *   },
  * });
  */
