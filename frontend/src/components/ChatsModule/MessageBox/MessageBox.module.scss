@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: rem-calc(24);
+  padding: rem-calc(32 24);
   @include webkit-smoothscroll;
   @include with-loader {
     background-color: $c-white;
@@ -34,7 +34,7 @@
 }
 
 .emptyMessageHeading {
-  border-bottom: 1px solid  $c-void;
+  border-bottom: 1px solid $c-void;
 }
 
 .mobileAppBoxContainer,
