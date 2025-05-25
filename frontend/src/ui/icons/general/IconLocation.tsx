@@ -3,10 +3,14 @@ import React from 'react';
 import icons from '@/ui/icons/icons.module.scss';
 import { FCIcon } from '@/ui/icons/typedefs';
 
-export const IconLocation: FCIcon = () => (
+export const IconLocation: FCIcon = ({ size = 18 }) => (
   // classname "icon" for overrides
   <svg
-    className={cn(icons.icon, 'icon-location')}
+    className={cn(icons.icon, "icon-location")}
+    style={{
+      width: typeof size === "number" ? `${size}px` : size,
+      height: typeof size === "number" ? `${size}px` : size,
+    }}
     width="18"
     height="18"
     viewBox="0 0 18 18"
