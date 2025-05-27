@@ -994,6 +994,7 @@ export type RecruiterProfile = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
+  city?: Maybe<Scalars['String']>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
