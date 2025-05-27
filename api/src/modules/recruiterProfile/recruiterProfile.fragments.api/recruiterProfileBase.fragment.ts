@@ -9,5 +9,6 @@ export const RECRUITER_PROFILE_BASE_FRAGMENT = gql`
     companyName
     slug
     lastActionTime
+    city
   }
 `;
