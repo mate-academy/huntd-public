@@ -30,7 +30,6 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'user_id',
   })
   userId: number;
-
   @BelongsTo(() => User)
   user: User
 
@@ -52,6 +51,12 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'company_name',
   })
   companyName: string;
+
+@Column({
+  type: DataType.STRING(255),
+  allowNull: true,
+})
+city: string | null;
 
   @Unique
   @Column
