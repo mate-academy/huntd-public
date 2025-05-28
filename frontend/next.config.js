@@ -9,6 +9,13 @@ const { nextI18NextRewrites } = require('next-i18next/rewrites');
 const localeSubpaths = {};
 
 const config = {
+  webpackDevMiddleware: (config) => {
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    };
+    return config;
+  },
   images: {
     domains: [
       `${process.env.FILES_HANDLER_BUCKET}.s3.eu-central-1.amazonaws.com`,
@@ -35,15 +42,11 @@ const config = {
   trailingSlash: false,
   poweredByHeader: false,
   sassOptions: {
-    includePaths: [
-      path.join(__dirname, 'src', 'style'),
-    ],
+    includePaths: [path.join(__dirname, 'src', 'style')],
   },
   experimental: {
     optimizeFonts: true,
   },
 };
 
-module.exports = withPlugins([
-  [withBundleAnalyzer],
-], config);
+module.exports = withPlugins([[withBundleAnalyzer]], config);

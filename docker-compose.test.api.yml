@@ -6,7 +6,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: '772184'
+      POSTGRES_PASSWORD: "772184"
       POSTGRES_DB: huntd_test
       POSTGRES_USER: dev
       POSTGRES_PORT: 5432

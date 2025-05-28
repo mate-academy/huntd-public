@@ -2,7 +2,6 @@ version: "3.3"
 
 services:
   ############################### NGINX ###############################
-  # nginx reverse proxy
   nginx:
     restart: always
     build:
@@ -17,21 +16,28 @@ services:
       - cms
       - db
     volumes:
-      - ./nginx:/etc/nginx:cached
-      - ./nginx/local-ssl:/etc/nginx/ssl:cached
+      - ./nginx:/etc/nginx
+      - ./nginx/local-ssl:/etc/nginx/ssl
       - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+
   ############################### REDIS ###############################
-  # redis
   redis:
     image: redis:5.0
     ports:
-      - '6379:6379'
+      - "6379:6379"
 
   ################################# CMS ################################
-  # strapi cms
   cms:
     restart: always
-    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev", "-- --watch-admin"]
+    command:
+      [
+        "./wait-for-it.sh",
+        "api:4000/healthz",
+        "npm",
+        "run",
+        "dev",
+        "-- --watch-admin",
+      ]
     build:
       context: ./cms
       args:
@@ -45,16 +51,18 @@ services:
       - api
     env_file:
       - .env
+    environment:
+      # File watching для Strapi
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
     volumes:
-      - ./cms:/usr/src/cms:cached
-      # monkey patch to disable host check in webpack dev server (use local.huntd.tech for admin development)
-      - ./cms/overwrites/strapi-admin/index.js:/usr/src/cms/node_modules/strapi-admin/index.js:cached
+      - ./cms:/usr/src/cms
+      - ./cms/overwrites/strapi-admin/index.js:/usr/src/cms/node_modules/strapi-admin/index.js
       - /usr/src/cms/node_modules
       - /usr/src/cms/.cache
       - /usr/src/cms/build
 
-  # ################################ API ################################
-  # sequelize + graphql wrapper over postgres database
+  ################################ API ################################
   api:
     restart: always
     build:
@@ -70,16 +78,16 @@ services:
       - "9229:9229"
     env_file:
       - .env
-    depends_on:
-      - redis
-      - db
+    environment:
+      # File watching для Node.js/TypeScript
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
     volumes:
-      - ./api:/usr/src/api:cached
+      - ./api:/usr/src/api
       - /usr/src/api/node_modules
       - /usr/src/api/dist
 
-  # ############################## FRONTEND #############################
-  # next.js based application
+  ############################## FRONTEND #############################
   frontend:
     restart: always
     command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev"]
@@ -95,8 +103,13 @@ services:
       - api
     env_file:
       - .env
+    environment:
+      # File watching для Next.js
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      - WATCHPACK_POLLING=true
     volumes:
-      - ./frontend:/usr/src/frontend:cached
+      - ./frontend:/usr/src/frontend
       - /usr/src/frontend/node_modules
       - /usr/src/frontend/.next
       - /usr/src/frontend/out
@@ -107,13 +120,14 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: '772184'
+      POSTGRES_PASSWORD: "772184"
       POSTGRES_DB: huntd_development
       POSTGRES_USER: dev
       POSTGRES_PORT: 5432
     volumes:
       - ./db:/docker-entrypoint-initdb.d
       - database_data:/var/lib/postgresql/data
+
 volumes:
   database_data:
     driver: local

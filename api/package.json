@@ -10,7 +10,7 @@
     "test:unit": "jest --watch .*spec.*",
     "test:watch": "jest --watch",
     "lint": "eslint . --fix",
-    "dev": "ts-node-dev --inspect=0.0.0.0 --respawn ./src/apiServer.ts",
+    "dev": "ts-node-dev --poll --inspect=0.0.0.0:9229 --respawn ./src/apiServer",
     "build": "tsc && babel dist -d dist",
     "prod": "node dist/apiServer.js",
     "migrate": "sequelize db:migrate",
