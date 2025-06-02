@@ -61,6 +61,7 @@ export const RecruiterProfileSchema = gql`
     companyName: String
     user: User
     lastActionTime: GraphQLDateTime
+    city: String
     statusesNotificationSentAt: GraphQLDateTime
     activeConnectionWithCandidate(candidateProfileId: Int!): ProfileConnection
   }
