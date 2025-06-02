@@ -1010,6 +1010,7 @@ export type RecruiterProfile = {
   companyName?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
+  city?: Maybe<Scalars['String']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
 };
@@ -2170,7 +2171,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'city' | 'lastActionTime'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -3788,6 +3789,7 @@ export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
   position
   companyName
   slug
+  city
   lastActionTime
 }
     `;
