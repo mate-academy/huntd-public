@@ -8,52 +8,52 @@ NPM_TOKEN ?= INSERT_HERE
 detached: silent logs
 
 silent:
-	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker compose up -d $(s)
+	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker-compose up -d $(s)
 
 up:
-	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker compose up $(s)
+	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker-compose up $(s)
 
 down:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose down
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose down
 
 stop:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose stop $(s)
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose stop $(s)
 
 restop:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose stop $(s) && TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose up -d $(s)
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose stop $(s) && TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose up -d $(s)
 
 test:
-	TAG=$(TAG) APP_ENV=test TEST_COMMAND="npm run test" NPM_TOKEN=$(NPM_TOKEN) API_PORT=4001 docker compose -f docker-compose.test.$(s).yml -p hunt-tests up --abort-on-container-exit
+	TAG=$(TAG) APP_ENV=test TEST_COMMAND="npm run test" NPM_TOKEN=$(NPM_TOKEN) API_PORT=4001 docker-compose -f docker-compose.test.$(s).yml -p hunt-tests up --abort-on-container-exit
 
 test-rebuild:
-	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker compose -f docker-compose.test.$(s).yml -p huntd-tests up --build
+	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker-compose -f docker-compose.test.$(s).yml -p huntd-tests up --build
 
 test-down:
-	TAG=$(TAG) APP_ENV=test docker compose -f docker-compose.test.$(s).yml -p hunt-tests down -v
+	TAG=$(TAG) APP_ENV=test docker-compose -f docker-compose.test.$(s).yml -p hunt-tests down -v
 
 test-local:
-	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -p huntd-tests up --abort-on-container-exit
+	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker-compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -p huntd-tests up --abort-on-container-exit
 
 test-local-listen:
-	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -f docker-compose.test.local.listen.$(s).yml -p huntd-tests run api
+	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker-compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -f docker-compose.test.local.listen.$(s).yml -p huntd-tests run api
 
 test-local-rebuild:
-	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -p huntd-tests up --abort-on-container-exit --build
+	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker-compose -f docker-compose.test.$(s).yml -f docker-compose.test.local.$(s).yml -p huntd-tests up --abort-on-container-exit --build
 
 test-inspect:
-	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker compose -f docker-compose.test.$(s).yml -f docker-compose.test.inspect.$(s).yml -p huntd-tests up --abort-on-container-exit
+	TAG=$(TAG) ENV=test NPM_TOKEN=$(NPM_TOKEN) docker-compose -f docker-compose.test.$(s).yml -f docker-compose.test.inspect.$(s).yml -p huntd-tests up --abort-on-container-exit
 
 rm:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose rm -fs $(s)
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose rm -fs $(s)
 
 rm-hard:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose rm -fsv $(s)
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose rm -fsv $(s)
 
 restart:
-	TAG=$(TAG) APP_ENV=$(APP_ENV) docker compose restart $(s)
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker-compose restart $(s)
 
 build:
-	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker compose build $(s)
+	TAG=$(TAG) NPM_TOKEN=$(NPM_TOKEN) APP_ENV=$(APP_ENV) docker-compose build $(s)
 
 rebuild: rm build silent
 

@@ -8,7 +8,7 @@ import {
   ForeignKey,
   HasMany,
   Index,
-  Table, Unique,
+  Table, Unique, Length,
 } from 'sequelize-typescript';
 import { User } from '@/models/User';
 import { RecruiterProfileStatusEnum } from '@/modules/recruiterProfile/recruiterProfile.typedefs';
@@ -67,4 +67,11 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'deleted_at',
   })
   deletedAt: Date
+
+  @AllowNull(true)
+  @Length({ min: 1, max: 255 })
+  @Column({
+    field: 'city',
+  })
+  city:string
 }
