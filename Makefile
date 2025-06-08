@@ -1,7 +1,7 @@
 TAG ?= latest
 APP_ENV ?= local
 t ?= 20
-NPM_TOKEN ?= INSERT_HERE
+NPM_TOKEN ?= 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-
 
 .PHONY: api front cms
 
@@ -61,6 +61,9 @@ rebuild-hard: rm-hard build silent
 
 db-development:
 	psql --host=localhost --port=5432 --username=dev --password --dbname=huntd_development
+
+api:
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker exec -it huntd-public-api-1 bash
 
 api:
 	TAG=$(TAG) APP_ENV=$(APP_ENV) docker exec -it huntd-public-api-1 bash
