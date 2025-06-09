@@ -65,6 +65,9 @@ db-development:
 api:
 	TAG=$(TAG) APP_ENV=$(APP_ENV) docker exec -it huntd-public-api-1 bash
 
+api:
+	TAG=$(TAG) APP_ENV=$(APP_ENV) docker exec -it huntd-public-api-1 bash
+
 cms:
 	TAG=$(TAG) APP_ENV=$(APP_ENV) docker exec -it huntd-public-cms-1 bash
 
