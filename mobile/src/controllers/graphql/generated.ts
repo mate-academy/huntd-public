@@ -9,9 +9,10 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  GraphQLDateTime: any;
   Upload: any;
+  GraphQLDateTime: any;
 };
+
 
 export type AdminSettings = {
   __typename?: 'AdminSettings';
@@ -993,6 +994,7 @@ export type RecruiterProfile = {
   position?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
   user?: Maybe<User>;
+  city?: Maybe<Scalars['String']>;
   lastActionTime?: Maybe<Scalars['GraphQLDateTime']>;
   statusesNotificationSentAt?: Maybe<Scalars['GraphQLDateTime']>;
   activeConnectionWithCandidate?: Maybe<ProfileConnection>;
@@ -1311,7 +1313,6 @@ export type CandidateProfileWorkPlaceInput = {
   startDate: Scalars['GraphQLDateTime'];
   endDate?: Maybe<Scalars['GraphQLDateTime']>;
 };
-
 
 export type CandidateProfileBaseFragment = (
   { __typename?: 'CandidateProfile' }

@@ -34,8 +34,13 @@
 
 .recruiterMetaItem {
   @extend .baseItem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   @include text-truncate;
+  @include icon-styles {
+    width: 0.8em;
+    height: 0.8em;
+  }
 
   &:not(:last-child) {
 
