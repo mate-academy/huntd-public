@@ -338,6 +338,12 @@
   {
     "language": "en",
     "namespace": "validations",
+    "code": "Email is already taken",
+    "value": "Email is already taken"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
   }
