@@ -10,7 +10,8 @@
     "prod": "next start",
     "lint:js": "eslint . --ext .ts,.tsx,.js --fix",
     "lint": "npm run lint:js",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@apollo/client": "^3.3.6",
@@ -53,6 +54,7 @@
     "timeago-react": "^3.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.7",
     "@mate-academy/eslint-config-react-internal": "0.0.9",
     "@mate-academy/ts-config": "^1.0.4",
     "@types/amplitude-js": "^6.0.0",

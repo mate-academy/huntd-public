@@ -48,7 +48,7 @@ export const RecruiterProfilePreviewModule = () => {
               <h1
                 className={cn(typography.h1, styles.title, 'mb-16')}
               >
-                {getFilledValue(profile.user?.computedName)}
+                {getFilledValue(profile.user?.computedName)} 
               </h1>
 
               <div className={ProfilePreview.profileMeta}>

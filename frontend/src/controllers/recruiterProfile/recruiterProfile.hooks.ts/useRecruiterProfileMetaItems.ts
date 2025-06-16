@@ -13,6 +13,7 @@ interface UseRecruiterProfileMetaItems {
 }
 export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
   profile,
+  
 ) => useMemo(
   () => {
     if (!profile) {
@@ -27,6 +28,10 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       {
         name: RecruiterProfileMetaItems.CompanyName,
         text: getFilledValue(profile.companyName),
+      },
+      {
+        name: RecruiterProfileMetaItems.City,
+        text: getFilledValue(profile.city),
       },
     ];
   },
