@@ -37,17 +37,15 @@ export const RecruiterProfilePreviewModule = () => {
 
   return (
     <div>
-      <div className={cn(
-        ProfilePreview.profileHeader,
-        { [ProfilePreview.profileHeaderActive]: isActive },
-      )}
+      <div
+        className={cn(ProfilePreview.profileHeader, {
+          [ProfilePreview.profileHeaderActive]: isActive,
+        })}
       >
         <div className="grid-container">
           <div className="grid-x grid-margin-x">
             <div className="cell large-8">
-              <h1
-                className={cn(typography.h1, styles.title, 'mb-16')}
-              >
+              <h1 className={cn(typography.h1, styles.title, 'mb-16')}>
                 {getFilledValue(profile.user?.computedName)}
               </h1>
 
@@ -63,7 +61,6 @@ export const RecruiterProfilePreviewModule = () => {
             </div>
           </div>
         </div>
-
       </div>
       <div className={ProfilePreview.profileContent}>
         <div className="grid-container">
@@ -82,7 +79,10 @@ export const RecruiterProfilePreviewModule = () => {
               </p>
 
               <div className={cn(typography.smallCaption, 'mb-8')}>
-                <a href={`mailto:${getFilledValue(user?.email)}`} className={typography.link}>
+                <a
+                  href={`mailto:${getFilledValue(user?.email)}`}
+                  className={typography.link}
+                >
                   {getFilledValue(user?.email)}
                 </a>
               </div>

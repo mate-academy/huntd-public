@@ -25,13 +25,21 @@ services:
   redis:
     image: redis:5.0
     ports:
-      - '6379:6379'
+      - "6379:6379"
 
   ################################# CMS ################################
   # strapi cms
   cms:
     restart: always
-    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev", "-- --watch-admin"]
+    command:
+      [
+        "./wait-for-it.sh",
+        "api:4000/healthz",
+        "npm",
+        "run",
+        "dev",
+        "-- --watch-admin",
+      ]
     build:
       context: ./cms
       args:
@@ -107,7 +115,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: '772184'
+      POSTGRES_PASSWORD: "772184"
       POSTGRES_DB: huntd_development
       POSTGRES_USER: dev
       POSTGRES_PORT: 5432
