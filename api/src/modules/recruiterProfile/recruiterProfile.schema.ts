@@ -54,6 +54,7 @@ export const RecruiterProfileSchema = gql`
 
   type RecruiterProfile {
     id: Int!
+    city: String
     slug: String
     status: RecruiterProfileStatus!
     rejectReason: String

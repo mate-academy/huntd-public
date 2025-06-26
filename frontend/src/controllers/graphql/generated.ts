@@ -9,9 +9,10 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  GraphQLDateTime: string;
   Upload: any;
+  GraphQLDateTime: string;
 };
+
 
 export type AdminSettings = {
   __typename?: 'AdminSettings';
@@ -1003,6 +1004,7 @@ export enum RecruiterProfileStatus {
 export type RecruiterProfile = {
   __typename?: 'RecruiterProfile';
   id: Scalars['Int'];
+  city?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   status: RecruiterProfileStatus;
   rejectReason?: Maybe<Scalars['String']>;
@@ -1354,7 +1356,6 @@ export type FlashMessage = {
   text: Scalars['String'];
   cta?: Maybe<Cta>;
 };
-
 
 export type AdminSettingsBaseFragment = (
   { __typename?: 'AdminSettings' }
@@ -2170,7 +2171,7 @@ export type ProfileConnectionUserMetaBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'city' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'slug' | 'lastActionTime'>
 );
 
 export type RecruiterProfileFullFragment = (
@@ -3783,6 +3784,7 @@ export const ProfileConnectionUnreadMessagesCountFragmentDoc = /*#__PURE__*/ gql
 export const RecruiterProfileBaseFragmentDoc = /*#__PURE__*/ gql`
     fragment RecruiterProfileBase on RecruiterProfile {
   id
+  city
   status
   rejectReason
   position
