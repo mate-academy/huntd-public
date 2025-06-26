@@ -34,8 +34,15 @@
 
 .recruiterMetaItem {
   @extend .baseItem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: rem-calc(4);
   @include text-truncate;
+
+  svg {
+    transform: scale(1.5);
+    transform-origin: center center;
+  }
 
   &:not(:last-child) {
 

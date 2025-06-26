@@ -9,9 +9,10 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  GraphQLDateTime: any;
   Upload: any;
+  GraphQLDateTime: any;
 };
+
 
 export type AdminSettings = {
   __typename?: 'AdminSettings';
@@ -987,6 +988,7 @@ export enum RecruiterProfileStatus {
 export type RecruiterProfile = {
   __typename?: 'RecruiterProfile';
   id: Scalars['Int'];
+  city?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   status: RecruiterProfileStatus;
   rejectReason?: Maybe<Scalars['String']>;
@@ -1311,7 +1313,6 @@ export type CandidateProfileWorkPlaceInput = {
   startDate: Scalars['GraphQLDateTime'];
   endDate?: Maybe<Scalars['GraphQLDateTime']>;
 };
-
 
 export type CandidateProfileBaseFragment = (
   { __typename?: 'CandidateProfile' }
