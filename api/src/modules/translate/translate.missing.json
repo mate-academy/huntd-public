@@ -332,8 +332,38 @@
   {
     "language": "en",
     "namespace": "profile",
+    "code": "fetch",
+    "value": "fetch"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "reload",
+    "value": "reload"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "settings_changepassword_tab",
+    "value": "settings_changepassword_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "settings_socialprofiles_tab",
+    "value": "settings_socialprofiles_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Invalid credentials",
+    "value": "Invalid credentials"
   },
   {
     "language": "en",
