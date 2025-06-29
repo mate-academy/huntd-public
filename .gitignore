@@ -12,6 +12,7 @@
 
 # Ignore env config
 .env
+.npmrc
 
 # Ignore node_modules
 node_modules
