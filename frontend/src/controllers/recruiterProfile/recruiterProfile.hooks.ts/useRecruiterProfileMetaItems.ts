@@ -19,7 +19,7 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
       return [];
     }
 
-    return [
+    const items = [
       {
         name: RecruiterProfileMetaItems.Position,
         text: getFilledValue(profile.position),
@@ -29,6 +29,15 @@ export const useRecruiterProfileMetaItems: UseRecruiterProfileMetaItems = (
         text: getFilledValue(profile.companyName),
       },
     ];
+
+    if (profile.city) {
+      items.push({
+        name: RecruiterProfileMetaItems.City,
+        text: getFilledValue(profile.city),
+      });
+    }
+
+    return items;
   },
   [profile],
 );
