@@ -16,6 +16,11 @@
   }
 }
 
+.locationIconWrapper :global(.icon-location) {
+    width: 25px;
+    height: 40px;
+}
+
 .baseItem {
   color: currentColor;
 }
@@ -53,4 +58,8 @@
   color: var(--icon-color, currentColor);
   background-color: $c-citrus;
   border-radius: 50%;
+}
+
+.icon {
+  height: 50px;
 }
