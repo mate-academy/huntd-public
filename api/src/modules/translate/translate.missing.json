@@ -2,6 +2,18 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "feedback_subtitle",
+    "value": "feedback_subtitle"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "feedback_title",
+    "value": "feedback_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "hire_web3_developer_seo_link",
     "value": "hire_web3_developer_seo_link"
   },
@@ -38,8 +50,20 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "send_feedback_button",
+    "value": "send_feedback_button"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "send_feedback_button_title",
     "value": "send_feedback_button_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "send_feedback_placeholder",
+    "value": "send_feedback_placeholder"
   },
   {
     "language": "en",
@@ -337,8 +361,26 @@
   },
   {
     "language": "en",
+    "namespace": "vacancy",
+    "code": "web3_top_companies",
+    "value": "web3_top_companies"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Invalid credentials",
+    "value": "Invalid credentials"
+  },
+  {
+    "language": "en",
     "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Please write a greeting message",
+    "value": "Please write a greeting message"
   }
 ]

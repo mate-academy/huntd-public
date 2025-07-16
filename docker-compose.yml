@@ -105,7 +105,7 @@ services:
   db:
     image: postgres:10.21
     ports:
-      - 5432:5432
+      - 5433:5432
     environment:
       POSTGRES_PASSWORD: '772184'
       POSTGRES_DB: huntd_development

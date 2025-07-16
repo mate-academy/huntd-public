@@ -35,4 +35,4 @@ RUN chmod +x ./wait-for-it.sh
 
 EXPOSE 3000
 
-CMD ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "prod"]
+CMD ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev"]

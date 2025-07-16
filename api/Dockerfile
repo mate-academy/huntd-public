@@ -34,4 +34,4 @@ RUN npm rebuild bcrypt --build-from-source
 
 EXPOSE 4000
 
-CMD npm run migrate && npm run seed && npm run prod
+CMD npm run migrate && npm run seed && npm run dev
