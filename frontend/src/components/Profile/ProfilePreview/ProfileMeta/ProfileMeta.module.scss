@@ -54,3 +54,30 @@
   background-color: $c-citrus;
   border-radius: 50%;
 }
+
+/* ProfileMeta.module.scss */
+
+.icon {
+  display: inline-flex;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (min-width: 768px) {
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

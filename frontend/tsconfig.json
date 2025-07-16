@@ -18,7 +18,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "module": "esnext",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
