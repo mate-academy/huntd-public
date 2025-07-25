@@ -1323,16 +1323,14 @@ export type CandidateProfileFullFragment = (
   & CandidateProfileEnglishLevelFragment
   & CandidateProfileJobExperienceFragment
   & CandidateProfileEmploymentTypesFragment
-  & CandidateProfileSpecializationFragment
   & CandidateProfileSpecializationsFragment
-  & CandidateProfileUserFragment
   & CandidateProfileCitiesFragment
-  & CandidateProfileEmploymentLocationsFragment
+  & CandidateProfileWorkPlacesFragment
 );
 
 export type CandidateProfileBaseFragment = (
   { __typename?: 'CandidateProfile' }
-  & Pick<CandidateProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'salary' | 'candidateDescription' | 'experienceDescription' | 'workExpectations' | 'achievements' | 'slug' | 'lastActionTime'>
+  & Pick<CandidateProfile, 'id' | 'userId' | 'status' | 'rejectReason' | 'position' | 'salary' | 'candidateDescription' | 'experienceDescription' | 'workExpectations' | 'achievements' | 'slug' | 'lastActionTime'>
 );
 
 export type CandidateProfileCitiesFragment = (
@@ -1340,14 +1338,6 @@ export type CandidateProfileCitiesFragment = (
   & { cities?: Maybe<Array<(
     { __typename?: 'CandidateProfileCity' }
     & CandidateProfileCityBaseFragment
-  )>> }
-);
-
-export type CandidateProfileEmploymentLocationsFragment = (
-  { __typename?: 'CandidateProfile' }
-  & { employmentLocations?: Maybe<Array<(
-    { __typename?: 'EmploymentLocation' }
-    & EmploymentLocationBaseFragment
   )>> }
 );
 
@@ -1375,14 +1365,6 @@ export type CandidateProfileJobExperienceFragment = (
   )> }
 );
 
-export type CandidateProfileSpecializationFragment = (
-  { __typename?: 'CandidateProfile' }
-  & { specialization?: Maybe<(
-    { __typename?: 'Specialization' }
-    & SpecializationBaseFragment
-  )> }
-);
-
 export type CandidateProfileSpecializationsFragment = (
   { __typename?: 'CandidateProfile' }
   & { specializations?: Maybe<Array<(
@@ -1399,104 +1381,41 @@ export type CandidateProfileTechnologiesFragment = (
   )>> }
 );
 
-export type CandidateProfileUserFragment = (
+export type CandidateProfileWorkPlacesFragment = (
   { __typename?: 'CandidateProfile' }
-  & { user?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserCvFragment
-  )> }
+  & { workPlaces?: Maybe<Array<(
+    { __typename?: 'CandidateProfileWorkPlace' }
+    & WorkPlaceBaseFragment
+  )>> }
 );
 
-export type LatestCandidateProfileQueryVariables = Exact<{ [key: string]: never; }>;
+export type CandidateProfilesBySubscriptionQueryVariables = Exact<{
+  subscriptionLastInteract: Scalars['GraphQLDateTime'];
+  where: PublicProfilesParameters;
+}>;
 
 
-export type LatestCandidateProfileQuery = (
+export type CandidateProfilesBySubscriptionQuery = (
   { __typename?: 'Query' }
-  & { latestCandidateProfile?: Maybe<(
+  & { candidateProfilesBySubscription: Array<(
     { __typename?: 'CandidateProfile' }
     & CandidateProfileFullFragment
   )> }
 );
 
-export type SendCandidateProfileToReviewMutationVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SendCandidateProfileToReviewMutation = (
-  { __typename?: 'Mutation' }
-  & { sendCandidateProfileToReview: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ) }
-);
-
-export type UpdateCandidateProfileMutationVariables = Exact<{
-  position?: Maybe<Scalars['String']>;
-  salary?: Maybe<Scalars['Float']>;
-  candidateDescription?: Maybe<Scalars['String']>;
-  experienceDescription?: Maybe<Scalars['String']>;
-  workExpectations?: Maybe<Scalars['String']>;
-  achievements?: Maybe<Scalars['String']>;
-  technologiesIds?: Maybe<Array<Scalars['Int']>>;
-  jobExperienceId?: Maybe<Scalars['Int']>;
-  employmentTypesIds?: Maybe<Array<Scalars['Int']>>;
-  employmentLocationsIds?: Maybe<Array<Scalars['Int']>>;
-  englishLevelId?: Maybe<Scalars['Int']>;
-  specializationId?: Maybe<Scalars['Int']>;
-  specializationsIds?: Maybe<Array<Scalars['Int']>>;
-  cities?: Maybe<Array<CandidateProfileCityInput>>;
+export type DeactivateUnresponsiveProfilesMutationVariables = Exact<{
+  userIds?: Maybe<Array<Scalars['Int']>>;
 }>;
 
 
-export type UpdateCandidateProfileMutation = (
+export type DeactivateUnresponsiveProfilesMutation = (
   { __typename?: 'Mutation' }
-  & { updateCandidateProfile: (
-    { __typename?: 'CandidateProfile' }
-    & CandidateProfileBaseFragment
-  ) }
+  & Pick<Mutation, 'deactivateUnresponsiveProfiles'>
 );
 
 export type CandidateProfileCityBaseFragment = (
   { __typename?: 'CandidateProfileCity' }
   & Pick<CandidateProfileCity, 'id' | 'cityId' | 'cityName' | 'cityCountryName' | 'cityCountrySlug' | 'cityTimezone' | 'type'>
-);
-
-export type DeviceTokenBaseFragment = (
-  { __typename?: 'DeviceToken' }
-  & Pick<DeviceToken, 'id' | 'userId' | 'token' | 'devicePlatform'>
-);
-
-export type DeviceTokenExtraFragment = (
-  { __typename?: 'DeviceToken' }
-  & Pick<DeviceToken, 'deviceName' | 'deviceYear' | 'systemVersion'>
-);
-
-export type RegisterDeviceMutationVariables = Exact<{
-  token: Scalars['String'];
-  devicePlatform: DevicePlatform;
-  deviceYear?: Maybe<Scalars['String']>;
-  systemVersion?: Maybe<Scalars['String']>;
-  deviceName?: Maybe<Scalars['String']>;
-}>;
-
-
-export type RegisterDeviceMutation = (
-  { __typename?: 'Mutation' }
-  & { registerDevice?: Maybe<(
-    { __typename?: 'DeviceToken' }
-    & DeviceTokenBaseFragment
-    & DeviceTokenExtraFragment
-  )> }
-);
-
-export type UnregisterDeviceMutationVariables = Exact<{
-  token: Scalars['String'];
-}>;
-
-
-export type UnregisterDeviceMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'unregisterDevice'>
 );
 
 export type EmploymentLocationBaseFragment = (
@@ -1514,35 +1433,6 @@ export type EnglishLevelBaseFragment = (
   & Pick<EnglishLevel, 'id' | 'slug'>
 );
 
-export type FeatureBaseFragment = (
-  { __typename?: 'Feature' }
-  & Pick<Feature, 'id' | 'name' | 'status'>
-);
-
-export type FeatureQueryVariables = Exact<{
-  name: Scalars['String'];
-}>;
-
-
-export type FeatureQuery = (
-  { __typename?: 'Query' }
-  & { feature?: Maybe<(
-    { __typename?: 'Feature' }
-    & FeatureBaseFragment
-  )> }
-);
-
-export type FeaturesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type FeaturesQuery = (
-  { __typename?: 'Query' }
-  & { features?: Maybe<Array<(
-    { __typename?: 'Feature' }
-    & FeatureBaseFragment
-  )>> }
-);
-
 export type JobExperienceBaseFragment = (
   { __typename?: 'JobExperience' }
   & Pick<JobExperience, 'id' | 'slug'>
@@ -1550,72 +1440,17 @@ export type JobExperienceBaseFragment = (
 
 export type RecruiterProfileBaseFragment = (
   { __typename?: 'RecruiterProfile' }
-  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'city' | 'slug' | 'lastActionTime'>
+  & Pick<RecruiterProfile, 'id' | 'status' | 'rejectReason' | 'position' | 'companyName' | 'city' | 'slug' | 'lastActionTime' | 'statusesNotificationSentAt'>
 );
 
-export type RecruiterProfileFullFragment = (
-  { __typename?: 'RecruiterProfile' }
-  & RecruiterProfileBaseFragment
-  & RecruiterProfileUserFragment
-);
-
-export type RecruiterProfileUserFragment = (
-  { __typename?: 'RecruiterProfile' }
-  & { user?: Maybe<(
-    { __typename?: 'User' }
-    & UserBaseFragment
-  )> }
-);
-
-export type LatestRecruiterProfileQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LatestRecruiterProfileQuery = (
-  { __typename?: 'Query' }
-  & { latestRecruiterProfile?: Maybe<(
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileFullFragment
-  )> }
-);
-
-export type ReviewRecruiterProfileMutationVariables = Exact<{
-  id: Scalars['Int'];
-  status: RecruiterProfileStatus;
-  rejectReason?: Maybe<Scalars['String']>;
+export type UpdateStatusesNotificationTimeMutationVariables = Exact<{
+  profileIds: Array<Scalars['Int']>;
 }>;
 
 
-export type ReviewRecruiterProfileMutation = (
+export type UpdateStatusesNotificationTimeMutation = (
   { __typename?: 'Mutation' }
-  & { reviewRecruiterProfile: (
-    { __typename?: 'RecruiterProfile' }
-    & Pick<RecruiterProfile, 'id' | 'status'>
-  ) }
-);
-
-export type SendRecruiterProfileToReviewMutationVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SendRecruiterProfileToReviewMutation = (
-  { __typename?: 'Mutation' }
-  & { sendRecruiterProfileToReview: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
-);
-
-export type UpdateRecruiterProfileMutationVariables = Exact<{
-  position?: Maybe<Scalars['String']>;
-  companyName?: Maybe<Scalars['String']>;
-}>;
-
-
-export type UpdateRecruiterProfileMutation = (
-  { __typename?: 'Mutation' }
-  & { updateRecruiterProfile: (
-    { __typename?: 'RecruiterProfile' }
-    & RecruiterProfileBaseFragment
-  ) }
+  & Pick<Mutation, 'updateStatusesNotificationTime'>
 );
 
 export type SpecializationBaseFragment = (
@@ -1628,240 +1463,37 @@ export type TechnologyBaseFragment = (
   & Pick<Technology, 'id' | 'name'>
 );
 
-export type UserBaseFragment = (
-  { __typename?: 'User' }
-  & Pick<User, 'id' | 'firstName' | 'lastName' | 'computedName' | 'username' | 'email' | 'phone' | 'inactive' | 'confirmed' | 'lastActionTime' | 'created' | 'ethWalletAddress'>
-);
-
-export type UserCvFragment = (
-  { __typename?: 'User' }
-  & Pick<User, 'id'>
-  & { cv?: Maybe<(
-    { __typename?: 'UploadedFile' }
-    & Pick<UploadedFile, 'id' | 'name' | 'mime' | 'url'>
-  )> }
-);
-
-export type UserEngagementFieldsFragment = (
-  { __typename?: 'User' }
-  & Pick<User, 'fvType' | 'fvSource' | 'fvMedium' | 'fvCampaign' | 'fvContent' | 'fvTerm' | 'lvType' | 'lvSource' | 'lvMedium' | 'lvCampaign' | 'lvContent' | 'lvTerm' | 'gClientid' | 'gIp' | 'gAgent' | 'gclid'>
-);
-
-export type UserPrimaryProfileFragment = (
-  { __typename?: 'User' }
-  & Pick<User, 'primaryProfile'>
-);
-
-export type UserSettingsFragment = (
-  { __typename?: 'User' }
-  & { settings?: Maybe<(
-    { __typename?: 'UserSettings' }
-    & UserSettingsBaseFragment
-  )> }
-);
-
-export type AuthUserQueryVariables = Exact<{ [key: string]: never; }>;
+export type UsersByPendingConnectionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AuthUserQuery = (
+export type UsersByPendingConnectionsQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
+  & { usersByPendingConnections?: Maybe<Array<(
     { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-    & UserCvFragment
-  )> }
+    & Pick<User, 'id' | 'email' | 'lastActionTime' | 'firstName' | 'lastName'>
+    & { recruiterProfiles?: Maybe<Array<(
+      { __typename?: 'RecruiterProfile' }
+      & RecruiterProfileBaseFragment
+    )>> }
+  )>> }
 );
 
-export type ConfirmEmailMutationVariables = Exact<{
-  token: Scalars['String'];
-}>;
+export type UsersWithChurnedCandidateProfilesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ConfirmEmailMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'confirmEmail'>
-);
-
-export type ForgotPasswordMutationVariables = Exact<{
-  email: Scalars['String'];
-}>;
-
-
-export type ForgotPasswordMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'forgotPassword'>
-);
-
-export type LogOutMutationVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LogOutMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'logOut'>
-);
-
-export type ResetPasswordMutationVariables = Exact<{
-  token: Scalars['String'];
-  password: Scalars['String'];
-  repeatPassword: Scalars['String'];
-}>;
-
-
-export type ResetPasswordMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'resetPassword'>
-);
-
-export type SendConfirmEmailLinkMutationVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SendConfirmEmailLinkMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'sendConfirmEmailLink'>
-);
-
-export type SignInMutationVariables = Exact<{
-  email: Scalars['String'];
-  password: Scalars['String'];
-}>;
-
-
-export type SignInMutation = (
-  { __typename?: 'Mutation' }
-  & { signIn: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
-);
-
-export type SignUpMutationVariables = Exact<{
-  email: Scalars['String'];
-  phone?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-  repeatPassword: Scalars['String'];
-  firstName?: Maybe<Scalars['String']>;
-  lastName?: Maybe<Scalars['String']>;
-  fvType?: Maybe<Scalars['String']>;
-  fvSource?: Maybe<Scalars['String']>;
-  fvMedium?: Maybe<Scalars['String']>;
-  fvCampaign?: Maybe<Scalars['String']>;
-  fvContent?: Maybe<Scalars['String']>;
-  fvTerm?: Maybe<Scalars['String']>;
-  lvType?: Maybe<Scalars['String']>;
-  lvSource?: Maybe<Scalars['String']>;
-  lvMedium?: Maybe<Scalars['String']>;
-  lvCampaign?: Maybe<Scalars['String']>;
-  lvContent?: Maybe<Scalars['String']>;
-  lvTerm?: Maybe<Scalars['String']>;
-  gClientid?: Maybe<Scalars['String']>;
-  gIp?: Maybe<Scalars['String']>;
-  gAgent?: Maybe<Scalars['String']>;
-  gclid?: Maybe<Scalars['String']>;
-}>;
-
-
-export type SignUpMutation = (
-  { __typename?: 'Mutation' }
-  & { signUp: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
-);
-
-export type SignUpAsInactiveUserMutationVariables = Exact<{
-  username: Scalars['String'];
-  email: Scalars['String'];
-  phone?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-  repeatPassword: Scalars['String'];
-  firstName?: Maybe<Scalars['String']>;
-  lastName?: Maybe<Scalars['String']>;
-  fvType?: Maybe<Scalars['String']>;
-  fvSource?: Maybe<Scalars['String']>;
-  fvMedium?: Maybe<Scalars['String']>;
-  fvCampaign?: Maybe<Scalars['String']>;
-  fvContent?: Maybe<Scalars['String']>;
-  fvTerm?: Maybe<Scalars['String']>;
-  lvType?: Maybe<Scalars['String']>;
-  lvSource?: Maybe<Scalars['String']>;
-  lvMedium?: Maybe<Scalars['String']>;
-  lvCampaign?: Maybe<Scalars['String']>;
-  lvContent?: Maybe<Scalars['String']>;
-  lvTerm?: Maybe<Scalars['String']>;
-  gClientid?: Maybe<Scalars['String']>;
-  gIp?: Maybe<Scalars['String']>;
-  gAgent?: Maybe<Scalars['String']>;
-  gclid?: Maybe<Scalars['String']>;
-}>;
-
-
-export type SignUpAsInactiveUserMutation = (
-  { __typename?: 'Mutation' }
-  & { signUpAsInactiveUser: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-    & UserEngagementFieldsFragment
-  ) }
-);
-
-export type UpdateProfileContactsMutationVariables = Exact<{
-  phone?: Maybe<Scalars['String']>;
-  firstName: Scalars['String'];
-  lastName: Scalars['String'];
-}>;
-
-
-export type UpdateProfileContactsMutation = (
-  { __typename?: 'Mutation' }
-  & { updateProfileContacts: (
-    { __typename?: 'User' }
-    & UserBaseFragment
-    & UserPrimaryProfileFragment
-  ) }
-);
-
-export type UserSettingsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type UserSettingsQuery = (
+export type UsersWithChurnedCandidateProfilesQuery = (
   { __typename?: 'Query' }
-  & { authUser?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id'>
-    & UserSettingsFragment
-  )> }
-);
-
-export type UserSettingsBaseFragment = (
-  { __typename?: 'UserSettings' }
-  & Pick<UserSettings, 'id' | 'userId' | 'pushNotificationsPermission'>
-);
-
-export type UpdateUserSettingsMutationVariables = Exact<{
-  pushNotificationsPermission?: Maybe<Scalars['Boolean']>;
-}>;
-
-
-export type UpdateUserSettingsMutation = (
-  { __typename?: 'Mutation' }
-  & { updateUserSettings: (
-    { __typename?: 'UserSettings' }
-    & UserSettingsBaseFragment
-  ) }
+  & { usersWithChurnedCandidateProfiles?: Maybe<Array<(
+    { __typename?: 'ChurnedUser' }
+    & Pick<ChurnedUser, 'id' | 'firstName' | 'email' | 'profilesCount' | 'profileId' | 'slug' | 'profileCreatedAt'>
+  )>> }
 );
 
 export type UsersSearchSubscriptionFullFragment = (
   { __typename?: 'UsersSearchSubscription' }
   & UsersSearchSubscriptionBaseFragment
   & UsersSearchSubscriptionParamsFragment
-  & UsersSearchSubscriptionStringifiedParamsFragment
+  & UsersSearchSubscriptionUserFragment
 );
 
 export type UsersSearchSubscriptionBaseFragment = (
@@ -1873,56 +1505,16 @@ export type UsersSearchSubscriptionParamsFragment = (
   { __typename?: 'UsersSearchSubscription' }
   & { searchParams: (
     { __typename?: 'CandidatesSearchParams' }
-    & Pick<CandidatesSearchParams, 'cities' | 'specializations' | 'salaryFrom' | 'salaryTo' | 'searchQuery' | 'experienceIds' | 'englishLevelIds' | 'employmentTypesIds' | 'technologiesIds'>
+    & Pick<CandidatesSearchParams, 'cities' | 'countries' | 'specializations' | 'salaryFrom' | 'salaryTo' | 'timezoneFrom' | 'timezoneTo' | 'timezoneReverseMode' | 'searchQuery' | 'experienceIds' | 'englishLevelIds' | 'employmentTypesIds' | 'technologiesIds'>
   ) }
 );
 
-export type UsersSearchSubscriptionStringifiedParamsFragment = (
+export type UsersSearchSubscriptionUserFragment = (
   { __typename?: 'UsersSearchSubscription' }
-  & { stringifiedSearchParams: (
-    { __typename?: 'SubscriptionStringifiedParams' }
-    & Pick<SubscriptionStringifiedParams, 'id'>
-    & { employmentTypes?: Maybe<Array<(
-      { __typename?: 'EmploymentType' }
-      & EmploymentTypeBaseFragment
-    )>>, technologies?: Maybe<Array<(
-      { __typename?: 'Technology' }
-      & TechnologyBaseFragment
-    )>>, jobExperiences?: Maybe<Array<(
-      { __typename?: 'JobExperience' }
-      & JobExperienceBaseFragment
-    )>>, englishLevels?: Maybe<Array<(
-      { __typename?: 'EnglishLevel' }
-      & EnglishLevelBaseFragment
-    )>> }
-  ) }
-);
-
-export type SubscribeToCandidatesSearchMutationVariables = Exact<{
-  title: Scalars['String'];
-  userId?: Maybe<Scalars['Int']>;
-  searchParams: PublicProfilesParameters;
-}>;
-
-
-export type SubscribeToCandidatesSearchMutation = (
-  { __typename?: 'Mutation' }
-  & { subscribeToCandidatesSearch: (
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-    & UsersSearchSubscriptionParamsFragment
-  ) }
-);
-
-export type UnsubscribeFromCandidatesSearchMutationVariables = Exact<{
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-}>;
-
-
-export type UnsubscribeFromCandidatesSearchMutation = (
-  { __typename?: 'Mutation' }
-  & Pick<Mutation, 'unsubscribeFromCandidatesSearch'>
+  & { user?: Maybe<(
+    { __typename?: 'User' }
+    & Pick<User, 'email'>
+  )> }
 );
 
 export type UpdateSubscriptionLastNotifiedMutationVariables = Exact<{
@@ -1935,38 +1527,60 @@ export type UpdateSubscriptionLastNotifiedMutation = (
   & Pick<Mutation, 'updateSubscriptionLastNotified'>
 );
 
-export type UpdateSubscriptionLastUsedMutationVariables = Exact<{
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-}>;
+export type UsersSearchSubscriptionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type UpdateSubscriptionLastUsedMutation = (
-  { __typename?: 'Mutation' }
-  & { updateSubscriptionLastUsed: (
+export type UsersSearchSubscriptionsQuery = (
+  { __typename?: 'Query' }
+  & { usersSearchSubscriptions?: Maybe<Array<(
     { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-  ) }
+    & UsersSearchSubscriptionFullFragment
+  )>> }
 );
 
-export type UpdateSubscriptionTitleMutationVariables = Exact<{
-  id: Scalars['Int'];
-  userId: Scalars['Int'];
-  values: UpdateSubscriptionsTitleValues;
+export type VacanciesSourceBaseFragment = (
+  { __typename?: 'VacanciesSource' }
+  & Pick<VacanciesSource, 'id' | 'userId' | 'url'>
+);
+
+export type VacanciesSourcesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type VacanciesSourcesQuery = (
+  { __typename?: 'Query' }
+  & { vacanciesSources?: Maybe<Array<(
+    { __typename?: 'VacanciesSource' }
+    & VacanciesSourceBaseFragment
+  )>> }
+);
+
+export type CreateSourcedVacanciesMutationVariables = Exact<{
+  vacancies?: Maybe<Array<SourcedVacancy>>;
 }>;
 
 
-export type UpdateSubscriptionTitleMutation = (
+export type CreateSourcedVacanciesMutation = (
   { __typename?: 'Mutation' }
-  & { updateSubscriptionTitle: (
-    { __typename?: 'UsersSearchSubscription' }
-    & UsersSearchSubscriptionBaseFragment
-  ) }
+  & Pick<Mutation, 'createSourcedVacancies'>
+);
+
+export type DeleteObsoleteSourcedVacanciesMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DeleteObsoleteSourcedVacanciesMutation = (
+  { __typename?: 'Mutation' }
+  & Pick<Mutation, 'deleteObsoleteSourcedVacancies'>
+);
+
+export type WorkPlaceBaseFragment = (
+  { __typename?: 'CandidateProfileWorkPlace' }
+  & Pick<CandidateProfileWorkPlace, 'id' | 'companyName' | 'title' | 'description' | 'startDate' | 'endDate'>
 );
 
 export const CandidateProfileBaseFragmentDoc = gql`
     fragment CandidateProfileBase on CandidateProfile {
   id
+  userId
   status
   rejectReason
   position
@@ -2037,13 +1651,6 @@ export const SpecializationBaseFragmentDoc = gql`
   name
 }
     `;
-export const CandidateProfileSpecializationFragmentDoc = gql`
-    fragment CandidateProfileSpecialization on CandidateProfile {
-  specialization {
-    ...SpecializationBase
-  }
-}
-    ${SpecializationBaseFragmentDoc}`;
 export const CandidateProfileSpecializationsFragmentDoc = gql`
     fragment CandidateProfileSpecializations on CandidateProfile {
   specializations {
@@ -2051,42 +1658,6 @@ export const CandidateProfileSpecializationsFragmentDoc = gql`
   }
 }
     ${SpecializationBaseFragmentDoc}`;
-export const UserBaseFragmentDoc = gql`
-    fragment UserBase on User {
-  id
-  firstName
-  lastName
-  computedName
-  username
-  email
-  phone
-  inactive
-  confirmed
-  lastActionTime
-  created
-  ethWalletAddress
-}
-    `;
-export const UserCvFragmentDoc = gql`
-    fragment UserCv on User {
-  id
-  cv {
-    id
-    name
-    mime
-    url
-  }
-}
-    `;
-export const CandidateProfileUserFragmentDoc = gql`
-    fragment CandidateProfileUser on CandidateProfile {
-  user {
-    ...UserBase
-    ...UserCv
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserCvFragmentDoc}`;
 export const CandidateProfileCityBaseFragmentDoc = gql`
     fragment CandidateProfileCityBase on CandidateProfileCity {
   id
@@ -2105,19 +1676,23 @@ export const CandidateProfileCitiesFragmentDoc = gql`
   }
 }
     ${CandidateProfileCityBaseFragmentDoc}`;
-export const EmploymentLocationBaseFragmentDoc = gql`
-    fragment EmploymentLocationBase on EmploymentLocation {
+export const WorkPlaceBaseFragmentDoc = gql`
+    fragment WorkPlaceBase on CandidateProfileWorkPlace {
   id
-  slug
+  companyName
+  title
+  description
+  startDate
+  endDate
 }
     `;
-export const CandidateProfileEmploymentLocationsFragmentDoc = gql`
-    fragment CandidateProfileEmploymentLocations on CandidateProfile {
-  employmentLocations {
-    ...EmploymentLocationBase
+export const CandidateProfileWorkPlacesFragmentDoc = gql`
+    fragment CandidateProfileWorkPlaces on CandidateProfile {
+  workPlaces {
+    ...WorkPlaceBase
   }
 }
-    ${EmploymentLocationBaseFragmentDoc}`;
+    ${WorkPlaceBaseFragmentDoc}`;
 export const CandidateProfileFullFragmentDoc = gql`
     fragment CandidateProfileFull on CandidateProfile {
   ...CandidateProfileBase
@@ -2125,42 +1700,22 @@ export const CandidateProfileFullFragmentDoc = gql`
   ...CandidateProfileEnglishLevel
   ...CandidateProfileJobExperience
   ...CandidateProfileEmploymentTypes
-  ...CandidateProfileSpecialization
   ...CandidateProfileSpecializations
-  ...CandidateProfileUser
   ...CandidateProfileCities
-  ...CandidateProfileEmploymentLocations
+  ...CandidateProfileWorkPlaces
 }
     ${CandidateProfileBaseFragmentDoc}
 ${CandidateProfileTechnologiesFragmentDoc}
 ${CandidateProfileEnglishLevelFragmentDoc}
 ${CandidateProfileJobExperienceFragmentDoc}
 ${CandidateProfileEmploymentTypesFragmentDoc}
-${CandidateProfileSpecializationFragmentDoc}
 ${CandidateProfileSpecializationsFragmentDoc}
-${CandidateProfileUserFragmentDoc}
 ${CandidateProfileCitiesFragmentDoc}
-${CandidateProfileEmploymentLocationsFragmentDoc}`;
-export const DeviceTokenBaseFragmentDoc = gql`
-    fragment DeviceTokenBase on DeviceToken {
+${CandidateProfileWorkPlacesFragmentDoc}`;
+export const EmploymentLocationBaseFragmentDoc = gql`
+    fragment EmploymentLocationBase on EmploymentLocation {
   id
-  userId
-  token
-  devicePlatform
-}
-    `;
-export const DeviceTokenExtraFragmentDoc = gql`
-    fragment DeviceTokenExtra on DeviceToken {
-  deviceName
-  deviceYear
-  systemVersion
-}
-    `;
-export const FeatureBaseFragmentDoc = gql`
-    fragment FeatureBase on Feature {
-  id
-  name
-  status
+  slug
 }
     `;
 export const RecruiterProfileBaseFragmentDoc = gql`
@@ -2173,61 +1728,9 @@ export const RecruiterProfileBaseFragmentDoc = gql`
   city
   slug
   lastActionTime
+  statusesNotificationSentAt
 }
     `;
-export const RecruiterProfileUserFragmentDoc = gql`
-    fragment RecruiterProfileUser on RecruiterProfile {
-  user {
-    ...UserBase
-  }
-}
-    ${UserBaseFragmentDoc}`;
-export const RecruiterProfileFullFragmentDoc = gql`
-    fragment RecruiterProfileFull on RecruiterProfile {
-  ...RecruiterProfileBase
-  ...RecruiterProfileUser
-}
-    ${RecruiterProfileBaseFragmentDoc}
-${RecruiterProfileUserFragmentDoc}`;
-export const UserEngagementFieldsFragmentDoc = gql`
-    fragment UserEngagementFields on User {
-  fvType
-  fvSource
-  fvMedium
-  fvCampaign
-  fvContent
-  fvTerm
-  lvType
-  lvSource
-  lvMedium
-  lvCampaign
-  lvContent
-  lvTerm
-  gClientid
-  gIp
-  gAgent
-  gclid
-}
-    `;
-export const UserPrimaryProfileFragmentDoc = gql`
-    fragment UserPrimaryProfile on User {
-  primaryProfile
-}
-    `;
-export const UserSettingsBaseFragmentDoc = gql`
-    fragment UserSettingsBase on UserSettings {
-  id
-  userId
-  pushNotificationsPermission
-}
-    `;
-export const UserSettingsFragmentDoc = gql`
-    fragment UserSettings on User {
-  settings {
-    ...UserSettingsBase
-  }
-}
-    ${UserSettingsBaseFragmentDoc}`;
 export const UsersSearchSubscriptionBaseFragmentDoc = gql`
     fragment UsersSearchSubscriptionBase on UsersSearchSubscription {
   id
@@ -2241,9 +1744,13 @@ export const UsersSearchSubscriptionParamsFragmentDoc = gql`
     fragment UsersSearchSubscriptionParams on UsersSearchSubscription {
   searchParams {
     cities
+    countries
     specializations
     salaryFrom
     salaryTo
+    timezoneFrom
+    timezoneTo
+    timezoneReverseMode
     searchQuery
     experienceIds
     englishLevelIds
@@ -2252,222 +1759,71 @@ export const UsersSearchSubscriptionParamsFragmentDoc = gql`
   }
 }
     `;
-export const UsersSearchSubscriptionStringifiedParamsFragmentDoc = gql`
-    fragment UsersSearchSubscriptionStringifiedParams on UsersSearchSubscription {
-  stringifiedSearchParams {
-    id
-    employmentTypes {
-      ...EmploymentTypeBase
-    }
-    technologies {
-      ...TechnologyBase
-    }
-    jobExperiences {
-      ...JobExperienceBase
-    }
-    englishLevels {
-      ...EnglishLevelBase
-    }
+export const UsersSearchSubscriptionUserFragmentDoc = gql`
+    fragment UsersSearchSubscriptionUser on UsersSearchSubscription {
+  user {
+    email
   }
 }
-    ${EmploymentTypeBaseFragmentDoc}
-${TechnologyBaseFragmentDoc}
-${JobExperienceBaseFragmentDoc}
-${EnglishLevelBaseFragmentDoc}`;
+    `;
 export const UsersSearchSubscriptionFullFragmentDoc = gql`
     fragment UsersSearchSubscriptionFull on UsersSearchSubscription {
   ...UsersSearchSubscriptionBase
   ...UsersSearchSubscriptionParams
-  ...UsersSearchSubscriptionStringifiedParams
+  ...UsersSearchSubscriptionUser
 }
     ${UsersSearchSubscriptionBaseFragmentDoc}
 ${UsersSearchSubscriptionParamsFragmentDoc}
-${UsersSearchSubscriptionStringifiedParamsFragmentDoc}`;
-export const LatestCandidateProfileDocument = gql`
-    query latestCandidateProfile {
-  latestCandidateProfile {
+${UsersSearchSubscriptionUserFragmentDoc}`;
+export const VacanciesSourceBaseFragmentDoc = gql`
+    fragment VacanciesSourceBase on VacanciesSource {
+  id
+  userId
+  url
+}
+    `;
+export const CandidateProfilesBySubscriptionDocument = gql`
+    query candidateProfilesBySubscription($subscriptionLastInteract: GraphQLDateTime!, $where: PublicProfilesParameters!) {
+  candidateProfilesBySubscription(subscriptionLastInteract: $subscriptionLastInteract, where: $where) {
     ...CandidateProfileFull
   }
 }
     ${CandidateProfileFullFragmentDoc}`;
-export const SendCandidateProfileToReviewDocument = gql`
-    mutation sendCandidateProfileToReview {
-  sendCandidateProfileToReview {
-    ...CandidateProfileBase
-  }
-}
-    ${CandidateProfileBaseFragmentDoc}`;
-export const UpdateCandidateProfileDocument = gql`
-    mutation updateCandidateProfile($position: String, $salary: Float, $candidateDescription: String, $experienceDescription: String, $workExpectations: String, $achievements: String, $technologiesIds: [Int!], $jobExperienceId: Int, $employmentTypesIds: [Int!], $employmentLocationsIds: [Int!], $englishLevelId: Int, $specializationId: Int, $specializationsIds: [Int!], $cities: [CandidateProfileCityInput!]) {
-  updateCandidateProfile(position: $position, salary: $salary, candidateDescription: $candidateDescription, experienceDescription: $experienceDescription, workExpectations: $workExpectations, achievements: $achievements, technologiesIds: $technologiesIds, jobExperienceId: $jobExperienceId, employmentTypesIds: $employmentTypesIds, employmentLocationsIds: $employmentLocationsIds, englishLevelId: $englishLevelId, specializationId: $specializationId, specializationsIds: $specializationsIds, cities: $cities) {
-    ...CandidateProfileBase
-  }
-}
-    ${CandidateProfileBaseFragmentDoc}`;
-export const RegisterDeviceDocument = gql`
-    mutation registerDevice($token: String!, $devicePlatform: DevicePlatform!, $deviceYear: String, $systemVersion: String, $deviceName: String) {
-  registerDevice(token: $token, devicePlatform: $devicePlatform, deviceYear: $deviceYear, systemVersion: $systemVersion, deviceName: $deviceName) {
-    ...DeviceTokenBase
-    ...DeviceTokenExtra
-  }
-}
-    ${DeviceTokenBaseFragmentDoc}
-${DeviceTokenExtraFragmentDoc}`;
-export const UnregisterDeviceDocument = gql`
-    mutation unregisterDevice($token: String!) {
-  unregisterDevice(token: $token)
+export const DeactivateUnresponsiveProfilesDocument = gql`
+    mutation deactivateUnresponsiveProfiles($userIds: [Int!]) {
+  deactivateUnresponsiveProfiles(userIds: $userIds)
 }
     `;
-export const FeatureDocument = gql`
-    query feature($name: String!) {
-  feature(name: $name) {
-    ...FeatureBase
-  }
+export const UpdateStatusesNotificationTimeDocument = gql`
+    mutation updateStatusesNotificationTime($profileIds: [Int!]!) {
+  updateStatusesNotificationTime(profileIds: $profileIds)
 }
-    ${FeatureBaseFragmentDoc}`;
-export const FeaturesDocument = gql`
-    query features {
-  features {
-    ...FeatureBase
-  }
-}
-    ${FeatureBaseFragmentDoc}`;
-export const LatestRecruiterProfileDocument = gql`
-    query latestRecruiterProfile {
-  latestRecruiterProfile {
-    ...RecruiterProfileFull
-  }
-}
-    ${RecruiterProfileFullFragmentDoc}`;
-export const ReviewRecruiterProfileDocument = gql`
-    mutation reviewRecruiterProfile($id: Int!, $status: RecruiterProfileStatus!, $rejectReason: String) {
-  reviewRecruiterProfile(id: $id, status: $status, rejectReason: $rejectReason) {
+    `;
+export const UsersByPendingConnectionsDocument = gql`
+    query usersByPendingConnections {
+  usersByPendingConnections {
     id
-    status
-  }
-}
-    `;
-export const SendRecruiterProfileToReviewDocument = gql`
-    mutation sendRecruiterProfileToReview {
-  sendRecruiterProfileToReview {
-    ...RecruiterProfileBase
+    email
+    lastActionTime
+    firstName
+    lastName
+    recruiterProfiles {
+      ...RecruiterProfileBase
+    }
   }
 }
     ${RecruiterProfileBaseFragmentDoc}`;
-export const UpdateRecruiterProfileDocument = gql`
-    mutation updateRecruiterProfile($position: String, $companyName: String) {
-  updateRecruiterProfile(position: $position, companyName: $companyName) {
-    ...RecruiterProfileBase
-  }
-}
-    ${RecruiterProfileBaseFragmentDoc}`;
-export const AuthUserDocument = gql`
-    query authUser {
-  authUser {
-    ...UserBase
-    ...UserPrimaryProfile
-    ...UserEngagementFields
-    ...UserCv
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserPrimaryProfileFragmentDoc}
-${UserEngagementFieldsFragmentDoc}
-${UserCvFragmentDoc}`;
-export const ConfirmEmailDocument = gql`
-    mutation confirmEmail($token: String!) {
-  confirmEmail(token: $token)
-}
-    `;
-export const ForgotPasswordDocument = gql`
-    mutation forgotPassword($email: String!) {
-  forgotPassword(email: $email)
-}
-    `;
-export const LogOutDocument = gql`
-    mutation logOut {
-  logOut
-}
-    `;
-export const ResetPasswordDocument = gql`
-    mutation resetPassword($token: String!, $password: String!, $repeatPassword: String!) {
-  resetPassword(token: $token, password: $password, repeatPassword: $repeatPassword)
-}
-    `;
-export const SendConfirmEmailLinkDocument = gql`
-    mutation sendConfirmEmailLink {
-  sendConfirmEmailLink
-}
-    `;
-export const SignInDocument = gql`
-    mutation signIn($email: String!, $password: String!) {
-  signIn(email: $email, password: $password) {
-    ...UserBase
-    ...UserPrimaryProfile
-    ...UserEngagementFields
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserPrimaryProfileFragmentDoc}
-${UserEngagementFieldsFragmentDoc}`;
-export const SignUpDocument = gql`
-    mutation signUp($email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUp(email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
-    ...UserBase
-    ...UserPrimaryProfile
-    ...UserEngagementFields
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserPrimaryProfileFragmentDoc}
-${UserEngagementFieldsFragmentDoc}`;
-export const SignUpAsInactiveUserDocument = gql`
-    mutation signUpAsInactiveUser($username: String!, $email: String!, $phone: String, $password: String!, $repeatPassword: String!, $firstName: String, $lastName: String, $fvType: String, $fvSource: String, $fvMedium: String, $fvCampaign: String, $fvContent: String, $fvTerm: String, $lvType: String, $lvSource: String, $lvMedium: String, $lvCampaign: String, $lvContent: String, $lvTerm: String, $gClientid: String, $gIp: String, $gAgent: String, $gclid: String) {
-  signUpAsInactiveUser(username: $username, email: $email, phone: $phone, password: $password, repeatPassword: $repeatPassword, firstName: $firstName, lastName: $lastName, fvType: $fvType, fvSource: $fvSource, fvMedium: $fvMedium, fvCampaign: $fvCampaign, fvContent: $fvContent, fvTerm: $fvTerm, lvType: $lvType, lvSource: $lvSource, lvMedium: $lvMedium, lvCampaign: $lvCampaign, lvContent: $lvContent, lvTerm: $lvTerm, gClientid: $gClientid, gIp: $gIp, gAgent: $gAgent, gclid: $gclid) {
-    ...UserBase
-    ...UserPrimaryProfile
-    ...UserEngagementFields
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserPrimaryProfileFragmentDoc}
-${UserEngagementFieldsFragmentDoc}`;
-export const UpdateProfileContactsDocument = gql`
-    mutation updateProfileContacts($phone: String, $firstName: String!, $lastName: String!) {
-  updateProfileContacts(firstName: $firstName, lastName: $lastName, phone: $phone) {
-    ...UserBase
-    ...UserPrimaryProfile
-  }
-}
-    ${UserBaseFragmentDoc}
-${UserPrimaryProfileFragmentDoc}`;
-export const UserSettingsDocument = gql`
-    query userSettings {
-  authUser {
+export const UsersWithChurnedCandidateProfilesDocument = gql`
+    query usersWithChurnedCandidateProfiles {
+  usersWithChurnedCandidateProfiles {
     id
-    ...UserSettings
+    firstName
+    email
+    profilesCount
+    profileId
+    slug
+    profileCreatedAt
   }
-}
-    ${UserSettingsFragmentDoc}`;
-export const UpdateUserSettingsDocument = gql`
-    mutation updateUserSettings($pushNotificationsPermission: Boolean) {
-  updateUserSettings(pushNotificationsPermission: $pushNotificationsPermission) {
-    ...UserSettingsBase
-  }
-}
-    ${UserSettingsBaseFragmentDoc}`;
-export const SubscribeToCandidatesSearchDocument = gql`
-    mutation subscribeToCandidatesSearch($title: String!, $userId: Int, $searchParams: PublicProfilesParameters!) {
-  subscribeToCandidatesSearch(title: $title, userId: $userId, searchParams: $searchParams) {
-    ...UsersSearchSubscriptionBase
-    ...UsersSearchSubscriptionParams
-  }
-}
-    ${UsersSearchSubscriptionBaseFragmentDoc}
-${UsersSearchSubscriptionParamsFragmentDoc}`;
-export const UnsubscribeFromCandidatesSearchDocument = gql`
-    mutation unsubscribeFromCandidatesSearch($id: Int!, $userId: Int!) {
-  unsubscribeFromCandidatesSearch(id: $id, userId: $userId)
 }
     `;
 export const UpdateSubscriptionLastNotifiedDocument = gql`
@@ -2475,20 +1831,30 @@ export const UpdateSubscriptionLastNotifiedDocument = gql`
   updateSubscriptionLastNotified(subscriptionsIds: $subscriptionsIds)
 }
     `;
-export const UpdateSubscriptionLastUsedDocument = gql`
-    mutation updateSubscriptionLastUsed($id: Int!, $userId: Int!) {
-  updateSubscriptionLastUsed(id: $id, userId: $userId) {
-    ...UsersSearchSubscriptionBase
+export const UsersSearchSubscriptionsDocument = gql`
+    query usersSearchSubscriptions {
+  usersSearchSubscriptions {
+    ...UsersSearchSubscriptionFull
   }
 }
-    ${UsersSearchSubscriptionBaseFragmentDoc}`;
-export const UpdateSubscriptionTitleDocument = gql`
-    mutation updateSubscriptionTitle($id: Int!, $userId: Int!, $values: UpdateSubscriptionsTitleValues!) {
-  updateSubscriptionTitle(id: $id, userId: $userId, values: $values) {
-    ...UsersSearchSubscriptionBase
+    ${UsersSearchSubscriptionFullFragmentDoc}`;
+export const VacanciesSourcesDocument = gql`
+    query vacanciesSources {
+  vacanciesSources {
+    ...VacanciesSourceBase
   }
 }
-    ${UsersSearchSubscriptionBaseFragmentDoc}`;
+    ${VacanciesSourceBaseFragmentDoc}`;
+export const CreateSourcedVacanciesDocument = gql`
+    mutation createSourcedVacancies($vacancies: [SourcedVacancy!]) {
+  createSourcedVacancies(vacancies: $vacancies)
+}
+    `;
+export const DeleteObsoleteSourcedVacanciesDocument = gql`
+    mutation deleteObsoleteSourcedVacancies {
+  deleteObsoleteSourcedVacancies
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: () => Promise<T>) => Promise<T>;
 
@@ -2496,89 +1862,35 @@ export type SdkFunctionWrapper = <T>(action: () => Promise<T>) => Promise<T>;
 const defaultWrapper: SdkFunctionWrapper = sdkFunction => sdkFunction();
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    latestCandidateProfile(variables?: LatestCandidateProfileQueryVariables): Promise<{ data?: LatestCandidateProfileQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<LatestCandidateProfileQuery>(print(LatestCandidateProfileDocument), variables));
+    candidateProfilesBySubscription(variables: CandidateProfilesBySubscriptionQueryVariables): Promise<{ data?: CandidateProfilesBySubscriptionQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<CandidateProfilesBySubscriptionQuery>(print(CandidateProfilesBySubscriptionDocument), variables));
     },
-    sendCandidateProfileToReview(variables?: SendCandidateProfileToReviewMutationVariables): Promise<{ data?: SendCandidateProfileToReviewMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SendCandidateProfileToReviewMutation>(print(SendCandidateProfileToReviewDocument), variables));
+    deactivateUnresponsiveProfiles(variables?: DeactivateUnresponsiveProfilesMutationVariables): Promise<{ data?: DeactivateUnresponsiveProfilesMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<DeactivateUnresponsiveProfilesMutation>(print(DeactivateUnresponsiveProfilesDocument), variables));
     },
-    updateCandidateProfile(variables?: UpdateCandidateProfileMutationVariables): Promise<{ data?: UpdateCandidateProfileMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateCandidateProfileMutation>(print(UpdateCandidateProfileDocument), variables));
+    updateStatusesNotificationTime(variables: UpdateStatusesNotificationTimeMutationVariables): Promise<{ data?: UpdateStatusesNotificationTimeMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<UpdateStatusesNotificationTimeMutation>(print(UpdateStatusesNotificationTimeDocument), variables));
     },
-    registerDevice(variables: RegisterDeviceMutationVariables): Promise<{ data?: RegisterDeviceMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<RegisterDeviceMutation>(print(RegisterDeviceDocument), variables));
+    usersByPendingConnections(variables?: UsersByPendingConnectionsQueryVariables): Promise<{ data?: UsersByPendingConnectionsQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<UsersByPendingConnectionsQuery>(print(UsersByPendingConnectionsDocument), variables));
     },
-    unregisterDevice(variables: UnregisterDeviceMutationVariables): Promise<{ data?: UnregisterDeviceMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UnregisterDeviceMutation>(print(UnregisterDeviceDocument), variables));
-    },
-    feature(variables: FeatureQueryVariables): Promise<{ data?: FeatureQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<FeatureQuery>(print(FeatureDocument), variables));
-    },
-    features(variables?: FeaturesQueryVariables): Promise<{ data?: FeaturesQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<FeaturesQuery>(print(FeaturesDocument), variables));
-    },
-    latestRecruiterProfile(variables?: LatestRecruiterProfileQueryVariables): Promise<{ data?: LatestRecruiterProfileQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<LatestRecruiterProfileQuery>(print(LatestRecruiterProfileDocument), variables));
-    },
-    reviewRecruiterProfile(variables: ReviewRecruiterProfileMutationVariables): Promise<{ data?: ReviewRecruiterProfileMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<ReviewRecruiterProfileMutation>(print(ReviewRecruiterProfileDocument), variables));
-    },
-    sendRecruiterProfileToReview(variables?: SendRecruiterProfileToReviewMutationVariables): Promise<{ data?: SendRecruiterProfileToReviewMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SendRecruiterProfileToReviewMutation>(print(SendRecruiterProfileToReviewDocument), variables));
-    },
-    updateRecruiterProfile(variables?: UpdateRecruiterProfileMutationVariables): Promise<{ data?: UpdateRecruiterProfileMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateRecruiterProfileMutation>(print(UpdateRecruiterProfileDocument), variables));
-    },
-    authUser(variables?: AuthUserQueryVariables): Promise<{ data?: AuthUserQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<AuthUserQuery>(print(AuthUserDocument), variables));
-    },
-    confirmEmail(variables: ConfirmEmailMutationVariables): Promise<{ data?: ConfirmEmailMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<ConfirmEmailMutation>(print(ConfirmEmailDocument), variables));
-    },
-    forgotPassword(variables: ForgotPasswordMutationVariables): Promise<{ data?: ForgotPasswordMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<ForgotPasswordMutation>(print(ForgotPasswordDocument), variables));
-    },
-    logOut(variables?: LogOutMutationVariables): Promise<{ data?: LogOutMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<LogOutMutation>(print(LogOutDocument), variables));
-    },
-    resetPassword(variables: ResetPasswordMutationVariables): Promise<{ data?: ResetPasswordMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<ResetPasswordMutation>(print(ResetPasswordDocument), variables));
-    },
-    sendConfirmEmailLink(variables?: SendConfirmEmailLinkMutationVariables): Promise<{ data?: SendConfirmEmailLinkMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SendConfirmEmailLinkMutation>(print(SendConfirmEmailLinkDocument), variables));
-    },
-    signIn(variables: SignInMutationVariables): Promise<{ data?: SignInMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SignInMutation>(print(SignInDocument), variables));
-    },
-    signUp(variables: SignUpMutationVariables): Promise<{ data?: SignUpMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SignUpMutation>(print(SignUpDocument), variables));
-    },
-    signUpAsInactiveUser(variables: SignUpAsInactiveUserMutationVariables): Promise<{ data?: SignUpAsInactiveUserMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SignUpAsInactiveUserMutation>(print(SignUpAsInactiveUserDocument), variables));
-    },
-    updateProfileContacts(variables: UpdateProfileContactsMutationVariables): Promise<{ data?: UpdateProfileContactsMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateProfileContactsMutation>(print(UpdateProfileContactsDocument), variables));
-    },
-    userSettings(variables?: UserSettingsQueryVariables): Promise<{ data?: UserSettingsQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UserSettingsQuery>(print(UserSettingsDocument), variables));
-    },
-    updateUserSettings(variables?: UpdateUserSettingsMutationVariables): Promise<{ data?: UpdateUserSettingsMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateUserSettingsMutation>(print(UpdateUserSettingsDocument), variables));
-    },
-    subscribeToCandidatesSearch(variables: SubscribeToCandidatesSearchMutationVariables): Promise<{ data?: SubscribeToCandidatesSearchMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<SubscribeToCandidatesSearchMutation>(print(SubscribeToCandidatesSearchDocument), variables));
-    },
-    unsubscribeFromCandidatesSearch(variables: UnsubscribeFromCandidatesSearchMutationVariables): Promise<{ data?: UnsubscribeFromCandidatesSearchMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UnsubscribeFromCandidatesSearchMutation>(print(UnsubscribeFromCandidatesSearchDocument), variables));
+    usersWithChurnedCandidateProfiles(variables?: UsersWithChurnedCandidateProfilesQueryVariables): Promise<{ data?: UsersWithChurnedCandidateProfilesQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<UsersWithChurnedCandidateProfilesQuery>(print(UsersWithChurnedCandidateProfilesDocument), variables));
     },
     updateSubscriptionLastNotified(variables?: UpdateSubscriptionLastNotifiedMutationVariables): Promise<{ data?: UpdateSubscriptionLastNotifiedMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
         return withWrapper(() => client.rawRequest<UpdateSubscriptionLastNotifiedMutation>(print(UpdateSubscriptionLastNotifiedDocument), variables));
     },
-    updateSubscriptionLastUsed(variables: UpdateSubscriptionLastUsedMutationVariables): Promise<{ data?: UpdateSubscriptionLastUsedMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateSubscriptionLastUsedMutation>(print(UpdateSubscriptionLastUsedDocument), variables));
+    usersSearchSubscriptions(variables?: UsersSearchSubscriptionsQueryVariables): Promise<{ data?: UsersSearchSubscriptionsQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<UsersSearchSubscriptionsQuery>(print(UsersSearchSubscriptionsDocument), variables));
     },
-    updateSubscriptionTitle(variables: UpdateSubscriptionTitleMutationVariables): Promise<{ data?: UpdateSubscriptionTitleMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper(() => client.rawRequest<UpdateSubscriptionTitleMutation>(print(UpdateSubscriptionTitleDocument), variables));
+    vacanciesSources(variables?: VacanciesSourcesQueryVariables): Promise<{ data?: VacanciesSourcesQuery | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<VacanciesSourcesQuery>(print(VacanciesSourcesDocument), variables));
+    },
+    createSourcedVacancies(variables?: CreateSourcedVacanciesMutationVariables): Promise<{ data?: CreateSourcedVacanciesMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<CreateSourcedVacanciesMutation>(print(CreateSourcedVacanciesDocument), variables));
+    },
+    deleteObsoleteSourcedVacancies(variables?: DeleteObsoleteSourcedVacanciesMutationVariables): Promise<{ data?: DeleteObsoleteSourcedVacanciesMutation | undefined; extensions?: any; headers: Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper(() => client.rawRequest<DeleteObsoleteSourcedVacanciesMutation>(print(DeleteObsoleteSourcedVacanciesDocument), variables));
     }
   };
 }
