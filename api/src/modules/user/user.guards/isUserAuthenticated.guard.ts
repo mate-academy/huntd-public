@@ -1,12 +1,12 @@
 import { skip } from 'graphql-resolvers';
 import { ForbiddenError } from 'apollo-server';
 import { idX } from '@mate-academy/core';
-import { makeResolver } from '@/core';
 import {
   GetAuthUserUseCase,
   GetAuthUserUseCaseOptions,
   GetAuthUserUseCaseResult,
-} from '@/modules/user/user.useCases/GetAuthUser.useCase';
+} from '@/modules/user/user.useCases/GetAuthUser.UseCase';
+import { makeResolver } from '@/core';
 import { AuthErrors } from '@/auth/auth.constants';
 
 export const isUserAuthenticatedGuard = makeResolver<
