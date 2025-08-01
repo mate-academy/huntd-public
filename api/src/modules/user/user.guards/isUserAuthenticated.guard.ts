@@ -6,7 +6,7 @@ import {
   GetAuthUserUseCase,
   GetAuthUserUseCaseOptions,
   GetAuthUserUseCaseResult,
-} from '@/modules/user/user.useCases/GetAuthUser.useCase';
+} from '@/modules/user/user.useCases/GetAuthUser.UseCase';
 import { AuthErrors } from '@/auth/auth.constants';
 
 export const isUserAuthenticatedGuard = makeResolver<
