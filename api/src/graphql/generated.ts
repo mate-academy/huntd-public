@@ -2171,6 +2171,7 @@ export const RecruiterProfileBaseFragmentDoc = gql`
   companyName
   slug
   lastActionTime
+  city
 }
     `;
 export const RecruiterProfileUserFragmentDoc = gql`
