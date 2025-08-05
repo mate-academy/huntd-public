@@ -18,8 +18,8 @@ services:
       - db
     volumes:
       - ./nginx:/etc/nginx:cached
-      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
       - ./nginx/local-ssl:/etc/nginx/ssl:cached
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
   ############################### REDIS ###############################
   # redis
   redis:
