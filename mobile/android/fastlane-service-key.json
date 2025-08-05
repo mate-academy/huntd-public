@@ -1,12 +1,12 @@
 {
   "type": "service_account",
-  "project_id": "pc-api-6585196554433996992-389",
-  "private_key_id": "c08885857170c576a4798741a68292d7d8475ea4",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDOuhyfy2JJL4hS\nrdR+gU+TNMFILiAbKA/CsAwjypdl0MdOGITtb7JZDh4UovQTcoFagrH0jqIyCm6c\ncmSMDvfi7sTyZJYIvYJ5GyHms3hegCj7Kcq7i8aK7d4/uKxobsOY6QEdM2rTC7c7\nPGX8kdSrMggWN11WayHPhTsekGdebcF+xoTOILkVtx6IkJHJUWh6YE/b8WIlzC/6\nq2Ck0Ojm5ZdRC08mCnOAsSMUBH+g7F6bdXrSKOSKvlFCsVu0jmubUtzMPpcFO4c1\nKC19kqL2oEVjzm+rZtmfZ/Uyx7B5j+dAi3oZldAyFQpAKipzthxooOLWbCoju1G5\nFc125Cr1AgMBAAECggEAKhy6sQinBH6k2CbmJ0EjWzr/drtCuhV+pGvlhTMDhW+y\n8iNHjPDYlZCtKwoJC58jX7NJGicmPmhmoQMinW99KuL2BuTbtXsZhZ8z2EHOLv4P\nmx6n2G3Aa9PKFxQBNyL9QHySyAaN5+E2meATbJCukJNYF2J+5phbYmFjKjZDgHYg\nax1lv36woHRBhHclApsZvQq/4TwsWuYD4eMF7ArkPtxUD5pKFCiQjS2YJUJmKGun\n5+18xSG3Ws78iwbLR7Ys83UkInxuPu+lM4wKtPi+v00dTtXwkPECjcAeDYWrz14t\nspRbmnHC8mSpk1Nqu2w7uMtGqg3Pz6EiitwPBlkU3wKBgQD1r/XWY4KGYaJbLvoP\n4gwqJ0uVAAose2MXanFbhgO+nHksem+hQ1G2OPp2+dJ4Z8VnP+v/qBC66pq+j0Ff\nA36X5rswCoKyM8b6TtQoVPvclNX6XekXO+yexGAW6yazPV/JD2e3Yy+qYXaslBD/\nblCDHmntXbWVq9dxCR3KAiQBrwKBgQDXZ4CKbS3WhmN6cPC6TYLY3X+JtBDAT7a7\nPTCUb3JfyPXAntIHNv6P73m/AJ1dFYwXL94H5ju0TQlEcjwkB5nRqSSfBln/2Szo\npl+2VB4q6F19gMQ7SBvtAieY/LTleeTzD81mrL8wu3dVzQ+R15jovgYmH2A5/aEg\nCHroCYK6mwKBgAGORrE/2hC9x4hqSL0XAlq1+v2LjYTwlxUL4IHi3F01onLMp65O\nvdK4k6VzOYj3p0FbH0R0LP7yA17Xi2NtozyVAnRwbJlySH1HSIKk3x9rddtrAtHZ\n2Eq9FZqvjIQwDE46ob6Ai0m56kV3fpAPg8UAyUzuffrfprKZiy2/S7kTAoGAYLJJ\n9dpFNYRmq9R/fGLHVms4kayPyIUAVtWFNV1CTtV73NhvGGYLqLmsQZ4ZBmxh0xbd\n6VXlf28FtgBCFzqCRqhTlD/ZrwzjKB1n4gWo9UISlgB0FtisEJ1jAT6QRmON778s\nSedKfKnrTE0drC7IqdKEGCEFpYLCDgtAgWGjmfkCgYA+CtmilHWoPpva0aGYsiW4\nIiSzKab31IM6KuyU4JZOYv/0mRZZyjC/Rp1uQNJ2f84td6dLi5ZEJNvjvWCSlMRN\n7DhqZik4su41piGqStIlut4Au2R/XulcNE5GZfs2qqcYcKz4aSfu6+ICNRK+72oA\nTnJ36yZv09NDsMdfhZGbAg==\n-----END PRIVATE KEY-----\n",
-  "client_email": "fastlane@pc-api-6585196554433996992-389.iam.gserviceaccount.com",
-  "client_id": "102872538152547799961",
+  "project_id": "YOUR_PROJECT_ID",
+  "private_key_id": "YOUR_PRIVATE_KEY_ID",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n",
+  "client_email": "YOUR_SERVICE_ACCOUNT_EMAIL",
+  "client_id": "YOUR_CLIENT_ID",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fastlane%40pc-api-6585196554433996992-389.iam.gserviceaccount.com"
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/YOUR_SERVICE_ACCOUNT_EMAIL"
 }

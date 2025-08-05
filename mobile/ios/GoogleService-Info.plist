@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>309958264854-eumteu0dnc0rstijb7slsf7afrsivsm9.apps.googleusercontent.com</string>
+	<string>YOUR_IOS_CLIENT_ID</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.309958264854-eumteu0dnc0rstijb7slsf7afrsivsm9</string>
+	<string>YOUR_REVERSED_CLIENT_ID</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>309958264854-sgp529suiq09nbumvtt2ggj2mljhedqc.apps.googleusercontent.com</string>
+	<string>YOUR_ANDROID_CLIENT_ID</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAN0PMMs_vf7Hv_ymvJqEPkeuKs5E2yT70</string>
+	<string>YOUR_IOS_API_KEY_HERE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>309958264854</string>
+	<string>YOUR_GCM_SENDER_ID</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.mateacademy.huntd</string>
 	<key>PROJECT_ID</key>
-	<string>huntd-mobile</string>
+	<string>YOUR_PROJECT_ID</string>
 	<key>STORAGE_BUCKET</key>
 	<string>huntd-mobile.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
