@@ -17,8 +17,6 @@ Anonymous job search in IT(public version).
     ```bash
     npm install # in root, ./frontend, ./api, ./cms
     ```
-5. Add certificates to trusted
-  - Check [Nginx Readme](./nginx/README.md)
 
 ## Run project
 
@@ -27,13 +25,13 @@ To run the project run following command in the root directory(INSERT NPM TOKEN 
   make up
 ```
 
-After project has started up it should be accessible at `https://local.huntd.tech`
+After project has started up it should be accessible at `http://localhost:3000`
 
 Project contains following services combined in `docker-compose`:
 - **API:**
     - Codebase: './api'
-    - Graphql endpoint: `https://local.huntd.tech/graphql`
-    - Rest endpoint: `https://local.huntd.tech/rest`
+    - Graphql endpoint: `http://localhost:4000/graphql`
+    - Rest endpoint: `http://localhost:4000/rest`
 
     Graphql is a primary endpoint to use. Rest api is needed only for services without graphql support (like receive a pingback from the oAuth provider).
 
@@ -44,7 +42,7 @@ Project contains following services combined in `docker-compose`:
 
 - **Frontend:**
     - Codebase: './frontend'
-    - Homepage: `https://local.huntd.tech`
+    - Homepage: `http://localhost:3000`
 
     [NextJS](https://nextjs.org) is used for serving UI on Huntd. Complete official [guide](https://nextjs.org/learn) and read the [docs](https://nextjs.org/docs) to get familiar with NextJS features.
 
@@ -61,7 +59,7 @@ Project contains following services combined in `docker-compose`:
 
   Reverse proxy server. Read the [docs](https://nginx.org/en/docs) to get familiar with nginx features.
 
-  **Follow guide from [Nginx readme](nginx/README.md)** to setup SSL certificates locally
+  **Follow guide from [Nginx readme](nginx/README.md) (Optional)** to setup SSL certificates locally
 
 
 - **DB:**

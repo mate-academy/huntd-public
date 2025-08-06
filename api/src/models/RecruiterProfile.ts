@@ -53,6 +53,11 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   })
   companyName: string;
 
+  @Column({
+    field: 'city',
+  })
+  city: string;
+
   @Unique
   @Column
   slug: string

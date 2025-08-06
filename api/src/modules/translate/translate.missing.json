@@ -1,6 +1,264 @@
 [
   {
     "language": "en",
+    "namespace": "auth",
+    "code": "forgot_password_link",
+    "value": "forgot_password_link"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_action",
+    "value": "sign_in_action"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_link",
+    "value": "sign_in_link"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_page_title",
+    "value": "sign_in_page_title"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_page_underhead",
+    "value": "sign_in_page_underhead"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_text",
+    "value": "sign_in_text"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_in_with",
+    "value": "sign_in_with"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_action",
+    "value": "sign_up_action"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_link",
+    "value": "sign_up_link"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_page_title",
+    "value": "sign_up_page_title"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_page_underhead",
+    "value": "sign_up_page_underhead"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_text",
+    "value": "sign_up_text"
+  },
+  {
+    "language": "en",
+    "namespace": "auth",
+    "code": "sign_up_with",
+    "value": "sign_up_with"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "advanced",
+    "value": "advanced"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "elementary",
+    "value": "elementary"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "intermediate",
+    "value": "intermediate"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "less-than-year",
+    "value": "less-than-year"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "more-than-five-years",
+    "value": "more-than-five-years"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "one-three-years",
+    "value": "one-three-years"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "pre-intermediate",
+    "value": "pre-intermediate"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "specializations_filters_label",
+    "value": "specializations_filters_label"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "specializations_filters_placeholder",
+    "value": "specializations_filters_placeholder"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "ten_connections_hint",
+    "value": "ten_connections_hint"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "ten_connections_hint_plural",
+    "value": "ten_connections_hint"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "three-five-years",
+    "value": "three-five-years"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "top_technologies_label",
+    "value": "top_technologies_label"
+  },
+  {
+    "language": "en",
+    "namespace": "candidates",
+    "code": "upper-intermediate",
+    "value": "upper-intermediate"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "candidate_profile_content",
+    "value": "candidate_profile_content"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "candidate_profile_overhead",
+    "value": "candidate_profile_overhead"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "priority_role_message",
+    "value": "priority_role_message"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "priority_role_title",
+    "value": "priority_role_title"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "recruiter_profile_content",
+    "value": "recruiter_profile_content"
+  },
+  {
+    "language": "en",
+    "namespace": "choose-profile",
+    "code": "recruiter_profile_overhead",
+    "value": "recruiter_profile_overhead"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "about_us",
+    "value": "about_us"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "burger_menu",
+    "value": "burger_menu"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "candidates_link",
+    "value": "candidates_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "candidates_list_page_title",
+    "value": "candidates_list_page_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "chats_link",
+    "value": "chats_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "cookies_policy",
+    "value": "cookies_policy"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "copyright",
+    "value": "copyright"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "faqs",
+    "value": "faqs"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "flash_message_close",
+    "value": "flash_message_close"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "free_sign_up_button",
+    "value": "free_sign_up_button"
+  },
+  {
+    "language": "en",
     "namespace": "common",
     "code": "hire_web3_developer_seo_link",
     "value": "hire_web3_developer_seo_link"
@@ -10,6 +268,60 @@
     "namespace": "common",
     "code": "hire_web3_developer_seo_title",
     "value": "hire_web3_developer_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "my_profile",
+    "value": "my_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "not_authorized_filters_flexible_benefit",
+    "value": "not_authorized_filters_flexible_benefit"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "not_authorized_filters_full_list_benefit",
+    "value": "not_authorized_filters_full_list_benefit"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "not_authorized_filters_title",
+    "value": "not_authorized_filters_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "not_authorized_filters_top_benefit",
+    "value": "not_authorized_filters_top_benefit"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "notify_me",
+    "value": "notify_me"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "notify_me_text",
+    "value": "notify_me_text"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "pricing",
+    "value": "pricing"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "privacy_policy",
+    "value": "privacy_policy"
   },
   {
     "language": "en",
@@ -38,8 +350,38 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "rename_subscription",
+    "value": "rename_subscription"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "search_results",
+    "value": "search_results"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "search_results_plural",
+    "value": "search_results"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "send_feedback_button_title",
     "value": "send_feedback_button_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "sign_out",
+    "value": "sign_out"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "subscriptions_select_placeholder",
+    "value": "subscriptions_select_placeholder"
   },
   {
     "language": "en",
@@ -56,6 +398,48 @@
   {
     "language": "en",
     "namespace": "common",
+    "code": "terms_of_use",
+    "value": "terms_of_use"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "twitter_bonus",
+    "value": "twitter_bonus"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "twitter_bonus_description",
+    "value": "twitter_bonus_description"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "usd_sign",
+    "value": "usd_sign"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "vacancies_page_title",
+    "value": "vacancies_page_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "view_word",
+    "value": "view_word"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "we_will_notify_you",
+    "value": "we_will_notify_you"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
     "code": "web3_companies_subtitle",
     "value": "web3_companies_subtitle"
   },
@@ -64,6 +448,168 @@
     "namespace": "common",
     "code": "web3_companies_title",
     "value": "web3_companies_title"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "avatar_upload",
+    "value": "avatar_upload"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "candidate_location_label",
+    "value": "candidate_location_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "candidate_location_tooltip",
+    "value": "candidate_location_tooltip"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "company_name_label",
+    "value": "company_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "country_city_switcher",
+    "value": "country_city_switcher"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "email_label",
+    "value": "email_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "english_level_label",
+    "value": "english_level_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "filters",
+    "value": "filters"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "first_name_label",
+    "value": "first_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "job_experience_label",
+    "value": "job_experience_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "last_name_label",
+    "value": "last_name_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "linkedin_url_label",
+    "value": "linkedin_url_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "password_label",
+    "value": "password_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "recruiter_position_label",
+    "value": "recruiter_position_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "recruiter_position_placeholder",
+    "value": "recruiter_position_placeholder"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "repeat_password_label",
+    "value": "repeat_password_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "salary_label",
+    "value": "salary_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "saved_and_subscribed",
+    "value": "saved_and_subscribed"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "show_map",
+    "value": "show_map"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "switcher_button_annual",
+    "value": "switcher_button_annual"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "switcher_button_monthly",
+    "value": "switcher_button_monthly"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "technologies_label",
+    "value": "technologies_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "technologies_no_options",
+    "value": "technologies_no_options"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "timezone_switcher",
+    "value": "timezone_switcher"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "tooltip_wallet_address",
+    "value": "tooltip_wallet_address"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "wallet_address_label",
+    "value": "wallet_address_label"
+  },
+  {
+    "language": "en",
+    "namespace": "form",
+    "code": "wallet_address_placeholder",
+    "value": "wallet_address_placeholder"
   },
   {
     "language": "en",
@@ -128,6 +674,60 @@
   {
     "language": "en",
     "namespace": "home",
+    "code": "fifth_review_name",
+    "value": "fifth_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fifth_review_position",
+    "value": "fifth_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fifth_review_text",
+    "value": "fifth_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_name",
+    "value": "first_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_position",
+    "value": "first_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "first_review_text",
+    "value": "first_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_name",
+    "value": "fourth_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_position",
+    "value": "fourth_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fourth_review_text",
+    "value": "fourth_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
     "code": "frontend_new_hero_company_name",
     "value": "frontend_new_hero_company_name"
   },
@@ -166,6 +766,24 @@
     "namespace": "home",
     "code": "homepage_web3_title",
     "value": "homepage_web3_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "how_it_works_title",
+    "value": "how_it_works_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_app_hero_description",
+    "value": "mobile_app_hero_description"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_app_hero_title",
+    "value": "mobile_app_hero_title"
   },
   {
     "language": "en",
@@ -308,6 +926,42 @@
   {
     "language": "en",
     "namespace": "home",
+    "code": "second_review_name",
+    "value": "second_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "second_review_position",
+    "value": "second_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "second_review_text",
+    "value": "second_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_name",
+    "value": "third_review_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_position",
+    "value": "third_review_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "third_review_text",
+    "value": "third_review_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
     "code": "web2_start",
     "value": "web2_start"
   },
@@ -331,14 +985,272 @@
   },
   {
     "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "perfect_candidate_submit_form",
+    "value": "perfect_candidate_submit_form"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "perfect_candidates_count",
+    "value": "perfect_candidates_count"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "perfect_candidates_count_plural",
+    "value": "perfect_candidates_count"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "profile_perfect_candidate_subtitle",
+    "value": "profile_perfect_candidate_subtitle"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "profile_perfect_candidate_title",
+    "value": "profile_perfect_candidate_title"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "profile_perfect_candidate_title_subs",
+    "value": "profile_perfect_candidate_title_subs"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "zero_candidates_button",
+    "value": "zero_candidates_button"
+  },
+  {
+    "language": "en",
+    "namespace": "perfect-candidate",
+    "code": "zero_candidates_title",
+    "value": "zero_candidates_title"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "account_settings",
+    "value": "account_settings"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "considering_roles",
+    "value": "considering_roles"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "contacts_overhead",
+    "value": "contacts_overhead"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "core_technical_skills",
+    "value": "core_technical_skills"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "deactivate_profile",
+    "value": "deactivate_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "edit_profile",
+    "value": "edit_profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "empty_candidates_list",
+    "value": "empty_candidates_list"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "experience_label",
+    "value": "experience_label"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "hiring_management",
+    "value": "hiring_management"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile",
+    "value": "profile"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_active",
+    "value": "profile_active"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_contacts_message",
+    "value": "profile_contacts_message"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_contacts_title",
+    "value": "profile_contacts_title"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_preview",
+    "value": "profile_preview"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_recruiter_title",
+    "value": "profile_recruiter_title"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_status_DRAFT",
+    "value": "profile_status_DRAFT"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "profile_status_undefined",
+    "value": "profile_status_undefined"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "ready_to_work",
+    "value": "ready_to_work"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_activated_message_text",
+    "value": "recruiter_profile_activated_message_text"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_activated_message_title",
+    "value": "recruiter_profile_activated_message_title"
+  },
+  {
+    "language": "en",
     "namespace": "profile",
     "code": "recruiter_profile_companyinfo_tab",
     "value": "recruiter_profile_companyinfo_tab"
   },
   {
     "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_contacts_tab",
+    "value": "recruiter_profile_contacts_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "save-and-continue",
+    "value": "save-and-continue"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "vacancies_list",
+    "value": "vacancies_list"
+  },
+  {
+    "language": "en",
+    "namespace": "timezones",
+    "code": "timezone_code-10",
+    "value": "timezone_code-10"
+  },
+  {
+    "language": "en",
+    "namespace": "timezones",
+    "code": "timezone_code-11",
+    "value": "timezone_code-11"
+  },
+  {
+    "language": "en",
+    "namespace": "timezones",
+    "code": "timezone_code-12",
+    "value": "timezone_code-12"
+  },
+  {
+    "language": "en",
+    "namespace": "timezones",
+    "code": "timezone_code12",
+    "value": "timezone_code12"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "fields_not_equal",
+    "value": "fields_not_equal"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "first_name_is_required",
+    "value": "first_name_is_required"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "invalid_social_profile_url",
+    "value": "invalid_social_profile_url"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "last_name_is_required",
+    "value": "last_name_is_required"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "login_invalid_credentials",
+    "value": "login_invalid_credentials"
+  },
+  {
+    "language": "en",
     "namespace": "validations",
     "code": "Please enter correct Linkedin link",
     "value": "Please enter correct Linkedin link"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "register_email_already_taken",
+    "value": "register_email_already_taken"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "required_email",
+    "value": "required_email"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "role_is_required",
+    "value": "role_is_required"
   }
 ]

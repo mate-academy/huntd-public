@@ -1,5 +1,11 @@
 # Local NGINX
-Uses certificates in ./local-ssl
+**Note**: SSL certificate setup is not required for the test assignment.
+
+The project can be accessed directly via:
+- Frontend: http://localhost:3000
+- API: http://localhost:4000
+
+SSL certificates can be placed in ./local-ssl if needed for advanced configurations.
 
 ## Add local.huntd.tech to /etc/hosts
 
