@@ -25,7 +25,6 @@
   align-items: center;
 
   &:last-child {
-
     .divider {
       display: none;
     }
@@ -34,14 +33,21 @@
 
 .recruiterMetaItem {
   @extend .baseItem;
-  display: inline-block;
+  display: flex;
   @include text-truncate;
 
-  &:not(:last-child) {
+  gap: 8px;
 
+  &__geoposition {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:not(:last-child) {
     &::after {
       margin: rem-calc(0 24);
-      content: '|';
+      content: "|";
     }
   }
 }

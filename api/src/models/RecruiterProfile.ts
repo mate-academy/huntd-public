@@ -14,6 +14,7 @@ import { User } from '@/models/User';
 import { RecruiterProfileStatusEnum } from '@/modules/recruiterProfile/recruiterProfile.typedefs';
 import { ProfileConnection } from '@/models/ProfileConnection';
 import { ModelBase } from '@/models/ModelBase';
+import { Post } from '@/models/Post';
 
 @Table({
   tableName: 'recruiter_profiles',
@@ -34,6 +35,9 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
   @BelongsTo(() => User)
   user: User
 
+  @HasMany(() => Post)
+  posts: Post[];
+
   @Default(RecruiterProfileStatusEnum.Draft)
   @Column({
     type: DataType.ENUM(...Object.values(RecruiterProfileStatusEnum)),
@@ -52,6 +56,13 @@ export class RecruiterProfile extends ModelBase<RecruiterProfile> {
     field: 'company_name',
   })
   companyName: string;
+
+  @Column({
+    type: DataType.STRING(255),
+    allowNull: true,
+    field: 'city',
+  })
+  city: string;
 
   @Unique
   @Column

@@ -35,6 +35,7 @@ import { VacanciesSource } from '@/models/VacanciesSource';
 import { CandidateProfileSpecialization } from '@/models/CandidateProfileSpecialization';
 import { CandidateProfileWorkPlace } from '@/models/CandidateProfileWorkPlace';
 import { Nft } from '@/models/Nft';
+import { Post } from '@/models/Post';
 
 export const models = {
   User,
@@ -72,6 +73,7 @@ export const models = {
   CandidateProfileSpecialization,
   CandidateProfileWorkPlace,
   Nft,
+  Post,
 };
 
 export type Models = typeof models;
